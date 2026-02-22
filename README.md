@@ -6,10 +6,26 @@ These guides explain how to install, configure, and operate the DroidLink system
 
 No programming experience is required.
 
-- You will need a license's to download firmware via web installer. 
-- License's are $60 per droid.
-- Contact me @ droidlink77@gmail.com
-  
+- A license is required to download firmware via the web installer.  
+- Licenses are **$60 per droid**.  
+- Contact: droidlink77@gmail.com  
+
+---
+
+## Optional Hardware
+
+To simplify audio wiring, I offer a **DFPlayer Mini breakout board** designed specifically for DroidLink.
+
+The breakout board cleans up wiring, simplifies installation, and reduces connection errors.
+
+See the image and wiring example here:
+
+<img src="images/master_dfplayer_wiring.jpg" alt="DFPlayer Breakout Wiring" width="600">
+
+Breakout board price: **$40**
+
+Contact: droidlink77@gmail.com for availability.
+
 ---
 
 ## Where to Start
