@@ -296,10 +296,11 @@ After a Universal Slave is installed and running in Normal Mode (LED will be OFF
 2. Connect to the Master_Config Wi-Fi network.
 3. Open a browser and go to:  
    http://192.168.4.1
-4. In the Slave (Node) configuration section:
+4. Password: droidlink  
+5. In the Slave (Node) configuration section:
    - Enter the Slave MAC address.
-5. Click SAVE Configuration.
-6. Reset or power cycle the Master.
+6. Click SAVE Configuration.
+7. Reset or power cycle the Master.
 
 Repeat this process for each additional Slave (Node ID 2–7).
 
