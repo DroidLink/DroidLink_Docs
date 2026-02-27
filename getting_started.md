@@ -328,12 +328,9 @@ If there is no response:
 
 ---
 
-## Setup Complete
+## ➡️ Next Step
 
-DroidLink firmware installation and configuration are complete.
+Now that your devices are installed and running,  
+learn how DroidLink works conceptually.
 
-All devices are activated, paired, and running in Normal Mode.
-
-You are now ready to begin hardware wiring and system integration.
-
-Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md).
+👉 **[Using DroidLink →](using_droidlink.md)**

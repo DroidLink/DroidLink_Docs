@@ -192,8 +192,9 @@ Your DroidLink Display is now ready for operation.
 
 ---
 
-## ➡️ Next Step
+## 🎬 Ready to Build Advanced Behaviors?
 
-Learn how to Setup Slave Interface. 
+Now that you understand how to use the Display interface,  
+learn how to create multi-step timed actions using Master Sequences.
 
-👉 **[Slave Interface Guide →](Slave_Interface_Guide.md)**
+👉 **[Creating a Master Sequence →](Creating_Master_Sequence.md)**

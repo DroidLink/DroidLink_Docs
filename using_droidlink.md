@@ -137,10 +137,9 @@ The following topics are covered in later sections:
 
 ---
 
-## Next steps
+## ➡️ Next Step
 
-Continue to:
+Now that you understand how the system works,  
+proceed to hardware wiring.
 
-**Hardware Setup**
-
-This section explains how to safely power and wire your DroidLink devices before creating controls or actions.
+👉 **[Master Wiring and Connections →](Master_Wiring_and_Connections.md)**

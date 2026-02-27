@@ -97,6 +97,25 @@ ground, and the TX communication line connected from the Master Controller.
 The breakout header pins are labeled VCC, GND, RX, and TX.
 Connect only VCC, GND, and RX for DroidLink operation.
 
+## 🎵 Audio Files for DFPlayer
+
+DroidLink uses audio files stored on a microSD card inserted into the DFPlayer Mini.
+
+Download the official DroidLink Audio Pack:
+
+👉 **[Download DroidLink Audio Pack v1](downloads/DroidLink_Audio_Pack_v1.zip)**
+
+---
+
+### Installation Steps
+
+1. Download and extract the ZIP file  
+2. Format your microSD card as **FAT32**  
+3. Copy the extracted `mp3` folder to the **root** of the microSD card.
+4. Insert the card into the DFPlayer Mini  
+
+Ensure the file numbering matches the track numbers used in your DroidLink mappings.
+
 
 ## Drive ESC Connections
 
