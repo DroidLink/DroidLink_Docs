@@ -50,7 +50,8 @@ Follow this order for a complete setup and configuration:
 6. [Display Interface Guide](Display_Interface_Guide.md) – Touch interface setup  
 7. [Creating a Master Sequence](Creating_Master_Sequence.md) – Build timed multi-step actions  
 8. [Creating Display Sequences](Creating_Display_Sequences.md) – Inline chaining from Display  
-9. [DroidLink Command Reference](DroidLink_Command_Reference.md) – Full command list and syntax  
+9. [DroidLink Command Reference](DroidLink_Command_Reference.md) – Full command list and syntax
+10. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly    
 
 ---
 
@@ -65,7 +66,9 @@ Follow this order for a complete setup and configuration:
 - `Display_Interface_Guide.md` – Display configuration interface  
 - `Creating_Master_Sequence.md` – Building Master Sequences  
 - `Creating_Display_Sequences.md` – Chained commands from Display  
-- `DroidLink_Command_Reference.md` – Complete command documentation  
+- `DroidLink_Command_Reference.md` – Complete command documentation
+- `OTA_Updates.md` – Over-the-air firmware updates  
+
 
 ---
 ## Scope

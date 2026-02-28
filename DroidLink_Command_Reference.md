@@ -311,6 +311,10 @@ For advanced integrations, external hardware behavior, or device-specific comman
 
 ---
 
-DroidLink Command Reference  
-Version 1.0
+## 🔄 Next Step — OTA Updates
 
+Keep your system up to date with the latest firmware improvements.
+
+Learn how to update the Master and Universal Slaves wirelessly:
+
+👉 **[OTA Updates →](OTA_Updates.md)**
