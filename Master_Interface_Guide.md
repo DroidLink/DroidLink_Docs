@@ -23,13 +23,13 @@ After completing Master Setup, you will see the main configuration screen.
 At the bottom of the page, you will find the following buttons:
 
 - **RC Controls**
-- **Command’s**
+- **Commands**
 - **Save Configuration**
 - **Factory Reset**
 
 To begin configuring how your droid behaves, select:
 
-👉 **Command’s**
+👉 **Commands**
 
 ---
 
@@ -163,6 +163,8 @@ Each mapping allows you to:
 ### Drive Tab
 
 Use the **Drive** tab to assign direct drive commands to controller inputs.
+
+> ⚠️ Drive profiles (Slow / Normal / Turbo) operate within the Max Drive Speed (%) limit configured in Master Setup.
 
 This controls:
 

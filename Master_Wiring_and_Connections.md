@@ -2,21 +2,24 @@
 
 This guide explains how to properly wire your DroidLink hardware.
 
+> ⚠️ Always disconnect battery power before making or modifying wiring connections.
+
 Follow each section carefully. Incorrect wiring can prevent boot, cause instability, or damage components.
 
 | Function         | GPIO | Description                               |
 | ---------------- | ---- | ----------------------------------------- |
 | SBUS Left RX     | 17   | Left receiver SBUS input                  |
 | SBUS Right RX    | 16   | Right receiver SBUS input                 |
-| ESC Left Signal  | 4    | Left drive ESC signal (signal wire only)  |
-| ESC Right Signal | 5    | Right drive ESC signal (signal wire only) |
+| Drive Left PWM Signal   | 4   | Left drive PWM signal (signal wire only)  |
+| Drive Right PWM Signal | 5    | Right drive PWM signal (signal wire only) |
 | Dome PWM Output  | 21   | Dome motor signal output                  |
 | DFPlayer TX      | 18   | Serial TX to DFPlayer                     |
 
+All GPIO references are based on the DroidLink Master firmware default pin configuration.
 
 ## Important Notes
 
-- ⚠️ ESC connections use **signal and ground only**. Do **not** connect 5V from the ESC to the ESP32.
+- ⚠️ Drive controller connections use **signal and ground only**. Do **not** connect 5V from an ESC or Sabertooth to the ESP32.
 - ⚠️ Ensure all grounds (ESCs, SBUS receivers, DFPlayer) are connected to a **common ground**.
 
 ---
@@ -116,26 +119,68 @@ Download the official DroidLink Audio Pack:
 
 Ensure the file numbering matches the track numbers used in your DroidLink mappings.
 
-
-## Drive ESC Connections
+---
+ 
+## Drive Controller Connections
 
 The drive motors are controlled using PWM signal outputs from the Master Controller.
 
-Each ESC connects to the Master using a **signal wire** and a **ground**.
+Each drive controller (ESC or Sabertooth) connects to the Master using a **signal wire** and a **ground**.
 
 ### Master Signal Connections
 
-- ESC Left signal → GPIO 4  
-- ESC Right signal → GPIO 5  
-- ESC ground → System common ground  
+- Drive Left PWM signal → GPIO 4  
+- Drive Right PWM signal → GPIO 5  
+- Controller ground → System common ground  
 
 Only the signal and ground wires connect to the Master Controller.
 
+> ⚠️ Do NOT connect 5V from an ESC or Sabertooth to the ESP32.
+
 ---
 
-### Drive ESC Signal Connection (Master Side)
+## Sabertooth Drive Controller Wiring (RC Mode)
 
-The image below shows the ESC signal connections on the Master Controller.
+If you are using a Sabertooth motor controller in **RC Mode**, connect the Master PWM outputs as follows:
+
+### Master → Sabertooth Signal Wiring
+
+- GPIO 4 → Sabertooth **S1**
+- GPIO 5 → Sabertooth **S2**
+- Master GND → Sabertooth **0V / GND**
+
+Only the signal and ground wires connect between the Master and Sabertooth.
+
+> ⚠️ Do NOT connect 5V from the Sabertooth to the ESP32.
+
+---
+
+### Sabertooth DIP Switch Settings (RC Mode)
+
+DroidLink requires the Sabertooth to be configured for **RC Mode**.
+
+For most dual-channel Sabertooth controllers (such as 2x25 and 2x32), the typical DIP switch configuration for RC Mode is:
+
+- Switch 1 — OFF  
+- Switch 2 — ON
+- Switch 3 — OFF  
+- Switch 4 — OFF  
+- Switch 5 — OFF  
+- Switch 6 — OFF  
+
+> ⚠️ DIP switch layouts may vary depending on model and hardware revision.  
+> Always verify the correct RC Mode settings using the official Sabertooth documentation for your specific controller.
+
+In RC Mode:
+- 1500µs = Neutral  
+- 1000µs = Full Reverse  
+- 2000µs = Full Forward  
+
+---
+
+### Drive PWM Signal Connections (Master Side)
+
+The image below shows the drive PWM signal connections on the Master Controller (used for ESC or Sabertooth in RC mode).
 
 ![Drive ESC Signal Connection](images/master_drive_esc.jpg)
 
@@ -143,7 +188,7 @@ The image below shows the ESC signal connections on the Master Controller.
 
 ### ESC Configuration Using VESC Tool
 
-After wiring the ESC signal connections, each drive ESC must be configured using **VESC Tool** before operation.
+If you are using brushless ESCs, each drive ESC must be configured using **VESC Tool** before operation.
 
 You can download the VESC Tool here:
 
@@ -159,25 +204,68 @@ A recommended video walkthrough of the setup process is available here:
 
 ---
 
+## 🚗 Drive Motor Type & Speed Cap
+
+DroidLink supports multiple drive motor configurations:
+
+- Brushless motors using RC ESCs (4" brushless setups)
+- Sabertooth motor controllers (RC mode, brushed DC)
+
+Because these systems differ in throttle response and torque characteristics,  
+the **Max Drive Speed (%)** setting in Master Setup may need adjustment depending on your motor type.
+
+### Recommended Starting Points
+
+- **Brushless ESC systems:** Leave the default at **30%** for initial testing.
+- **Sabertooth or brushed scooter motors:** You may increase this value as needed.  
+  Many builds operate closer to **100%**, depending on gearing and droid weight.
+
+Always increase speed gradually and test in a safe, open area.
+
+---
+
+### Sabertooth Configuration
+
+Set the Sabertooth to **RC Mode** using DIP switches.
+
+In RC Mode:
+
+- 1500µs = Neutral
+- 1000µs = Full Reverse
+- 2000µs = Full Forward
+
+Refer to your specific Sabertooth model documentation for correct DIP switch settings.
+
+---
+
+### Important
+
+- Ensure Sabertooth battery ground and Master ground share a **common ground**.
+- Perform motor direction verification before full-speed testing.
+- Begin testing with **Max Drive Speed (%) set to 30%** and increase gradually.
+
+---
+
 ### 🚗 Drive Mode Speed Configuration
 
-- After ESC calibration is complete, drive behavior can be tuned directly from the Display.
-- Once you have completed all wiring and configuration guides (Master, Display, and Slave) and Command Reference
-- return to here for adjusting drive modes. 
+After drive controller setup is complete (ESC calibration or Sabertooth configuration),  
+drive behavior can be tuned directly from the Display.
+
+Once you have completed all wiring and configuration guides (Master, Display, and Slave) and reviewed the Command Reference, return here to adjust drive modes.
 
 To adjust drive speed profiles:
 
 1. Swipe to the **Master Mode** screen  
-2. Enter **Params**  
+2. Enter **Params**
 
-From this screen, you can adjust speed scaling, when you adjust slider it immediately takes effect when releasing slider:
+From this screen, you can adjust speed scaling. Changes take effect immediately when the slider is released.
 
-- Param screen will show what speed mode your in. 
-- Slow Mode  
-- Normal Mode  
-- Turbo Mode  
+- The Param screen shows which speed mode you are in:
+  - Slow Mode  
+  - Normal Mode  
+  - Turbo Mode  
 
-These values define how throttle input is scaled before being sent to the ESCs.
+These values define how throttle input is scaled before being sent to the drive controller.
 
 For example:
 
@@ -185,25 +273,32 @@ For example:
 - **Normal Mode** → Standard operating speed  
 - **Turbo Mode** → Maximum allowed speed  
 
-- When a drive mode is selected, the Master applies the corresponding speed profile configured here.
-- To exit param screen hold back < for at least 2 seconds. 
+When a drive mode is selected, the Master applies the corresponding speed profile configured here.
+
+To exit the Param screen, hold the back button (<) for at least 2 seconds.
 
 ### Important Notes
 
 - Drive Enable must be active for motion to occur  
-- These settings adjust scaling only — they do not replace ESC calibration  
-- Speed changes apply immediately after moving slider.   
+- These settings adjust scaling only — they do not replace ESC calibration or Sabertooth configuration  
+- Speed changes apply immediately after moving the slider  
 
 Drive tuning allows the system to be tailored for event space, surface type, and operator preference.
+
+---
 
 ## Master Wiring Complete
 
 At this stage, the Master Controller should be fully wired and configured.
 
 Before proceeding:
-- Verify all signal connections
-- Confirm common ground across all devices
-- Ensure ESCs are configured and calibrated
-- Confirm DFPlayer audio output is functional
 
-You are now ready to proceed to [Universal Slave Wiring](Slave_Wiring.md).
+- Verify all signal connections  
+- Confirm common ground across all devices  
+- Ensure ESCs are calibrated (if applicable)  
+- Confirm Sabertooth is set to RC Mode (if applicable)  
+- Confirm DFPlayer audio output is functional  
+
+Your Master wiring and drive configuration are now complete.
+
+Proceed to [Universal Slave Wiring](Slave_Wiring.md) to continue system setup.
