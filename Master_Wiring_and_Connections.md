@@ -242,7 +242,6 @@ Refer to your specific Sabertooth model documentation for correct DIP switch set
 
 - Ensure Sabertooth battery ground and Master ground share a **common ground**.
 - Perform motor direction verification before full-speed testing.
-- Begin testing with **Max Drive Speed (%) set to 30%** and increase gradually.
 
 ---
 
