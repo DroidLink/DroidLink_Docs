@@ -6,14 +6,14 @@ This guide explains how to properly wire your DroidLink hardware.
 
 Follow each section carefully. Incorrect wiring can prevent boot, cause instability, or damage components.
 
-| Function         | GPIO | Description                               |
-| ---------------- | ---- | ----------------------------------------- |
-| SBUS Left RX     | 17   | Left receiver SBUS input                  |
-| SBUS Right RX    | 16   | Right receiver SBUS input                 |
-| Drive Left PWM Signal   | 4   | Left drive PWM signal (signal wire only)  |
-| Drive Right PWM Signal | 5    | Right drive PWM signal (signal wire only) |
-| Dome PWM Output  | 21   | Dome motor signal output                  |
-| DFPlayer TX      | 18   | Serial TX to DFPlayer                     |
+| Function                     | GPIO | Description                              |
+|------------------------------|------|------------------------------------------|
+| Drive Controller SBUS RX     | 17   | SBUS input from the drive RC receiver    |
+| Dome Controller SBUS RX      | 16   | SBUS input from the dome RC receiver     |
+| Drive Left PWM Signal        | 4    | Left drive PWM signal (signal wire only) |
+| Drive Right PWM Signal       | 5    | Right drive PWM signal (signal wire only)|
+| Dome PWM Output              | 21   | Dome motor signal output                 |
+| DFPlayer TX                  | 18   | Serial TX to DFPlayer                    |
 
 All GPIO references are based on the DroidLink Master firmware default pin configuration.
 

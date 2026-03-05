@@ -12,6 +12,36 @@ No programming experience is required.
 
 ---
 
+## ⚠ Safety and Liability Notice
+
+DroidLink is a DIY hobby robotics control system and is not intended
+for commercial, industrial, or safety-critical applications.
+
+Robots are capable of movement and may cause injury or property damage  
+if built or operated improperly.
+
+By building, installing, or operating DroidLink firmware or hardware, you agree that:
+
+* You assume full responsibility for the safe construction and operation of your robot.
+* Software, electronics, radio systems, and hardware can fail unexpectedly.
+* The developer of DroidLink is not responsible for any injury, damage,  
+  property loss, or other consequences resulting from the use or misuse  
+  of this system.
+### Recommended Safety Practices
+
+When building or operating a DroidLink robot:
+
+* Install a **physical master power switch**
+* Test motors with **wheels lifted off the ground**
+* Verify **RC failsafe behavior** before driving
+* Keep batteries accessible so power can be disconnected quickly
+* Never operate robots near people, pets, or fragile property
+* Always supervise robots during operation
+
+DroidLink is provided **“as-is” without warranty of any kind**, express or implied, including but not limited to fitness for a particular purpose.
+
+---
+
 ## Optional Hardware
 
 To simplify audio wiring, I offer a **DFPlayer Mini breakout board** designed specifically for DroidLink.
