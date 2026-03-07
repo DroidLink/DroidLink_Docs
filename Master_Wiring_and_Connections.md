@@ -8,8 +8,8 @@ Follow each section carefully. Incorrect wiring can prevent boot, cause instabil
 
 | Function                     | GPIO | Description                              |
 |------------------------------|------|------------------------------------------|
-| Drive Controller SBUS RX     | 17   | SBUS input from the drive RC receiver    |
-| Dome Controller SBUS RX      | 16   | SBUS input from the dome RC receiver     |
+| Drive Controller SBUS RX     | 16   | SBUS input from the drive RC receiver    |
+| Dome Controller SBUS RX      | 17   | SBUS input from the dome RC receiver     |
 | Drive Left PWM Signal        | 4    | Left drive PWM signal (signal wire only) |
 | Drive Right PWM Signal       | 5    | Right drive PWM signal (signal wire only)|
 | Dome PWM Output              | 21   | Dome motor signal output                 |
