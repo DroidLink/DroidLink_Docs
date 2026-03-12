@@ -117,8 +117,27 @@ MASTER READY
 
 The Master Controller is successfully activated and running in Normal Mode.
 
-
 ---
+
+### ⚠️ If the Master repeatedly reboots after installation
+
+If the Master appears to continuously reboot in the Console (the boot message repeats over and over),  
+this is usually caused by a **USB power cable that cannot supply enough current**.   
+Any time you see Pink led turning on and off and maybe eventually going solid.  
+You are in a boot loop **Confirm Power Source**. 
+
+The ESP32-S3 can draw short bursts of power when Wi-Fi starts.  
+Some USB cables — especially charge-only or very thin cables — can cause a brief voltage drop which forces the device to restart.
+
+If this occurs:
+s
+1. Disconnect the USB cable.
+2. Try a different **USB data cable**.
+3. Plug the cable directly into the computer (avoid USB hubs if possible).
+4. Press **RESET Device** again.
+
+After switching cables, the Master should boot normally and remain running.
+
 
 ## Step 3 — Install Display Firmware (Optional)
 
