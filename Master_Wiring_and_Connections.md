@@ -6,21 +6,39 @@ This guide explains how to properly wire your **DroidLink Master hardware**.
 
 Follow each section carefully. Incorrect wiring can prevent boot, cause instability, or damage components.
 
-| Function                     | GPIO | Description                              |
-|------------------------------|------|------------------------------------------|
-| Drive Controller SBUS RX     | 17   | SBUS input from the drive RC receiver    |
-| Dome Controller SBUS RX      | 16   | SBUS input from the dome RC receiver     |
-| Drive Left PWM Signal        | 4    | Left drive PWM signal (signal wire only) |
-| Drive Right PWM Signal       | 5    | Right drive PWM signal (signal wire only)|
-| Dome PWM Output              | 21   | Dome motor signal output                 |
-| DFPlayer TX                  | 18   | Serial TX to DFPlayer                    |
+---
 
-All GPIO references are based on the DroidLink Master firmware default pin configuration.
+# Master GPIO Reference
 
-## Important Notes
+| Function                     | GPIO | Description                                   |
+| ---------------------------- | ---- | --------------------------------------------- |
+| Drive Controller SBUS RX     | 16   | SBUS input from the drive RC receiver         |
+| Dome Controller SBUS RX      | 17   | SBUS input from the dome RC receiver          |
+| Drive Left PWM Signal        | 4    | ESC mode: Left drive PWM output               |
+| Drive Right PWM Signal       | 5    | ESC mode: Right drive PWM output              |
+| Dome PWM Output              | 21   | ESC mode: Dome motor PWM signal               |
+| Sabertooth / SyRen Serial TX | 4    | Packetized serial motor bus (Sabertooth mode) |
+| DFPlayer TX                  | 18   | Serial TX to DFPlayer                         |
 
-- ⚠️ Drive controller connections use **signal and ground only**. Do **not** connect 5V from an ESC or Sabertooth to the ESP32.
-- ⚠️ Ensure all grounds (ESCs, SBUS receivers, DFPlayer) are connected to a **common ground**.
+> When **Sabertooth mode** is enabled in the Master configuration,
+> **GPIO 4 switches from PWM output to a packetized serial motor bus** used by both the Sabertooth drive controller and the SyRen dome controller.
+
+---
+
+# Important Notes
+
+* ⚠️ Drive controller connections use **signal and ground only**.
+* ⚠️ **Never connect 5V** from ESCs or Sabertooth controllers to the ESP32.
+* ⚠️ All devices must share a **common ground**.
+
+Devices that must share ground:
+
+* ESCs / Sabertooth motor controllers
+* SBUS receivers
+* DFPlayer
+* DroidLink Master
+
+A shared ground ensures reliable signal communication between all devices.
 
 ---
 
