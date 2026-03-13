@@ -51,7 +51,7 @@ Installing in this order ensures proper pairing and activation behavior.
 7. Click Connect.
 
 8. When prompted:  
-   “Do you want to install DroidLink Master Controller V1.0?”  
+   “Do you want to install DroidLink Master Controller V1.1?”  
    Click Install.
 
 Wait for the installation process to complete.
