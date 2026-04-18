@@ -103,6 +103,85 @@ Example:
 
 ---
 
+## 👁 Sentry Mode (Autonomous Behavior)
+
+Sentry Mode allows the Master to perform randomized actions such as dome movement and sound playback at timed intervals.
+
+---
+
+### 🔹 Enable / Disable
+
+:SMON   → Enable Sentry Mode using last configuration
+:SMOFF  → Disable Sentry Mode immediately
+
+---
+
+### 🔹 Configure + Start
+
+Sentry Mode is configured using the `:SM` command:
+
+`:SM:<minDelay>:<maxDelay>:<sound>:<domeMin>:<domeMax>`
+
+* minDelay = Minimum delay between actions (seconds)
+* maxDelay = Maximum delay between actions (seconds)
+* sound = Audio category (see Audio Commands)
+* domeMin = Minimum dome movement time (milliseconds)
+* domeMax = Maximum dome movement time (milliseconds)
+
+---
+
+### 🔹 Examples
+
+Fixed dome timing:
+
+:SM:2:4:SAD:700
+
+→ Every 2–4 seconds, perform a random action
+→ Dome spins for exactly 700 ms
+
+---
+
+Random dome timing:
+
+:SM:2:4:SAD:300:700
+
+→ Every 2–4 seconds, perform a random action
+→ Dome spins randomly between 300–700 ms
+
+---
+
+### 🔹 Behavior
+
+While enabled, Sentry Mode randomly performs:
+
+* Dome rotate left
+* Dome rotate right
+* Play random sound from selected category
+* Do nothing (idle moment)
+
+---
+
+### 🔹 Important Notes
+
+* Sentry Mode is non-blocking
+* Automatically pauses if a Master Sequence is running
+* Dome movement always stops after the calculated duration
+* Delay timing is randomized between minDelay and maxDelay
+* All timing is time-based, not action-completion-based
+
+---
+
+### 🔹 Compatible with Command Chaining
+
+Sentry Mode can be triggered inside command chains:
+
+:SM:2:4:CHAT:300:700:W10000:SMOFF
+
+→ Run Sentry Mode for ~10 seconds, then stop
+
+---
+
+
 # 🎵 Audio Commands (DFPlayer)
 
 All audio commands use the :AS prefix.
