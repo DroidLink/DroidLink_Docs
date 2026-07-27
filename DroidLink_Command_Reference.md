@@ -396,4 +396,4 @@ Keep your system up to date with the latest firmware improvements.
 
 Learn how to update the Master and Universal Slaves wirelessly:
 
-👉 **[OTA Updates →](OTA_Updates.md)**
+👉 **[DroidLink Astropixels →](Droidlink_Astropixels.md)**

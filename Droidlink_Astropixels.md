@@ -266,3 +266,13 @@ Factory default servo limits 800 to 2200 remain built into the firmware.
 If no saved calibration exists, AstroPixels automatically uses the factory defaults.
 
 Once a servo has been calibrated using the `:SL` command, the saved calibration overrides the factory settings until it is erased.
+
+---
+
+## 🔄 Next Step — OTA Updates
+
+Keep your system up to date with the latest firmware improvements.
+
+Learn how to update the Master and Universal Slaves wirelessly:
+
+👉 **[OTA Updates →](OTA_Updates.md)**
