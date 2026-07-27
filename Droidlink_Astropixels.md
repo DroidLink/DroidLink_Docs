@@ -74,6 +74,31 @@ Runs Sequence **15** on both Maestro controllers.
 
 > **Note:** `:DS` is intended for synchronized operation. Use `:D1S` or `:D2S` when you need to control a specific Maestro independently.
 
+
+# Holoprojector Improvements
+
+## Correct Holoprojector Servo Assignment
+
+Beginning with the latest AstroPixels firmware, holoprojector servos now start on **Servo Board 2**, matching the standard DroidLink hardware configuration.
+
+This change aligns AstroPixels with the recommended wiring used throughout the DroidLink ecosystem and eliminates the need for custom servo remapping.
+
+### Default Holoprojector Servo Locations
+
+| Holoprojector | Servo Board |
+|---------------|-------------|
+| Front Holo    | Board 2 |
+| Rear Holo     | Board 2 |
+| Top Holo      | Board 2 |
+
+If your holoprojectors were previously connected to Servo Board 1, move them to Servo Board 2 to use the default AstroPixels configuration.
+
+> **Note:** Existing users with custom configurations may need to update their wiring or servo assignments after upgrading.
+
+ - Front Holo  -> Board 2, Servo 0
+ - Rear Holo   -> Board 2, Servo 1
+ - Top Holo    -> Board 2, Servo 2
+
 # Holoprojector Auto Twitch
 
 AstroPixels supports automatic holoprojector twitching with fully adjustable timing.
