@@ -1,24 +1,16 @@
 # Using DroidLink AstroPixels
 
+This guide explains how to connect and control Pololu Maestro servo controllers, install and calibrate holoprojector servos, and configure Holoprojector Auto Twitch.
+
 ## Maestro Support
 
 DroidLink AstroPixels supports one or two Pololu Maestro servo controllers for advanced servo control.
 
-The Maestro controller(s) connect directly to the AstroPixels **Serial2** port(s). Once connected, DroidLink automatically routes Maestro sequence commands to the appropriate controller.
+Connect the Maestro controller(s) directly to the AstroPixels **Serial2** port(s). Once connected and enabled in the AstroPixels configuration, DroidLink routes Maestro sequence commands to the appropriate controller.
 
-Current features include:
+### Run a Sequence on Maestro 1
 
-- Support for one or two Maestro controllers.
-- Wireless Maestro sequence execution through DroidLink.
-- Compatible with existing DroidLink command routing.
-
-### Running Maestro Sequences
-
-#### Maestro 1 (Device ID 12)
-
-Use the `:D1S` command to run a sequence on Maestro 1.
-
-Examples:
+Maestro 1 uses **Device ID 12** and the `:D1S` command.
 
 ```text
 :D1S00
@@ -32,13 +24,9 @@ Runs Sequence **0** on Maestro 1.
 
 Runs Sequence **15** on Maestro 1.
 
----
+### Run a Sequence on Maestro 2
 
-#### Maestro 2 (Device ID 13)
-
-Use the `:D2S` command to run a sequence on Maestro 2.
-
-Examples:
+Maestro 2 uses **Device ID 13** and the `:D2S` command.
 
 ```text
 :D2S00
@@ -52,13 +40,9 @@ Runs Sequence **0** on Maestro 2.
 
 Runs Sequence **15** on Maestro 2.
 
----
+### Run a Sequence on Both Maestros
 
-### Broadcast to Both Maestros
-
-If two Maestro controllers are installed, the standard `:DS` command sends the sequence to **both** controllers simultaneously.
-
-Example:
+When two Maestro controllers are installed, the standard `:DS` command sends the same sequence to both controllers simultaneously.
 
 ```text
 :DS00
@@ -72,111 +56,211 @@ Runs Sequence **0** on both Maestro controllers.
 
 Runs Sequence **15** on both Maestro controllers.
 
-> **Note:** `:DS` is intended for synchronized operation. Use `:D1S` or `:D2S` when you need to control a specific Maestro independently.
+> **Note:** Use `:DS` for synchronized operation. Use `:D1S` or `:D2S` when you need to control one Maestro independently.
 
+---
 
-# Holoprojector Improvements
+## Holoprojector Servo Setup
 
-## Correct Holoprojector Servo Assignment
+The latest AstroPixels firmware starts the holoprojector servos on **Servo Board 2**, matching the standard DroidLink hardware configuration.
 
-Beginning with the latest AstroPixels firmware, holoprojector servos now start on **Servo Board 2**, matching the standard DroidLink hardware configuration.
+### Default Holoprojector Locations
 
-This change aligns AstroPixels with the recommended wiring used throughout the DroidLink ecosystem and eliminates the need for custom servo remapping.
+| Holoprojector | Servo Board | Starting Servo |
+| --- | --- | ---: |
+| Front | Board 2 | 0 |
+| Rear | Board 2 | 1 |
+| Top | Board 2 | 2 |
 
-### Default Holoprojector Servo Locations
+The six holoprojector servo calibration numbers are **13 through 18**.
 
-| Holoprojector | Servo Board |
-|---------------|-------------|
-| Front Holo    | Board 2 |
-| Rear Holo     | Board 2 |
-| Top Holo      | Board 2 |
+> **Important:** If your holoprojectors were previously connected to Servo Board 1, move them to Servo Board 2 before using the default AstroPixels configuration. Existing custom configurations may require updated wiring or servo assignments after upgrading.
 
-If your holoprojectors were previously connected to Servo Board 1, move them to Servo Board 2 to use the default AstroPixels configuration.
+### Recommended Installation and Calibration
 
-> **Note:** Existing users with custom configurations may need to update their wiring or servo assignments after upgrading.
+Perform this setup while the DroidLink Display is in **Configuration Mode**. This lets you send commands and observe the servos live while making adjustments.
 
- - Front Holo  -> Board 2, Servo 0
- - Rear Holo   -> Board 2, Servo 1
- - Top Holo    -> Board 2, Servo 2
+> **Safety:** Servo commands take effect immediately. Keep your hands and tools clear of moving mechanisms, and begin without the linkages attached whenever possible.
 
-# Holoprojector Auto Twitch
+#### Step 1 — Center the Servos
 
-AstroPixels supports automatic holoprojector twitching with fully adjustable timing.
+Before installing the servo horns, center the holoprojector you are working on.
 
-## Enable Auto Twitch
+Front holoprojector:
+
+```text
+*HPF101
+```
+
+Rear holoprojector:
+
+```text
+*HPR102
+```
+
+Top holoprojector:
+
+```text
+*HPT103
+```
+
+The selected holoprojector servos will move to their center positions.
+
+#### Step 2 — Install the Servo Horns
+
+With the servos still centered:
+
+1. Install each servo horn as straight and in line with the servo as possible.
+2. Secure the horns with their screws.
+3. Do not rotate the servo shafts while fitting the horns.
+
+#### Step 3 — Attach the TPU Linkages
+
+Attach the printed TPU servo linkages between the servo horns and the holoprojector mechanism. With the servos centered, the holoprojector should also sit in its centered position.
+
+#### Step 4 — Set Safe Starting Limits
+
+The factory default servo limits are **800 to 2200**. Before testing the holoprojectors, use a safer starting range of **1200 to 1800** for all six holoprojector servos.
+
+Enter each command in the Display's command field and press **Send**. Repeat this for every servo from 13 through 18:
+
+```text
+:SL13,1200,1800
+:SL14,1200,1800
+:SL15,1200,1800
+:SL16,1200,1800
+:SL17,1200,1800
+:SL18,1200,1800
+```
+
+Each `:SL` command takes effect immediately and is saved automatically.
+
+#### Step 5 — Test with Auto Twitch
+
+After installing the horns and linkages and setting safe limits, enable Auto Twitch to observe the mechanism in normal operation.
+
+First, set a short test interval of **1 to 3 seconds**:
+
+```text
+@HPA190,1,3
+```
+
+This command only sets the timing. It does **not** start Auto Twitch. The short interval makes all three holoprojectors move frequently so you can observe their operation. Auto Twitch starts only after you send one of the enable commands below.
+
+All holoprojectors:
 
 ```text
 @HPA199
 ```
 
-Enables automatic twitching for all holoprojectors.
+Front only:
 
----
+```text
+@HPF199
+```
 
-## Disable Auto Twitch
+Rear only:
+
+```text
+@HPR199
+```
+
+Top only:
+
+```text
+@HPT199
+```
+
+While the holoprojector is moving, verify that:
+
+- Movement is smooth and looks natural.
+- The TPU linkages move freely and do not bind.
+- The servos do not buzz, stall, or push against mechanical stops.
+- The holoprojector has suitable travel in every direction.
+- The holoprojector returns to center correctly.
+
+Stop Auto Twitch before making mechanical adjustments.
+
+All holoprojectors:
 
 ```text
 @HPA198
 ```
 
-Disables automatic twitching.
+Individual holoprojectors:
+
+```text
+@HPF198
+@HPR198
+@HPT198
+```
+
+#### Step 6 — Fine-Tune the Movement
+
+Once the holoprojector operates safely, adjust each servo's minimum and maximum values to get the amount of travel you prefer.
+
+For example:
+
+```text
+:SL18,1250,1750
+```
+
+Make small changes, test again with Auto Twitch, and continue until the movement looks right. If a servo buzzes, stalls, binds, or reaches a mechanical stop, reduce its travel immediately.
 
 ---
 
-## Set Twitch Interval
+## Holoprojector Auto Twitch Settings
 
-The twitch interval can be adjusted at runtime without recompiling the firmware.
+Auto Twitch can be enabled for all holoprojectors or controlled individually.
 
-### All Holoprojectors
+### Enable or Disable Auto Twitch
+
+| Target | Enable | Disable |
+| --- | --- | --- |
+| All holoprojectors | `@HPA199` | `@HPA198` |
+| Front | `@HPF199` | `@HPF198` |
+| Rear | `@HPR199` | `@HPR198` |
+| Top | `@HPT199` | `@HPT198` |
+
+### Set the Twitch Interval
+
+Use the following format to set the minimum and maximum random delay between movements:
 
 ```text
-@HPA190,<minimum>,<maximum>
+@HP<target>190,<minimum>,<maximum>
 ```
 
-Example:
+The interval values are in **seconds**.
+
+> **Note:** An interval command only saves the timing. It does not start Auto Twitch. Send the appropriate `199` enable command afterward to begin movement.
+
+Set all holoprojectors to twitch randomly every 5 to 10 seconds:
 
 ```text
 @HPA190,5,10
 ```
 
-The holoprojectors will twitch randomly between **5 and 10 seconds**.
-
----
-
-### Individual Holoprojectors
-
-Front:
+Set a different interval for each holoprojector:
 
 ```text
 @HPF190,10,30
-```
-
-Rear:
-
-```text
 @HPR190,5,10
-```
-
-Top:
-
-```text
 @HPT190,15,25
 ```
 
-Each holoprojector can have its own random twitch interval.
+These examples configure:
+
+- Front: every **10 to 30 seconds**
+- Rear: every **5 to 10 seconds**
+- Top: every **15 to 25 seconds**
 
 ---
 
-# Runtime Servo Calibration
+## Runtime Servo Calibration
 
-Servo endpoints can now be adjusted while AstroPixels is running.
+AstroPixels servo endpoints can be adjusted while the controller is running. No source-code changes or firmware recompilation are required.
 
-No source code changes or firmware recompilation are required.
-
-
----
-
-## Command Format
+### Command Format
 
 ```text
 :SL<servo>,<minimum>,<maximum>
@@ -188,116 +272,49 @@ Example:
 :SL0,900,2100
 ```
 
-This command immediately updates the selected servo's minimum and maximum travel.
+This immediately sets Servo 0 to a minimum of **900** and a maximum of **2100**.
 
-## Testing Servo Calibration
+### Calibration Procedure
 
-After adjusting a servo's endpoints, it is recommended to test the servo before installing linkages or operating the mechanism.
+1. Begin with conservative minimum and maximum values.
+2. Move the servo through its normal operating range using the appropriate AstroPixels command or sequence.
+3. Watch for binding, buzzing, stalling, or contact with mechanical stops.
+4. Adjust the limits in small increments and test again.
+5. Reboot AstroPixels and verify that the saved calibration is restored.
 
-### Step 1 - Set the Servo Limits
+Every servo installation is different. Do not assume that one servo's safe limits will be suitable for another mechanism.
 
-Example:
+### Persistent Calibration
 
-```text
-:SL0,900,2100
-```
+Beginning with AstroPixels **V1.4**, every valid `:SL` command is automatically saved to the ESP32's non-volatile Preferences/NVS memory.
 
-This updates Servo 0 with a minimum position of **900** and a maximum position of **2100**.
+After issuing a command:
 
----
+- The new limits take effect immediately.
+- The calibration is saved automatically.
+- The saved calibration is restored at every boot.
+- No separate save command is required.
 
-### Step 2 - Test the Servo
+### Firmware Updates
 
-Move the servo through its full range of motion using your normal AstroPixels sequence or servo movement commands.
+Saved servo calibration is preserved during:
 
-Observe the servo as it moves between its minimum and maximum positions.
-
-Verify:
-
-- The servo reaches the desired travel.
-- The servo does not bind against mechanical stops.
-- The servo does not buzz or stall at either end of its travel.
-- The linkage moves freely throughout its entire range.
-
----
-
-### Step 3 - Adjust if Necessary
-
-If additional adjustment is required, simply send another `:SL` command.
-
-Example:
-
-```text
-:SL0,950,2050
-```
-
-The new limits take effect immediately.
-
-Repeat the adjustment process until the desired movement is achieved.
-
----
-
-### Step 4 - Save and Reboot
-
-Beginning with **V1.4**, AstroPixels automatically saves every `:SL` command to the ESP32's internal non-volatile memory (Preferences/NVS).
-
-No additional save command is required.
-
-After rebooting the controller, the servo will automatically use the last saved calibration.
-
----
-
-## Calibration Tips
-
-- Always calibrate the servo **before** installing horns or linkages whenever possible.
-- Start with conservative endpoint values and gradually increase the travel.
-- If the servo begins to buzz, stall, or push against a mechanical stop, reduce the endpoint immediately.
-- Every servo installation is different, so each servo may require unique endpoint values.
-- Once calibrated, the settings are retained until they are changed with another `:SL` command or the device is erased.
-
-
-
----
-
-## Persistent Servo Calibration (V1.4)
-
-Beginning with **V1.4**, servo calibration is automatically saved to the ESP32's internal non-volatile memory (Preferences/NVS).
-
-After issuing a `:SL` command:
-
-- The servo updates immediately.
-- The new calibration is automatically saved.
-- The calibration is restored automatically every time AstroPixels boots.
-
-There is no longer a need to edit source code or recompile firmware after calibrating a servo.
-
----
-
-## Firmware Updates
-
-Servo calibration is preserved during:
-
-- OTA firmware updates
 - Standard firmware uploads that do **not** erase flash
 
-Calibration is lost only if the flash/NVS partition is erased (for example, during a full chip erase or if "Erase Flash" is selected during installation).
+Calibration is lost only when the ESP32 flash or NVS data is erased, such as during a full chip erase or when **Erase Flash** is selected during installation.
+
+### Factory Defaults
+
+The factory default servo limits are **800 to 2200**.
+
+If no saved calibration exists, AstroPixels uses these factory defaults. After a servo is calibrated with `:SL`, its saved values override the factory defaults until the stored data is changed or erased.
 
 ---
 
-## Factory Defaults
-
-Factory default servo limits 800 to 2200 remain built into the firmware.
-
-If no saved calibration exists, AstroPixels automatically uses the factory defaults.
-
-Once a servo has been calibrated using the `:SL` command, the saved calibration overrides the factory settings until it is erased.
-
----
-
-## 🔄 Next Step — OTA Updates
+## Next Step — OTA Updates
 
 Keep your system up to date with the latest firmware improvements.
 
 Learn how to update the Master and Universal Slaves wirelessly:
 
-👉 **[OTA Updates →](OTA_Updates.md)**
+**[OTA Updates →](OTA_Updates.md)**
