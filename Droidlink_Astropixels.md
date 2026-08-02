@@ -1,14 +1,24 @@
 # Using DroidLink AstroPixels
 
-This guide explains how to connect and control Pololu Maestro servo controllers, install and calibrate holoprojector servos, and configure Holoprojector Auto Twitch.
+This guide explains how to use PCA servo boards or Pololu Maestro servo controllers with DroidLink AstroPixels, install and calibrate holoprojector servos, and configure Holoprojector Auto Twitch.
 
-## Maestro Support
+## Servo Controller Support
 
-DroidLink AstroPixels supports one or two Pololu Maestro servo controllers for advanced servo control.
+DroidLink AstroPixels supports both **PCA servo boards** and **Pololu Maestro servo controllers**. You can use the standard PCA servo-board setup for AstroPixels devices, or connect one or two Maestro controllers when advanced scripted servo sequences are required.
+
+### PCA Servo Boards
+
+PCA servo boards provide the standard AstroPixels servo outputs used for holoprojectors, panels, and other servo-driven mechanisms. AstroPixels supports the standard two-board configuration, referred to throughout this guide as **Servo Board 1** and **Servo Board 2**.
+
+The holoprojector setup described below uses PCA **Servo Board 2** by default.
+
+### Pololu Maestro Controllers
+
+DroidLink AstroPixels also supports one or two Pololu Maestro servo controllers for advanced servo control and scripted sequences.
 
 Connect the Maestro controller(s) directly to the AstroPixels **Serial2** port(s). Once connected and enabled in the AstroPixels configuration, DroidLink routes Maestro sequence commands to the appropriate controller.
 
-### Run a Sequence on Maestro 1
+#### Run a Sequence on Maestro 1
 
 Maestro 1 uses **Device ID 12** and the `:D1S` command.
 
@@ -24,7 +34,7 @@ Runs Sequence **0** on Maestro 1.
 
 Runs Sequence **15** on Maestro 1.
 
-### Run a Sequence on Maestro 2
+#### Run a Sequence on Maestro 2
 
 Maestro 2 uses **Device ID 13** and the `:D2S` command.
 
@@ -40,7 +50,7 @@ Runs Sequence **0** on Maestro 2.
 
 Runs Sequence **15** on Maestro 2.
 
-### Run a Sequence on Both Maestros
+#### Run a Sequence on Both Maestros
 
 When two Maestro controllers are installed, the standard `:DS` command sends the same sequence to both controllers simultaneously.
 
