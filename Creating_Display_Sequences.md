@@ -1,7 +1,6 @@
+# 🔗 Creating Display Sequences
 
----
-
-## 🔗 Using Chained Commands from the Display
+## Using Chained Commands from the Display
 
 In addition to triggering Master Sequences (`:MSnn`),  
 Display buttons can send chained commands directly.

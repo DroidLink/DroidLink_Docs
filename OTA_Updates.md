@@ -11,18 +11,18 @@ This guide explains how to update:
 
 ---
 
-# 📡 Requirements
+## 📡 Requirements
 
 Before performing an OTA update:
 
 - The device must be running normally
-- WiFi credentials must be configured
+- Wi-Fi credentials must be configured
 - Internet access must be available
 - Remote OTA must be enabled
 
 ---
 
-# 🚀 Updating the Master Controller
+## 🚀 Updating the Master Controller
 
 ## Step 1 — Enter Configuration Mode
 
@@ -38,7 +38,7 @@ The LED will glow **pink** in Config Mode.
 
 ## Step 2 — Open Master Web Interface
 
-1. Connect to **Master_Config** WiFi
+1. Connect to the **Master_Config** Wi-Fi network
 2. Open:
 
 http://192.168.4.1
@@ -60,11 +60,11 @@ After reboot, the Master will begin the OTA update automatically.
 
 During the update:
 
-- LED blinks **purple** while connecting to WiFi
+- LED blinks **purple** while connecting to Wi-Fi
 - LED changes color while downloading and installing firmware
 - The Master may reboot automatically
 
-⚠️ If the LED turns **red**, the OTA failed (check WiFi credentials).
+⚠️ If the LED turns **red**, the OTA failed (check Wi-Fi credentials).
 
 Do not power off the droid during this process.
 
@@ -106,7 +106,7 @@ OTA can also be performed while installed in the droid, but ensure drive and dom
 
 ---
 
-# 🔧 Updating a Universal Slave
+## 🔧 Updating a Universal Slave
 
 The process is similar.
 
@@ -136,26 +136,26 @@ http://192.168.4.1
 On reboot, the Slave will:
 
 - LED turns **solid blue**
-- Connect to WiFi
+- Connect to Wi-Fi
 - Check for updates
 - Install if a newer firmware version is available
 - Automatically Reboot when finished (LED off and in normal mode)
 
 ---
 
-# ⚠️ Important Notes
+## ⚠️ Important Notes
 
 - Do not power off the device during update.
-- OTA requires stable WiFi.
+- OTA requires stable Wi-Fi.
 - If OTA fails, you can always re-flash using USB.
 
 ---
 
-# 🛠 Troubleshooting OTA
+## 🛠 Troubleshooting OTA
 
 If OTA does not start:
 
-- Verify WiFi credentials
+- Verify Wi-Fi credentials
 - Confirm internet access
 - Ensure Remote OTA is enabled
 
@@ -166,6 +166,6 @@ If update fails:
 
 ---
 
-# 🎉 OTA Complete
+## 🎉 OTA Complete
 
 Once the device has rebooted successfully, it is running the latest DroidLink firmware.

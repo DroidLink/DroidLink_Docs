@@ -321,10 +321,8 @@ If no saved calibration exists, AstroPixels uses these factory defaults. After a
 
 ---
 
-## Next Step — OTA Updates
+## Next Step — Sentry Mode
 
-Keep your system up to date with the latest firmware improvements.
+Configure unattended random actions on the Master:
 
-Learn how to update the Master and Universal Slaves wirelessly:
-
-**[OTA Updates →](OTA_Updates.md)**
+**[Sentry Mode User Guide →](Sentry_Mode.md)**

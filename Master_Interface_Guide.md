@@ -33,7 +33,7 @@ To begin configuring how your droid behaves, select:
 
 ---
 
-# 🎬 Master Sequences
+## 🎬 Master Sequences
 
 Master Sequences allow you to create single commands or multi-step command chains using:
 
@@ -115,7 +115,7 @@ Example:
 
 ---
 
-# 🎮 RC Input Mapping
+## 🎮 RC Input Mapping
 
 RC Input Mapping allows you to assign controller inputs to DroidLink commands.
 
@@ -186,7 +186,7 @@ Mappings take effect immediately after saving.
 
 ---
 
-# 💾 Finalizing Your Configuration
+## 💾 Finalizing Your Configuration
 
 After completing setup:
 
@@ -228,7 +228,7 @@ Your droid is now fully operational.
 
 ---
 
-# 🎉 Command Setup Complete
+## 🎉 Command Setup Complete
 
 You have successfully:
 

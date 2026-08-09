@@ -39,7 +39,7 @@ The sections below document native DroidLink commands.
 
 ---
 
-# Core DroidLink Commands
+## Core DroidLink Commands
 
 
 
@@ -105,69 +105,76 @@ Example:
 
 ## 👁 Sentry Mode (Autonomous Behavior)
 
-Sentry Mode allows the Master to perform randomized actions such as dome movement and sound playback at timed intervals.
+Sentry Mode allows the Master to perform randomized actions such as dome movement, sound playback, idle results, and configured Master Sequences at timed intervals.
 
 ---
 
 ### 🔹 Enable / Disable
 
-:SMON   → Enable Sentry Mode using last configuration
-:SMOFF  → Disable Sentry Mode immediately
+- `:SMON` → Start Sentry Mode using the saved configuration.
+- `:SMOFF` → Stop Sentry scheduling and apply the configured shutdown behavior.
 
 ---
 
-### 🔹 Configure + Start
+### 🔹 Legacy Configure + Start
 
-Sentry Mode is configured using the `:SM` command:
+The recommended configuration method is the Master web interface described in the [Sentry Mode User Guide](Sentry_Mode.md). The legacy `:SM` command remains available for compatibility and starts Sentry immediately:
 
-`:SM:<minDelay>:<maxDelay>:<sound>:<domeMin>:<domeMax>`
+`:SM:<minDelay>:<maxDelay>:<sound>:<domeMin>:<domeMax>,MS00,MS01,MS02`
 
-* minDelay = Minimum delay between actions (seconds)
-* maxDelay = Maximum delay between actions (seconds)
-* sound = Audio category (see Audio Commands)
-* domeMin = Minimum dome movement time (milliseconds)
-* domeMax = Maximum dome movement time (milliseconds)
+- `minDelay` = Minimum delay between actions in seconds
+- `maxDelay` = Maximum delay between actions in seconds
+- `sound` = Audio category; see Audio Commands
+- `domeMin` = Minimum dome movement time in milliseconds
+- `domeMax` = Maximum dome movement time in milliseconds
+- `MS00,MS01,MS02` = Up to three optional Master Sequence identifiers
+
+Supplying one dome value uses a fixed movement duration. Supplying two values selects a random duration within that range.
 
 ---
 
 ### 🔹 Examples
 
-Fixed dome timing:
+Fixed dome timing with one Master Sequence:
 
-:SM:2:4:SAD:700
+`:SM:2:4:SAD:700,MS00`
 
-→ Every 2–4 seconds, perform a random action
-→ Dome spins for exactly 700 ms
+- Every 2–4 seconds, perform a random action.
+- Direct dome movements last exactly 700 milliseconds.
+- `MS00` is available as a Sentry action.
 
 ---
 
 Random dome timing:
 
-:SM:2:4:SAD:300:700
+`:SM:2:4:SAD:300:700`
 
-→ Every 2–4 seconds, perform a random action
-→ Dome spins randomly between 300–700 ms
+- Every 2–4 seconds, perform a random action.
+- Direct dome movements last randomly between 300 and 700 milliseconds.
 
 ---
 
 ### 🔹 Behavior
 
-While enabled, Sentry Mode randomly performs:
+Depending on the saved configuration, Sentry Mode can randomly perform:
 
-* Dome rotate left
-* Dome rotate right
-* Play random sound from selected category
-* Do nothing (idle moment)
+- Rotate the dome left.
+- Rotate the dome right.
+- Play a random sound from the selected category.
+- Do nothing for an idle result.
+- Run one of up to three configured Master Sequences.
 
 ---
 
 ### 🔹 Important Notes
 
-* Sentry Mode is non-blocking
-* Automatically pauses if a Master Sequence is running
-* Dome movement always stops after the calculated duration
-* Delay timing is randomized between minDelay and maxDelay
-* All timing is time-based, not action-completion-based
+- Sentry Mode is non-blocking.
+- A Master Sequence started by Sentry can be cancelled or allowed to finish when Sentry stops.
+- The optional dome shutdown setting takes immediate priority when Sentry stops.
+- Delay timing is randomized between the configured minimum and maximum.
+- Saved settings persist after reboot, but Sentry always starts off.
+
+See the [Sentry Mode User Guide](Sentry_Mode.md) for complete configuration, frequency, persistence, and shutdown details.
 
 ---
 
@@ -175,14 +182,14 @@ While enabled, Sentry Mode randomly performs:
 
 Sentry Mode can be triggered inside command chains:
 
-:SM:2:4:CHAT:300:700:W10000:SMOFF
+`:SM:2:4:CHAT:300:700:W10000:SMOFF`
 
 → Run Sentry Mode for ~10 seconds, then stop
 
 ---
 
 
-# 🎵 Audio Commands (DFPlayer)
+## 🎵 Audio Commands (DFPlayer)
 
 All audio commands use the :AS prefix.
 
@@ -268,7 +275,7 @@ Files must be named numerically:
 
 ---
 
-# 🔗 Command Chaining & Delays
+## 🔗 Command Chaining & Delays
 
 DroidLink allows multiple commands to be executed in sequence using command chaining.
 
@@ -369,7 +376,7 @@ Chaining allows complex, timed behaviors using structured ASCII commands without
 
 ---
 
-# ✅ Command Reference Complete
+## ✅ Command Reference Complete
 
 You now have a complete overview of all supported native DroidLink command formats.
 
@@ -390,10 +397,10 @@ For advanced integrations, external hardware behavior, or device-specific comman
 
 ---
 
-## 🔄 Next Step — OTA Updates
+## 🔄 Next Step — AstroPixels
 
 Keep your system up to date with the latest firmware improvements.
 
 Learn how to update the Master and Universal Slaves wirelessly:
 
-👉 **[DroidLink Astropixels →](Droidlink_Astropixels.md)**
+👉 **[DroidLink AstroPixels →](Droidlink_Astropixels.md)**

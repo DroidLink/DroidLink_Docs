@@ -8,7 +8,7 @@ Follow each section carefully. Incorrect wiring can prevent boot, cause instabil
 
 ---
 
-# Master GPIO Reference
+## Master GPIO Reference
 
 | Function                     | GPIO | Description                                   |
 | ---------------------------- | ---- | --------------------------------------------- |
@@ -25,7 +25,7 @@ Follow each section carefully. Incorrect wiring can prevent boot, cause instabil
 
 ---
 
-# Important Notes
+## Important Notes
 
 * ⚠️ Drive controller connections use **signal and ground only**.
 * ⚠️ **Never connect 5V** from ESCs or Sabertooth controllers to the ESP32.
@@ -42,7 +42,7 @@ A shared ground ensures reliable signal communication between all devices.
 
 ---
 
-# Master Power & SBUS Connections
+## Master Power & SBUS Connections
 
 The image below shows the Master Controller mounted to the breakout board,
 powered via a 12V DC input, with both SBUS receivers connected.
@@ -58,7 +58,7 @@ powered via a 12V DC input, with both SBUS receivers connected.
 
 ---
 
-# Dome Controller Options
+## Dome Controller Options
 
 The dome motor can be controlled using **two supported configurations** depending on your hardware.
 
@@ -71,7 +71,7 @@ Choose the configuration that matches your system.
 
 ---
 
-# Dome Controller — ESC Mode (PWM)
+## Dome Controller — ESC Mode (PWM)
 
 In ESC mode the dome motor is controlled using a **PWM signal output** from the Master.
 
@@ -109,7 +109,7 @@ https://www.dimensionengineering.com/datasheets/SyRen10.pdf
 
 ---
 
-# Sabertooth / SyRen Serial Dome Control
+## Sabertooth / SyRen Serial Dome Control
 
 When **Sabertooth mode** is enabled in the Master configuration, the dome motor is controlled using **packetized serial commands** instead of PWM.
 
@@ -214,7 +214,7 @@ https://www.dimensionengineering.com/datasheets/Sabertooth2x25.pdf
 
 ---
 
-# DFPlayer Mini Connection
+## DFPlayer Mini Connection
 
 The DFPlayer audio module is mounted on the **DroidLink DFPlayer breakout board**.
 
@@ -256,7 +256,7 @@ The **TX pin is not required** for DroidLink operation.
 
 ---
 
-# Audio Files for DFPlayer
+## Audio Files for DFPlayer
 
 DroidLink uses audio files stored on a **microSD card inserted into the DFPlayer Mini**.
 
@@ -277,7 +277,7 @@ Ensure the file numbering matches the track numbers used in your DroidLink mappi
 
 ---
 
-# Drive Controller Options
+## Drive Controller Options
 
 DroidLink supports two drive controller configurations:
 
@@ -288,7 +288,7 @@ Choose the configuration that matches your hardware.
 
 ---
 
-# ESC Drive Configuration
+## ESC Drive Configuration
 
 ESC systems use standard **PWM motor control signals**.
 
@@ -319,7 +319,7 @@ Only **signal and ground wires** connect to the Master.
 
 ---
 
-# ESC Configuration Using VESC Tool
+## ESC Configuration Using VESC Tool
 
 If you are using brushless ESCs each ESC must be configured using **VESC Tool**.
 
@@ -341,7 +341,7 @@ This performs ESC calibration through the DroidLink system.
 
 ---
 
-# Drive Motor Type & Speed Cap
+## Drive Motor Type & Speed Cap
 
 DroidLink supports multiple drive motor configurations:
 
@@ -363,7 +363,7 @@ Always increase speed gradually and test in a safe open area.
 
 ---
 
-# Drive Mode Speed Configuration
+## Drive Mode Speed Configuration
 
 After drive controller setup is complete drive behavior can be tuned from the Display.
 
@@ -400,7 +400,7 @@ Changes take effect **immediately** when the slider is released.
 
 ---
 
-# Master Wiring Complete
+## Master Wiring Complete
 
 At this stage the Master Controller should be fully wired and configured.
 

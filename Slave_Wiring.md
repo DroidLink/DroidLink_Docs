@@ -112,4 +112,4 @@ Refer to the Slave Configuration section for:
 - Selecting device roles (Maestro, MarcDuino, AstroPixels)
 - Saving and rebooting
 
-Proceed to [Slave Configuration Guide](Slave_Configuration.md).
+Proceed to the [Slave Interface Guide](Slave_Interface_Guide.md).

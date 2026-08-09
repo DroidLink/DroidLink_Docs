@@ -81,7 +81,9 @@ Follow this order for a complete setup and configuration:
 7. [Creating a Master Sequence](Creating_Master_Sequence.md) – Build timed multi-step actions  
 8. [Creating Display Sequences](Creating_Display_Sequences.md) – Inline chaining from Display  
 9. [DroidLink Command Reference](DroidLink_Command_Reference.md) – Full command list and syntax
-10. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly    
+10. [DroidLink AstroPixels](Droidlink_Astropixels.md) – Configure servo controllers and holoprojectors
+11. [Sentry Mode User Guide](Sentry_Mode.md) – Configure unattended random actions
+12. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly
 
 ---
 
@@ -97,6 +99,8 @@ Follow this order for a complete setup and configuration:
 - `Creating_Master_Sequence.md` – Building Master Sequences  
 - `Creating_Display_Sequences.md` – Chained commands from Display  
 - `DroidLink_Command_Reference.md` – Complete command documentation
+- `Droidlink_Astropixels.md` – AstroPixels servo and holoprojector setup
+- `Sentry_Mode.md` – Configuring and operating Sentry Mode
 - `OTA_Updates.md` – Over-the-air firmware updates  
 
 

@@ -26,7 +26,7 @@ The DroidLink Slave Config page will load.
 
 ---
 
-# 🔧 Entering Slave Configuration Mode
+## 🔧 Entering Slave Configuration Mode
 
 A Slave must be placed into Configuration Mode before you can access its web interface.
 
@@ -135,9 +135,9 @@ Ensure baud rate matches the connected hardware.
 
 ---
 
-## WiFi (Optional – OTA Only)
+## Wi-Fi (Optional – OTA Only)
 
-WiFi credentials are only required for remote OTA updates.
+Wi-Fi credentials are only required for remote OTA updates.
 
 If not using OTA, these fields may be left blank.
 
@@ -155,7 +155,7 @@ Enable this option to trigger a firmware update on next reboot.
 After enabling:
 
 1. Save & Reboot
-2. The Slave will connect to WiFi
+2. The Slave will connect to Wi-Fi
 3. It will check for the latest release
 4. If available, firmware will update automatically
 
@@ -169,6 +169,8 @@ After making changes:
 2. The Slave will restart
 3. It will register with the Master
 4. Capabilities will be reported automatically
+
+![Slave Configuration Screen](images/slave_config_UI.png)
 
 ---
 
@@ -202,7 +204,7 @@ If serial devices do not respond:
 
 ---
 
-# 🎉 Slave Configuration Complete
+## 🎉 Slave Configuration Complete
 
 Your Slave device is now configured and ready to receive commands.
 

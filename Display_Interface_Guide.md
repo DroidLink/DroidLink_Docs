@@ -1,4 +1,4 @@
-# 📟 Master Interface Guide
+# 📟 Display Interface Guide
 
 The DroidLink Display provides a touch-based interface for operating and monitoring your droid.
 
@@ -179,7 +179,7 @@ Display Control:
 
 ---
 
-# 🎉 Display Interface Setup Complete
+## 🎉 Display Interface Setup Complete
 
 You have successfully configured:
 
