@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Using DroidLink AstroPixels</title>
+<style>
+@page { size: Letter; margin: 0.65in 0.7in 0.7in; }
+* { box-sizing: border-box; }
+body { font-family: "Segoe UI", Arial, sans-serif; color: #20252b; font-size: 10.5pt; line-height: 1.42; margin: 0; }
+h1 { color: #14395c; font-size: 27pt; margin: 0 0 6px; }
+h2 { color: #176789; font-size: 18pt; border-bottom: 2px solid #cfe3ec; padding-bottom: 4px; margin: 25px 0 10px; break-after: avoid; }
+h3 { color: #244d68; font-size: 13pt; margin: 18px 0 7px; break-after: avoid; }
+p { margin: 6px 0 9px; }
+ul, ol { margin: 6px 0 10px 24px; padding: 0; }
+li { margin: 3px 0; }
+table { border-collapse: collapse; width: 100%; margin: 9px 0 14px; font-size: 9.5pt; break-inside: avoid; }
+th { background: #176789; color: white; text-align: left; }
+th, td { border: 1px solid #aebfc8; padding: 6px 7px; vertical-align: top; }
+tr:nth-child(even) td { background: #f4f8fa; }
+code { font-family: Consolas, monospace; background: #edf2f5; padding: 1px 4px; border-radius: 3px; }
+pre { font-family: Consolas, monospace; background: #17232c; color: #f5f7f8; padding: 9px 12px; border-radius: 5px; white-space: pre-wrap; margin: 7px 0 12px; break-inside: avoid; }
+.subtitle { color: #526775; font-size: 13pt; margin-bottom: 25px; }
+.cover { padding-top: 1.1in; min-height: 8.2in; }
+.cover-box { margin-top: 30px; padding: 18px; background: #eaf4f8; border-left: 6px solid #176789; }
+.note, .warning, .tip { padding: 9px 12px; margin: 10px 0 13px; break-inside: avoid; }
+.note { background: #edf6fa; border-left: 5px solid #3488a8; }
+.warning { background: #fff3e2; border-left: 5px solid #e58b22; }
+.tip { background: #edf7ed; border-left: 5px solid #4f9853; }
+.small { font-size: 9pt; color: #52616b; }
+.pagebreak { break-before: page; }
+.toc a { color: #176789; text-decoration: none; }
+.flow { text-align: center; font-family: Consolas, monospace; padding: 10px; background: #f3f7f9; border: 1px solid #c5d5dc; margin: 10px 0; }
+a { color: #126486; }
+thead { display: table-header-group; }
+</style>
+</head>
+<body>
+
+<section class="cover">
+  <h1>Using DroidLink AstroPixels</h1>
+  <div class="subtitle">Complete setup, wiring, pairing, commands, servo calibration, and troubleshooting guide</div>
+  <div class="cover-box">
+    <strong>What this guide covers</strong>
+    <p>DroidLink AstroPixels is an ESP32-based dome controller for AstroPixels lighting, PCA9685 servo boards, holoprojectors, and optional Pololu Maestro controllers. It receives commands wirelessly from the DroidLink Master and can also pass compatible commands to devices connected to Serial2.</p>
+  </div>
+  <p style="margin-top:35px"><strong>Important:</strong> AstroPixels uses reserved DroidLink Slave ID <strong>7</strong> and requires DroidLink Master firmware <strong>V1.6 or newer</strong>.</p>
+  <p class="small">Guide revised for the current DroidLink AstroPixels firmware. Commands and hardware behavior were checked against the firmware source.</p>
+</section>
+
+<section class="pagebreak toc">
+<h2>Contents</h2>
+<ol>
+  <li><a href="#overview">System overview</a></li>
+  <li><a href="#before">Before you begin</a></li>
+  <li><a href="#wiring">Connections and wiring</a></li>
+  <li><a href="#pairing">First-time setup and pairing</a></li>
+  <li><a href="#commands">How commands travel through AstroPixels</a></li>
+  <li><a href="#testing">Testing basic commands</a></li>
+  <li><a href="#pca">PCA9685 panel and servo control</a></li>
+  <li><a href="#maestro">Pololu Maestro control</a></li>
+  <li><a href="#holo">Holoprojector installation and Auto Twitch</a></li>
+  <li><a href="#logic">Logic, PSI, holo-light, and sequence commands</a></li>
+  <li><a href="#reference">Command-reference strategy</a></li>
+  <li><a href="#troubleshooting">Troubleshooting and recovery</a></li>
+  <li><a href="#quick">Quick-reference page</a></li>
+</ol>
+
+<h2 id="overview">1. System overview</h2>
+<p>The DroidLink Master sends ESP-NOW command packets directly to AstroPixels. AstroPixels executes supported commands locally using the ReelTwo/Marcduino command engine. With Serial2 pass-through enabled by default, most received commands are also transmitted from the AstroPixels Serial2 TX pin.</p>
+<div class="flow">DroidLink Display → DroidLink Master → ESP-NOW → AstroPixels → local lights/PCA servos<br>　　　　　　　　　　　　　　　　　　　　　　　└→ Serial2 TX → downstream Marcduino-compatible device</div>
+
+<h3>What AstroPixels can control</h3>
+<ul>
+  <li>Front and rear logic displays</li>
+  <li>Front and rear PSI lighting</li>
+  <li>Front, rear, and top holoprojector lights and movement servos</li>
+  <li>Dome panels through one or two PCA9685 servo boards</li>
+  <li>Pololu Maestro scripted servo sequences over Serial2</li>
+  <li>Additional Marcduino-compatible devices chained from Serial2 TX</li>
+</ul>
+<div class="note"><strong>Current build:</strong> the normal AstroPixels Wi-Fi access point, web page, OTA, and Wi-Fi command receiver are disabled in this DroidLink build. Wireless control comes from DroidLink over ESP-NOW.</div>
+
+<h2 id="before">2. Before you begin</h2>
+<h3>Required items</h3>
+<ul>
+  <li>DroidLink Master running firmware V1.6 or newer</li>
+  <li>DroidLink AstroPixels ESP32 with current firmware</li>
+  <li>A USB data cable and serial terminal for first-time setup</li>
+  <li>Correctly powered AstroPixels LED hardware</li>
+  <li>Optional PCA9685 board(s), Maestro controller(s), and servos</li>
+</ul>
+<div class="warning"><strong>Servo safety:</strong> test new servos without linkages attached. Set conservative limits before allowing full movement. Keep hands and tools clear whenever commands are being sent.</div>
+
+<h3>Information you will need</h3>
+<p>You need both wireless MAC addresses:</p>
+<ul>
+  <li><strong>AstroPixels MAC:</strong> printed in the USB serial console at boot. Add this to the Master as a slave.</li>
+  <li><strong>DroidLink Master MAC:</strong> paste this into the AstroPixels serial console during first-time setup.</li>
+</ul>
+
+<h2 id="wiring">3. Connections and wiring</h2>
+<h3>Serial2 connector</h3>
+<table><thead><tr><th>Signal</th><th>ESP32 pin</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>Serial2 RX</td><td>GPIO 16</td><td>Optional incoming serial command data</td></tr>
+<tr><td>Serial2 TX</td><td>GPIO 17</td><td>Outgoing Marcduino text or Maestro binary commands</td></tr>
+<tr><td>Ground</td><td>GND</td><td>Must be shared with the connected serial device</td></tr>
+</tbody></table>
+<p>The default Serial2 rate is <strong>9600 baud, 8 data bits, no parity, 1 stop bit</strong>.</p>
+<div class="warning"><strong>Do not connect two active transmitters to the same RX wire.</strong> Confirm the signal direction before connecting AstroPixels, a Maestro, or another Marcduino-compatible controller. Use logic-level serial, not RS-232 voltage levels.</div>
+
+<h3>PCA9685 servo boards</h3>
+<p>AstroPixels is the I²C controller for the PCA9685 boards. Board 1 is used for dome panels. Board 2 is used for the six holoprojector movement axes. Power servos from an appropriate external supply and share ground with AstroPixels. Do not assume the ESP32 or USB connection can power the servos.</p>
+
+<h2 id="pairing">4. First-time setup and pairing</h2>
+<ol>
+  <li>Connect AstroPixels to the computer by USB.</li>
+  <li>Open a serial terminal at <strong>115200 baud</strong>.</li>
+  <li>Power or reset AstroPixels. The console prints the AstroPixels MAC address and first-time instructions.</li>
+  <li>Open the DroidLink Master configuration and add the displayed AstroPixels MAC as a slave. AstroPixels always uses reserved Slave ID <strong>7</strong>.</li>
+  <li>Save the Master configuration. Do not reboot the Master yet.</li>
+  <li>Copy the DroidLink Master MAC address and paste it into the AstroPixels serial console in the form <code>AA:BB:CC:DD:EE:FF</code>.</li>
+  <li>AstroPixels saves the address and restarts.</li>
+  <li>When AstroPixels says it is waiting for the Master, reboot the Master within approximately 30 seconds.</li>
+  <li>After AstroPixels receives a packet from the saved Master, it stores the paired state and starts its lights, servos, and command engine.</li>
+</ol>
+<div class="tip"><strong>Normal first-pair behavior:</strong> the first packet establishes communication and starts AstroPixels. Send your test command again after the startup messages appear.</div>
+
+<h3>Status LED and console messages</h3>
+<ul>
+  <li><strong>Solid status LED during initial setup:</strong> waiting for a Master MAC to be entered.</li>
+  <li><strong>Triple pulse:</strong> a command was received from the configured Master.</li>
+  <li><strong>“No Master communication detected” after 30 seconds:</strong> check both MAC addresses, save the Master configuration, and reboot the Master.</li>
+</ul>
+
+<h3>Start over with a different Master</h3>
+<p>At 115200 baud, type the following in the AstroPixels USB serial terminal and press Enter:</p>
+<pre>NEWMAC</pre>
+<p>This clears the stored Master MAC and paired state, then restarts AstroPixels. It does not describe a general factory reset of every AstroPixels preference.</p>
+
+<h2 id="commands">5. How commands travel through AstroPixels</h2>
+<p>This is important when other devices are connected to Serial2.</p>
+<table><thead><tr><th>Command type</th><th>Local action</th><th>Serial2 behavior</th></tr></thead><tbody>
+<tr><td>Normal AstroPixels/Marcduino command, such as <code>:OP00</code></td><td>Executed locally by AstroPixels</td><td>Also sent as text followed by a carriage return when pass-through is enabled</td></tr>
+<tr><td>Maestro command, such as <code>:D1S05</code></td><td>Consumed by the Maestro adapter</td><td>Converted to a Pololu binary command; the original text is not forwarded</td></tr>
+<tr><td><code>:CAP?</code></td><td>Requests AstroPixels capability information</td><td>Not treated as an ordinary device command</td></tr>
+</tbody></table>
+<div class="note"><strong>Example:</strong> sending <code>:OP00</code> from DroidLink opens all locally controlled PCA panels and also sends <code>:OP00</code> plus a carriage return from Serial2 TX at 9600 baud. A downstream Marcduino-compatible device may therefore react to the same command.</div>
+<div class="warning"><strong>Avoid accidental double actions.</strong> If both AstroPixels and a downstream controller recognize the same command, both may move hardware. Disconnect the downstream serial device during initial PCA servo testing if you are unsure.</div>
+
+<h2 id="testing">6. Testing basic commands</h2>
+<p>Use the command field in the DroidLink Display while it is in Configuration Mode. Send one command at a time and watch both the mechanism and USB serial output.</p>
+<table><thead><tr><th>Command</th><th>Expected result</th></tr></thead><tbody>
+<tr><td><code>@0T1</code></td><td>Set both logic displays to normal</td></tr>
+<tr><td><code>@0T3</code></td><td>Set both logic displays to alarm</td></tr>
+<tr><td><code>*ON01</code></td><td>Turn on the front holoprojector light</td></tr>
+<tr><td><code>*OF01</code></td><td>Turn off the front holoprojector light</td></tr>
+<tr><td><code>:CL00</code></td><td>Close all PCA-controlled dome panels</td></tr>
+<tr><td><code>:OP00</code></td><td>Open all PCA-controlled dome panels</td></tr>
+</tbody></table>
+<div class="warning">Only test <code>:OP00</code> after panel servo directions and safe endpoints are known. Opening every panel at once can damage a mechanism that is wired or calibrated incorrectly.</div>
+
+<h2 id="pca">7. PCA9685 panel and servo control</h2>
+<h3>Common panel commands</h3>
+<table><thead><tr><th>Command</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>:CL00</code></td><td>Close all panels</td></tr>
+<tr><td><code>:OP00</code></td><td>Open all panels</td></tr>
+<tr><td><code>:OF00</code></td><td>Flutter all panels</td></tr>
+<tr><td><code>:OP01</code> through <code>:OP10</code></td><td>Open panel group 1 through 10</td></tr>
+<tr><td><code>:CL01</code> through <code>:CL10</code></td><td>Close panel group 1 through 10</td></tr>
+<tr><td><code>:OF01</code> through <code>:OF10</code></td><td>Flutter panel group 1 through 10</td></tr>
+<tr><td><code>:OP11</code> / <code>:CL11</code></td><td>Open / close the configured top pie-panel group</td></tr>
+<tr><td><code>:OP12</code> / <code>:CL12</code></td><td>Open / close the configured lower dome-panel group</td></tr>
+</tbody></table>
+
+<h3>Direct servo tools</h3>
+<table><thead><tr><th>Format</th><th>Purpose</th></tr></thead><tbody>
+<tr><td><code>:SQ&lt;servo&gt;,&lt;pulse&gt;</code></td><td>Move one servo directly to a pulse value</td></tr>
+<tr><td><code>:SL&lt;servo&gt;,&lt;minimum&gt;,&lt;maximum&gt;</code></td><td>Set and save servo endpoints</td></tr>
+<tr><td><code>:SM...</code></td><td>Advanced direct movement using the ReelTwo servo-dispatch format</td></tr>
+<tr><td><code>:SF&lt;easing&gt;$&lt;group&gt;</code></td><td>Set an easing method for a servo group</td></tr>
+</tbody></table>
+
+<h3>Persistent servo calibration</h3>
+<p>Every valid <code>:SL</code> command takes effect immediately and is saved automatically in ESP32 non-volatile storage. Saved values are restored at boot. No separate save command is required.</p>
+<pre>:SL0,900,2100
+:SL18,1250,1750</pre>
+<p>Factory defaults are <strong>800–2200</strong>. Saved calibration normally survives a firmware upload, but it is lost if flash/NVS is erased.</p>
+
+<h2 id="maestro">8. Pololu Maestro control</h2>
+<p>AstroPixels can address three chained Maestro devices on Serial2:</p>
+<table><thead><tr><th>DroidLink target</th><th>Maestro device ID</th><th>Example</th></tr></thead><tbody>
+<tr><td>D1</td><td>12</td><td><code>:D1S05</code> runs script 5</td></tr>
+<tr><td>D2</td><td>13</td><td><code>:D2S05</code> runs script 5</td></tr>
+<tr><td>D3</td><td>14</td><td><code>:D3S05</code> runs script 5</td></tr>
+<tr><td>Broadcast</td><td>12, 13, and 14</td><td><code>:DS05</code> runs script 5 on all three</td></tr>
+</tbody></table>
+<p>Script numbers must be between 0 and 99. Maestro commands are converted to Pololu binary protocol; they are not passed as ordinary Marcduino text.</p>
+<div class="note">The Maestro must be configured for the same device ID used above and for the appropriate serial protocol. All devices must share ground.</div>
+
+<h2 id="holo">9. Holoprojector installation and Auto Twitch</h2>
+<h3>Default servo assignments</h3>
+<table><thead><tr><th>Holoprojector</th><th>PCA board</th><th>AstroPixels servo numbers</th></tr></thead><tbody>
+<tr><td>Front</td><td>Board 2</td><td>13 horizontal, 14 vertical</td></tr>
+<tr><td>Top</td><td>Board 2</td><td>15 horizontal, 16 vertical</td></tr>
+<tr><td>Rear</td><td>Board 2</td><td>17 vertical, 18 horizontal</td></tr>
+</tbody></table>
+<div class="warning">If the holoprojectors were previously connected to PCA Board 1, move them to Board 2 before using this default configuration.</div>
+
+<h3>Safe installation procedure</h3>
+<ol>
+  <li>Remove or disconnect the mechanical linkages.</li>
+  <li>Center the front, rear, and top mechanisms:</li>
+</ol>
+<pre>*HPF101
+*HPR102
+*HPT103</pre>
+<ol start="3">
+  <li>Install each horn as straight as possible while the servo remains centered.</li>
+  <li>Attach the flexible linkages with the holoprojector physically centered.</li>
+  <li>Set conservative limits for servos 13 through 18:</li>
+</ol>
+<pre>:SL13,1200,1800
+:SL14,1200,1800
+:SL15,1200,1800
+:SL16,1200,1800
+:SL17,1200,1800
+:SL18,1200,1800</pre>
+<p>Fine-tune one endpoint at a time. Reduce travel immediately if a servo buzzes, stalls, binds, or pushes into a stop.</p>
+
+<h3>Auto Twitch</h3>
+<p>Set the interval first; this does not start movement:</p>
+<pre>@HPA190,1,3</pre>
+<table><thead><tr><th>Target</th><th>Enable</th><th>Disable</th></tr></thead><tbody>
+<tr><td>All holoprojectors</td><td><code>@HPA199</code></td><td><code>@HPA198</code></td></tr>
+<tr><td>Front</td><td><code>@HPF199</code></td><td><code>@HPF198</code></td></tr>
+<tr><td>Rear</td><td><code>@HPR199</code></td><td><code>@HPR198</code></td></tr>
+<tr><td>Top</td><td><code>@HPT199</code></td><td><code>@HPT198</code></td></tr>
+</tbody></table>
+<p>Interval format:</p>
+<pre>@HP&lt;target&gt;190,&lt;minimum seconds&gt;,&lt;maximum seconds&gt;</pre>
+<p>Examples: <code>@HPF190,10,30</code>, <code>@HPR190,5,10</code>, and <code>@HPT190,15,25</code>.</p>
+
+<h2 id="logic">10. Logic, PSI, holo-light, and sequence commands</h2>
+<h3>Logic-display effects</h3>
+<p>The first digit selects the display: <code>1</code> front, <code>2</code> rear, and <code>0</code> both.</p>
+<table><thead><tr><th>Example</th><th>Effect</th></tr></thead><tbody>
+<tr><td><code>@0T1</code></td><td>Normal</td></tr><tr><td><code>@0T2</code></td><td>Flashing color</td></tr>
+<tr><td><code>@0T3</code></td><td>Alarm</td></tr><tr><td><code>@0T4</code></td><td>Failure</td></tr>
+<tr><td><code>@0T5</code></td><td>Red-alert/scream effect</td></tr><tr><td><code>@0T6</code></td><td>Leia effect</td></tr>
+<tr><td><code>@0T11</code></td><td>Imperial March effect</td></tr>
+</tbody></table>
+<p>Text examples: <code>@1MHello</code> for the upper front logic, <code>@2MWorld</code> for the lower front logic, and <code>@3MAstromech</code> for the rear logic. Font commands include <code>@1P60</code>/<code>@2P60</code>/<code>@3P60</code> for Latin and <code>P61</code> variants for Aurebesh.</p>
+
+<h3>PSI effects</h3>
+<p>PSI commands follow a similar pattern: <code>@1P...</code> selects front PSI, <code>@2P...</code> selects rear PSI, and <code>@0P...</code> selects both. Common effect numbers are 1 normal, 2 flashing, 3 alarm, 4 failure, 5 red-alert, 6 Leia, and 11 March.</p>
+
+<h3>Holoprojector light and movement examples</h3>
+<table><thead><tr><th>Command</th><th>Action</th></tr></thead><tbody>
+<tr><td><code>*ON01</code> / <code>*OF01</code></td><td>Front holo light on / off</td></tr>
+<tr><td><code>*ON02</code> / <code>*OF02</code></td><td>Rear holo light on / off</td></tr>
+<tr><td><code>*ON03</code> / <code>*OF03</code></td><td>Top holo light on / off</td></tr>
+<tr><td><code>*ST00</code></td><td>Reset all holoprojectors</td></tr>
+<tr><td><code>*RD01</code>, <code>*RD02</code>, <code>*RD03</code></td><td>Random movement for front, rear, or top</td></tr>
+<tr><td><code>*HPS301</code> / <code>*HPS601</code></td><td>Front holo pulse / rainbow; use final digit 2 or 3 for rear/top</td></tr>
+<tr><td><code>*HN01</code>, <code>*HN02</code>, <code>*HN03</code></td><td>Nod front, rear, or top</td></tr>
+<tr><td><code>*HW01</code>, <code>*HW02</code>, <code>*HW03</code></td><td>Wag front, rear, or top</td></tr>
+</tbody></table>
+
+<h3>AstroPixels extended logic effects</h3>
+<p>The <code>@APLE</code> command provides AstroPixels-specific effects. Its encoded value selects the target logic, effect, color, speed/sensitivity, and duration. Useful examples include:</p>
+<table><thead><tr><th>Command</th><th>Result</th></tr></thead><tbody>
+<tr><td><code>@APLE51000</code></td><td>Solid red</td></tr>
+<tr><td><code>@APLE54000</code></td><td>Solid green</td></tr>
+<tr><td><code>@APLE10500</code></td><td>Default alarm</td></tr>
+<tr><td><code>@APLE20000</code></td><td>Failure</td></tr>
+<tr><td><code>@APLE30008</code></td><td>Leia effect for 8 seconds</td></tr>
+<tr><td><code>@APLE63315</code></td><td>Flashing yellow for 15 seconds</td></tr>
+<tr><td><code>@APLE100500</code></td><td>Rainbow</td></tr>
+<tr><td><code>@APLE225000</code></td><td>Fire effect</td></tr>
+</tbody></table>
+
+<h2 id="reference">11. Command-reference strategy</h2>
+<p>AstroPixels is intentionally compatible with a large portion of the Marcduino command language. The firmware contains far more commands than can be safely summarized in one setup guide, including complete sequences, advanced panel group animations, sound commands, and specialized logic effects.</p>
+<p>When a command is not listed here:</p>
+<ol>
+  <li>Check the DroidLink Command Reference.</li>
+  <li>Check the AstroPixelsPlus documentation and command list.</li>
+  <li>Check a Marcduino command reference. PCA panel commands such as <code>:OP</code>, <code>:CL</code>, <code>:OF</code>, and many standard <code>:SE</code> sequences generally follow Marcduino conventions.</li>
+  <li>Test with linkages disconnected or with conservative endpoints. Compatibility does not guarantee that a command is mechanically safe for a particular build.</li>
+</ol>
+<p>AstroPixelsPlus project: <a href="https://github.com/reeltwo/AstroPixelsPlus">https://github.com/reeltwo/AstroPixelsPlus</a></p>
+<div class="note">Commands sent through DroidLink should normally be entered exactly as documented, without adding a visible carriage return. DroidLink transports the command, and AstroPixels adds the required Serial2 terminator when passing it downstream.</div>
+
+<h2 id="troubleshooting">12. Troubleshooting and recovery</h2>
+<table><thead><tr><th>Problem</th><th>Checks</th></tr></thead><tbody>
+<tr><td>AstroPixels remains in first-time setup</td><td>Enter the Master wireless MAC in the USB console. Use six hexadecimal pairs separated by colons.</td></tr>
+<tr><td>No Master detected</td><td>Confirm the AstroPixels MAC is saved in the Master, confirm the correct Master MAC was entered into AstroPixels, save the Master configuration, then reboot the Master.</td></tr>
+<tr><td>Paired previously but will not connect now</td><td>Verify that the same Master is being used. Type <code>NEWMAC</code> at 115200 baud to clear pairing and repeat setup.</td></tr>
+<tr><td>First command after pairing did nothing</td><td>The first packet may have established pairing before the command engine started. Wait for startup to finish and send it again.</td></tr>
+<tr><td>Local PCA panels move, but downstream device does not</td><td>Check Serial2 TX on GPIO 17, common ground, 9600 baud, downstream RX wiring, and downstream command compatibility.</td></tr>
+<tr><td>Unexpected second device moves</td><td>The same normal command is executed locally and passed out Serial2. Disconnect or reconfigure the downstream device if both should not react.</td></tr>
+<tr><td>Maestro does not run a script</td><td>Check device ID 12/13/14, shared ground, serial mode, script number 0–99, and use <code>:D1S</code>, <code>:D2S</code>, <code>:D3S</code>, or <code>:DS</code>.</td></tr>
+<tr><td>Servo calibration disappeared</td><td>Check whether the installer performed a full flash/NVS erase. Normal uploads preserve calibration; erase operations do not.</td></tr>
+<tr><td>Servo buzzes or binds</td><td>Stop movement, disconnect the linkage if necessary, and reduce the corresponding <code>:SL</code> range.</td></tr>
+<tr><td>AstroPixels web page cannot be found</td><td>The current DroidLink build has the upstream AstroPixels Wi-Fi/web features disabled. Use DroidLink and the USB serial console.</td></tr>
+</tbody></table>
+
+<section class="pagebreak" id="quick">
+<h2>13. Quick-reference page</h2>
+<table><thead><tr><th>Task</th><th>Command or setting</th></tr></thead><tbody>
+<tr><td>USB setup terminal</td><td>115200 baud</td></tr>
+<tr><td>Serial2 output</td><td>GPIO 17, 9600 baud, 8N1</td></tr>
+<tr><td>Reset Master pairing</td><td><code>NEWMAC</code> in USB console</td></tr>
+<tr><td>Open / close / flutter all panels</td><td><code>:OP00</code> / <code>:CL00</code> / <code>:OF00</code></td></tr>
+<tr><td>Set servo limits</td><td><code>:SL&lt;servo&gt;,&lt;min&gt;,&lt;max&gt;</code></td></tr>
+<tr><td>Run Maestro script 5 on D1</td><td><code>:D1S05</code></td></tr>
+<tr><td>Run Maestro script 5 on all</td><td><code>:DS05</code></td></tr>
+<tr><td>Normal / alarm / failure logics</td><td><code>@0T1</code> / <code>@0T3</code> / <code>@0T4</code></td></tr>
+<tr><td>Front holo light on / off</td><td><code>*ON01</code> / <code>*OF01</code></td></tr>
+<tr><td>Set all holo twitch interval</td><td><code>@HPA190,5,10</code></td></tr>
+<tr><td>Enable / disable all holo twitch</td><td><code>@HPA199</code> / <code>@HPA198</code></td></tr>
+</tbody></table>
+<div class="warning"><strong>Remember:</strong> ordinary commands such as <code>:OP00</code> execute locally and are also passed out Serial2 by default. Maestro <code>:D...</code> commands are converted to binary Maestro instructions instead.</div>
+<p class="small">End of guide.</p>
+</section>
+
+</body>
+</html>
