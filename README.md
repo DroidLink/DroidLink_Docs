@@ -83,8 +83,10 @@ Follow this order for a complete setup and configuration:
 9. [DroidLink Command Reference](DroidLink_Command_Reference.md) – Full command list and syntax
 10. [DroidLink AstroPixels](DroidLink_AstroPixels.md) – Configure servo controllers and holoprojectors
 11. [Using DroidLink Periscope](Using_DroidLink_Periscope.md) – Configure and operate the Periscope Logic Lights ([PDF](Using_DroidLink_Periscope.pdf))
-12. [Sentry Mode User Guide](Sentry_Mode.md) – Configure unattended random actions
-13. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly
+12. [Using DroidLink MagicPanel](Using_DroidLink_MagicPanel.md) – Install, configure, and test a MagicPanel ([PDF](Using_DroidLink_MagicPanel.pdf))
+13. [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) – MagicPanel effects and command syntax ([PDF](DroidLink_MagicPanel_Command_Reference.pdf))
+14. [Sentry Mode User Guide](Sentry_Mode.md) – Configure unattended random actions
+15. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly
 
 ---
 
@@ -103,6 +105,12 @@ Follow this order for a complete setup and configuration:
 - `DroidLink_AstroPixels.md` – AstroPixels servo and holoprojector setup
 - `Using_DroidLink_Periscope.md` – Periscope setup, commands, and operation
 - `Using_DroidLink_Periscope.pdf` – Printable Periscope guide
+- `Using_DroidLink_MagicPanel.md` – MagicPanel installation and first-time setup
+- `Using_DroidLink_MagicPanel.html` – Browser-ready MagicPanel installation guide
+- `Using_DroidLink_MagicPanel.pdf` – Printable MagicPanel installation guide
+- `DroidLink_MagicPanel_Command_Reference.md` – MagicPanel effects and command syntax
+- `DroidLink_MagicPanel_Command_Reference.html` – Browser-ready MagicPanel command reference
+- `DroidLink_MagicPanel_Command_Reference.pdf` – Printable MagicPanel command reference
 - `Sentry_Mode.md` – Configuring and operating Sentry Mode
 - `OTA_Updates.md` – Over-the-air firmware updates  
 

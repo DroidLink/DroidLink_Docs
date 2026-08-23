@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DroidLink MagicPanel Setup &amp; Install Guide</title>
+<style>
+@page{size:Letter;margin:.58in}*{box-sizing:border-box}body{margin:0;color:#172633;font:11pt/1.45 "Segoe UI",Arial,sans-serif}h1,h2,h3{color:#0d3c5d;line-height:1.15;margin:0 0 9px}h1{font-size:34pt}h2{font-size:19pt;border-bottom:2px solid #1aa9c6;padding-bottom:5px;margin-top:5px}h3{font-size:13pt;margin-top:15px}.cover{min-height:9.25in;padding:1.1in .58in;background:linear-gradient(145deg,#09263e,#0e6386 65%,#22b8ca);color:#fff;position:relative}.cover h1{color:#fff;font-size:40pt;margin-top:1.5in}.sub{font-size:19pt;margin-top:18px}.tag{display:inline-block;border:1px solid #8ee8f5;border-radius:20px;padding:6px 14px;letter-spacing:1px}.foot{position:absolute;bottom:.65in;left:.58in;opacity:.9}.page{break-before:page}.call{padding:10px 13px;border-left:5px solid #1aa6c2;background:#eaf7fb;margin:12px 0}.warn{border-color:#e38d1c;background:#fff4df}.ok{border-color:#45a74d;background:#edf8ed}code{font-family:Consolas,monospace;background:#edf1f4;padding:1px 4px;border-radius:3px}pre{background:#10283b;color:#effbff;padding:11px 13px;border-radius:5px;font:11pt/1.4 Consolas,monospace}ol,ul{margin:7px 0 13px 24px;padding:0}li{margin:6px 0}table{width:100%;border-collapse:collapse;margin:9px 0 14px}th{background:#174f70;color:#fff;text-align:left}th,td{border:1px solid #c8d5dc;padding:7px 8px;vertical-align:top}tr:nth-child(even) td{background:#f4f7f8}.footer{margin-top:16px;border-top:1px solid #cad6dc;padding-top:7px;color:#637887;font-size:8.5pt}
+</style></head><body>
+<section class="cover"><span class="tag">DROIDLINK QUICK START</span><h1>MagicPanel<br>Setup &amp; Install</h1><div class="sub">A simple guide to installing, configuring,<br>and connecting your MagicPanel</div><div class="foot">ESP32-C3 • DroidLink Installer • August 2026</div></section>
+
+<section class="page"><h2>1. What You Need</h2>
+<ul><li>Your MagicPanel controller and LED matrix</li><li>A USB <strong>data</strong> cable</li><li>A computer with a compatible browser</li><li>The DroidLink Installer</li><li>The Wi-Fi MAC address of your DroidLink Master</li></ul>
+<div class="call warn"><strong>Power:</strong> use the correct regulated power supply for the LED matrix. Large matrices should not be powered directly from a computer USB port unless the hardware is specifically designed for it.</div>
+
+<h2>2. Install the Firmware</h2>
+<ol><li>Connect the MagicPanel controller to the computer with the USB data cable.</li><li>Open <strong>DroidLink Installer</strong>.</li><li>Select the serial/COM port for the ESP32-C3 controller.</li><li>Select <strong>DroidLink MagicPanel</strong> from the firmware list.</li><li>Start the installation and approve the browser's serial-port request if prompted.</li><li>Wait until the Installer reports that flashing is complete. Do not disconnect the controller during installation.</li></ol>
+<div class="call">After installation, open the Installer's <strong>Console</strong> and set it to <strong>9600 baud</strong>.</div>
+
+<h2>3. Enter the Master MAC</h2>
+<p>When the console displays <code>MAGICPANEL FIRST-TIME SETUP</code>, paste the Wi-Fi MAC address of your DroidLink Master and press <strong>Enter</strong>.</p>
+<pre>Example format:
+9C:13:9E:A8:6F:A8</pre>
+<p>Use your own Master's MAC address. MagicPanel saves it and immediately continues to Device ID setup.</p></section>
+
+<section class="page"><h2>4. Enter the Device ID</h2>
+<p>When prompted, enter an unused DroidLink Device ID from <strong>2 through 13</strong>.</p>
+<pre>Example:
+12</pre>
+<p>Master ID 0 and Display ID 1 are reserved. Every configured DroidLink device must have its own unique ID. MagicPanel saves the ID and continues to Matrix Profile setup.</p>
+
+<h2>5. Select the Matrix Profile</h2>
+<p>When prompted, enter the number matching your LED matrix:</p>
+<table><tr><th>Enter</th><th>Matrix profile</th></tr><tr><td><code>1</code></td><td>8×15 — 120 LEDs, progressive</td></tr><tr><td><code>2</code></td><td>8×8 — 64 LEDs, progressive</td></tr><tr><td><code>3</code></td><td>4×8 — 32 LEDs, serpentine</td></tr></table>
+<p>After the profile is saved, setup is complete and MagicPanel performs one automatic reboot. The normal boot output displays the saved Device ID and Matrix profile.</p>
+
+<h2>6. Add MagicPanel to the Master</h2>
+<p>If the panel has not connected after about 15 seconds, the Console displays <code>Waiting for Master</code> and shows the MagicPanel's own <code>Device MAC</code>.</p>
+<ol><li>Copy the displayed MagicPanel Device MAC.</li><li>Add that MAC and the chosen Device ID to the DroidLink Master configuration.</li><li>Save the Master configuration.</li><li>Reboot the DroidLink Master.</li></ol>
+<div class="call ok"><strong>Connected:</strong> the MagicPanel Console displays <code>DroidLink Connected</code> and <code>MagicPanel Online</code> when communication begins.</div>
+
+<h2>7. Quick Test</h2>
+<p>First select timed mode, then run the test:</p><pre>:MPP0
+:MPT56,10,C2</pre>
+<p>The MagicPanel should run pattern 56 (Animated Heart) for 10 seconds in blue. In always-on mode (<code>:MPP1</code>), the heart continues instead of timing out.</p></section>
+
+<section class="page"><h2>Status LED and Device Identification</h2>
+<p>The onboard status LED turns on during first-time setup. During normal operation, press the MagicPanel's matching <strong>DEVICE ID</strong> button on the Watch Display Settings screen to light the status LED briefly and confirm that the selected device received the identification command.</p>
+<div class="call"><strong>Normal commands:</strong> MagicPanel effect and text commands do not flash the status LED.</div>
+
+<h2>Quick Troubleshooting</h2>
+<table><tr><th>Problem</th><th>Check</th></tr><tr><td>No serial/COM port</td><td>Try another USB data cable or USB port. Close other programs using the serial port.</td></tr><tr><td>No Console output</td><td>Select the correct port and set the Console to 9600 baud. Reconnect or press the controller reset button.</td></tr><tr><td>Master MAC rejected</td><td>Use six hexadecimal pairs separated by colons: <code>XX:XX:XX:XX:XX:XX</code>.</td></tr><tr><td>Waiting for Master</td><td>Confirm the correct Master MAC was entered. Add the MagicPanel Device MAC and Device ID to the Master, save, and reboot the Master.</td></tr><tr><td>Display looks wrong</td><td>Confirm that the selected matrix profile matches the connected matrix.</td></tr><tr><td>Panel flickers or resets</td><td>Check the power supply, wiring, connectors, and common ground.</td></tr></table>
+
+<h2>Setup Checklist</h2>
+<ul><li>MagicPanel firmware installed through DroidLink Installer</li><li>Console opened at 9600 baud</li><li>DroidLink Master MAC saved</li><li>Unique Device ID saved</li><li>Correct matrix profile selected</li><li>MagicPanel Device MAC added to the Master</li><li>Master configuration saved and Master rebooted</li><li>Timed mode selected with <code>:MPP0</code></li><li>Test command <code>:MPT56,10,C2</code> completed successfully</li></ul>
+<div class="call"><strong>Need the full command list?</strong> See the separate <em>DroidLink MagicPanel Command Reference</em>.</div>
+<div class="footer">DroidLink MagicPanel Setup &amp; Install Guide • Quick-start edition</div></section>
+</body></html>

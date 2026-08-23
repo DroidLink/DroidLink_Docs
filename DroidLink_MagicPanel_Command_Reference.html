@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>DroidLink MagicPanel Command Reference</title>
+<style>
+@page{size:Letter;margin:.52in}*{box-sizing:border-box}body{margin:0;color:#182633;font:10pt/1.4 "Segoe UI",Arial,sans-serif}h1,h2,h3{color:#0d3d5d;line-height:1.15;margin:0 0 8px}h1{font-size:30pt}h2{font-size:17pt;border-bottom:2px solid #1ba9c6;padding-bottom:4px;margin-top:5px}h3{font-size:12pt;margin-top:12px}.cover{min-height:9.4in;padding:1.1in .55in;background:linear-gradient(145deg,#09263e,#0e6285 65%,#22b7ca);color:#fff;position:relative}.cover h1{color:#fff;font-size:38pt;margin-top:1.35in}.sub{font-size:18pt;margin-top:18px}.tag{display:inline-block;border:1px solid #8ee8f5;border-radius:20px;padding:6px 14px;letter-spacing:1px}.foot{position:absolute;bottom:.65in;left:.55in;opacity:.9}.page{break-before:page}.call{padding:9px 12px;border-left:5px solid #1aa6c2;background:#eaf7fb;margin:10px 0}.warn{border-color:#e48d1b;background:#fff4df}.ok{border-color:#47a84d;background:#eef8ee}code{font-family:Consolas,monospace;background:#edf1f4;padding:1px 4px;border-radius:3px}pre{background:#10283b;color:#effbff;padding:10px 12px;border-radius:5px;font:10pt/1.45 Consolas,monospace}table{width:100%;border-collapse:collapse;margin:8px 0 13px;font-size:9.1pt}th{background:#174f70;color:#fff;text-align:left}th,td{border:1px solid #c9d5dc;padding:5px 7px;vertical-align:top}tr:nth-child(even) td{background:#f4f7f8}ul,ol{margin:5px 0 10px 22px;padding:0}li{margin:3px 0}.big{font-size:16pt;text-align:center;padding:14px}.two{columns:2;column-gap:20px}.two table{break-inside:avoid}.small{font-size:8.45pt}.footer{margin-top:12px;border-top:1px solid #cad6dc;padding-top:6px;color:#637887;font-size:8pt}
+</style></head><body>
+<section class="cover"><span class="tag">DROIDLINK COMMANDS</span><h1>MagicPanel<br>Command Reference</h1><div class="sub">DroidLink command syntax, examples,<br>patterns, colors, text, and settings</div><div class="foot">Commands-only edition • MagicPanel command engine v2.6 • August 2026</div></section>
+
+<section class="page"><h2>1. The DroidLink Command Format</h2>
+<div class="call big"><code>:MPT56,10,C2</code></div>
+<p>This is a complete DroidLink MagicPanel command. In <strong>timed mode</strong>, it means: run <strong>pattern 56</strong> for <strong>10 seconds</strong> using <strong>color 2 (blue)</strong>.</p>
+<table><tr><th>Part</th><th>Meaning</th></tr><tr><td><code>:</code></td><td>Starts a DroidLink command.</td></tr><tr><td><code>MP</code></td><td>Routes the command to the MagicPanel device type.</td></tr><tr><td><code>T56</code></td><td>Runs MagicPanel pattern 56 (Animated Heart).</td></tr><tr><td><code>,10</code></td><td>Runs it for 10 seconds.</td></tr><tr><td><code>,C2</code></td><td>Uses preset color 2, Blue.</td></tr></table>
+<div class="call"><strong>Use the full DroidLink form:</strong> commands in this guide begin with <code>:MP</code>. Pattern options are separated with commas. Example: <code>:MPT62,30,C5</code>.</div>
+<h3>Basic formula</h3><pre>:MP + MAGICPanel command
+
+:MPT&lt;pattern&gt;
+:MPT&lt;pattern&gt;,&lt;seconds&gt;
+:MPT&lt;pattern&gt;,C&lt;color&gt;
+:MPT&lt;pattern&gt;,&lt;seconds&gt;,C&lt;color&gt;</pre>
+<h3>Pattern examples</h3><table><tr><th>DroidLink command</th><th>Result</th></tr><tr><td><code>:MPT56</code></td><td>Run Animated Heart.</td></tr><tr><td><code>:MPT56,10</code></td><td>Run Animated Heart for 10 seconds.</td></tr><tr><td><code>:MPT56,C2</code></td><td>Run Animated Heart in blue.</td></tr><tr><td><code>:MPT56,10,C2</code></td><td>Run Animated Heart for 10 seconds in blue.</td></tr><tr><td><code>:MPT62,30,C5</code></td><td>Run Matrix Rain for 30 seconds in cyan.</td></tr><tr><td><code>:MPT109,20,C0</code></td><td>Run PSI Random Flicker for 20 seconds in red.</td></tr></table>
+<div class="call warn"><strong>Set timed mode first:</strong> send <code>:MPP0</code> before using a duration. In always-on mode (<code>:MPP1</code>), a continuous pattern such as Animated Heart continues instead of timing out. Duration must be 1–3600 seconds; color must be 0–9.</div></section>
+
+<section class="page"><h2>2. Pattern and Display Commands</h2>
+<table><tr><th>DroidLink command</th><th>Purpose</th><th>Example</th></tr>
+<tr><td><code>:MPT&lt;n&gt;</code></td><td>Run pattern n.</td><td><code>:MPT57</code></td></tr>
+<tr><td><code>:MPS&lt;n&gt;</code></td><td>Alternate pattern prefix; same result as T.</td><td><code>:MPS57</code></td></tr>
+<tr><td><code>:MPT&lt;n&gt;,&lt;seconds&gt;</code></td><td>Run for a chosen duration.</td><td><code>:MPT57,30</code></td></tr>
+<tr><td><code>:MPT&lt;n&gt;,C&lt;color&gt;</code></td><td>Run with a preset color.</td><td><code>:MPT57,C1</code></td></tr>
+<tr><td><code>:MPT&lt;n&gt;,&lt;seconds&gt;,C&lt;color&gt;</code></td><td>Run with duration and color.</td><td><code>:MPT56,10,C2</code></td></tr>
+<tr><td><code>:MPDEMO</code></td><td>Run Smart Demo, pattern 200.</td><td><code>:MPDEMO</code></td></tr>
+<tr><td><code>:MP!</code></td><td>Cancel the current animation and clear the panel.</td><td><code>:MP!</code></td></tr>
+<tr><td><code>:MPA</code> or <code>:MPON</code></td><td>Turn all LEDs on.</td><td><code>:MPON</code></td></tr>
+<tr><td><code>:MPD</code> or <code>:MPOFF</code></td><td>Turn all LEDs off.</td><td><code>:MPOFF</code></td></tr>
+</table>
+<h2>3. Color Commands</h2>
+<table><tr><th>DroidLink command</th><th>Purpose</th><th>Example</th></tr><tr><td><code>:MPC&lt;n&gt;</code></td><td>Set preset color 0–8; 9 selects rainbow.</td><td><code>:MPC2</code></td></tr><tr><td><code>:MPC&lt;r&gt;,&lt;g&gt;,&lt;b&gt;</code></td><td>Set a custom RGB color; each value is 0–255.</td><td><code>:MPC255,80,0</code></td></tr></table>
+<table><tr><th>Number</th><th>Color</th><th>Number</th><th>Color</th><th>Number</th><th>Color</th></tr><tr><td>0</td><td>Red</td><td>1</td><td>Green</td><td>2</td><td>Blue</td></tr><tr><td>3</td><td>White</td><td>4</td><td>Yellow</td><td>5</td><td>Cyan</td></tr><tr><td>6</td><td>Magenta</td><td>7</td><td>Orange</td><td>8</td><td>Purple</td></tr><tr><td>9</td><td>Rainbow</td><td></td><td></td><td></td><td></td></tr></table>
+<div class="call ok"><code>:MPT56,10,C2</code> uses preset 2 (blue). To set a custom color separately, use a command such as <code>:MPC25,100,255</code>.</div></section>
+
+<section class="page"><h2>4. Brightness, Speed, and Mode</h2>
+<table><tr><th>DroidLink command</th><th>Range / result</th><th>Example</th></tr>
+<tr><td><code>:MPB&lt;n&gt;</code></td><td>Brightness from 0 to 255.</td><td><code>:MPB100</code></td></tr>
+<tr><td><code>:MPV&lt;n&gt;</code></td><td>Animation speed from 1 to 100.</td><td><code>:MPV60</code></td></tr>
+<tr><td><code>:MPSP&lt;n&gt;</code></td><td>Alternate speed command, 1 to 100.</td><td><code>:MPSP60</code></td></tr>
+<tr><td><code>:MPP0</code></td><td>Timed mode. Required when a continuous pattern should stop after its supplied duration.</td><td><code>:MPP0</code></td></tr>
+<tr><td><code>:MPP1</code></td><td>Always-on mode. Continuous patterns keep running instead of timing out.</td><td><code>:MPP1</code></td></tr>
+<tr><td><code>:MPTRANSITION0</code></td><td>Disable smooth transitions.</td><td><code>:MPTRANSITION0</code></td></tr>
+<tr><td><code>:MPTRANSITION1</code></td><td>Enable smooth transitions.</td><td><code>:MPTRANSITION1</code></td></tr>
+</table>
+<div class="call warn">High brightness increases current demand. If the panel flickers or resets, reduce brightness and check the power supply.</div>
+<h2>5. Text Commands</h2>
+<p>Text may contain up to 48 characters. Saved-text slots are numbered 0–9.</p>
+<table><tr><th>DroidLink command</th><th>Result</th></tr>
+<tr><td><code>:MPTEXT:HELLO THERE</code></td><td>Scroll “HELLO THERE.”</td></tr>
+<tr><td><code>:MPTEXT_BOUNCE:R2-D2</code></td><td>Display bouncing “R2-D2” text.</td></tr>
+<tr><td><code>:MPTEXTSAVE0:HELLO</code></td><td>Save “HELLO” in slot 0.</td></tr>
+<tr><td><code>:MPTEXTLOAD0</code></td><td>Load and scroll the text saved in slot 0.</td></tr>
+<tr><td><code>:MPFONT0</code></td><td>Use the standard font.</td></tr>
+<tr><td><code>:MPFONT1</code></td><td>Use the Aurebesh font.</td></tr>
+</table></section>
+
+<section class="page"><h2>6. Saving, Startup, and Information</h2>
+<table><tr><th>DroidLink command</th><th>Result</th></tr>
+<tr><td><code>:MPSAVE</code></td><td>Save current panel settings permanently.</td></tr>
+<tr><td><code>:MPLOAD</code></td><td>Reload previously saved settings.</td></tr>
+<tr><td><code>:MPAUTOSAVE0</code></td><td>Disable automatic saving.</td></tr>
+<tr><td><code>:MPAUTOSAVE1</code></td><td>Enable automatic saving and save current settings.</td></tr>
+<tr><td><code>:MPSTART&lt;n&gt;</code></td><td>Set fixed startup pattern n and save it immediately.</td></tr>
+<tr><td><code>:MPSTART0</code></td><td>Clear fixed startup pattern; resume the last saved pattern.</td></tr>
+<tr><td><code>:MPSTATUS</code></td><td>Print current brightness, color, mode, speed, font, startup pattern, transitions, autosave, and last pattern to the panel console.</td></tr>
+<tr><td><code>:MPHELP</code></td><td>Print the quick help menu to the panel console.</td></tr>
+<tr><td><code>:MPHELP FULL</code></td><td>Print extended device help to the panel console.</td></tr>
+<tr><td><code>:MPLIST</code></td><td>Print the complete pattern list to the panel console.</td></tr>
+</table>
+<h3>Example: create and save a normal operating setup</h3><pre>:MPC5
+:MPB100
+:MPV50
+:MPTRANSITION1
+:MPT57
+:MPSAVE</pre>
+<h2>7. Recovery Commands</h2>
+<table><tr><th>DroidLink command</th><th>Result</th></tr><tr><td><code>:MPNEWMAC</code></td><td>Clear the stored Master MAC and reboot into Master MAC setup.</td></tr><tr><td><code>:MPNEWPROFILE</code></td><td>Clear the matrix profile and reboot into profile selection.</td></tr></table>
+<div class="call warn">After <code>:MPNEWMAC</code>, DroidLink control cannot resume until the Master MAC is entered again through the panel's USB setup console. Recovery commands should normally be entered directly at the device when its Master connection is unavailable.</div>
+<h3>Temporary playlist</h3><p><code>:MPPLAYLIST_RUN:57,62,109</code> runs the listed patterns in sequence. Playlist save/load is not implemented.</p></section>
+
+<section class="page"><h2>8. Complete Pattern Numbers</h2><div class="two small">
+<table><tr><th>ID</th><th>Pattern</th></tr><tr><td>0</td><td>Off</td></tr><tr><td>1</td><td>On Indefinite</td></tr><tr><td>2</td><td>On 2s</td></tr><tr><td>3</td><td>On 5s</td></tr><tr><td>4</td><td>On 10s</td></tr><tr><td>5</td><td>Toggle</td></tr><tr><td>6</td><td>Alert 4s</td></tr><tr><td>7</td><td>Alert 10s</td></tr><tr><td>8</td><td>Trace Up Fill</td></tr><tr><td>9</td><td>Trace Up Line</td></tr><tr><td>10</td><td>Trace Down Fill</td></tr><tr><td>11</td><td>Trace Down Line</td></tr><tr><td>12</td><td>Trace Right Fill</td></tr><tr><td>13</td><td>Trace Right Line</td></tr><tr><td>14</td><td>Trace Left Fill</td></tr><tr><td>15</td><td>Trace Left Line</td></tr><tr><td>16</td><td>Expand Fill</td></tr><tr><td>17</td><td>Expand Ring</td></tr><tr><td>18</td><td>Compress Fill</td></tr><tr><td>19</td><td>Compress Ring</td></tr><tr><td>20</td><td>Cross</td></tr><tr><td>21</td><td>Cylon Column</td></tr><tr><td>22</td><td>Cylon Row</td></tr><tr><td>23</td><td>Eye Scan</td></tr><tr><td>24</td><td>Fade Out/In</td></tr><tr><td>25</td><td>Fade Out</td></tr><tr><td>26</td><td>Flash All</td></tr><tr><td>27</td><td>Flash Vertical</td></tr><tr><td>28</td><td>Flash Quadrants</td></tr><tr><td>29</td><td>Two Loop</td></tr><tr><td>30</td><td>One Loop</td></tr><tr><td>31</td><td>Test Fill</td></tr><tr><td>32</td><td>Test Pixel</td></tr><tr><td>33</td><td>AI Logo</td></tr><tr><td>34</td><td>2GWD Logo</td></tr><tr><td>35</td><td>Quadrant TL→TR→BR→BL</td></tr><tr><td>36</td><td>Quadrant TR→TL→BL→BR</td></tr><tr><td>37</td><td>Quadrant TR→BR→BL→TL</td></tr><tr><td>38</td><td>Quadrant TL→BL→BR→TR</td></tr><tr><td>39</td><td>Random Pixel</td></tr><tr><td>40</td><td>Countdown 9–0</td></tr><tr><td>41</td><td>Countdown 3–0</td></tr><tr><td>42</td><td>Alert Random 4s</td></tr><tr><td>43</td><td>Alert Random 8s</td></tr><tr><td>44</td><td>Sad Face</td></tr><tr><td>45</td><td>Smiley Face</td></tr><tr><td>46</td><td>Heart</td></tr><tr><td>47</td><td>Checkerboard</td></tr></table>
+<table><tr><th>ID</th><th>Pattern</th></tr><tr><td>48</td><td>Compress In Fill</td></tr><tr><td>49</td><td>Compress In Clear</td></tr><tr><td>50</td><td>Explode Out Fill</td></tr><tr><td>51</td><td>Explode Out Clear</td></tr><tr><td>52</td><td>VU Meter Columns Up</td></tr><tr><td>53</td><td>VU Meter Rows Left</td></tr><tr><td>54</td><td>VU Meter Columns Down</td></tr><tr><td>55</td><td>VU Meter Rows Right</td></tr><tr><td>56</td><td>Animated Heart</td></tr><tr><td>57</td><td>Rainbow Cycle</td></tr><tr><td>58</td><td>Fire Effect</td></tr><tr><td>59</td><td>Twinkle</td></tr><tr><td>60</td><td>Plasma</td></tr><tr><td>61</td><td>Game of Life</td></tr><tr><td>62</td><td>Matrix Rain</td></tr><tr><td>63</td><td>3D Cube</td></tr><tr><td>64</td><td>Kaleidoscope</td></tr><tr><td>65</td><td>Raindrops</td></tr><tr><td>66</td><td>Drip Effect</td></tr><tr><td>67</td><td>Pac-Man</td></tr><tr><td>68</td><td>Space Invaders</td></tr><tr><td>80</td><td>Bouncing Text</td></tr><tr><td>97</td><td>Scroll Text (English)</td></tr><tr><td>98</td><td>Scroll Text (Aurebesh)</td></tr><tr><td>99</td><td>Test All Patterns</td></tr><tr><td>100</td><td>PSI Solid Red</td></tr><tr><td>101</td><td>PSI Solid Blue</td></tr><tr><td>102</td><td>PSI Solid Green</td></tr><tr><td>103</td><td>PSI Solid Yellow</td></tr><tr><td>104</td><td>PSI Solid Cyan</td></tr><tr><td>105</td><td>PSI Solid Magenta</td></tr><tr><td>106</td><td>PSI Solid White</td></tr><tr><td>107</td><td>PSI Color Wipe Down</td></tr><tr><td>108</td><td>PSI Color Wipe Up</td></tr><tr><td>109</td><td>PSI Random Flicker</td></tr><tr><td>110</td><td>PSI Pulse</td></tr><tr><td>111</td><td>PSI Rainbow</td></tr><tr><td>112</td><td>PSI March Horizontal</td></tr><tr><td>113</td><td>PSI March Vertical</td></tr><tr><td>114</td><td>PSI March Diagonal</td></tr><tr><td>115</td><td>PSI March Checkerboard</td></tr><tr><td>116</td><td>PSI March Spiral</td></tr><tr><td>117</td><td>R2-D2 Communication</td></tr><tr><td>118</td><td>R2-D2 Thinking</td></tr><tr><td>119</td><td>R2-D2 Alert</td></tr><tr><td>200</td><td>Smart Demo</td></tr></table></div>
+<div class="call">To run any pattern, place its number after <code>:MPT</code>. Examples: <code>:MPT45</code>, <code>:MPT68,15</code>, or <code>:MPT117,20,C2</code>.</div></section>
+
+<section class="page"><h2>9. Quick Copy-and-Send Examples</h2>
+<table><tr><th>Command</th><th>What it does</th></tr>
+<tr><td><code>:MPT56,10,C2</code></td><td>Animated Heart, 10 seconds, blue.</td></tr><tr><td><code>:MPT58,20,C7</code></td><td>Fire Effect, 20 seconds, orange.</td></tr><tr><td><code>:MPT62,30,C1</code></td><td>Matrix Rain, 30 seconds, green.</td></tr><tr><td><code>:MPT109,15,C0</code></td><td>PSI Random Flicker, 15 seconds, red.</td></tr><tr><td><code>:MPT117,20,C2</code></td><td>R2-D2 Communication, 20 seconds, blue.</td></tr><tr><td><code>:MPB80</code></td><td>Set brightness to 80.</td></tr><tr><td><code>:MPV60</code></td><td>Set animation speed to 60.</td></tr><tr><td><code>:MPC0</code></td><td>Set red.</td></tr><tr><td><code>:MPC0,180,255</code></td><td>Set custom cyan-blue RGB color.</td></tr><tr><td><code>:MPTEXT:HELLO THERE</code></td><td>Scroll HELLO THERE.</td></tr><tr><td><code>:MPDEMO</code></td><td>Start Smart Demo.</td></tr><tr><td><code>:MP!</code></td><td>Stop and clear the current animation.</td></tr><tr><td><code>:MPOFF</code></td><td>Turn the display off.</td></tr><tr><td><code>:MPSAVE</code></td><td>Save current settings.</td></tr></table>
+<h3>If a command does not work</h3><ul><li>Confirm it begins with <code>:MP</code>.</li><li>Do not insert spaces inside pattern commands.</li><li>Use commas between pattern, seconds, and color: <code>:MPT56,10,C2</code>.</li><li>Confirm the pattern number exists and is supported by the selected matrix profile.</li><li>Confirm the MagicPanel is paired with the correct DroidLink Master MAC.</li><li>Confirm the correct MagicPanel Device ID is configured in the Master.</li></ul>
+<div class="footer">DroidLink MagicPanel Command Reference • Commands-only edition • Generated from firmware command processing behavior</div></section>
+</body></html>
