@@ -144,7 +144,7 @@ You can also trigger a Master Sequence from the Display by sending:
 
 This example sequence will:
 
-- This is V1.1 New Users will need to upload New master fimware in OTA mode. 
+- Install the current Master firmware before creating or editing Master Sequences.
 - Start the dome turning **RIGHT**
 - Call Body Maestro Sequence 1  
 - Start track 240  

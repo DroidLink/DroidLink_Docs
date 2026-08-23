@@ -8,7 +8,7 @@ Supported roles include:
 - Dome panels (Maestro or MarcDuino controlled), including Teeces and AstroPixels lighting systems
 - Lifter mechanisms (Maestro controlled)
 
-The Slave communicates wirelessly with the Master Controller using ESP-NOW.  
+The Slave communicates wirelessly with the Master Controller.  
 No signal wiring between Master and Slave is required.
 
 ---

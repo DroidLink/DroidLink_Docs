@@ -2,7 +2,7 @@
 
 ESP32-C3 Super Mini controller for the Printed-Droid Periscope Logic Lights.
 
-This firmware keeps the original Periscope lighting effects and adds DroidLink control over ESP-NOW.
+This firmware keeps the original Periscope lighting effects and adds wireless control through the DroidLink Master.
 
 The Periscope can still be controlled directly from USB Serial, but normal operation is through the DroidLink Master.
 
@@ -17,7 +17,7 @@ Display / RC / Master Sequence
         ↓
 DroidLink Master
         ↓
-ESP-NOW
+Wireless DroidLink connection
         ↓
 DroidLink Periscope
         ↓
@@ -70,9 +70,11 @@ The Periscope and Master must know each other's MAC addresses.
 
 Install the DroidLink Periscope firmware using the DroidLink Installer.
 
-After installation, open the installer console.
+After installation, wait for the blue setup light, open **Console Log**, and then click **Reset Device** or press the Periscope's physical reset button. The firmware waits approximately three seconds at startup so the USB console can reconnect before the boot banner is printed.
 
-The Periscope will display its own ESP-NOW MAC address:
+During first-time setup, normal Periscope operation does not start. The firmware only displays the setup instructions and accepts the node ID and Master MAC. Wireless communication, lighting effects, sequences, and normal command processing remain inactive until both values have been saved.
+
+The Periscope will display its device MAC address:
 
 ```text
 DroidLink Periscope — Boot
@@ -92,27 +94,33 @@ Open the DroidLink Master configuration.
 
 Add the Periscope MAC address to an available slave slot.
 
-The current Periscope firmware identifies itself as:
+The Periscope uses the node ID selected during first-time setup:
 
 ```text
-Node ID: 6
-Role: Periscope
-Device: Periscope
+Node ID: 2 through 13 (user selected)
 ```
 
 Save the Master configuration and power or reboot the Master.
 
 ---
 
-## Step 3 — Enter the Master MAC
+## Step 3 — Enter the Periscope Node ID and Master MAC
 
-On first boot, the Periscope will stop and display:
+On first boot, the Periscope first asks for its node ID:
 
 ```text
 ====================================
 FIRST TIME SETUP
 ====================================
 
+Enter Periscope Node ID (2-13):
+```
+
+Choose an unused ID from 2 through 13. The Master uses ID 0 and Displays use ID 1. Every DroidLink device must have a unique ID.
+
+After saving the node ID, the Periscope asks for the Master MAC:
+
+```text
 Paste Master MAC like:
 9C:13:9E:A8:6F:A8
 ```
@@ -132,47 +140,22 @@ Master MAC saved!
 Rebooting...
 ```
 
-The Master MAC is stored in ESP32 Preferences and remains saved after power loss.
+The node ID and Master MAC are stored in ESP32 Preferences and remain saved after power loss.
 
 ---
 
 # Successful Connection
 
-When configuration is correct, the Periscope boot output will include:
+When configuration is correct, the Periscope starts normally and appears in the Master's Devices tab. If its MAC has not yet been saved in a Master device slot, it may first appear as an **Unconfigured device**.
+
+Add the displayed Periscope MAC to an available Master device slot and save the Master configuration to complete setup. When the Master sends a command, the Periscope console shows the received command and resulting lighting action:
 
 ```text
-Master peer added
-ESP-NOW ready
-```
-
-When the Master sends a valid packet, the Periscope reports:
-
-```text
-Master Seen: 1
-ESP-NOW RX: :PSOFF
+:PSOFF
 LIGHT CMD: OFF
 ```
 
-The Periscope automatically announces its identity and capabilities shortly after startup. It also responds whenever the Master broadcasts:
-
-```text
-:CAP?
-```
-
-The Master's console should show:
-
-```text
----------------------------------------------------------
-Capability received
----------------------------------------------------------
-
-Node: Slave (ID 6)
-
-Roles: Periscope
-Adapters: Periscope
-```
-
-This allows the Periscope to appear automatically in the Master's Devices tab regardless of which device powers on first. The `:CAP?` command is a DroidLink system command. It is handled internally and is not a Periscope lighting effect.
+The Master and Periscope automatically find each other after both have been configured, regardless of which one powers on first.
 
 ---
 
@@ -186,14 +169,14 @@ Type:
 NEWMAC
 ```
 
-The Periscope will erase the saved Master MAC:
+The Periscope will erase the saved node ID and Master MAC:
 
 ```text
-Clearing stored Master MAC...
+Clearing stored Periscope configuration...
 Rebooting...
 ```
 
-After reboot, the first-time setup prompt will return.
+After reboot, the complete first-time setup returns. Enter the Periscope node ID first, followed by the correct Master MAC.
 
 ```text
 Paste Master MAC like:
@@ -206,13 +189,13 @@ Enter the correct Master MAC.
 
 # Master Communication Check
 
-After boot, the Periscope waits for a valid packet from the configured Master.
+After boot, the Periscope checks for communication with the configured Master.
 
-If no valid Master packet is received within approximately 15 seconds, the console displays:
+If Master communication is not detected within approximately 15 seconds, the console displays:
 
 ```text
-No Master communication detected.
-Type NEWMAC to reconfigure.
+Master communication has not been detected yet.
+If the saved Master MAC is incorrect, type NEWMAC to reconfigure.
 ```
 
 This can mean:
@@ -220,20 +203,7 @@ This can mean:
 - The Master is not powered on
 - The wrong Master MAC was entered
 - The Periscope MAC was not added to the Master
-- The Master and Periscope are not using the same ESP-NOW channel
 - The Master has not sent a command yet
-
-Receiving any valid packet from the configured Master changes:
-
-```text
-Master Seen: 0
-```
-
-to:
-
-```text
-Master Seen: 1
-```
 
 ---
 
@@ -493,7 +463,7 @@ The main firmware serial handler also accepts:
 NEWMAC
 ```
 
-to erase the saved Master MAC.
+to erase the saved node ID and Master MAC and restart first-time setup.
 
 ---
 
@@ -525,65 +495,12 @@ Commands are converted to uppercase by the firmware, so lowercase input is also 
 
 ---
 
-# ESP-NOW Settings
-
-The Periscope currently uses:
-
-```text
-Wi-Fi Station Mode
-ESP-NOW Channel 1
-Encryption Disabled
-```
-
-The Master must also use ESP-NOW Channel 1.
-
-Only packets from the saved Master MAC are accepted.
-
-Packets from other MAC addresses are ignored.
-
----
-
-# FastLED Requirement
-
-Use:
-
-```text
-FastLED 3.9.0
-```
-
-PlatformIO configuration:
-
-```ini
-lib_deps =
-    fastled/FastLED@3.9.0
-```
-
-Do not use the caret version:
-
-```ini
-fastled/FastLED@^3.9.0
-```
-
-Pinning the exact version prevents PlatformIO from automatically installing a newer version.
-
-Newer FastLED versions may cause:
-
-- Flickering
-- Incorrect colors
-- Timing problems
-- ESP32 RMT conflicts
-- Unstable multi-strip behavior
-
----
-
-# Current DroidLink Identity
+# Current DroidLink Configuration
 
 The current firmware reports:
 
 ```text
-Node ID: 6
-Role: ROLE_PERISCOPE
-Device: DEV_PERISCOPE
+Node ID: configured value from 2 through 13
 ```
 
 The Master routes commands beginning with:
@@ -592,13 +509,7 @@ The Master routes commands beginning with:
 :PS
 ```
 
-to the node advertising:
-
-```text
-ROLE_PERISCOPE
-```
-
-The Periscope therefore does not need its MAC hardcoded into command-routing logic after capability discovery. The Master routes using the advertised Periscope role.
+to the configured Periscope.
 
 ---
 
@@ -609,10 +520,10 @@ The Periscope therefore does not need its MAC hardcoded into command-routing log
 2. Copy the Periscope MAC from the installer console
 3. Add the Periscope MAC to the DroidLink Master
 4. Power or reboot the Master
-5. Paste the Master MAC into the Periscope console
-6. Periscope saves the MAC and reboots
-7. Periscope announces its capabilities and also responds to :CAP?
-8. Master registers Role: Periscope
+5. Enter an unused Periscope node ID from 2 through 13
+6. Paste the Master MAC into the Periscope console
+7. Periscope saves the node ID and Master MAC, then reboots
+8. Confirm the Periscope appears in the Master's Devices tab
 9. Send commands using :PS
 ```
 

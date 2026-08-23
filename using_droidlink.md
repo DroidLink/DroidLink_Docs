@@ -29,7 +29,7 @@ It is responsible for:
 - Making decisions based on configuration
 - Sending commands to connected Slaves
 - Coordinating system state
-- Controllers Drive & Dome Motor's
+- Controlling the drive and dome motors
 
 There is **only one Master** in a DroidLink system.
 
@@ -39,7 +39,7 @@ There is **only one Master** in a DroidLink system.
 
 Slaves perform the actual work.
 
-Depending on configuration, a Universal  may:
+Depending on configuration, a Universal Slave may:
 
 - Drive serial devices (Maestro, Marcduino, etc.)
 - Control lighting or accessories

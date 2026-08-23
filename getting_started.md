@@ -51,7 +51,7 @@ Installing in this order ensures proper pairing and activation behavior.
 7. Click Connect.
 
 8. When prompted:  
-   “Do you want to install DroidLink Master Controller V1.1?”  
+   Confirm installation of the current DroidLink Master Controller firmware.  
    Click Install.
 
 Wait for the installation process to complete.
@@ -130,7 +130,6 @@ The ESP32-S3 can draw short bursts of power when Wi-Fi starts.
 Some USB cables — especially charge-only or very thin cables — can cause a brief voltage drop which forces the device to restart.
 
 If this occurs:
-s
 1. Disconnect the USB cable.
 2. Try a different **USB data cable**.
 3. Plug the cable directly into the computer (avoid USB hubs if possible).
@@ -163,7 +162,7 @@ You may proceed with installing the Display Module.
 7. Click Connect.
 
 8. When prompted:  
-   “Do you want to install DroidLink Display UI V1.0?”  
+   Confirm installation of the current DroidLink Display UI firmware.  
    Click Install DroidLink Display.
 
 Wait for the installation process to complete.
@@ -208,7 +207,7 @@ Remain in Logs & Console.
 You should see output similar to:
 
 Device MAC: XX:XX:XX:XX:XX:XX  
-Firmware: V1.0  
+Firmware: current installed version  
 Board: ESP32-S3 Display  
 
 SETUP COMPLETE  

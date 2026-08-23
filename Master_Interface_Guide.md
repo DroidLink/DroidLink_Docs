@@ -75,7 +75,7 @@ Examples:
 - `:DS01` → Dome action
 - `:BS02` → Body action
 - `:OP00` → MarcDuino Open All Panels
-- `@APLE` → Astropixels
+- `@APLE` → AstroPixels
 
 Commands are executed in the order they appear.
 

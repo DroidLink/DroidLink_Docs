@@ -66,8 +66,8 @@ thead { display: table-header-group; }
 </ol>
 
 <h2 id="overview">1. System overview</h2>
-<p>The DroidLink Master sends ESP-NOW command packets directly to AstroPixels. AstroPixels executes supported commands locally using the ReelTwo/Marcduino command engine. With Serial2 pass-through enabled by default, most received commands are also transmitted from the AstroPixels Serial2 TX pin.</p>
-<div class="flow">DroidLink Display → DroidLink Master → ESP-NOW → AstroPixels → local lights/PCA servos<br>　　　　　　　　　　　　　　　　　　　　　　　└→ Serial2 TX → downstream Marcduino-compatible device</div>
+<p>The DroidLink Master sends commands wirelessly to AstroPixels. AstroPixels performs the requested action and can pass supported commands to an optional downstream device.</p>
+<div class="flow">DroidLink Display &rarr; DroidLink Master &rarr; AstroPixels &rarr; lights, servos, and optional downstream devices</div>
 
 <h3>What AstroPixels can control</h3>
 <ul>
@@ -78,7 +78,7 @@ thead { display: table-header-group; }
   <li>Pololu Maestro scripted servo sequences over Serial2</li>
   <li>Additional Marcduino-compatible devices chained from Serial2 TX</li>
 </ul>
-<div class="note"><strong>Current build:</strong> the normal AstroPixels Wi-Fi access point, web page, OTA, and Wi-Fi command receiver are disabled in this DroidLink build. Wireless control comes from DroidLink over ESP-NOW.</div>
+<div class="note"><strong>Current build:</strong> configure and control AstroPixels through DroidLink and its USB setup console.</div>
 
 <h2 id="before">2. Before you begin</h2>
 <h3>Required items</h3>
@@ -102,7 +102,7 @@ thead { display: table-header-group; }
 <h3>Serial2 connector</h3>
 <table><thead><tr><th>Signal</th><th>ESP32 pin</th><th>Purpose</th></tr></thead><tbody>
 <tr><td>Serial2 RX</td><td>GPIO 16</td><td>Optional incoming serial command data</td></tr>
-<tr><td>Serial2 TX</td><td>GPIO 17</td><td>Outgoing Marcduino text or Maestro binary commands</td></tr>
+<tr><td>Serial2 TX</td><td>GPIO 17</td><td>Output to a supported downstream controller</td></tr>
 <tr><td>Ground</td><td>GND</td><td>Must be shared with the connected serial device</td></tr>
 </tbody></table>
 <p>The default Serial2 rate is <strong>9600 baud, 8 data bits, no parity, 1 stop bit</strong>.</p>
@@ -121,9 +121,9 @@ thead { display: table-header-group; }
   <li>Copy the DroidLink Master MAC address and paste it into the AstroPixels serial console in the form <code>AA:BB:CC:DD:EE:FF</code>.</li>
   <li>AstroPixels saves the address and restarts.</li>
   <li>When AstroPixels says it is waiting for the Master, reboot the Master within approximately 30 seconds.</li>
-  <li>After AstroPixels receives a packet from the saved Master, it stores the paired state and starts its lights, servos, and command engine.</li>
+  <li>After AstroPixels connects to the saved Master, it starts normal lighting, servo, and command operation.</li>
 </ol>
-<div class="tip"><strong>Normal first-pair behavior:</strong> the first packet establishes communication and starts AstroPixels. Send your test command again after the startup messages appear.</div>
+<div class="tip"><strong>First connection:</strong> wait for AstroPixels startup to finish before sending a test command.</div>
 
 <h3>Status LED and console messages</h3>
 <ul>
@@ -135,16 +135,16 @@ thead { display: table-header-group; }
 <h3>Start over with a different Master</h3>
 <p>At 115200 baud, type the following in the AstroPixels USB serial terminal and press Enter:</p>
 <pre>NEWMAC</pre>
-<p>This clears the stored Master MAC and paired state, then restarts AstroPixels. It does not describe a general factory reset of every AstroPixels preference.</p>
+<p>This clears the stored Master configuration, then restarts AstroPixels. It does not describe a general factory reset of every AstroPixels preference.</p>
 
-<h2 id="commands">5. How commands travel through AstroPixels</h2>
+<h2 id="commands">5. AstroPixels command behavior</h2>
 <p>This is important when other devices are connected to Serial2.</p>
 <table><thead><tr><th>Command type</th><th>Local action</th><th>Serial2 behavior</th></tr></thead><tbody>
-<tr><td>Normal AstroPixels/Marcduino command, such as <code>:OP00</code></td><td>Executed locally by AstroPixels</td><td>Also sent as text followed by a carriage return when pass-through is enabled</td></tr>
-<tr><td>Maestro command, such as <code>:D1S05</code></td><td>Consumed by the Maestro adapter</td><td>Converted to a Pololu binary command; the original text is not forwarded</td></tr>
-<tr><td><code>:CAP?</code></td><td>Requests AstroPixels capability information</td><td>Not treated as an ordinary device command</td></tr>
+<tr><td>Normal AstroPixels/Marcduino command, such as <code>:OP00</code></td><td>Executed by AstroPixels</td><td>Can also control a supported downstream device</td></tr>
+<tr><td>Maestro command, such as <code>:D1S05</code></td><td>Runs the requested Maestro sequence</td><td>Sent to the selected Maestro controller</td></tr>
+
 </tbody></table>
-<div class="note"><strong>Example:</strong> sending <code>:OP00</code> from DroidLink opens all locally controlled PCA panels and also sends <code>:OP00</code> plus a carriage return from Serial2 TX at 9600 baud. A downstream Marcduino-compatible device may therefore react to the same command.</div>
+<div class="note"><strong>Example:</strong> sending <code>:OP00</code> can operate AstroPixels hardware and a configured downstream Marcduino-compatible device.</div>
 <div class="warning"><strong>Avoid accidental double actions.</strong> If both AstroPixels and a downstream controller recognize the same command, both may move hardware. Disconnect the downstream serial device during initial PCA servo testing if you are unsure.</div>
 
 <h2 id="testing">6. Testing basic commands</h2>
@@ -289,7 +289,7 @@ thead { display: table-header-group; }
   <li>Test with linkages disconnected or with conservative endpoints. Compatibility does not guarantee that a command is mechanically safe for a particular build.</li>
 </ol>
 <p>AstroPixelsPlus project: <a href="https://github.com/reeltwo/AstroPixelsPlus">https://github.com/reeltwo/AstroPixelsPlus</a></p>
-<div class="note">Commands sent through DroidLink should normally be entered exactly as documented, without adding a visible carriage return. DroidLink transports the command, and AstroPixels adds the required Serial2 terminator when passing it downstream.</div>
+<div class="note">Commands sent through DroidLink should normally be entered exactly as documented, without adding a visible carriage return. AstroPixels handles the formatting required by supported downstream devices.</div>
 
 <h2 id="troubleshooting">12. Troubleshooting and recovery</h2>
 <table><thead><tr><th>Problem</th><th>Checks</th></tr></thead><tbody>
@@ -320,7 +320,7 @@ thead { display: table-header-group; }
 <tr><td>Set all holo twitch interval</td><td><code>@HPA190,5,10</code></td></tr>
 <tr><td>Enable / disable all holo twitch</td><td><code>@HPA199</code> / <code>@HPA198</code></td></tr>
 </tbody></table>
-<div class="warning"><strong>Remember:</strong> ordinary commands such as <code>:OP00</code> execute locally and are also passed out Serial2 by default. Maestro <code>:D...</code> commands are converted to binary Maestro instructions instead.</div>
+<div class="warning"><strong>Remember:</strong> ordinary commands such as <code>:OP00</code> execute locally and are also passed out Serial2 by default. Maestro <code>:D...</code> commands are sent to the selected Maestro controller instead.</div>
 <p class="small">End of guide.</p>
 </section>
 

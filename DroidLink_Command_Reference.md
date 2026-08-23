@@ -9,7 +9,7 @@ These commands are used by:
 - RC Input Mapping  
 - Serial input mode  
 
-External systems such as MarcDuino / Teeces and AstroPixels are supported via serial communication only.
+External systems such as MarcDuino, Teeces, and AstroPixels are supported through the appropriate configured DroidLink device.
 
 ---
 
@@ -370,7 +370,7 @@ This will:
 
 1. Trigger Body Slave slot 01  
 2. Wait 500 milliseconds  
-3. Send `@APLE51000` to Astropixelplus over serial   
+3. Send `@APLE51000` to AstroPixelsPlus  
 
 Chaining allows complex, timed behaviors using structured ASCII commands without requiring scripting.
 
@@ -403,4 +403,4 @@ Keep your system up to date with the latest firmware improvements.
 
 Learn how to update the Master and Universal Slaves wirelessly:
 
-👉 **[DroidLink AstroPixels →](Droidlink_Astropixels.md)**
+👉 **[DroidLink AstroPixels →](DroidLink_AstroPixels.md)**

@@ -7,7 +7,7 @@ Sentry settings are saved on the Master and persist after a reboot. Sentry itsel
 ## Before you begin
 
 - Complete the normal DroidLink Master setup.
-- Configure any ESP-NOW slaves used by the actions.
+- Configure any DroidLink devices used by the actions.
 - Create any Master Sequences you want Sentry to use before opening the Sentry configuration page.
 - Upload both the firmware and filesystem image when installing a version that changes the web interface.
 
@@ -164,4 +164,3 @@ Stopping the Master Sequence scheduler cannot undo a command already received by
 ## Next step
 
 See the [DroidLink Command Reference](DroidLink_Command_Reference.md) for other commands, or continue to [OTA Updates](OTA_Updates.md).
-
