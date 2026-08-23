@@ -108,6 +108,10 @@ Follow this order for a complete setup and configuration:
 
 
 ---
+## V2.0.0 Update Guide
+
+Upgrading the Master and Watch Display? See [DroidLink V2.0.0 New Features](DroidLink_V2.0.0_New_Features.md) for what was added and how to use it. A [printable PDF](DroidLink_V2.0.0_New_Features.pdf) is also available.
+
 ## Scope
 
 These documents are intended for **end users**.

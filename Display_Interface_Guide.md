@@ -1,200 +1,136 @@
-# 📟 Display Interface Guide
+# DroidLink Watch Display Interface Guide
 
-The DroidLink Display provides a touch-based interface for operating and monitoring your droid.
+The DroidLink Watch Display is a touchscreen controller and status display for the DroidLink Master. It provides direct controls, configurable command buttons, Master status, power management, and its own browser-based configuration page.
 
-Unlike RC Input Mapping, which assigns behavior to transmitter controls, the Display allows direct command triggering and system configuration.
+## Display Web Config
 
-This guide explains:
+Connect to the Display hotspot and open its configuration page. Select **Enter Setup** to edit its settings.
 
-- How to configure the Display
-- How each tab works
-- How to create on-screen buttons
-- How to trigger Master Sequences (MSnn)
-- How to manage system behavior
+The welcome page shows the installed firmware version and the Display’s own MAC address. Use **Copy** when entering the Display MAC in the Watch Display field of the Master’s System Setup page.
 
----
+## System settings
 
-## Entering Display Setup
+### Master MAC
 
-When the Display powers on, you will see the welcome screen:
+Enter the MAC shown in the Master interface. The Display uses this address to communicate with the correct Master.
 
-**“DroidLink Display — Web Config”**
+The **Display MAC** identifies this Watch Display. The **Master MAC** identifies the Master it controls; the two addresses are not interchangeable.
 
-To configure the Display:
+### Display hotspot
 
-1. Tap **Enter Setup**
-2. The Configuration screen will open
+The Display hotspot name and password can be customized. The Home-screen Wi-Fi control turns the Display’s own hotspot on or off during normal operation without rebooting.
 
----
+### Interface appearance and controls
 
-## ⚙️ System Tab
+The browser interface provides settings for screen accent colors, configurable button labels, and command strings for the Body, Dome, Lifter, Audio, and Universal sections.
 
-The System tab controls Display behavior and Master communication.
+Save after editing. Reset Configuration removes saved customization, so make a backup first when the current setup should be preserved.
 
-### Master MAC Address
+## Home screen
 
-Enter the MAC address of your Master device.
+The Home screen provides:
 
-Example:
-`44:1D:64:F8:D8:88`
+- Clock, battery, and charging information
+- Master connection indicator
+- Drive enabled, Dome enabled, and current drive-mode status
+- Direct dome left, right, and stop controls
+- Hardware brightness slider
+- Display Wi-Fi control
+- Command Center access
 
-This allows the Display to send commands to the correct Master.
+### Master connection indicator
 
----
+The indicator is green while communication with the Master is confirmed. It turns gray after communication is lost. After startup or waking, the Display asks the Master for its current drive, dome, and mode state.
 
-### Display Sleep
+### Brightness
 
-Sets how long the screen remains active before sleeping.
+Move the brightness slider upward for a brighter AMOLED screen and downward to dim it. The selected hardware brightness is saved across restarts.
 
-Value is entered in minutes.
+### Display Wi-Fi control
 
----
+The Home-screen Wi-Fi control manages the Display hotspot. It does not control the Master hotspot.
 
-### Display Rotation
+Use **Master Web UI On** and **Master Web UI Off** on the Settings screen to open or close the Master’s runtime web interface.
 
-Choose screen orientation:
+## Control screens
 
-- 90° (Watch Default)
-- 0°
-- 180°
-- 270°
+The Display includes Body, Dome, Lifter, Audio, Audio Player, Universal, Master, Drive Parameters, and Dome Parameters screens. Configurable buttons send their saved commands to the Master.
 
----
+Buttons may run individual commands, Master Sequences such as `:MS00`, or supported chained commands. See [Creating Display Sequences](Creating_Display_Sequences.md) for examples.
 
-### Button Hold Time
+## Drive and Dome tuning
 
-Defines how long a button must be pressed before a command is sent.
+The tuning screens request the current profile from the Master before editing it.
 
-This prevents accidental triggers.
+- Drive tuning includes maximum speed, acceleration, deceleration, and spin settings.
+- Dome tuning includes maximum speed, acceleration, and deceleration settings.
 
-Value is set in milliseconds.
+Wait for the current values to appear before changing them. Test movement settings with the droid safely supported and clear of people and objects.
 
----
+## Settings screen
 
-### Universal Tab Title
+The scrollable Settings screen includes:
 
-Allows you to rename the “Universal” tab header.
+- Display MAC
+- Sleep enable switch and timeout
+- Shutdown enable switch and timeout
+- Master Web UI On and Off
+- Device configuration buttons for Device IDs `2` through `13`
+- Two SD-card backup and restore slots
 
-This is cosmetic only and does not affect functionality.
+Every DroidLink device must have a unique Device ID. Use the matching Device ID button when placing a configured device into setup mode.
 
----
+This also allows you to ping any device online and paired. 
 
-### Saving Display Settings
+Backup and restore require a compatible SD card. Hold the backup or restore control to prevent accidental activation.
 
-After making changes:
+## Sleep, wake, and shutdown
 
-1. Press **💾 Save & Reboot**
-2. The Display will restart
-3. New settings will be applied
+### Sleep
 
-To clear all settings:
+The sleep timer can be adjusted from 5 to 600 seconds. When Display Wi-Fi is off, the AMOLED and ESP32 enter low-power sleep. Touching the screen wakes the Display, restores communication, and requests the Master’s current state.
 
-Press **♻️ Reset Config**
+The first touch is reserved for waking and will not activate the control underneath it.
 
----
+When Display Wi-Fi is on, the AMOLED can sleep while the web interface remains available.
 
-## Control Tabs Overview
+### Automatic shutdown
 
-The Display allows you to create on-screen buttons for different systems:
+The shutdown timer can be adjusted from 1 to 60 minutes. Automatic shutdown is blocked while USB power is connected or while Display Wi-Fi is on. If the deadline passes while charging, the Display can shut down after USB power is removed.
 
-- **Body**
-- **Dome**
-- **Lifter**
-- **Audio**
-- **Universal**
+## Master Web Config controls
 
-Each tab allows you to create custom buttons that send commands to the Master.
+- **Master Web UI On** sends `:CM09` and opens the Master runtime hotspot.
+- **Master Web UI Off** sends `:CM0B` and closes it.
 
----
+These controls differ from the Home-screen Wi-Fi control, which manages only the Display hotspot.
 
-## Creating Buttons
+## Configuration backups
 
-Inside any control tab:
+The Settings screen provides two SD-card backup slots and two matching restore controls. A restored configuration is applied after restart. Verify the Master MAC, buttons, theme, and power settings after restoring.
 
-1. Select **+ Add Button**
-2. Configure the button label
-3. Assign a command
-4. Save
+## Updating the Display
 
-Buttons can send:
+Use the DroidLink Installer and follow the instructions provided with the current Watch Display update. Back up the Display configuration before updating.
 
-- Direct DroidLink commands
-- Master Sequences (`:MSnn`)
-- Raw prefixed commands
+## Troubleshooting
 
----
+### The Master indicator remains gray
 
-## Universal Tab
+Confirm both devices are powered, verify the Master MAC in Display Web Config, verify the Display MAC in Master System Setup, and confirm the Display is enabled in the Master configuration.
 
-The Universal tab allows you to create buttons that are not tied to a specific system.
+### New web controls are missing
 
-These can:
+Confirm the current Watch Display update was installed, reconnect to the Display hotspot, and refresh the page.
 
-- Trigger Master Sequences
-- Send chained commands
-- Execute special system actions
+### The Display does not wake correctly
 
-The tab title can be customized in the System tab.
+Touch once to wake it and allow communication to restore. The wake touch intentionally does not activate a button.
 
----
+### Automatic shutdown does not occur
 
-## Triggering Master Sequences
+Confirm shutdown is enabled, USB power is disconnected, and Display Wi-Fi is off.
 
-The Display can trigger previously created Master Sequences using:
+## Next step
 
-`:MSnn`
-
-Example:
-
-`:MS00`
-
-This executes Master Sequence slot 00.
-
----
-
-## 🔄 Manual Display Reboot (Touch Gesture)
-
-The Display includes a built-in recovery gesture.
-
-If the screen becomes frozen or unresponsive:
-
-1. Press and hold the **bottom-right corner**
-2. Continue holding until the reboot triggers
-3. The Display will restart automatically
-
-This is a safe reboot and will not affect saved settings.
-
----
-
-## RC vs Display Control
-
-RC Input Mapping:
-- Uses your transmitter
-- Requires SBUS configuration
-
-Display Control:
-- Uses touch buttons
-- Sends commands directly to the Master
-- Does not require RC input
-
----
-
-## 🎉 Display Interface Setup Complete
-
-You have successfully configured:
-
-- Display communication
-- Screen behavior
-- Custom control buttons
-- Master Sequence triggering
-
-Your DroidLink Display is now ready for operation.
-
----
-
-## 🎬 Ready to Build Advanced Behaviors?
-
-Now that you understand how to use the Display interface,  
-learn how to create multi-step timed actions using Master Sequences.
-
-👉 **[Creating a Master Sequence →](Creating_Master_Sequence.md)**
+See [Creating a Master Sequence](Creating_Master_Sequence.md) and [Creating Display Sequences](Creating_Display_Sequences.md) for advanced actions.

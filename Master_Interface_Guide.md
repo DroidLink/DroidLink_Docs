@@ -1,249 +1,146 @@
-# 🎮 DroidLink Navigation & Command Setup
+# DroidLink Master Interface Guide
 
-Your DroidLink system is fully installed and communicating.
+The DroidLink Master web interface configures the droid, maps RC controls, builds Master Sequences, configures Sentry Mode, monitors devices, and backs up settings.
 
-Now it’s time to configure how your droid behaves.
+## Opening the Master interface
 
-In this guide, you will learn how to:
+### First-time setup or forced configuration
 
-- Navigate the DroidLink interface
-- Understand each control tab
-- Assign commands to events
-- Configure movement, dome, and audio actions
-- Create single or multi-step Master Sequences
+Connect to the Master setup hotspot, open the address shown by the installer console, and complete System Setup. This mode is intended for initial configuration and recovery.
 
-This is where your droid comes to life.
+### Runtime Web Config
 
----
+During normal operation, send **Master Web UI On** (`:CM09`) from the Watch Display or an assigned control. Connect to the `DroidLink_Master` hotspot and open the configuration page.
 
-## Accessing the Command Interface
+Use **Exit Web Mode**, **Master Web UI Off**, or `:CM0B` when finished. The Master shows a solid pink indicator while runtime Web Config is active.
 
-After completing Master Setup, you will see the main configuration screen.
+For safety, drive motors remain disabled while runtime Web Config is open. Dome, audio, Sentry, Master Sequences, and device commands remain available. Closing Web Config does not automatically enable the drives.
 
-At the bottom of the page, you will find the following buttons:
+## Main dashboard
 
-- **RC Controls**
-- **Commands**
-- **Save Configuration**
-- **Factory Reset**
+The dashboard provides access to:
 
-To begin configuring how your droid behaves, select:
+- **System Setup** — network, update, drive, dome, audio, and device settings
+- **RC Controls** — assign transmitter inputs to actions
+- **Master Sequences** — create and run saved multi-step actions
+- **Sentry Mode** — configure and control unattended actions
+- **Backup / Restore** — download or restore Master settings
+- **Device Status** — view configured and detected DroidLink devices
+- **Exit Web Mode** — close runtime Web Config
 
-👉 **Commands**
+The Master MAC appears near the top of the interface. Use **Copy** when entering it into a Display or another DroidLink device.
 
----
+## System Setup
 
-## 🎬 Master Sequences
+System Setup contains the Master’s primary configuration. Available sections depend on the installed hardware and selected modes.
 
-Master Sequences allow you to create single commands or multi-step command chains using:
+### Device configuration
 
-- Raw command strings
-- Delays between commands
+Enter the MAC printed or displayed by each DroidLink device. Every configured device must use its own unique Device ID.
 
-These sequences can be:
+The Watch Display and optional Large Display have separate settings. Enable only the Displays that are installed, enter their correct MAC addresses, and save the configuration.
 
-- Assigned to an RC button (Master Seq tab)
-- Triggered from the Display using `:MSnn`
+### Saving
 
----
+Use the page’s save control after editing settings. Initial setup and configuration restore use save-and-reboot so the complete configuration is loaded cleanly. Ordinary configuration sections may save without requiring an immediate reboot.
 
-## Creating a Master Sequence
+## RC Controls
 
-When you open the **Master Sequences** page, you will see:
+RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, and other supported actions.
 
-- ◀ ▶ buttons to select the sequence slot (MS00, MS01, etc.)
-- A list of steps (initially empty)
-- ➕ Add Command
-- ⏱ Add Delay
-- 💾 Save
-- ⬅ Back
+1. Choose the desired input.
+2. Select its action.
+3. Save the RC mappings.
+4. Test with the droid safely supported and drive wheels off the ground.
 
-Each sequence slot can store up to 12 steps.
+Drive profiles always remain limited by the maximum drive speed configured in System Setup.
 
----
+## Master Sequences
 
-## Adding a Command
+Master Sequences store ordered commands and delays. A sequence can be triggered by RC mapping, the Watch Display, Sentry Mode, or the browser.
 
-Select:
+### Create a sequence
 
-➕ **Add Command**
+1. Open **Master Sequences**.
+2. Select a slot from `MS00` through `MS31`.
+3. Add command and delay steps in the required order.
+4. Save the sequence.
 
-You will enter a raw DroidLink command string.
+A delay is entered in milliseconds: `500` is half a second and `1000` is one second.
 
-Examples:
+### Run or cancel a sequence
 
-- `:DS01` → Dome action
-- `:BS02` → Body action
-- `:OP00` → MarcDuino Open All Panels
-- `@APLE` → AstroPixels
+Select a saved sequence and run it from the browser, or send `:MSnn`, such as `:MS00`.
 
-Commands are executed in the order they appear.
+**Cancel Remaining Steps** prevents steps that have not yet been sent. It cannot reverse a command already received by another device. Add an appropriate stop or idle command at the end when an effect should not remain active.
 
----
+For detailed sequence design, see [Creating a Master Sequence](Creating_Master_Sequence.md).
 
-## Adding a Delay
+## Sentry Mode
 
-Select:
+Sentry Mode can randomly move the dome, play sounds, choose an idle result, and run up to three saved Master Sequences.
 
-⏱ **Add Delay**
+The Sentry page configures:
 
-Enter the delay time in milliseconds.
+- Minimum and maximum delay between selections
+- Allowed dome directions and movement duration
+- Optional sound and idle actions
+- Up to three saved Master Sequences
+- Whether Sentry enables the dome when starting
+- Whether stopping Sentry disables the dome
+- Whether a Sentry-started sequence may finish after Sentry stops
+- Optional Master Sequence probability and cooldown
 
-Example:
+Saving settings does not start Sentry. Use the browser controls, an RC mapping, `:SMON`, or `:SMOFF` to start and stop it. Saved settings persist after reboot, but Sentry always starts off.
 
-- 500 → waits half a second
-- 1000 → waits one full second
+See [Sentry Mode User Guide](Sentry_Mode.md) for every option and shutdown behavior.
 
-Delays allow you to create timed sequences between commands.
+## Device Status
 
----
+Device Status compares configured devices with devices recently detected by the Master. Each entry may show its configured MAC, Device ID, reported role or adapter, and last-seen status.
 
-## Saving and Triggering
+- **Live Monitoring** refreshes the browser using information the Master already has. It does not repeatedly request device discovery.
+- **Refresh Device Discovery** performs one discovery request and then displays the replies.
 
-After building your sequence:
+**MAC mismatch** means the Master heard a device announcement from a MAC address that is not saved in its configuration. This may indicate an incorrect or missing MAC address. A device whose saved MAC is wrong may instead show **No response** if the Master never receives its announcement.
 
-1. Press 💾 Save
-2. Return using ⬅ Back
-3. Assign the sequence in the **Master Seq** tab  
-   or trigger it directly from the Display using:
+## Backup and Restore
 
-   `:MSnn`
+Use **Backup / Restore** before firmware updates or major configuration changes.
 
-Example:
+- Download a JSON backup to the computer.
+- Restore by selecting a JSON file, dragging and dropping it, or pasting its contents.
+- Review the selected backup before confirming restore.
+- Allow the Master to reboot after a successful restore.
 
-`:MS00`
+Backups include the Master configuration, RC mappings, sequences, and supported Sentry settings.
 
----
+## Updating the Master
 
-## 🎮 RC Input Mapping
+Use the DroidLink Installer and follow the instructions provided with the current Master update. Back up the Master configuration before updating.
 
-RC Input Mapping allows you to assign controller inputs to DroidLink commands.
+## Troubleshooting
 
-This defines what happens when you press a switch or move a control on your transmitter.
+### A new page or control is missing
 
----
+Confirm the current Master update was installed, then refresh the browser. If necessary, close and reopen the hotspot connection.
 
-## RC Input Tabs
+### The drives will not enable
 
-Inside RC Input Mapping, you will see three tabs:
+Drive output is intentionally locked while runtime Web Config is starting, active, or stopping. Exit Web Mode first, then deliberately enable the drives.
 
-- **Audio**
-- **Master Seq**
-- **Drive**
+### A device is not shown as recently seen
 
-Each tab controls a different type of input mapping.
+Confirm it is powered, verify its saved MAC and unique Device ID, then use **Refresh Device Discovery** once.
 
----
+### A device shows No response
 
-### Audio Tab
+The configured MAC did not answer. The device may be powered off, out of range, temporarily unavailable, or saved under the wrong MAC address. Discovery cannot contact a device through an incorrect saved address.
 
-Use the **Audio** tab to map controller inputs to sound playback commands.
+### Canceling a sequence did not stop a device effect
 
-You can:
+Cancellation stops future sequence steps. Send the device’s normal stop or idle command for an effect it already received.
 
-- Add new audio mappings
-- Select an input trigger
-- Choose a sound action
-- Save the configuration
+## Next step
 
----
-
-### Master Seq Tab
-
-Use the **Master Seq** tab to trigger previously created Master Sequences.
-
-Each mapping allows you to:
-
-- Select a controller input
-- Assign a sequence slot (MS00, MS01, etc.)
-- Execute multi-step command chains with a single button press
-
----
-
-### Drive Tab
-
-Use the **Drive** tab to assign direct drive commands to controller inputs.
-
-> ⚠️ Drive profiles (Slow / Normal / Turbo) operate within the Max Drive Speed (%) limit configured in Master Setup.
-
-This controls:
-
-- Movement behavior
-- Drive profiles
-- Directional or motion-based actions
-
----
-
-## Saving RC Input Mappings
-
-After configuring your mappings:
-
-1. Press **SAVE RC INPUTS**
-2. Wait for confirmation
-3. Return using **BACK TO SETUP**
-
-Mappings take effect immediately after saving.
-
----
-
-## 💾 Finalizing Your Configuration
-
-After completing setup:
-
-1. Save each Master Sequence using 💾 Save
-2. Save RC mappings using SAVE RC INPUTS
-3. Select BACK TO SETUP
-4. Press Save Configuration on the Master Setup page
-
-Saving writes all settings to the Master device.
-
----
-
-## 🔄 Reboot Required
-
-After saving, reboot your droid:
-
-- Power cycle the Master
-  or
-- Press the physical RESET button on the Master Controller
-
-This ensures:
-
-- Updated mappings are loaded
-- Sequences are initialized
-- All nodes re-register properly
-
----
-
-## ✅ After Reboot
-
-When the system restarts:
-
-- The Master will load your saved configuration (this may take several seconds and may play a startup sound when complete)
-- Slaves will reconnect
-- RC inputs will trigger assigned commands
-- Master Sequences (MS00, MS01, etc.) will execute when triggered
-
-Your droid is now fully operational.
-
----
-
-## 🎉 Command Setup Complete
-
-You have successfully:
-
-- Created Master Sequences
-- Configured RC Input Mapping
-- Saved and rebooted your system
-
-Your DroidLink configuration is now active.
-
-Enjoy bringing your droid to life.
-
----
-
-## ➡️ Next Step
-
-Learn how to operate and monitor your droid using the Display:
-
-👉 **[Display Interface Guide →](Display_Interface_Guide.md)**
+Continue to the [Display Interface Guide](Display_Interface_Guide.md).
