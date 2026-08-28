@@ -128,6 +128,8 @@ Use **Backup / Restore** before firmware updates or major configuration changes.
 
 Backups include the Master configuration, RC mappings, sequences, and supported Sentry settings.
 
+**Dome RC calibration is stored separately and is not included in `Master_Config.json`.** After installing V2.0.1, complete Dome RC calibration once from System Setup. Restoring `Master_Config.json` does not restore the calibration, so repeat it after a full device erase or whenever the Dome RC receiver or controller is changed.
+
 ## Updating the Master
 
 Use the DroidLink Installer and follow the instructions provided with the current Master update. Back up the Master configuration before updating.
