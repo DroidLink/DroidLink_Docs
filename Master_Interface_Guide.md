@@ -40,6 +40,19 @@ Enter the MAC printed or displayed by each DroidLink device. Every configured de
 
 The Watch Display and optional Large Display have separate settings. Enable only the Displays that are installed, enter their correct MAC addresses, and save the configuration.
 
+### Dome RC calibration
+
+Use **Dome RC Calibration** when the dome does not reach full speed or the receiver's center and endpoints differ from the standard SBUS values.
+
+1. Secure the droid so dome movement can be tested safely.
+2. Select **Start** in the Dome RC Calibration section.
+3. Leave the Dome rotation stick centered when prompted.
+4. Move the stick fully left and fully right to capture both endpoints.
+5. Return the stick to center and select **Save**.
+6. Test neutral, direction, and full-speed dome rotation.
+
+The page displays the live raw input and captured low, center, and high values. Dome motor output stays locked during calibration, and calibration cannot be saved without sufficient travel on both sides of center. Use **Cancel** to keep the previous calibration or **Reset Defaults** to restore standard SBUS values.
+
 ### Saving
 
 Use the page’s save control after editing settings. Initial setup and configuration restore use save-and-reboot so the complete configuration is loaded cleanly. Ordinary configuration sections may save without requiring an immediate reboot.

@@ -16,6 +16,7 @@ This guide explains how to update:
 Before performing an OTA update:
 
 - The device must be running normally
+- A valid DroidLink license must be saved on the device
 - Wi-Fi credentials must be configured
 - Internet access must be available
 - Remote OTA must be enabled
@@ -66,7 +67,7 @@ During the update:
 
 ⚠️ If the LED turns **red**, the OTA failed (check Wi-Fi credentials).
 
-Do not power off the droid during this process.
+Do not power off the droid during this process. Allow the update to finish completely; the Master will reboot on its own.
 
 The update typically takes **30–60 seconds**.
 
