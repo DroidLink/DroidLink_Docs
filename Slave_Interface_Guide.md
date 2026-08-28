@@ -148,7 +148,7 @@ Enter:
 
 ---
 
-## Remote OTA (GitHub Releases)
+## Remote OTA (DroidLink Updates)
 
 Enable this option to trigger a firmware update on next reboot.
 
