@@ -128,7 +128,7 @@ Use **Backup / Restore** before firmware updates or major configuration changes.
 
 Backups include the Master configuration, RC mappings, sequences, and supported Sentry settings.
 
-**Dome RC calibration is stored separately and is not included in `Master_Config.json`.** Normal Remote OTA updates preserve the saved calibration, and restoring `Master_Config.json` does not replace or erase it. Recalibrate only if the calibration storage was erased, the Dome RC receiver or controller was changed, or neutral and full-speed response are no longer correct.
+**Dome RC calibration is stored separately and is not included in `Master_Config.json`.** After installing V2.0.1, complete Dome RC calibration once from System Setup. Restoring `Master_Config.json` does not restore the calibration, so repeat it after a full device erase or whenever the Dome RC receiver or controller is changed.
 
 ## Updating the Master
 
