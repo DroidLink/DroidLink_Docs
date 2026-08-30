@@ -79,7 +79,7 @@ The Periscope will display its device MAC address:
 ```text
 DroidLink Periscope — Boot
 
-Device MAC: E4:B3:23:C6:95:00
+Device MAC: XX:XX:XX:XX:XX:XX
 ```
 
 Your actual MAC address will be different.
@@ -122,7 +122,7 @@ After saving the node ID, the Periscope asks for the Master MAC:
 
 ```text
 Paste Master MAC like:
-9C:13:9E:A8:6F:A8
+XX:XX:XX:XX:XX:XX
 ```
 
 Paste the DroidLink Master MAC address into the console.
@@ -130,7 +130,7 @@ Paste the DroidLink Master MAC address into the console.
 The Periscope will confirm the value:
 
 ```text
-Received MAC: 9C:13:9E:A8:6F:A8
+Received MAC: XX:XX:XX:XX:XX:XX
 ```
 
 It will then save the MAC and reboot:
@@ -140,7 +140,7 @@ Master MAC saved!
 Rebooting...
 ```
 
-The node ID and Master MAC are stored in ESP32 Preferences and remain saved after power loss.
+The node ID and Master MAC are stored on the device and remain saved after power loss.
 
 ---
 
@@ -180,7 +180,7 @@ After reboot, the complete first-time setup returns. Enter the Periscope node ID
 
 ```text
 Paste Master MAC like:
-9C:13:9E:A8:6F:A8
+XX:XX:XX:XX:XX:XX
 ```
 
 Enter the correct Master MAC.
