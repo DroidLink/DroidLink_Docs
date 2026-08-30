@@ -85,8 +85,10 @@ Follow this order for a complete setup and configuration:
 11. [Using DroidLink Periscope](Using_DroidLink_Periscope.md) – Configure and operate the Periscope Logic Lights ([PDF](Using_DroidLink_Periscope.pdf))
 12. [Using DroidLink MagicPanel](Using_DroidLink_MagicPanel.md) – Install, configure, and test a MagicPanel ([PDF](Using_DroidLink_MagicPanel.pdf))
 13. [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) – MagicPanel effects and command syntax ([PDF](DroidLink_MagicPanel_Command_Reference.pdf))
-14. [Sentry Mode User Guide](Sentry_Mode.md) – Configure unattended random actions
-15. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly
+14. [Using DroidLink BodyPCA](Using_DroidLink_BodyPCA.md) – Install, configure, wire, and operate BodyPCA ([PDF](Using_DroidLink_BodyPCA.pdf))
+15. [BodyPCA Command Reference](DroidLink_BodyPCA_Command_Reference.md) – Exact Master-ready BodyPCA commands ([PDF](DroidLink_BodyPCA_Command_Reference.pdf))
+16. [Sentry Mode User Guide](Sentry_Mode.md) – Configure unattended random actions
+17. [OTA Updates](OTA_Updates.md) – Update firmware wirelessly
 
 ---
 
@@ -111,6 +113,11 @@ Follow this order for a complete setup and configuration:
 - `DroidLink_MagicPanel_Command_Reference.md` – MagicPanel effects and command syntax
 - `DroidLink_MagicPanel_Command_Reference.html` – Browser-ready MagicPanel command reference
 - `DroidLink_MagicPanel_Command_Reference.pdf` – Printable MagicPanel command reference
+- `Using_DroidLink_BodyPCA.md` – BodyPCA installation, wiring, configuration, and operation
+- `Using_DroidLink_BodyPCA.pdf` – Printable BodyPCA setup guide
+- `DroidLink_BodyPCA_PCA_Channel_Wiring_List.pdf` – Printable PCA9685 channel wiring list
+- `DroidLink_BodyPCA_Command_Reference.md` – Exact Master-ready BodyPCA command syntax
+- `DroidLink_BodyPCA_Command_Reference.pdf` – Printable BodyPCA command reference
 - `Sentry_Mode.md` – Configuring and operating Sentry Mode
 - `OTA_Updates.md` – Over-the-air firmware updates  
 

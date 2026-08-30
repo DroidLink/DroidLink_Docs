@@ -293,7 +293,7 @@ The Console will guide you to:
 
 - Connect to the Slave_Config Wi-Fi network  
 - Open http://192.168.4.1  
-- Select a Node ID (2 through 7)  
+- Select a Node ID (2 through 13)  
 - Select at least one Output (A or B)  
   ↳ An output selection is REQUIRED before Save will work.  
   ↳ You can change this later at any time.  
@@ -320,7 +320,7 @@ After a Universal Slave is installed and running in Normal Mode (LED will be OFF
 6. Click SAVE Configuration.
 7. Reset or power cycle the Master.
 
-Repeat this process for each additional Slave (Node ID 2–7).
+Repeat this process for each additional Slave (Node ID 2–13).
 
 ---
 

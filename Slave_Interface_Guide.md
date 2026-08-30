@@ -74,7 +74,7 @@ Each Slave must have a unique Node ID.
 
 - Master = 0
 - Display = 1
-- Slaves = 2 through 7
+- Slaves = 2 through 13
 
 A Slave will not register correctly if its Node ID conflicts with another device.
 
@@ -192,7 +192,7 @@ Behavior logic is configured on the Master.
 
 If the Slave does not register with the Master:
 
-- Verify Node ID is unique (2–7)
+- Verify Node ID is unique (2–13)
 - Confirm Master MAC address is correct
 - Ensure both devices are powered
 - Reboot both Master and Slave

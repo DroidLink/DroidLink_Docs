@@ -33,7 +33,7 @@ MagicPanel collects all three required settings and then reboots once.
 Enter the MAC address shown by the DroidLink Master in this format:
 
 ```text
-9C:13:9E:A8:6F:A8
+XX:XX:XX:XX:XX:XX
 ```
 
 Use your own Master address. MagicPanel saves it and continues automatically.
