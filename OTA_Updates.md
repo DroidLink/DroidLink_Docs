@@ -1,172 +1,99 @@
-# 🔄 OTA Updates (Master & Slave)
+# DroidLink Remote OTA Updates
 
-DroidLink supports Over-The-Air (OTA) firmware updates.
+Remote OTA updates supported DroidLink firmware without requiring another USB installation. The update is requested from the device's configuration page, downloaded through DroidLink's update service, installed, and completed by the device automatically.
 
-OTA allows you to update firmware without reconnecting a USB cable.
+This guide covers the Master Controller and Universal Slave. Other devices should be updated with the DroidLink Web Installer unless their current user guide specifically provides an OTA option.
 
-This guide explains how to update:
+## Before updating
 
-- Master Controller
-- Universal Slave
+- Back up the Master configuration.
+- Use stable power and a reliable Wi-Fi connection with internet access.
+- Make sure the saved DroidLink license is active.
+- Keep the droid stationary with the drive and dome systems inactive.
+- Do not disconnect power after the update begins.
 
----
+Remote OTA installs the release currently offered for that device. It does not allow a user to choose an arbitrary firmware version.
 
-## 📡 Requirements
+## Update the Master Controller
 
-Before performing an OTA update:
+### 1. Open Runtime Web Config
 
-- The device must be running normally
-- A valid DroidLink license must be saved on the device
-- Wi-Fi credentials must be configured
-- Internet access must be available
-- Remote OTA must be enabled
+During normal Master operation, start **Master Web UI On** from the Watch Display or an assigned RC control. The system command is `:CM09`.
 
----
+Connect a phone or computer to:
 
-## 🚀 Updating the Master Controller
+```text
+DroidLink_Master
+```
 
-## Step 1 — Enter Configuration Mode
+Then open:
 
-Place the Master into Configuration Mode:
-
-- Using the configured RC combination  
-- Tap **RESET**, then immediately press and hold **BOOT** until the LED changes   
-- Using the Display (if configured)  
-
-The LED will glow **pink** in Config Mode.
-
----
-
-## Step 2 — Open Master Web Interface
-
-1. Connect to the **Master_Config** Wi-Fi network
-2. Open:
-
+```text
 http://192.168.4.1
+```
 
----
+If normal Runtime Web Config is unavailable, forced configuration mode may be used for recovery. Its hotspot is `Master_Config` with password `droidlink`.
 
-## Step 3 — Enable Remote OTA
+### 2. Request Remote OTA
 
-1. Locate the **Remote OTA** section
-2. Enable OTA update
-3. Click **Save Configuration**
-4. Reboot the droid
+1. Open **System Setup**.
+2. Turn on **Remote OTA**.
+3. Select **Save Configuration** once.
 
----
+The Master saves the request and reboots automatically. Do not manually reset or power-cycle it after selecting Save Configuration.
 
-## Step 4 — Automatic Update Process
+### 3. Allow the update to finish
 
-After reboot, the Master will begin the OTA update automatically.
+After reboot, the Master connects to the saved home Wi-Fi network and checks for the current authorized OTA release. If an update is available, it installs the web files and firmware.
 
-During the update:
+The Master may reboot more than once. This is expected. Wait until it finishes rebooting and returns to normal operation.
 
-- LED blinks **purple** while connecting to Wi-Fi
-- LED changes color while downloading and installing firmware
-- The Master may reboot automatically
+### 4. Verify the result
 
-⚠️ If the LED turns **red**, the OTA failed (check Wi-Fi credentials).
+Open the installer console or Master web interface and confirm the displayed firmware version. Verify the saved configuration, RC controls, drive and dome behavior, and connected devices before normal operation.
 
-Do not power off the droid during this process. Allow the update to finish completely; the Master will reboot on its own.
+## Update a Universal Slave
 
-The update typically takes **30–60 seconds**.
+### 1. Open Slave Config
 
----
+Enter Slave configuration mode from the Watch Display by selecting the Slave's Device ID. If the Slave cannot be reached remotely, use its documented manual configuration-button method.
 
-## Step 5 — Post-Update Reboot
+Connect to the Slave configuration hotspot and open:
 
-After installation completes, the Master performs a controlled reboot sequence.
-
-You may observe:
-
-- The system reboots
-- The LED turns **solid green** briefly
-- The system reboots again
-
-This is normal.
-
-The double reboot ensures that all connected hardware (audio modules, motor controllers, etc.) initializes cleanly after the update.
-
-When complete, the system returns to normal operation.
-
----
-
-## ⚠️ Recommended OTA Method (Most Reliable)
-
-For maximum reliability when updating the Master:
-
-1. Power down the droid.
-2. Disconnect the Master from the internal breakout board.
-3. Power the Master directly via USB.
-4. Perform the OTA update.
-5. Reinstall the Master after completion.
-
-This provides the cleanest and most stable power during the update process.
-
-OTA can also be performed while installed in the droid, but ensure drive and dome systems are inactive during the update.
-
----
-
-## 🔧 Updating a Universal Slave
-
-The process is similar.
-
-## Step 1 — Enter Slave Configuration Mode
-
-Use:
-
-- Display Config Mode screen  
-- Manual **EN + Boot** method  
-
----
-
-## Step 2 — Connect to Slave_Config
-
-Open:
-
+```text
 http://192.168.4.1
+```
 
----
+### 2. Request Remote OTA
 
-## Step 3 — Enable Remote OTA
+1. Confirm the Slave has the correct home Wi-Fi credentials.
+2. Turn on **Remote OTA**.
+3. Select **Save & Reboot**.
 
-1. Enable OTA
-2. Click **Save Configuration**
-3. The device will reboot
+The Slave reboots automatically, connects to the saved Wi-Fi network, and checks for the current authorized Slave release.
 
-On reboot, the Slave will:
+### 3. Verify the result
 
-- LED turns **solid blue**
-- Connect to Wi-Fi
-- Check for updates
-- Install if a newer firmware version is available
-- Automatically Reboot when finished (LED off and in normal mode)
+Allow the Slave to complete the update and all automatic reboots. Confirm the firmware version in the console, then verify its Device ID, assigned outputs, connection to the Master, and connected hardware.
 
----
+## Troubleshooting
 
-## ⚠️ Important Notes
+### The update does not start
 
-- Do not power off the device during update.
-- OTA requires stable Wi-Fi.
-- If OTA fails, you can always re-flash using USB.
+- Confirm Remote OTA was enabled before saving.
+- Confirm the saved home Wi-Fi name and password are correct.
+- Confirm that network has internet access.
+- Confirm the device has an active DroidLink license or is associated with the licensed Master as required.
+- Confirm an OTA release is currently available for that device.
 
----
+### The update is denied or unavailable
 
-## 🛠 Troubleshooting OTA
+The requested release may not be offered to that license or may no longer be the current OTA release. Use the current DroidLink Web Installer or contact DroidLink support.
 
-If OTA does not start:
+### The update fails
 
-- Verify Wi-Fi credentials
-- Confirm internet access
-- Ensure Remote OTA is enabled
+Allow the device to reboot normally, verify power and Wi-Fi, and try once more. If it still fails, install the current firmware through USB with the DroidLink Web Installer.
 
-If update fails:
+## Continue
 
-- Reboot and try again once
-- If still failing, perform a USB reflash
-
----
-
-## 🎉 OTA Complete
-
-Once the device has rebooted successfully, it is running the latest DroidLink firmware.
+Review the [Firmware Changelog](DroidLink_Firmware_Changelog.md) for user-visible release information, or return to the [Documentation Home](README.md).

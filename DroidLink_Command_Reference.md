@@ -397,10 +397,10 @@ For advanced integrations, external hardware behavior, or device-specific comman
 
 ---
 
-## 🔄 Next Step — AstroPixels
+## Next step
 
-Keep your system up to date with the latest firmware improvements.
+Learn how to combine commands into reusable actions:
 
-Learn how to update the Master and Universal Slaves wirelessly:
+👉 **[Creating a Master Sequence →](Creating_Master_Sequence.md)**
 
-👉 **[DroidLink AstroPixels →](DroidLink_AstroPixels.md)**
+Device-specific commands are covered in the guides listed on the [Documentation Home](README.md).

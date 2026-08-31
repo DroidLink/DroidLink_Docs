@@ -212,6 +212,6 @@ Once powered and connected, it will automatically register with the Master and b
 
 ## ➡️ Next Step
 
-Learn DroidLink Command List. 
+Continue to the Master configuration and operation guide.
 
-👉 **[DroidLink Command Reference→](DroidLink_Command_Reference.md)**
+👉 **[Master Interface Guide →](Master_Interface_Guide.md)**

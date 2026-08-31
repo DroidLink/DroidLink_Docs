@@ -1,10 +1,10 @@
-# DroidLink_BodyPCA
+# Using DroidLink BodyPCA
 
 DroidLink_BodyPCA is an ESP32-C3 body controller for DroidLink systems. It
 uses two PCA9685 boards to operate body servos and supported accessories while
-receiving commands wirelessly from the DroidLink Master.
+receiving commands from the DroidLink Master.
 
-BodySlave provides:
+BodyPCA provides:
 
 - Control for body drawers, doors, utility arms, and service arms.
 - Web-based servo calibration and testing.
@@ -13,7 +13,7 @@ BodySlave provides:
 - Three user-named body LED segments on one GPIO4 data chain.
 - Two configurable buzzsaw endstop inputs.
 - DroidLink commands `BS00` through `BS99`.
-- Device discovery and status reporting in the Master Devices page.
+- Device discovery and status reporting in Master Device Status.
 
 See [DroidLink BodyPCA Command Reference](DroidLink_BodyPCA_Command_Reference.md) for the
 complete command list.
@@ -68,18 +68,18 @@ For a separate printable channel assignment sheet, see the
 
 1. Disconnect servo horns and mechanical linkages.
 2. Install the firmware with **Erase Flash** enabled.
-3. Open the installer Console Log and reset the BodySlave.
+3. Open the installer Console Log and reset BodyPCA.
 4. Enter a unique DroidLink Device ID from `2` through `13`, then press Enter.
 5. Enter the DroidLink Master MAC address, then press Enter.
-6. Allow BodySlave to save the settings and reboot.
-7. Save the BodySlave MAC address shown in the Console Log.
+6. Allow BodyPCA to save the settings and reboot.
+7. Save the BodyPCA MAC address shown in the Console Log.
 8. Add that MAC address to the DroidLink Master configuration and save it.
-9. Reset BodySlave if needed after saving the Master configuration.
+9. Allow the Master to complete its automatic reboot when required.
 
-BodySlave does not initialize its normal hardware or run commands until it
+BodyPCA does not initialize its normal hardware or run commands until it
 has a valid Device ID and Master MAC address.
 
-Each BodySlave must use a unique Device ID. It communicates only with the
+Each BodyPCA must use a unique Device ID. It communicates only with the
 Master MAC entered during setup.
 
 To replace the stored Device ID or Master MAC later, connect through USB
@@ -88,9 +88,9 @@ LED configuration, and accessory settings are preserved.
 
 ## Opening Web Config
 
-BodySlave normally keeps Wi-Fi off. Open its Web Config using either method:
+BodyPCA normally keeps Wi-Fi off. Open its Web Config using either method:
 
-- Select the BodySlave Device ID from the Watch Display Settings page.
+- Select the BodyPCA Device ID from the Watch Display Settings page.
 - Send `:BS,WEB,ON` from DroidLink.
 
 You can also hold the ESP32-C3 BOOT button for approximately two seconds after
@@ -131,7 +131,7 @@ hardware-output emergency stop immediately if a mechanism moves incorrectly.
 
 ## Body mechanisms
 
-BodySlave supports:
+BodyPCA supports:
 
 - Eight drawers: `D1` through `D8`.
 - Front and rear large doors: `FL`, `FR`, `BL`, and `BR`.
@@ -184,7 +184,7 @@ Test the entire mechanism with its linkage disconnected before normal use.
 
 ## Trading-card dispenser
 
-BodySlave includes built-in support for a trading-card dispenser motor and a
+BodyPCA includes built-in support for a trading-card dispenser motor and a
 calibrated cartridge-eject servo.
 
 - `:BS75` runs the card-dispense preset.
@@ -197,7 +197,7 @@ common signal ground.
 ## Presets and commands
 
 The Command Builder creates timed presets containing servo, accessory, and LED
-actions. Presets are saved on BodySlave and can be assigned to DroidLink
+actions. Presets are saved on BodyPCA and can be assigned to DroidLink
 shortcut slots.
 
 - `BS00`–`BS31`: user-created servo or mixed presets.
@@ -214,7 +214,7 @@ Send shortcut commands through DroidLink with a leading colon, such as:
 :BS90
 ```
 
-Other BodySlave commands use the `:BS,` envelope:
+Other BodyPCA commands use the `:BS,` envelope:
 
 ```text
 :BS,BZ,D,FWD
@@ -223,7 +223,7 @@ Other BodySlave commands use the `:BS,` envelope:
 :BS,BX
 ```
 
-BodySlave removes the envelope and processes the enclosed body command. Refer
+BodyPCA processes the enclosed body command. Refer
 to [DroidLink BodyPCA Command Reference](DroidLink_BodyPCA_Command_Reference.md) for all
 available commands and their meanings.
 
@@ -252,3 +252,7 @@ presets.
 - Send `:BS,BX` to stop presets, servo motion, LED effects, and PCA outputs.
 - Do not operate an accessory until its limits, direction, and safe state have
   been verified on the actual hardware.
+
+## Continue
+
+Review the [BodyPCA Command Reference](DroidLink_BodyPCA_Command_Reference.md), or return to the [Documentation Home](README.md).
