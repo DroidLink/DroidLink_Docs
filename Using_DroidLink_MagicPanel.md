@@ -92,12 +92,14 @@ The onboard status LED turns on during first-time setup. During normal operation
 
 ## Recovery
 
-Use these commands only when reconfiguration is required:
+Use these commands only when reconfiguration is required. Connect MagicPanel
+through USB and enter the command directly in its Console; these are local
+recovery commands, not commands sent through the DroidLink Master.
 
 | Command | Result |
 | --- | --- |
-| `:MPNEWMAC` | Clears the stored Master MAC and reboots into setup. |
-| `:MPNEWPROFILE` | Clears the Matrix profile and reboots into profile selection. |
+| `NEWMAC` | Clears the stored Master MAC and reboots into Master MAC setup. |
+| `NEWPROFILE` | Clears the Matrix profile and reboots into profile selection. |
 
 After clearing the Master MAC, control cannot resume until the correct address is entered through the USB Console.
 
