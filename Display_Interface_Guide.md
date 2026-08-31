@@ -133,4 +133,4 @@ Confirm shutdown is enabled, USB power is disconnected, and Display Wi-Fi is off
 
 ## Next step
 
-See [Creating a Master Sequence](Creating_Master_Sequence.md) and [Creating Display Sequences](Creating_Display_Sequences.md) for advanced actions.
+Continue to the [DroidLink Command Reference](DroidLink_Command_Reference.md). After reviewing the commands, see [Creating a Master Sequence](Creating_Master_Sequence.md) and [Creating Display Sequences](Creating_Display_Sequences.md) for advanced actions.
