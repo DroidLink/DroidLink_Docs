@@ -67,8 +67,7 @@ If MagicPanel has not received Master communication after approximately 15 secon
 1. Copy the displayed MagicPanel Device MAC.
 2. Open Master Config.
 3. Add that MAC to the same Device ID selected during MagicPanel setup.
-4. Save the Master configuration.
-5. Reboot the Master when prompted or required by the configuration flow.
+4. Select **Save Configuration**. The Master saves the entry and reboots automatically when required.
 
 When communication begins, the MagicPanel Console displays **DroidLink Connected** and **MagicPanel Online**, including its Device ID.
 
@@ -93,12 +92,14 @@ The onboard status LED turns on during first-time setup. During normal operation
 
 ## Recovery
 
-Use these commands only when reconfiguration is required:
+Use these commands only when reconfiguration is required. Connect MagicPanel
+through USB and enter the command directly in its Console; these are local
+recovery commands, not commands sent through the DroidLink Master.
 
 | Command | Result |
 | --- | --- |
-| `:MPNEWMAC` | Clears the stored Master MAC and reboots into setup. |
-| `:MPNEWPROFILE` | Clears the Matrix profile and reboots into profile selection. |
+| `NEWMAC` | Clears the stored Master MAC and reboots into Master MAC setup. |
+| `NEWPROFILE` | Clears the Matrix profile and reboots into profile selection. |
 
 After clearing the Master MAC, control cannot resume until the correct address is entered through the USB Console.
 
@@ -118,7 +119,7 @@ Use six hexadecimal pairs separated by colons: `XX:XX:XX:XX:XX:XX`.
 
 ### Waiting for Master
 
-Verify the stored Master MAC, the MagicPanel Device MAC saved in Master Config, and the matching unique Device ID. Save and reboot the Master if required.
+Verify the stored Master MAC, the MagicPanel Device MAC saved in Master Config, and the matching unique Device ID. After correcting the Master entry, select **Save Configuration** and allow the automatic reboot to finish.
 
 ### Matrix image is arranged incorrectly
 
@@ -131,3 +132,5 @@ Check the power supply capacity, wiring, connectors, voltage, and common ground.
 ## Commands
 
 See the [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) for patterns, colors, brightness, speed, text, persistent settings, and complete examples. A [printable PDF](DroidLink_MagicPanel_Command_Reference.pdf) is also available.
+
+Return to the [Documentation Home](README.md) when setup and testing are complete.

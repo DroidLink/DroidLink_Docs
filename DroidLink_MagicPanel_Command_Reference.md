@@ -121,8 +121,10 @@ The printable [MagicPanel Command Reference PDF](DroidLink_MagicPanel_Command_Re
 
 | Command | Result |
 | --- | --- |
-| `:MPNEWMAC` | Clear the Master MAC and reboot into setup. |
-| `:MPNEWPROFILE` | Clear the Matrix profile and reboot into selection. |
+| `NEWMAC` | Enter through the USB Console to clear the Master MAC and reboot into setup. |
+| `NEWPROFILE` | Enter through the USB Console to clear the Matrix profile and reboot into selection. |
+
+These are local USB Console recovery commands and are not routed through the DroidLink Master. After `NEWMAC`, DroidLink control cannot resume until the Master MAC is entered again through the MagicPanel setup Console.
 
 ## Temporary playlist
 

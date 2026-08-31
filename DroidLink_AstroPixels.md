@@ -2,6 +2,23 @@
 
 This guide explains how to use PCA servo boards or Pololu Maestro servo controllers with DroidLink AstroPixels, install and calibrate holoprojector servos, and configure Holoprojector Auto Twitch.
 
+## Install and connect AstroPixels
+
+1. Install the current **AstroPixels** firmware with the DroidLink Web Installer.
+2. Open **Logs & Console** and reset the controller if the setup instructions are not visible.
+3. Record the AstroPixels Device MAC shown in the console.
+4. Paste the DroidLink Master MAC when prompted.
+5. Allow AstroPixels to save the address and restart.
+6. Open Master **System Setup** and add the AstroPixels Device MAC to a DroidLink device entry.
+7. Give the entry a helpful name such as `AstroPixels`.
+8. Select **Save Configuration** and allow the Master to reboot automatically when required.
+
+AstroPixels currently reports Device ID `7`. Do not assign ID `7` to another DroidLink device in the same droid.
+
+After both devices return to normal operation, open Master **Device Status** and use **Refresh Device Discovery** once. Confirm AstroPixels appears under the expected MAC and role. Either device may be powered first after setup.
+
+If the wrong Master MAC was saved, connect AstroPixels to USB, open the console, and enter `NEWMAC` to restart its setup.
+
 ## Servo Controller Support
 
 DroidLink AstroPixels supports both **PCA servo boards** and **Pololu Maestro servo controllers**. You can use the standard PCA servo-board setup for AstroPixels devices, or connect one or two Maestro controllers when advanced scripted servo sequences are required.

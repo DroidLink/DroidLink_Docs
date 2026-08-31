@@ -8,7 +8,7 @@ The Periscope can still be controlled directly from USB Serial, but normal opera
 
 ---
 
-# How DroidLink Control Works
+# Controlling the Periscope
 
 The communication path is:
 
@@ -50,18 +50,6 @@ Runs Periscope Sequence 1.
 
 Runs Main LED Effect 1, White, at Speed 5.
 
-The Periscope firmware removes the `:PS` prefix before sending the remaining command to the original Periscope lighting engine.
-
-Example:
-
-```text
-DroidLink command: :PSQ4
-Periscope command: Q4
-Result: Police Lights sequence
-```
-
----
-
 # First-Time DroidLink Setup
 
 The Periscope and Master must know each other's MAC addresses.
@@ -70,7 +58,7 @@ The Periscope and Master must know each other's MAC addresses.
 
 Install the DroidLink Periscope firmware using the DroidLink Installer.
 
-After installation, wait for the blue setup light, open **Console Log**, and then click **Reset Device** or press the Periscope's physical reset button. The firmware waits approximately three seconds at startup so the USB console can reconnect before the boot banner is printed.
+After installation, wait for the blue setup light, open **Console Log**, and then select **Reset Device** or press the Periscope's physical reset button.
 
 During first-time setup, normal Periscope operation does not start. The firmware only displays the setup instructions and accepts the node ID and Master MAC. Wireless communication, lighting effects, sequences, and normal command processing remain inactive until both values have been saved.
 
@@ -100,7 +88,7 @@ The Periscope uses the node ID selected during first-time setup:
 Node ID: 2 through 13 (user selected)
 ```
 
-Save the Master configuration and power or reboot the Master.
+Select **Save Configuration**. The Master saves the device entry and reboots automatically when required.
 
 ---
 
@@ -146,7 +134,7 @@ The node ID and Master MAC are stored on the device and remain saved after power
 
 # Successful Connection
 
-When configuration is correct, the Periscope starts normally and appears in the Master's Devices tab. If its MAC has not yet been saved in a Master device slot, it may first appear as an **Unconfigured device**.
+When configuration is correct, the Periscope starts normally and appears in the Master's **Device Status** page. If its MAC has not yet been saved in a Master device slot, it may first appear as an **Unconfigured device**.
 
 Add the displayed Periscope MAC to an available Master device slot and save the Master configuration to complete setup. When the Master sends a command, the Periscope console shows the received command and resulting lighting action:
 
@@ -519,11 +507,11 @@ to the configured Periscope.
 1. Install Periscope firmware
 2. Copy the Periscope MAC from the installer console
 3. Add the Periscope MAC to the DroidLink Master
-4. Power or reboot the Master
+4. Select Save Configuration and allow the Master to reboot automatically when required
 5. Enter an unused Periscope node ID from 2 through 13
 6. Paste the Master MAC into the Periscope console
 7. Periscope saves the node ID and Master MAC, then reboots
-8. Confirm the Periscope appears in the Master's Devices tab
+8. Confirm the Periscope appears in the Master's Device Status page
 9. Send commands using :PS
 ```
 
@@ -543,16 +531,6 @@ Turns the Periscope lights off.
 
 ---
 
-# Viewing This README in VS Code
+# Continue
 
-Open `README.md` and press:
-
-```text
-CTRL + SHIFT + V
-```
-
-Or right-click inside the file and select:
-
-```text
-Open Preview
-```
+Return to the [Documentation Home](README.md) or review the [DroidLink Command Reference](DroidLink_Command_Reference.md).
