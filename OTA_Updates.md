@@ -2,7 +2,7 @@
 
 Remote OTA updates supported DroidLink firmware without requiring another USB installation. The update is requested from the device's configuration page, downloaded through DroidLink's update service, installed, and completed by the device automatically.
 
-This guide covers the Master Controller and Universal Slave. Other devices should be updated with the DroidLink Web Installer unless their current user guide specifically provides an OTA option.
+This guide covers the Master Controller. DroidLink Maestro and other devices should be updated with the DroidLink Web Installer unless their current user guide specifically provides an OTA option.
 
 ## Before updating
 
@@ -51,30 +51,6 @@ The Master may reboot more than once. This is expected. Wait until it finishes r
 ### 4. Verify the result
 
 Open the installer console or Master web interface and confirm the displayed firmware version. Verify the saved configuration, RC controls, drive and dome behavior, and connected devices before normal operation.
-
-## Update a Universal Slave
-
-### 1. Open Slave Config
-
-Enter Slave configuration mode from the Watch Display by selecting the Slave's Device ID. If the Slave cannot be reached remotely, use its documented manual configuration-button method.
-
-Connect to the Slave configuration hotspot and open:
-
-```text
-http://192.168.4.1
-```
-
-### 2. Request Remote OTA
-
-1. Confirm the Slave has the correct home Wi-Fi credentials.
-2. Turn on **Remote OTA**.
-3. Select **Save & Reboot**.
-
-The Slave reboots automatically, connects to the saved Wi-Fi network, and checks for the current authorized Slave release.
-
-### 3. Verify the result
-
-Allow the Slave to complete the update and all automatic reboots. Confirm the firmware version in the console, then verify its Device ID, assigned outputs, connection to the Master, and connected hardware.
 
 ## Troubleshooting
 

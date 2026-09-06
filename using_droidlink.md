@@ -1,145 +1,67 @@
 # Using DroidLink
 
-This section explains how DroidLink works once firmware is installed and devices are running normally.
+DroidLink is a modular control system made up of devices that work together without requiring an internet connection during normal operation.
 
-If you have completed the **Getting Started** guide and your devices boot without entering Setup Mode, you are in the right place.
+## Main components
 
----
+### Master Controller
 
-## What DroidLink is (in simple terms)
+Every DroidLink system has one Master Controller. It receives controls and button actions, applies the saved configuration, coordinates system state, controls drive and dome motors, and sends commands to other DroidLink devices.
 
-DroidLink is a modular control system made up of multiple devices that work together:
+### DroidLink Maestro
 
-- One **Master Controller**
-- One or more **Universal Slaves**
-- An optional **Display**
+DroidLink Maestro is the recommended replacement for the older Universal Slave firmware when using Pololu Maestro controllers.
 
-Each device has a specific role. Together, they form a complete control system for your droid.
+Each Maestro can be assigned one role:
 
----
+- Body
+- Dome
+- Lifter
+- Universal
 
-## Core components
+A Maestro receives commands from the Master and operates configured Maestro outputs, LED segments, physical switch actions, and saved sequences. Multiple Maestro devices can be used in one droid, provided each has a unique Device ID.
 
-### Master Controller (required)
+See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for installation and configuration.
 
-The Master is the “brain” of the system.
+### Dedicated devices
 
-It is responsible for:
-- Receiving inputs (buttons, controllers, display actions)
-- Making decisions based on configuration
-- Sending commands to connected Slaves
-- Coordinating system state
-- Controlling the drive and dome motors
+AstroPixels, MagicPanel, Periscope, AstroPixels PCA, and BodyPCA provide controls for their specific hardware. Follow the guide for each installed device.
 
-There is **only one Master** in a DroidLink system.
+### Watch Display
 
----
+The optional Watch Display provides system status, programmable buttons, and access to device configuration. It sends user actions to the Master rather than controlling mechanisms directly.
 
-### Universal Slaves
+## How a command moves through the system
 
-Slaves perform the actual work.
+1. A physical input, remote control, Watch Display button, or saved sequence starts an action.
+2. The Master interprets that action.
+3. The Master sends the appropriate command to the configured device.
+4. The receiving device operates its connected hardware.
 
-Depending on configuration, a Universal Slave may:
+This arrangement keeps configuration in known places and allows each device to report its status to the Master.
 
-- Drive serial devices (Maestro, Marcduino, etc.)
-- Control lighting or accessories
+## Normal operation
 
-Each Slave:
-- Connects to the Master automatically
-- Reports its capabilities to the Master
-- Responds only to commands sent by the Master
+After setup:
 
-You may use **multiple Slaves** in a single system.
+- Devices boot directly into normal operation.
+- Devices reconnect to the Master automatically.
+- Saved configuration remains after power is removed.
+- Internet access is not required for normal operation.
+- A missing or incorrectly configured device appears offline in Master Device Status.
 
----
+## Device identity
 
-### Display (optional)
+The Master uses Device ID `0` and the Watch Display uses Device ID `1`. Maestro controllers and dedicated devices use unique IDs from `2` through `13`.
 
-The Display provides:
-- System status
-- Visual feedback
-- Button Commands
-
-The Display does not control hardware directly.  
-It sends user actions to the Master, which decides what to do.
-
----
-
-## How DroidLink works conceptually
-
-DroidLink follows a simple flow:
-
-
-Examples:
-- A button press is sent to the Master
-- The Master interprets the action
-- A command is sent to the appropriate Slave
-- The Slave drives the hardware
-
-This separation keeps the system:
-- Predictable
-- Safer
-- Easier to expand
-
----
+The Master must contain each device's MAC address, and each device must contain the Master MAC address. Do not reuse a Device ID or MAC entry.
 
 ## Inputs, actions, and commands
 
-### Inputs
-Inputs are how you interact with the system. Examples include:
-- Physical buttons
-- Remote controls
-- Display buttons
-- SBUS or other control signals
+Inputs include physical switches, RC controls, and Watch Display buttons. An action is the behavior assigned to an input. Commands are the messages used to start those actions on the Master or another DroidLink device.
 
-### Actions
-An action is what the system *does* in response to an input.
+The configuration interfaces create most commands for you. See the [DroidLink Command Reference](DroidLink_Command_Reference.md) when entering commands manually.
 
-Examples:
-- Start a motor
-- Play a sound
-- Move a mechanism
-- Trigger a sequence
+## Continue
 
-### Commands
-Commands are the messages the Master sends to Slaves to perform actions.
-  
-Configuration tools handle this for you.
-
----
-
-## System behavior you should expect
-
-In normal operation:
-- Devices boot directly into run mode
-- Slaves automatically reconnect to the Master
-- The system operates without internet access
-- Configuration persists across power cycles
-
-If a device cannot operate normally, it will:
-- Enter Setup Mode
-- Or appear offline to the Master
-
-This behavior is intentional and helps with recovery.
-
----
-
-## What this guide does not cover
-
-This page explains **how the system works**, not how to build or wire it.
-
-The following topics are covered in later sections:
-- Wiring hardware
-- Power requirements
-- Creating buttons
-- Assigning actions
-- Customizing behavior
-
----
-
-## ➡️ Next Step
-
-Now that you understand how the system works,  
-proceed to hardware wiring.
-
-👉 **[Master Wiring and Connections →](Master_Wiring_and_Connections.md)**
+Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for Maestro-controlled mechanisms.

@@ -416,4 +416,4 @@ Before continuing verify:
 
 Proceed to the next guide:
 
-👉 **[Universal Slave Wiring](Slave_Wiring.md)**
+Continue with **[Using DroidLink Maestro](Using_DroidLink_Maestro.md)** for Maestro wiring, installation, and configuration.

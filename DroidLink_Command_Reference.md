@@ -1,6 +1,6 @@
 # 📘 DroidLink Command Reference
 
-DroidLink uses a structured ASCII command system to control Master logic, Slave devices, and connected serial hardware.
+DroidLink uses a structured ASCII command system to control Master logic, DroidLink Maestro controllers, dedicated devices, and connected hardware.
 
 These commands are used by:
 
@@ -43,25 +43,33 @@ The sections below document native DroidLink commands.
 
 
 
-## 🔹 Slave Slot Commands (Maestro Only)
+## 🔹 DroidLink Maestro sequence commands
 
-These commands instruct a Slave device to execute a stored Maestro command.
+These commands instruct a DroidLink Maestro to run a saved sequence.
 
 The following prefixes are reserved exclusively for Maestro-controlled outputs:
 
-:BSnn  → Body Slave Maestro slot  
-:LSnn  → Lifter Slave Maestro slot  
-:DSnn  → Dome Slave Maestro slot  
+`:BSnn` → Body Maestro sequence
 
-`nn` = two-digit slot number stored on that Slave.
+`:LSnn` → Lifter Maestro sequence
 
-When triggered, the Slave executes the configured Maestro command for that slot.
+`:DSnn` → Dome Maestro sequence
+
+`:USnn` → Universal Maestro sequence
+
+`nn` = two-digit shortcut assigned on that Maestro.
+
+When triggered, the Maestro runs the sequence assigned to that shortcut.
 
 Examples:
 
-:BS01  → Body Slave runs Maestro slot 01  
-:LS02  → Lifter Slave runs Maestro slot 02  
-:DS03  → Dome Slave runs Maestro slot 03  
+`:BS01` → Body Maestro runs sequence 01
+
+`:LS02` → Lifter Maestro runs sequence 02
+
+`:DS03` → Dome Maestro runs sequence 03
+
+`:US04` → Universal Maestro runs sequence 04
 
 These commands are dedicated to Maestro control and are not used for other device types.
 ---
@@ -316,8 +324,8 @@ Example:
 
 This will:
 
-1. Trigger Body Slave slot 01  
-2. Then trigger Dome Slave slot 02  
+1. Trigger Body Maestro sequence 01
+2. Then trigger Dome Maestro sequence 02
 
 ---
 
@@ -335,9 +343,9 @@ Example:
 
 This will:
 
-1. Trigger Body Slave slot 01  
+1. Trigger Body Maestro sequence 01
 2. Wait 1000 milliseconds  
-3. Trigger Dome Slave slot 02  
+3. Trigger Dome Maestro sequence 02
 
 ---
 
@@ -368,7 +376,7 @@ Example:
 
 This will:
 
-1. Trigger Body Slave slot 01  
+1. Trigger Body Maestro sequence 01
 2. Wait 500 milliseconds  
 3. Send `@APLE51000` to AstroPixelsPlus  
 
@@ -383,7 +391,7 @@ You now have a complete overview of all supported native DroidLink command forma
 This document defines:
 
 - Master-level control commands  
-- Slave Maestro slot execution  
+- DroidLink Maestro sequence execution
 - Dome control commands  
 - Audio system commands  
 - External serial command compatibility  
@@ -391,7 +399,7 @@ This document defines:
 
 DroidLink is built around a structured, predictable ASCII command system designed for reliability, flexibility, and clean expansion.
 
-Whether you are triggering simple slot actions or building timed multi-device behaviors, the command system provides consistent control across Master, Slave, and connected serial hardware.
+Whether you are triggering saved actions or building timed multi-device behaviors, the command system provides consistent control across the Master, Maestro controllers, and dedicated devices.
 
 For advanced integrations, external hardware behavior, or device-specific command syntax, refer to the official documentation of the supported platforms.
 

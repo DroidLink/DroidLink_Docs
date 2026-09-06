@@ -11,20 +11,20 @@ No programming, compiling, or IDE is required.
 - A DroidLink license key
 - A 2.4 GHz home Wi-Fi network with internet access for activation and updates
 - A DroidLink Master Controller
-- Any optional Watch Display, Universal Slaves, or dedicated DroidLink devices
+- Any optional Watch Display, DroidLink Maestro controllers, or dedicated DroidLink devices
 
 ## Before connecting hardware
 
 - Keep drive wheels raised and mechanisms disconnected during initial testing.
 - Use stable power and a common ground where required by the wiring guides.
 - Record every device MAC address and its assigned Device ID.
-- Give every Slave or dedicated device a unique ID from 2 through 13.
+- Give every Maestro or dedicated device a unique ID from 2 through 13.
 
 ## Recommended installation order
 
 1. Master Controller
 2. Watch Display, if used
-3. Universal Slaves and dedicated DroidLink devices
+3. DroidLink Maestro controllers and dedicated DroidLink devices
 4. Add every installed device to the Master
 5. Verify Device Status and test commands
 6. Create configuration backups
@@ -41,7 +41,7 @@ The Master must activate before the installer makes dependent firmware available
 6. Wait for installation to finish.
 7. Open **Logs & Console** and select **Reset Device** if the boot instructions are not already visible.
 
-Record the Master MAC shown in the console. Every Display, Slave, and dedicated device needs this address during setup.
+Record the Master MAC shown in the console. Every Display, Maestro, and dedicated device needs this address during setup.
 
 On first boot, the Master creates this setup network:
 
@@ -95,21 +95,22 @@ In **System Setup**:
 
 The Master saves and reboots automatically. After both devices return to normal operation, confirm that the Display shows a Master connection.
 
-## 4. Install a Universal Slave
+## 4. Install DroidLink Maestro
 
-Repeat this section for each Universal Slave.
+DroidLink Maestro replaces the older Universal Slave firmware for Pololu Maestro output control. Repeat this section for each Body, Dome, Lifter, or Universal Maestro.
 
-1. Install the current **Universal Slave** firmware with the DroidLink Web Installer.
-2. Open **Logs & Console** and reset the Slave if setup instructions are not visible.
-3. Record the Slave MAC.
-4. Follow the console instructions to open the Slave configuration page.
-5. Assign a unique Device ID from 2 through 13.
-6. Enter the Master MAC.
-7. Assign at least one output and configure its connected device.
-8. Enter Wi-Fi credentials only if Remote OTA will be used.
-9. Select **Save & Reboot**.
+The Maestro option is not yet present in the public Web Installer. Do not install Universal Slave as a substitute. When **DroidLink Maestro** becomes available in the Installer:
 
-The Slave saves its settings and restarts automatically. See the [Slave Interface Guide](Slave_Interface_Guide.md) for output and serial configuration.
+1. Install it with **Erase Flash** enabled for the first installation.
+2. Open **Logs & Console** and reset the ESP32-C3 if setup instructions are not visible.
+3. Record the Maestro Device MAC.
+4. Assign a unique Device ID from 2 through 13.
+5. Select its Body, Dome, Lifter, or Universal role.
+6. Enter the connected Maestro controller count, channel counts, and device numbers.
+7. Enter the Master MAC.
+8. Allow it to save and reboot.
+
+See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for required hardware, pin connections, Pololu Maestro setup, Web Config, calibration, and sequences.
 
 ## 5. Install a dedicated DroidLink device
 
@@ -125,14 +126,14 @@ During setup, record the device MAC, enter the Master MAC, and assign a unique D
 
 Testing firmware should only be installed when the user understands that it has not yet been promoted to a current stable release.
 
-## 6. Add Slaves and dedicated devices to the Master
+## 6. Add Maestro and dedicated devices to the Master
 
 Open Master System Setup using forced configuration mode or normal Runtime Web Config.
 
 For each device:
 
-1. Add a DroidLink Slave entry.
-2. Enter a helpful name such as `Body Slave`, `AstroPixels`, or `Periscope`.
+1. Select **Add Slave**. This is the current Master interface label for adding a Maestro or dedicated DroidLink device.
+2. Enter a helpful name such as `Body Maestro`, `AstroPixels`, or `Periscope`.
 3. Enter the exact device MAC.
 4. Confirm its Device ID is unique across the droid.
 
