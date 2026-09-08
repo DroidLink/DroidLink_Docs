@@ -5,7 +5,7 @@ Welcome to the public user documentation for DroidLink.
 These guides explain how to install, configure, operate, update, and troubleshoot a DroidLink system. No programming experience is required.
 
 - A license is required to download firmware with the DroidLink Web Installer.
-- Licenses are $60 per droid.
+- Licenses are $80 per droid.
 - Contact: droidlink77@gmail.com
 
 ## Safety and liability notice
