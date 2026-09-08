@@ -15,9 +15,9 @@ The examples below use the Body prefix. Replace `BS` with the prefix for the con
 
 | Command | Action |
 |---|---|
-| `:BS00`–`:BS31` | Run an assigned Maestro or combined Maestro/LED sequence |
+| `:BS00` through `:BS31` | Run an assigned Maestro or combined Maestro/LED sequence |
 | `:BS80` | Stop LED effects and turn off the complete LED strip |
-| `:BS81`–`:BS99` | Run an assigned LED-only sequence |
+| `:BS81` through `:BS99` | Run an assigned LED-only sequence |
 
 Slots `32` through `79` are reserved and currently have no user assignment.
 
@@ -35,7 +35,6 @@ Slots `32` through `79` are reserved and currently have no user assignment.
 | Command | Action |
 |---|---|
 | `:BS,BX` | Stop playback, servo motion, LED effects, and Maestro outputs |
-| `:BS,BD,index` | Stop and disable one zero-based output index |
 
 `BX` is the normal command-level emergency stop. Keep a physical power disconnect available whenever mechanisms are being tested.
 

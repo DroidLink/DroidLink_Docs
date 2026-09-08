@@ -4,7 +4,7 @@ DroidLink Maestro is the recommended replacement for the older DroidLink Univers
 
 The built-in web interface is used to name outputs, calibrate servos, configure LEDs and switches, build sequences, and assign DroidLink commands. Pololu Maestro scripts are not required.
 
-> DroidLink Maestro is being prepared for the DroidLink Web Installer. Do not select Universal Slave as a substitute. Install Maestro only when a DroidLink Maestro option is shown in the Installer.
+> DroidLink Maestro is not currently listed in the public DroidLink Web Installer. Do not select Universal Slave as a substitute. Install Maestro only when a DroidLink Maestro option is shown in the Installer.
 
 ## What you need
 
@@ -161,7 +161,12 @@ See the [DroidLink Maestro Command Reference](DroidLink_Maestro_Command_Referenc
 
 Calibration, output settings, groups, LED settings, switches, and shortcut assignments are stored in flash. Named sequences are stored in the Maestro filesystem.
 
-Download an all-presets backup after significant changes. **Erase Flash** removes first-time setup values and can remove calibration, settings, and sequences.
+Back up the parts that can currently be exported:
+
+1. Export the output template for output names, output types, and groups.
+2. Export all sequences for sequence actions and shortcut assignments.
+
+These are separate files. There is not currently one full-device backup containing calibration, Device ID, Master MAC, switch settings, LED configuration, and sequences. **Erase Flash** removes first-time setup and can remove all saved settings, so record safe calibration values separately before erasing.
 
 ## Troubleshooting
 
