@@ -13,10 +13,8 @@ Some older releases do not have a recorded release date or detailed public notes
 | Master Controller | V2.0.1 | Current |
 | Universal Slave | V1.5 | Current |
 | Watch Display | V2.0.0 | Current |
-| AstroPixels | V1.4 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| AstroPixels PCA | V1.1 | Testing |
 | DroidLink BodyPCA | V1.0.0 | Testing |
 | DroidLink_AP | V1.0.0 | Paid upgrade |
 
@@ -96,7 +94,7 @@ Some older releases do not have a recorded release date or detailed public notes
 - Previous Universal Slave firmware distributed through the DroidLink installer.
 - Detailed public release notes were not recorded.
 
-## AstroPixels
+## DroidLink_AP
 
 ### DroidLink_AP V1.0.0 — September 11, 2026
 
@@ -107,16 +105,6 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added `:AP00` through `:AP31` for saved AstroPixels lighting and text sequences.
 - Added dedicated setup guides for Maestro, PCA, and Marcduino installations.
 - This release requires paid-upgrade access on the DroidLink license.
-
-### V1.4 — July 2026
-
-- Added the updated AstroPixels effects and servo-control firmware.
-- Added persistent holoprojector servo limits.
-- Expanded supported Maestro script commands.
-- Improved startup pairing and device discovery.
-- Corrected holoprojector servo pin assignments.
-
-V1.4 is the earliest AstroPixels release recorded as user-accessible through the official installer.
 
 ## MagicPanel
 
@@ -138,20 +126,6 @@ V1.4 is the earliest AstroPixels release recorded as user-accessible through the
 - Starts with its LEDs off until an ON command is received.
 - Added saved sequence selection and Periscope lighting commands.
 - Improved first-time setup validation and startup behavior.
-
-## AstroPixels PCA
-
-### V1.1 — August 29, 2026 — Testing
-
-- Corrected command parsing and suffix handling.
-- Improved compatibility with supported AstroPixels command formats.
-- Distributed as testing firmware rather than a stable general release.
-
-### V1.0 — August 29, 2026 — Testing
-
-- Initial DroidLink AstroPixels PCA integration.
-- Added DroidLink setup, device identification, and PCA9685 output control.
-- Distributed as testing firmware rather than a stable general release.
 
 ## DroidLink BodyPCA
 

@@ -86,9 +86,9 @@ Command:
 
 This button will:
 
-1. Scroll "DroidLink" on the Rear Logic Display (AstroPixelsplus)  
+1. Scroll "DroidLink" on the Rear Logic Display (DroidLink_AP)
 2. Wait 5 seconds  
-3. Set AstroPixels to failure mode  
+3. Set DroidLink_AP to failure mode
 
 This demonstrates chaining external serial commands with a delay between them.
 

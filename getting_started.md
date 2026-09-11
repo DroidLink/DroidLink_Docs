@@ -114,12 +114,13 @@ See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for required hardware,
 
 ## 5. Install a dedicated DroidLink device
 
-AstroPixels, MagicPanel, Periscope, AstroPixels PCA, and BodyPCA use device-specific first-time setup. Install only the devices present in the droid.
+DroidLink_AP, MagicPanel, Periscope, and BodyPCA use device-specific first-time setup. Install only the devices present in the droid.
 
 During setup, record the device MAC, enter the Master MAC, and assign a unique Device ID from 2 through 13. Then follow the appropriate guide:
 
-- [AstroPixels](DroidLink_AstroPixels.md)
-- [AstroPixels PCA](Using_DroidLink_AstroPixelsPCA.md)
+- [DroidLink_AP Maestro setup](DroidLink_AP_Maestro_Setup.md)
+- [DroidLink_AP PCA setup](DroidLink_AP_PCA_Setup.md)
+- [DroidLink_AP Marcduino setup](DroidLink_AP_Marcduino_Setup.md)
 - [MagicPanel](Using_DroidLink_MagicPanel.md)
 - [Periscope](Using_DroidLink_Periscope.md)
 - [BodyPCA](Using_DroidLink_BodyPCA.md)
@@ -133,7 +134,7 @@ Open Master System Setup using forced configuration mode or normal Runtime Web C
 For each device:
 
 1. Select **Add Slave**. This is the current Master interface label for adding a Maestro or dedicated DroidLink device.
-2. Enter a helpful name such as `Body Maestro`, `AstroPixels`, or `Periscope`.
+2. Enter a helpful name such as `Body Maestro`, `DroidLink_AP`, or `Periscope`.
 3. Enter the exact device MAC.
 4. Confirm its Device ID is unique across the droid.
 

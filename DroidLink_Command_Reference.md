@@ -9,7 +9,7 @@ These commands are used by:
 - RC Input Mapping  
 - Serial input mode  
 
-External systems such as MarcDuino, Teeces, and AstroPixels are supported through the appropriate configured DroidLink device.
+External systems such as MarcDuino and Teeces are supported through the appropriate configured DroidLink device.
 
 ---
 
@@ -20,7 +20,6 @@ For full command references, see the official documentation below:
 
  
 - [MarcDuino / Teeces Command Reference](https://www.curiousmarc.com/r2-d2/marcduino-system/marcduino-software-reference/marcduino-command-reference)
-- [AstroPixels (AstroPixelPlus) Command Reference](https://github.com/reeltwo/AstroPixelsPlus/tree/main)
 
 These external command sets are maintained by their respective developers.
 DroidLink supports them via serial forwarding only.
@@ -32,7 +31,7 @@ All native DroidLink commands begin with the `:` prefix.
 DroidLink also supports serial command forwarding to:
 
 - MarcDuino / Teeces  
-- AstroPixels  
+- DroidLink_AP
 - Custom serial extensions  
 
 The sections below document native DroidLink commands.
@@ -378,7 +377,7 @@ This will:
 
 1. Trigger Body Maestro sequence 01
 2. Wait 500 milliseconds  
-3. Send `@APLE51000` to AstroPixelsPlus  
+3. Send `@APLE51000` to DroidLink_AP
 
 Chaining allows complex, timed behaviors using structured ASCII commands without requiring scripting.
 

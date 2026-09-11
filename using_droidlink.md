@@ -25,7 +25,7 @@ See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for installation and c
 
 ### Dedicated devices
 
-AstroPixels, MagicPanel, Periscope, AstroPixels PCA, and BodyPCA provide controls for their specific hardware. Follow the guide for each installed device.
+DroidLink_AP, MagicPanel, Periscope, and BodyPCA provide controls for their specific hardware. Follow the guide for each installed device.
 
 ### Watch Display
 
