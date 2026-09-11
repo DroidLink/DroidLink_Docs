@@ -18,6 +18,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Periscope | V1.0 | Current |
 | AstroPixels PCA | V1.1 | Testing |
 | DroidLink BodyPCA | V1.0.0 | Testing |
+| DroidLink_AP | V1.0.0 | Paid upgrade |
 
 ## Master Controller
 
@@ -96,6 +97,16 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## AstroPixels
+
+### DroidLink_AP V1.0.0 — September 11, 2026
+
+- Added one firmware for Maestro, PCA9685, or Marcduino output controllers.
+- Added guided first-time controller selection and setup.
+- Added browser configuration for outputs, lighting, holoprojectors, and reusable sequences where supported.
+- Added `:DS00` through `:DS59` for saved Maestro and PCA output sequences.
+- Added `:AP00` through `:AP31` for saved AstroPixels lighting and text sequences.
+- Added dedicated setup guides for Maestro, PCA, and Marcduino installations.
+- This release requires paid-upgrade access on the DroidLink license.
 
 ### V1.4 — July 2026
 

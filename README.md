@@ -59,6 +59,11 @@ Follow the guides in this order:
 - [DroidLink Maestro](Using_DroidLink_Maestro.md) — replacement for the older Universal Slave firmware
 - [DroidLink Maestro Command Reference](DroidLink_Maestro_Command_Reference.md)
 - [AstroPixels](DroidLink_AstroPixels.md)
+- **DroidLink_AP** — choose the guide for your installed output controller:
+  - [Maestro setup](DroidLink_AP_Maestro_Setup.md)
+  - [PCA setup](DroidLink_AP_PCA_Setup.md)
+  - [Marcduino setup](DroidLink_AP_Marcduino_Setup.md)
+  - [Command Reference](DroidLink_AP_Command_Reference.md)
 - [AstroPixels PCA](Using_DroidLink_AstroPixelsPCA.md) — testing firmware
 - [Periscope Logic Lights](Using_DroidLink_Periscope.md) ([PDF](Using_DroidLink_Periscope.pdf))
 - [MagicPanel setup](Using_DroidLink_MagicPanel.md) ([PDF](Using_DroidLink_MagicPanel.pdf))
