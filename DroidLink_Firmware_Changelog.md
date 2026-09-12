@@ -16,7 +16,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
 | DroidLink BodyPCA | V1.0.0 | Testing |
-| DroidLink_AP | V1.0.0 | Paid upgrade |
+| DroidLink_AP | V1.1.0 | Current |
 
 ## Master Controller
 
@@ -96,6 +96,23 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## DroidLink_AP
 
+### DroidLink_AP V1.1.0 — September 11, 2026
+
+- Added complete controller backup and restore for calibration, groups,
+  lighting, holo settings, sequences, command assignments, and Web Config
+  settings.
+- Added the command reference and mode-specific operating instructions directly
+  to Web Config.
+- Added saved-storage usage information on the Welcome page.
+- Added clearer calibration controls, including unsaved-output warnings, holo
+  direction labels, and center testing.
+- Output templates now preserve existing calibrated endpoints and saved output
+  states.
+- Corrected the front, rear, and top holo assignments in the Maestro and PCA
+  dome templates.
+- Improved saved LED-sequence editing, preview behavior, and Web Config setup
+  instructions.
+
 ### DroidLink_AP V1.0.0 — September 11, 2026
 
 - Added one firmware for Maestro, PCA9685, or Marcduino output controllers.
@@ -103,8 +120,9 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added browser configuration for outputs, lighting, holoprojectors, and reusable sequences where supported.
 - Added `:DS00` through `:DS59` for saved Maestro and PCA output sequences.
 - Added `:AP00` through `:AP31` for saved AstroPixels lighting and text sequences.
-- Added dedicated setup guides for Maestro, PCA, and Marcduino installations.
-- This release requires paid-upgrade access on the DroidLink license.
+- Added dedicated setup information for Maestro, PCA, and Marcduino
+  installations.
+- Replaced in the Installer by V1.1.0.
 
 ## MagicPanel
 

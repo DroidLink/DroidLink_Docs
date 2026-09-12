@@ -118,9 +118,7 @@ DroidLink_AP, MagicPanel, Periscope, and BodyPCA use device-specific first-time 
 
 During setup, record the device MAC, enter the Master MAC, and assign a unique Device ID from 2 through 13. Then follow the appropriate guide:
 
-- [DroidLink_AP Maestro setup](DroidLink_AP_Maestro_Setup.md)
-- [DroidLink_AP PCA setup](DroidLink_AP_PCA_Setup.md)
-- [DroidLink_AP Marcduino setup](DroidLink_AP_Marcduino_Setup.md)
+- [DroidLink_AP installation and setup](Using_DroidLink_AP.md)
 - [MagicPanel](Using_DroidLink_MagicPanel.md)
 - [Periscope](Using_DroidLink_Periscope.md)
 - [BodyPCA](Using_DroidLink_BodyPCA.md)
