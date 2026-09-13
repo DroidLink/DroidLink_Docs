@@ -1,6 +1,6 @@
-# DroidLink Maestro Command Reference
+# DroidLink Slave Command Reference
 
-DroidLink Maestro uses a prefix based on its configured role.
+DroidLink Slave uses a prefix based on its configured role.
 
 | Role | Shortcut prefix | Command envelope |
 |---|---|---|
@@ -9,17 +9,18 @@ DroidLink Maestro uses a prefix based on its configured role.
 | Lifter | `:LS` | `:LS,` |
 | Universal | `:US` | `:US,` |
 
-The examples below use the Body prefix. Replace `BS` with the prefix for the configured Maestro role.
+The examples below use the Body prefix. Replace `BS` with the prefix for the configured Slave role.
 
 ## Saved sequence shortcuts
 
 | Command | Action |
 |---|---|
-| `:BS00` through `:BS31` | Run an assigned Maestro or combined Maestro/LED sequence |
-| `:BS80` | Stop LED effects and turn off the complete LED strip |
-| `:BS81` through `:BS99` | Run an assigned LED-only sequence |
+| `:BS00` through `:BS59` | Run an assigned servo-only or combined servo/LED sequence |
+| `:BS60` | Restore the saved startup LED sequence |
+| `:BS61` | Stop LED effects and turn off the complete LED strip |
+| `:BS62` through `:BS91` | Run an assigned LED-only sequence |
 
-Slots `32` through `79` are reserved and currently have no user assignment.
+Create and assign these sequences in Web Config. The Commands tab automatically shows the prefix selected for the device role.
 
 ## Sequence controls
 
@@ -34,7 +35,9 @@ Slots `32` through `79` are reserved and currently have no user assignment.
 
 | Command | Action |
 |---|---|
-| `:BS,BX` | Stop playback, servo motion, LED effects, and Maestro outputs |
+| `:BS,STOP` | Cancel all actions, stop continuous outputs, turn On/Off outputs off, release positional outputs, and turn configured LEDs off |
+| `:BS,HOME` | Cancel all actions, return positional outputs to their saved Closed positions, turn On/Off outputs off, and stop 360-degree servos |
+| `:BS,BX` | Stop playback, servo motion, LED effects, and active controller outputs |
 
 `BX` is the normal command-level emergency stop. Keep a physical power disconnect available whenever mechanisms are being tested.
 
@@ -68,4 +71,4 @@ Examples:
 
 Most users should create motion and lighting actions with Web Config instead of entering low-level calibration or pulse commands manually.
 
-Return to [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for installation, wiring, calibration, sequences, backups, and troubleshooting.
+Return to [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation, wiring, calibration, sequences, backups, and troubleshooting.

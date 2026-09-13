@@ -31,7 +31,7 @@ New users should begin with [Getting Started](getting_started.md). It covers:
 
 1. Installing and activating the Master
 2. Installing the optional Watch Display
-3. Installing DroidLink Maestro and dedicated DroidLink devices
+3. Installing DroidLink Slave and dedicated DroidLink devices
 4. Adding device MAC addresses to the Master
 5. Verifying Device Status
 6. Creating configuration backups
@@ -43,8 +43,8 @@ Follow the guides in this order:
 1. [Getting Started](getting_started.md) — installation, activation, pairing, verification, and backups
 2. [Using DroidLink](using_droidlink.md) — system overview
 3. [Master Wiring and Connections](Master_Wiring_and_Connections.md) — power and hardware wiring
-4. [Using DroidLink Maestro](Using_DroidLink_Maestro.md) — installation, wiring, outputs, LEDs, switches, and sequences
-5. [DroidLink Maestro Command Reference](DroidLink_Maestro_Command_Reference.md) — role commands and saved-sequence shortcuts
+4. [Using DroidLink Slave](Using_DroidLink_Slave.md) — installation, wiring, outputs, LEDs, switches, and sequences
+5. [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) — role commands and saved-sequence shortcuts
 6. [Master Interface Guide](Master_Interface_Guide.md) — Master configuration and operation
 7. [Display Interface Guide](Display_Interface_Guide.md) — Watch Display configuration and operation
 8. [DroidLink Command Reference](DroidLink_Command_Reference.md) — supported command syntax
@@ -56,8 +56,8 @@ Follow the guides in this order:
 
 ## Device guides
 
-- [DroidLink Maestro](Using_DroidLink_Maestro.md) — replacement for the older Universal Slave firmware
-- [DroidLink Maestro Command Reference](DroidLink_Maestro_Command_Reference.md)
+- [DroidLink Slave](Using_DroidLink_Slave.md) — replacement for the older Universal Slave firmware
+- [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md)
 - **DroidLink_AP**:
   - [Installation and setup](Using_DroidLink_AP.md)
   - [Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)

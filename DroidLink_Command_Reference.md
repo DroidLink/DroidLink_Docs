@@ -1,6 +1,6 @@
 # 📘 DroidLink Command Reference
 
-DroidLink uses a structured ASCII command system to control Master logic, DroidLink Maestro controllers, dedicated devices, and connected hardware.
+DroidLink uses a structured ASCII command system to control Master logic, DroidLink Slave controllers, dedicated devices, and connected hardware.
 
 These commands are used by:
 
@@ -42,9 +42,9 @@ The sections below document native DroidLink commands.
 
 
 
-## 🔹 DroidLink Maestro sequence commands
+## 🔹 DroidLink Slave sequence commands
 
-These commands instruct a DroidLink Maestro to run a saved sequence.
+These commands instruct a DroidLink Slave to run a saved sequence.
 
 The following prefixes are reserved exclusively for Maestro-controlled outputs:
 
@@ -390,7 +390,7 @@ You now have a complete overview of all supported native DroidLink command forma
 This document defines:
 
 - Master-level control commands  
-- DroidLink Maestro sequence execution
+- DroidLink Slave sequence execution
 - Dome control commands  
 - Audio system commands  
 - External serial command compatibility  

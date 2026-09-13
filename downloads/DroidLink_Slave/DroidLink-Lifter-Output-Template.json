@@ -1,0 +1,20 @@
+{
+  "format": "DroidLinkMaestroOutputTemplate",
+  "version": 1,
+  "name": "R2 FIVE LIFTERS",
+  "role": "Lifter",
+  "created": "2026-09-05T00:00:00.000Z",
+  "functions": [
+    { "key": "LIFEFORM_UP", "name": "LIFEFORM_UP", "mode": "OUTPUT", "defaultOutput": 0 },
+    { "key": "LIFEFORM_DOWN", "name": "LIFEFORM_DOWN", "mode": "OUTPUT", "defaultOutput": 1 },
+    { "key": "SABER_UP", "name": "SABER_UP", "mode": "OUTPUT", "defaultOutput": 2 },
+    { "key": "SABER_DOWN", "name": "SABER_DOWN", "mode": "OUTPUT", "defaultOutput": 3 },
+    { "key": "ZAPPER_UP", "name": "ZAPPER_UP", "mode": "OUTPUT", "defaultOutput": 4 },
+    { "key": "ZAPPER_DOWN", "name": "ZAPPER_DOWN", "mode": "OUTPUT", "defaultOutput": 5 },
+    { "key": "BAD_MOT_UP", "name": "BAD_MOT_UP", "mode": "OUTPUT", "defaultOutput": 6 },
+    { "key": "BAD_MOT_DOWN", "name": "BAD_MOT_DOWN", "mode": "OUTPUT", "defaultOutput": 7 },
+    { "key": "PERISCOPE_UP", "name": "PERISCOPE_UP", "mode": "OUTPUT", "defaultOutput": 8 },
+    { "key": "PERISCOPE_DOWN", "name": "PERISCOPE_DOWN", "mode": "OUTPUT", "defaultOutput": 9 }
+  ],
+  "groups": []
+}

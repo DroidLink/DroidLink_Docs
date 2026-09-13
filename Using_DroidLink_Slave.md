@@ -1,15 +1,15 @@
-# Using DroidLink Maestro
+# Using DroidLink Slave
 
-DroidLink Maestro is the recommended replacement for the older DroidLink Universal Slave firmware when controlling Pololu Maestro outputs. One ESP32 can be configured as a Body, Dome, Lifter, or Universal Maestro and can control one or two chained Pololu Maestro controllers.
+DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
 
 The built-in web interface is used to name outputs, calibrate servos, configure LEDs and switches, build sequences, and assign DroidLink commands. Pololu Maestro scripts are not required.
 
-> DroidLink Maestro is not currently listed in the public DroidLink Web Installer. Do not select Universal Slave as a substitute. Install Maestro only when a DroidLink Maestro option is shown in the Installer.
+> DroidLink Slave is currently offered as testing firmware. Install it only if your license has access, and do not select the legacy Universal Slave as a substitute.
 
 ## What you need
 
 - ESP32-C3 Super Mini or ESP32 DevKit
-- One or two Pololu Maestro controllers
+- One or two Pololu Maestro controllers, or one or two PCA9685 boards
 - USB data cable
 - Separate, correctly sized and fused power supplies for servos and LEDs
 - DroidLink Master MAC address
@@ -20,10 +20,10 @@ Disconnect servo horns and mechanical linkages during installation and initial c
 
 ## Choose the correct board in the Installer
 
-DroidLink Maestro has separate Installer choices because the two supported boards use different pins and bootloaders. Select the entry that exactly matches the board connected by USB:
+DroidLink Slave has separate Installer choices because the two supported boards use different pins and bootloaders. Select the entry that exactly matches the board connected by USB:
 
-- **DroidLink Maestro — ESP32-C3 Super Mini**
-- **DroidLink Maestro — ESP32 DevKit**
+- **DroidLink Slave — ESP32-C3 Super Mini**
+- **DroidLink Slave — ESP32 DevKit**
 
 Do not install one board's build on the other board.
 
@@ -33,18 +33,27 @@ Do not install one board's build on the other board.
 |---|---:|---:|---|
 | Configurable switch input 1 | GPIO0 | GPIO32 | No |
 | Configurable switch input 2 | GPIO1 | GPIO33 | No |
+| Configurable switch input 3 | GPIO3 | GPIO25 | No |
+| Configurable switch input 4 | GPIO10 | GPIO26 | No |
 | NeoPixel-compatible LED data | GPIO4 | GPIO4 | No |
 | Web Config button | Onboard BOOT / GPIO9 | Onboard BOOT / GPIO0 | Built in |
 | Command-status LED | GPIO8 | GPIO2 | Built in |
 | Maestro serial RX reserve; do not connect | GPIO20 | GPIO16 | No |
 | Serial TX to Maestro RX | GPIO21 | GPIO17 | Yes |
+| PCA9685 SDA | GPIO5 | GPIO21 | PCA installations only |
+| PCA9685 SCL | GPIO6 | GPIO22 | PCA installations only |
+| PCA9685 output enable | GPIO7 | GPIO27 | PCA installations only |
 | Common ground | GND | GND | Yes |
 
-The two configurable switch inputs use internal pull-up resistors. Configure each input in Web Config before connecting or operating a switch.
+The four configurable switch inputs use internal pull-up resistors. Configure each input in Web Config before connecting or operating a switch.
 
 Do not power servos or an LED strip from the ESP32. The GPIO4 LED output is a data signal only. A 330–470 ohm data resistor and a suitable 3.3-to-5 V logic-level shifter are recommended for 5 V LED strips.
 
-## Configure the Maestro controllers
+## Prepare the servo controllers
+
+For PCA9685 installations, use address `0x40` for the first board and `0x41` for the second board. Connect SDA, SCL, output enable, and common ground using the board-specific pins above.
+
+For Pololu Maestro installations, use Maestro Control Center before connecting the controllers to the ESP32:
 
 Use Pololu Maestro Control Center before connecting the Maestro controllers to the ESP32:
 
@@ -57,16 +66,16 @@ Use Pololu Maestro Control Center before connecting the Maestro controllers to t
 
 Connect the board's serial TX pin—GPIO21 on the ESP32-C3 or GPIO17 on the ESP32 DevKit—to the RX input of every Maestro in the serial chain. Connect all grounds together. The reserved RX pin is not used.
 
-During DroidLink Maestro setup, select the actual number of Maestro controllers, the channel count of each controller, and the same device numbers saved in Maestro Control Center.
+During DroidLink Slave setup, select the actual number of Maestro controllers, the channel count of each controller, and the same device numbers saved in Maestro Control Center.
 
 ## Install the firmware
 
-When DroidLink Maestro is available in the Web Installer:
+To install DroidLink Slave from the Web Installer:
 
 1. Open the [DroidLink Web Installer](https://droidlink.github.io/DroidLink_Installer/) in Chrome or Edge.
 2. Enter the DroidLink license key.
 3. Connect the ESP32 with a USB data cable.
-4. Select the DroidLink Maestro entry that exactly matches your ESP32 board.
+4. Select the DroidLink Slave entry that exactly matches your ESP32 board.
 5. For a first installation or complete reset, enable **Erase Flash**.
 6. Select **Install Firmware** and choose the correct serial device.
 7. When installation finishes, open **Logs & Console** and reset the ESP32 if the setup prompt is not visible.
@@ -77,38 +86,38 @@ Follow the prompts in the Installer console:
 
 1. Enter a unique Device ID from `2` through `13`.
 2. Select the role: Body, Dome, Lifter, or Universal.
-3. Select one or two Maestro controllers.
-4. Select the channel count for Maestro A and, if used, Maestro B.
-5. Enter each Maestro device number. These must match Maestro Control Center.
+3. Select the servo-controller type: Pololu Maestro or PCA9685.
+4. Select one or two controllers.
+5. For Maestro, select each controller's channel count and enter its saved device number. For PCA9685, the firmware uses addresses `0x40` and `0x41`.
 6. Enter the DroidLink Master MAC address.
 7. Allow the controller to save and reboot.
 
 Record the Device MAC shown near the top of the console. In Master System Setup, select **Add Slave** (the current interface label for a Maestro or dedicated device), enter a useful name and the Device MAC, then save the Master configuration.
 
-Each DroidLink device must have a unique Device ID. The Maestro will not start normal output operation until its required setup values are valid.
+Each DroidLink device must have a unique Device ID. The Slave will not start normal output operation until its required setup values are valid.
 
 ## Open Web Config
 
 Start Web Config in any of these ways:
 
-- Select the Maestro's Device ID from the Watch Display Settings page.
+- Select the Slave's Device ID from the Watch Display Settings page.
 - Send the role command shown below.
 - Hold the ESP32 BOOT button for about two seconds during normal operation.
 
 | Role | Open Web Config command | Wi-Fi network |
 |---|---|---|
-| Body | `:BS,WEB,ON` | `DroidLink_Body_Maestro` |
-| Dome | `:DS,WEB,ON` | `DroidLink_Dome_Maestro` |
-| Lifter | `:LS,WEB,ON` | `DroidLink_Lifter_Maestro` |
-| Universal | `:US,WEB,ON` | `DroidLink_Universal_Maestro` |
+| Body | `:BS,WEB,ON` | `DroidLink_Body` |
+| Dome | `:DS,WEB,ON` | `DroidLink_Dome` |
+| Lifter | `:LS,WEB,ON` | `DroidLink_Lifter` |
+| Universal | `:US,WEB,ON` | `DroidLink_Universal` |
 
 Connect using password `droidlink`, then open `http://192.168.4.1`.
 
-The onboard status LED remains solid while Web Config is active. Select **Exit Web Config** when finished so the Maestro reboots into normal DroidLink operation.
+The onboard status LED remains solid while Web Config is active. Select **Exit Web Config** when finished so the Slave reboots into normal DroidLink operation.
 
 ## Configure outputs safely
 
-For each connected Maestro output:
+For each connected output:
 
 1. Give the output a clear, unique name.
 2. Select **Servo** for a positional servo or **Output** for an on/off servo-signal device.
@@ -121,14 +130,19 @@ Saved endpoints must be safe working positions, not mechanical hard stops. Test 
 
 ## Output templates
 
-An output template contains output names, output types, and groups. It does not contain calibration, Device ID, Master MAC, LEDs, or sequences.
+An output template contains output names, output types, and groups. It does not contain calibration, Device ID, Master MAC, LEDs, or sequences. The same template can be mapped to Maestro or PCA9685 outputs as long as the selected controller setup has enough outputs.
+
+Available templates:
+
+- [Basic MK4 Body output template](downloads/DroidLink_Slave/DroidLink-MK4-Body-Output-Template.json) — requires at least 24 outputs.
+- [Five-lifter output template](downloads/DroidLink_Slave/DroidLink-Lifter-Output-Template.json) — requires at least 10 outputs.
 
 Templates and downloaded presets include the configured role in their filenames, for example:
 
 ```text
-DroidLink-Body-Maestro-Output-Template-MY-DROID.json
-DroidLink-Dome-Maestro-Preset-PANELS.json
-DroidLink-Lifter-Maestro-Presets.json
+DroidLink-Body-Output-Template-MY-DROID.json
+DroidLink-Dome-Preset-PANELS.json
+DroidLink-Lifter-Presets.json
 ```
 
 When importing a template, review every output assignment before applying it. Servo outputs still require calibration on the actual mechanism.
@@ -141,41 +155,36 @@ Use a separate fused LED power supply and a common ground. Confirm the LED volta
 
 ## Physical switches
 
-GPIO0 and GPIO1 can trigger an action on a quick press, hold, or release. Each input can be configured as normally open or normally closed. Leave an input disabled until its wiring and action have been tested.
+Four board-specific GPIO inputs can trigger an action on a quick press, hold, or release. Each input can be configured as normally open or normally closed. Leave an input disabled until its wiring and action have been tested.
 
 ## Build and assign sequences
 
-The Sequence Builder can combine timed Maestro output and LED actions. Actions with the same start time begin together.
+The Sequence Builder can combine timed servo/output, switch-wait, and LED actions. Actions with the same start time begin together.
 
 1. Add and preview each action.
 2. Save the sequence with a unique name.
-3. Assign it to an available role shortcut from `00` through `31`.
+3. Assign a servo-only or combined sequence to an available role shortcut from `00` through `59`. LED-only sequences use `62` through `91`.
 4. Test the saved shortcut with mechanisms unloaded first.
 5. Use **Export selected** or **Export all** to keep a backup.
 
-Role shortcuts are `:BS00`–`:BS31`, `:DS00`–`:DS31`, `:LS00`–`:LS31`, or `:US00`–`:US31`.
+Command `60` restores the saved startup LED sequence and command `61` stops LED effects and turns the configured LEDs off. The Web Config Commands tab shows all ranges using the prefix selected for this device.
 
-See the [DroidLink Maestro Command Reference](DroidLink_Maestro_Command_Reference.md) for commands available to users.
+See the [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) for commands available to users.
 
-## Back up before erasing
+## Back up before updating or erasing
 
-Calibration, output settings, groups, LED settings, switches, and shortcut assignments are stored in flash. Named sequences are stored in the Maestro filesystem.
+Use **Complete controller backup and restore** on the Welcome tab. The complete backup contains output names and types, saved endpoints, groups, inputs, LED configuration, sequences, command assignments, and the Web Config network name. Restore accepts a backup created for the same servo-controller backend. Pairing and controller selection remain those of the device receiving the restore.
 
-Back up the parts that can currently be exported:
-
-1. Export the output template for output names, output types, and groups.
-2. Export all sequences for sequence actions and shortcut assignments.
-
-These are separate files. There is not currently one full-device backup containing calibration, Device ID, Master MAC, switch settings, LED configuration, and sequences. **Erase Flash** removes first-time setup and can remove all saved settings, so record safe calibration values separately before erasing.
+Output templates remain useful for sharing a layout without sharing calibration or identity. Sequence exports remain useful for sharing only selected sequences. **Erase Flash** removes the saved setup, so download a complete backup first.
 
 ## Troubleshooting
 
-### Maestro does not appear in Device Status
+### Slave does not appear in Device Status
 
 - Confirm its Device ID is unique.
 - Confirm the Master MAC entered during setup is correct.
-- Confirm the Maestro Device MAC is saved in the Master.
-- Power-cycle the Maestro and refresh Device Status once.
+- Confirm the Slave Device MAC is saved in the Master.
+- Power-cycle the Slave and refresh Device Status once.
 
 ### Outputs do not move
 

@@ -11,7 +11,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Device | Version | Status |
 | --- | --- | --- |
 | Master Controller | V2.0.1 | Current |
-| Universal Slave | V1.5 | Current |
+| DroidLink Slave | V2.1.0 | Testing |
 | Watch Display | V2.0.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
@@ -75,7 +75,21 @@ Some older releases do not have a recorded release date or detailed public notes
 - Legacy firmware for the original round DroidLink Display.
 - Detailed public release notes were not recorded.
 
-## Universal Slave
+## DroidLink Slave
+
+### V2.1.0 — September 13, 2026
+
+- Replaces the legacy Universal Slave for new Maestro-based installations.
+- Supports ESP32-C3 Super Mini and ESP32 DevKit controller builds.
+- Supports one or two Pololu Maestro controllers, or one or two PCA9685 boards.
+- Adds selectable Body, Dome, Lifter, and Universal roles.
+- Adds browser-based output setup, endpoint calibration, named outputs, reusable templates, and complete configuration backup and restore.
+- Adds servo, output, input-wait, and LED sequence builders with testing and timeline tools.
+- Supports up to 60 saved controller sequences and 30 saved LED-only sequences.
+- Adds direct output commands, stop-all and return-home commands, configurable startup lighting, and four switch inputs.
+- Available as a testing release for licenses with the required update access.
+
+## Legacy Universal Slave
 
 ### V1.5 — August 28, 2026
 

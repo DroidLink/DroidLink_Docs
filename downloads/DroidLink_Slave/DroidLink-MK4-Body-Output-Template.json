@@ -1,0 +1,33 @@
+{
+  "format": "DroidLinkMaestroOutputTemplate",
+  "version": 1,
+  "name": "BASIC MK4 BODY",
+  "role": "Body",
+  "created": "2026-09-13T00:00:00.000Z",
+  "minimumOutputs": 24,
+  "functions": [
+    { "key": "FRONT_LEFT_DOOR", "name": "FRONT LEFT DOOR", "mode": "SERVO", "defaultOutput": 0 },
+    { "key": "FRONT_RIGHT_DOOR", "name": "FRONT RIGHT DOOR", "mode": "SERVO", "defaultOutput": 1 },
+    { "key": "BACK_LEFT_DOOR", "name": "BACK LEFT DOOR", "mode": "SERVO", "defaultOutput": 2 },
+    { "key": "BACK_RIGHT_DOOR", "name": "BACK RIGHT DOOR", "mode": "SERVO", "defaultOutput": 3 },
+    { "key": "CHARGE_BAY", "name": "CHARGE BAY", "mode": "SERVO", "defaultOutput": 4 },
+    { "key": "DATA_PORT", "name": "DATA PORT", "mode": "SERVO", "defaultOutput": 5 },
+    { "key": "SMALL_DOOR", "name": "SMALL DOOR", "mode": "SERVO", "defaultOutput": 6 },
+    { "key": "UPPER_UTIL_ARM", "name": "UPPER UTIL ARM", "mode": "SERVO", "defaultOutput": 7 },
+    { "key": "LOWER_UTIL_ARM", "name": "LOWER UTIL ARM", "mode": "SERVO", "defaultOutput": 8 },
+    { "key": "DRAWER_1", "name": "DRAWER 1", "mode": "SERVO", "defaultOutput": 16 },
+    { "key": "DRAWER_2", "name": "DRAWER 2", "mode": "SERVO", "defaultOutput": 17 },
+    { "key": "DRAWER_3", "name": "DRAWER 3", "mode": "SERVO", "defaultOutput": 18 },
+    { "key": "DRAWER_4", "name": "DRAWER 4", "mode": "SERVO", "defaultOutput": 19 },
+    { "key": "DRAWER_5", "name": "DRAWER 5", "mode": "SERVO", "defaultOutput": 20 },
+    { "key": "DRAWER_6", "name": "DRAWER 6", "mode": "SERVO", "defaultOutput": 21 },
+    { "key": "DRAWER_7", "name": "DRAWER 7", "mode": "SERVO", "defaultOutput": 22 },
+    { "key": "DRAWER_8", "name": "DRAWER 8", "mode": "SERVO", "defaultOutput": 23 }
+  ],
+  "groups": [
+    { "name": "LARGE DOORS", "members": ["FRONT_LEFT_DOOR", "FRONT_RIGHT_DOOR", "BACK_LEFT_DOOR", "BACK_RIGHT_DOOR"] },
+    { "name": "SERVICE DOORS", "members": ["CHARGE_BAY", "DATA_PORT", "SMALL_DOOR"] },
+    { "name": "UTILITY ARMS", "members": ["UPPER_UTIL_ARM", "LOWER_UTIL_ARM"] },
+    { "name": "DRAWERS", "members": ["DRAWER_1", "DRAWER_2", "DRAWER_3", "DRAWER_4", "DRAWER_5", "DRAWER_6", "DRAWER_7", "DRAWER_8"] }
+  ]
+}

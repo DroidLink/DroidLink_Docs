@@ -8,9 +8,9 @@ DroidLink is a modular control system made up of devices that work together with
 
 Every DroidLink system has one Master Controller. It receives controls and button actions, applies the saved configuration, coordinates system state, controls drive and dome motors, and sends commands to other DroidLink devices.
 
-### DroidLink Maestro
+### DroidLink Slave
 
-DroidLink Maestro is the recommended replacement for the older Universal Slave firmware when using Pololu Maestro controllers.
+DroidLink Slave is the recommended replacement for the older Universal Slave firmware when using Pololu Maestro controllers.
 
 Each Maestro can be assigned one role:
 
@@ -21,7 +21,7 @@ Each Maestro can be assigned one role:
 
 A Maestro receives commands from the Master and operates configured Maestro outputs, LED segments, physical switch actions, and saved sequences. Multiple Maestro devices can be used in one droid, provided each has a unique Device ID.
 
-See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for installation and configuration.
+See [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation and configuration.
 
 ### Dedicated devices
 
@@ -64,4 +64,4 @@ The configuration interfaces create most commands for you. See the [DroidLink Co
 
 ## Continue
 
-Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for Maestro-controlled mechanisms.
+Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Slave](Using_DroidLink_Slave.md) for Maestro-controlled mechanisms.

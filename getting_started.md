@@ -11,7 +11,7 @@ No programming, compiling, or IDE is required.
 - A DroidLink license key
 - A 2.4 GHz home Wi-Fi network with internet access for activation and updates
 - A DroidLink Master Controller
-- Any optional Watch Display, DroidLink Maestro controllers, or dedicated DroidLink devices
+- Any optional Watch Display, DroidLink Slave controllers, or dedicated DroidLink devices
 
 ## Before connecting hardware
 
@@ -24,7 +24,7 @@ No programming, compiling, or IDE is required.
 
 1. Master Controller
 2. Watch Display, if used
-3. DroidLink Maestro controllers and dedicated DroidLink devices
+3. DroidLink Slave controllers and dedicated DroidLink devices
 4. Add every installed device to the Master
 5. Verify Device Status and test commands
 6. Create configuration backups
@@ -95,11 +95,11 @@ In **System Setup**:
 
 The Master saves and reboots automatically. After both devices return to normal operation, confirm that the Display shows a Master connection.
 
-## 4. Install DroidLink Maestro
+## 4. Install DroidLink Slave
 
-DroidLink Maestro replaces the older Universal Slave firmware for Pololu Maestro output control. Repeat this section for each Body, Dome, Lifter, or Universal Maestro.
+DroidLink Slave replaces the older Universal Slave firmware. Repeat this section for each Body, Dome, Lifter, or Universal controller.
 
-The Maestro option is not yet present in the public Web Installer. Do not install Universal Slave as a substitute. When **DroidLink Maestro** becomes available in the Installer:
+DroidLink Slave is currently offered as testing firmware to licenses with access. Do not install the legacy Universal Slave as a substitute. To install **DroidLink Slave**:
 
 1. Install it with **Erase Flash** enabled for the first installation.
 2. Open **Logs & Console** and reset the ESP32-C3 if setup instructions are not visible.
@@ -110,7 +110,7 @@ The Maestro option is not yet present in the public Web Installer. Do not instal
 7. Enter the Master MAC.
 8. Allow it to save and reboot.
 
-See [Using DroidLink Maestro](Using_DroidLink_Maestro.md) for required hardware, pin connections, Pololu Maestro setup, Web Config, calibration, and sequences.
+See [Using DroidLink Slave](Using_DroidLink_Slave.md) for required hardware, pin connections, Pololu Maestro setup, Web Config, calibration, and sequences.
 
 ## 5. Install a dedicated DroidLink device
 
