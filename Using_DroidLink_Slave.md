@@ -4,7 +4,7 @@ DroidLink Slave is the recommended replacement for the older DroidLink Universal
 
 The built-in web interface is used to name outputs, calibrate servos, configure LEDs and switches, build sequences, and assign DroidLink commands. Pololu Maestro scripts are not required.
 
-> DroidLink Slave is currently offered as testing firmware. Install it only if your license has access, and do not select the legacy Universal Slave as a substitute.
+> DroidLink Slave is the current firmware for new Maestro- and PCA9685-based Slave installations. Do not select the legacy Universal Slave as a substitute.
 
 ## What you need
 

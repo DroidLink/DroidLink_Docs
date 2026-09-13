@@ -65,9 +65,6 @@ Follow the guides in this order:
 - [Periscope Logic Lights](Using_DroidLink_Periscope.md) ([PDF](Using_DroidLink_Periscope.pdf))
 - [MagicPanel setup](Using_DroidLink_MagicPanel.md) ([PDF](Using_DroidLink_MagicPanel.pdf))
 - [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) ([PDF](DroidLink_MagicPanel_Command_Reference.pdf))
-- [BodyPCA setup](Using_DroidLink_BodyPCA.md) ([PDF](Using_DroidLink_BodyPCA.pdf)) — testing firmware
-- [BodyPCA Command Reference](DroidLink_BodyPCA_Command_Reference.md) ([PDF](DroidLink_BodyPCA_Command_Reference.pdf)) — testing firmware
-- [BodyPCA PCA Channel Wiring List](DroidLink_BodyPCA_PCA_Channel_Wiring_List.pdf) — testing firmware
 
 ## Release guides
 
@@ -88,7 +85,6 @@ These documents are intended for end users. They cover installation, wiring, set
 
 They intentionally do not publish firmware source code, private service details, security controls, credentials, or internal communication implementation.
 
-Testing firmware is labeled as testing and should not be treated as a current stable release.
 
 ## Licensing
 

@@ -25,7 +25,7 @@ See [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation and confi
 
 ### Dedicated devices
 
-DroidLink_AP, MagicPanel, Periscope, and BodyPCA provide controls for their specific hardware. Follow the guide for each installed device.
+DroidLink_AP, MagicPanel, and Periscope provide controls for their specific hardware. Follow the guide for each installed device.
 
 ### Watch Display
 

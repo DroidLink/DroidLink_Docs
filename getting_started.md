@@ -99,7 +99,7 @@ The Master saves and reboots automatically. After both devices return to normal 
 
 DroidLink Slave replaces the older Universal Slave firmware. Repeat this section for each Body, Dome, Lifter, or Universal controller.
 
-DroidLink Slave is currently offered as testing firmware to licenses with access. Do not install the legacy Universal Slave as a substitute. To install **DroidLink Slave**:
+DroidLink Slave is the current firmware for new Maestro- and PCA9685-based Slave installations. Do not install the legacy Universal Slave as a substitute. To install **DroidLink Slave**:
 
 1. Install it with **Erase Flash** enabled for the first installation.
 2. Open **Logs & Console** and reset the ESP32-C3 if setup instructions are not visible.
@@ -114,16 +114,13 @@ See [Using DroidLink Slave](Using_DroidLink_Slave.md) for required hardware, pin
 
 ## 5. Install a dedicated DroidLink device
 
-DroidLink_AP, MagicPanel, Periscope, and BodyPCA use device-specific first-time setup. Install only the devices present in the droid.
+DroidLink_AP, MagicPanel, and Periscope use device-specific first-time setup. Install only the devices present in the droid.
 
 During setup, record the device MAC, enter the Master MAC, and assign a unique Device ID from 2 through 13. Then follow the appropriate guide:
 
 - [DroidLink_AP installation and setup](Using_DroidLink_AP.md)
 - [MagicPanel](Using_DroidLink_MagicPanel.md)
 - [Periscope](Using_DroidLink_Periscope.md)
-- [BodyPCA](Using_DroidLink_BodyPCA.md)
-
-Testing firmware should only be installed when the user understands that it has not yet been promoted to a current stable release.
 
 ## 6. Add Maestro and dedicated devices to the Master
 

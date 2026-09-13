@@ -11,11 +11,10 @@ Some older releases do not have a recorded release date or detailed public notes
 | Device | Version | Status |
 | --- | --- | --- |
 | Master Controller | V2.0.1 | Current |
-| DroidLink Slave | V2.1.0 | Testing |
+| DroidLink Slave | V2.1.0 | Current |
 | Watch Display | V2.0.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| DroidLink BodyPCA | V1.0.0 | Testing |
 | DroidLink_AP | V1.1.0 | Current |
 
 ## Master Controller
@@ -87,7 +86,7 @@ Some older releases do not have a recorded release date or detailed public notes
 - Adds servo, output, input-wait, and LED sequence builders with testing and timeline tools.
 - Supports up to 60 saved controller sequences and 30 saved LED-only sequences.
 - Adds direct output commands, stop-all and return-home commands, configurable startup lighting, and four switch inputs.
-- Available as a testing release for licenses with the required update access.
+- Current release for new Maestro- and PCA9685-based Slave installations.
 
 ## Legacy Universal Slave
 
@@ -158,16 +157,6 @@ Some older releases do not have a recorded release date or detailed public notes
 - Starts with its LEDs off until an ON command is received.
 - Added saved sequence selection and Periscope lighting commands.
 - Improved first-time setup validation and startup behavior.
-
-## DroidLink BodyPCA
-
-### V1.0.0 — August 30, 2026 — Testing
-
-- Initial DroidLink BodyPCA release.
-- Added guided setup and configurable DroidLink Device ID.
-- Added PCA9685 body-servo control and saved servo configuration.
-- Added device identification and command support for Master and Display controls.
-- Distributed as testing firmware rather than a stable general release.
 
 ## About Legacy Firmware
 
