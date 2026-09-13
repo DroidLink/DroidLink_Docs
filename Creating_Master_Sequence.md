@@ -146,10 +146,10 @@ This example sequence will:
 
 - Install the current Master firmware before creating or editing Master Sequences.
 - Start the dome turning **RIGHT**
-- Call Body Maestro Sequence 1  
+- Call Body Slave Sequence 1
 - Start track 240  
 - Wait 5 seconds (non-blocking — foot drives will still work)  
-- Call Body Maestro Sequence 1 again  
+- Call Body Slave Sequence 1 again
 - Change the dome direction to **LEFT**  
 - Wait 5 seconds  
 
@@ -160,16 +160,16 @@ This example sequence will:
 This is all based on timing.
 
 - The dome will start  
-- Maestro will start  
+- The Body Slave sequence will start
 - Audio will start  
 
 Those three will begin in that order with little to no delay between them.
 
-The 5-second timer starts immediately as well, so you must make sure the Maestro sequence you are running has enough time to complete before you call it again.
+The 5-second timer starts immediately as well, so you must make sure the Body Slave sequence you are running has enough time to complete before you call it again.
 
-So after the wait, the body maestro and the dome are instantly going to take effect. 
+After the wait, the Body Slave and dome actions begin immediately.
 
-The final 5-second delay at the end ensures the Maestro sequence completes before the dome stops spinning.
+The final 5-second delay at the end allows the Body Slave sequence to complete before the dome stops spinning.
 
 Audio will continue playing unless you stop it manually using `:AS00`.
 

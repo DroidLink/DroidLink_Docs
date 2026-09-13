@@ -10,16 +10,16 @@ Every DroidLink system has one Master Controller. It receives controls and butto
 
 ### DroidLink Slave
 
-DroidLink Slave is the recommended replacement for the older Universal Slave firmware when using Pololu Maestro controllers.
+DroidLink Slave is the recommended replacement for the older Universal Slave firmware. It supports Pololu Maestro controllers and PCA9685 boards.
 
-Each Maestro can be assigned one role:
+Each DroidLink Slave ESP32 is assigned one role:
 
 - Body
 - Dome
 - Lifter
 - Universal
 
-A Maestro receives commands from the Master and operates configured Maestro outputs, LED segments, physical switch actions, and saved sequences. Multiple Maestro devices can be used in one droid, provided each has a unique Device ID.
+A DroidLink Slave receives commands from the Master and operates its configured Maestro or PCA9685 outputs, LED segments, physical switch actions, and saved sequences. Multiple Slave devices can be used in one droid, provided each has a unique Device ID.
 
 See [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation and configuration.
 
@@ -64,4 +64,4 @@ The configuration interfaces create most commands for you. See the [DroidLink Co
 
 ## Continue
 
-Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Slave](Using_DroidLink_Slave.md) for Maestro-controlled mechanisms.
+Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Slave](Using_DroidLink_Slave.md) for Maestro- or PCA9685-controlled mechanisms.

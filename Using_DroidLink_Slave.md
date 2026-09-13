@@ -53,8 +53,6 @@ Do not power servos or an LED strip from the ESP32. The GPIO4 LED output is a da
 
 For PCA9685 installations, use address `0x40` for the first board and `0x41` for the second board. Connect SDA, SCL, output enable, and common ground using the board-specific pins above.
 
-For Pololu Maestro installations, use Maestro Control Center before connecting the controllers to the ESP32:
-
 Use Pololu Maestro Control Center before connecting the Maestro controllers to the ESP32:
 
 1. Select UART serial mode with a fixed baud rate.
@@ -202,3 +200,5 @@ Output templates remain useful for sharing a layout without sharing calibration 
 ### Emergency stop
 
 Send the role prefix followed by `BX`, such as `:BS,BX`. This stops sequence playback, servo motion, LED effects, and Maestro outputs. Disconnect mechanism power if movement remains unsafe.
+
+For a broader controlled stop, use `:BS,STOP` (replace `BS` with the configured role prefix). Use `:BS,HOME` to stop active actions and return configured positional outputs to their saved Closed positions.

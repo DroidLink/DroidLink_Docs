@@ -72,7 +72,7 @@ This button will:
 1. Spin the dome RIGHT  
 2. Wait 5 seconds  
 3. Spin the dome LEFT  
-4. Call Body Maestro Sequence 01  
+4. Call Body Slave Sequence 01
 5. Wait another 5 seconds  
 
 This is a fully chained native command using `:DC`, `:BS`, and `:W`.

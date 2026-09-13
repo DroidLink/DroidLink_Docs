@@ -41,6 +41,18 @@ Create and assign these sequences in Web Config. The Commands tab automatically 
 
 `BX` is the normal command-level emergency stop. Keep a physical power disconnect available whenever mechanisms are being tested.
 
+## Direct output controls
+
+Direct output commands use the same zero-based output number shown in Web Config. Replace `BS` with the configured role prefix.
+
+| Output type | Commands | Action |
+|---|---|---|
+| Positional servo | `:BS0O` / `:BS0C` | Move Output 0 to its saved Full / Closed position |
+| On/Off output | `:BS0O` / `:BS0C` | Turn Output 0 on / off using its saved pulse values |
+| 360-degree servo | `:BS0F` / `:BS0R` / `:BS0S` | Run Output 0 forward / reverse / stop |
+
+Change `0` to the output number displayed in Web Config. Commands that do not match the saved output type are rejected.
+
 ## LED controls
 
 Use a saved segment name or `ALL` as the target.

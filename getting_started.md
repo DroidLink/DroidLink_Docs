@@ -41,7 +41,7 @@ The Master must activate before the installer makes dependent firmware available
 6. Wait for installation to finish.
 7. Open **Logs & Console** and select **Reset Device** if the boot instructions are not already visible.
 
-Record the Master MAC shown in the console. Every Display, Maestro, and dedicated device needs this address during setup.
+Record the Master MAC shown in the console. Every Display, DroidLink Slave, and dedicated device needs this address during setup.
 
 On first boot, the Master creates this setup network:
 
@@ -103,7 +103,7 @@ DroidLink Slave is the current firmware for new Maestro- and PCA9685-based Slave
 
 1. Install it with **Erase Flash** enabled for the first installation.
 2. Open **Logs & Console** and reset the ESP32-C3 if setup instructions are not visible.
-3. Record the Maestro Device MAC.
+3. Record the DroidLink Slave Device MAC.
 4. Assign a unique Device ID from 2 through 13.
 5. Select its Body, Dome, Lifter, or Universal role.
 6. Enter the connected Maestro controller count, channel counts, and device numbers.
@@ -122,14 +122,14 @@ During setup, record the device MAC, enter the Master MAC, and assign a unique D
 - [MagicPanel](Using_DroidLink_MagicPanel.md)
 - [Periscope](Using_DroidLink_Periscope.md)
 
-## 6. Add Maestro and dedicated devices to the Master
+## 6. Add DroidLink Slave and dedicated devices to the Master
 
 Open Master System Setup using forced configuration mode or normal Runtime Web Config.
 
 For each device:
 
-1. Select **Add Slave**. This is the current Master interface label for adding a Maestro or dedicated DroidLink device.
-2. Enter a helpful name such as `Body Maestro`, `DroidLink_AP`, or `Periscope`.
+1. Select **Add Slave**. This is the current Master interface label for adding a DroidLink Slave or dedicated DroidLink device.
+2. Enter a helpful name such as `Body Slave`, `DroidLink_AP`, or `Periscope`.
 3. Enter the exact device MAC.
 4. Confirm its Device ID is unique across the droid.
 

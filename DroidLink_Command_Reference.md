@@ -46,31 +46,31 @@ The sections below document native DroidLink commands.
 
 These commands instruct a DroidLink Slave to run a saved sequence.
 
-The following prefixes are reserved exclusively for Maestro-controlled outputs:
+The following prefixes address DroidLink Slave devices according to their configured role. A Slave may use Pololu Maestro or PCA9685 output hardware:
 
-`:BSnn` → Body Maestro sequence
+`:BSnn` → Body Slave sequence
 
-`:LSnn` → Lifter Maestro sequence
+`:LSnn` → Lifter Slave sequence
 
-`:DSnn` → Dome Maestro sequence
+`:DSnn` → Dome Slave sequence
 
-`:USnn` → Universal Maestro sequence
+`:USnn` → Universal Slave sequence
 
-`nn` = two-digit shortcut assigned on that Maestro.
+`nn` = two-digit shortcut assigned on that DroidLink Slave.
 
-When triggered, the Maestro runs the sequence assigned to that shortcut.
+When triggered, the addressed DroidLink Slave runs the sequence assigned to that shortcut.
 
 Examples:
 
-`:BS01` → Body Maestro runs sequence 01
+`:BS01` → Body Slave runs sequence 01
 
-`:LS02` → Lifter Maestro runs sequence 02
+`:LS02` → Lifter Slave runs sequence 02
 
-`:DS03` → Dome Maestro runs sequence 03
+`:DS03` → Dome Slave runs sequence 03
 
-`:US04` → Universal Maestro runs sequence 04
+`:US04` → Universal Slave runs sequence 04
 
-These commands are dedicated to Maestro control and are not used for other device types.
+These commands are dedicated to DroidLink Slave role shortcuts and are not used for unrelated device types.
 ---
 
 ## 🔹 Dome Movement Commands
@@ -323,8 +323,8 @@ Example:
 
 This will:
 
-1. Trigger Body Maestro sequence 01
-2. Then trigger Dome Maestro sequence 02
+1. Trigger Body Slave sequence 01
+2. Then trigger Dome Slave sequence 02
 
 ---
 
@@ -342,9 +342,9 @@ Example:
 
 This will:
 
-1. Trigger Body Maestro sequence 01
+1. Trigger Body Slave sequence 01
 2. Wait 1000 milliseconds  
-3. Trigger Dome Maestro sequence 02
+3. Trigger Dome Slave sequence 02
 
 ---
 
@@ -375,7 +375,7 @@ Example:
 
 This will:
 
-1. Trigger Body Maestro sequence 01
+1. Trigger Body Slave sequence 01
 2. Wait 500 milliseconds  
 3. Send `@APLE51000` to DroidLink_AP
 

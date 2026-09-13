@@ -1,5 +1,7 @@
 # DroidLink V2.0.0 New Features
 
+> **Historical release guide:** This page describes the V2.0.0 Master and Watch Display release. Use [Getting Started](getting_started.md) and the [Firmware Changelog](DroidLink_Firmware_Changelog.md) to identify and install the current firmware.
+
 DroidLink V2.0.0 is a coordinated update for the **DroidLink Master** and **DroidLink Watch Display**. It adds a new Master web dashboard, advanced Sentry and sequence controls, device monitoring, and major Watch Display power and connectivity improvements.
 
 ## Before updating
