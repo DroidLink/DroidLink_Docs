@@ -4,6 +4,9 @@ Welcome to the public user documentation for DroidLink.
 
 These guides explain how to install, configure, operate, update, and troubleshoot a DroidLink system. No programming experience is required.
 
+New to DroidLink? Begin with [Start Here with DroidLink](DroidLink_Start_Here.md)
+for the complete hardware, license, installation, and setup path.
+
 - A license is required to download firmware with the DroidLink Web Installer.
 - Licenses are $80 per droid.
 - Contact: droidlink77@gmail.com
@@ -30,7 +33,7 @@ Robots can move unexpectedly and may cause injury or property damage. By buildin
 New users should begin with [Getting Started](getting_started.md). It covers:
 
 1. Installing and activating the Master
-2. Installing the optional Watch Display
+2. Installing the required Watch Display
 3. Installing DroidLink Slave and dedicated DroidLink devices
 4. Adding device MAC addresses to the Master
 5. Verifying Device Status
@@ -40,19 +43,21 @@ New users should begin with [Getting Started](getting_started.md). It covers:
 
 Follow the guides in this order:
 
-1. [Getting Started](getting_started.md) — installation, activation, pairing, verification, and backups
-2. [Using DroidLink](using_droidlink.md) — system overview
-3. [Master Wiring and Connections](Master_Wiring_and_Connections.md) — power and hardware wiring
-4. [Using DroidLink Slave](Using_DroidLink_Slave.md) — installation, wiring, outputs, LEDs, switches, and sequences
-5. [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) — role commands and saved-sequence shortcuts
-6. [Master Interface Guide](Master_Interface_Guide.md) — Master configuration and operation
-7. [Display Interface Guide](Display_Interface_Guide.md) — Watch Display configuration and operation
-8. [DroidLink Command Reference](DroidLink_Command_Reference.md) — supported command syntax
-9. [Creating a Master Sequence](Creating_Master_Sequence.md) — reusable timed actions
-10. [Creating Display Sequences](Creating_Display_Sequences.md) — chained Display commands
-11. [Sentry Mode User Guide](Sentry_Mode.md) — unattended random actions
-12. [Remote OTA Updates](OTA_Updates.md) — supported wireless firmware updates
-13. [Firmware Changelog](DroidLink_Firmware_Changelog.md) — current, testing, and historical releases
+1. [Start Here with DroidLink](DroidLink_Start_Here.md) — hardware, licensing, installation, and setup path
+2. [DroidLink Main Hardware](DroidLink_Parts_List.md) — controller boards, breakouts, RC equipment, and optional audio
+3. [Getting Started](getting_started.md) — installation, activation, pairing, verification, and backups
+4. [Using DroidLink](using_droidlink.md) — system overview
+5. [Master Wiring and Connections](Master_Wiring_and_Connections.md) — power and hardware wiring
+6. [Using DroidLink Slave](Using_DroidLink_Slave.md) — installation, wiring, outputs, LEDs, switches, and sequences
+7. [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) — role commands and saved-sequence shortcuts
+8. [Master Interface Guide](Master_Interface_Guide.md) — Master configuration and operation
+9. [Display Interface Guide](Display_Interface_Guide.md) — Watch Display configuration and operation
+10. [DroidLink Command Reference](DroidLink_Command_Reference.md) — supported command syntax
+11. [Creating a Master Sequence](Creating_Master_Sequence.md) — reusable timed actions
+12. [Creating Display Sequences](Creating_Display_Sequences.md) — chained Display commands
+13. [Sentry Mode User Guide](Sentry_Mode.md) — unattended random actions
+14. [Remote OTA Updates](OTA_Updates.md) — supported wireless firmware updates
+15. [Firmware Changelog](DroidLink_Firmware_Changelog.md) — current, testing, and historical releases
 
 ## Device guides
 

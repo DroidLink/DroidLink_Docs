@@ -11,7 +11,7 @@ No programming, compiling, or IDE is required.
 - A DroidLink license key
 - A 2.4 GHz home Wi-Fi network with internet access for activation and updates
 - A DroidLink Master Controller
-- Any optional Watch Display, DroidLink Slave controllers, or dedicated DroidLink devices
+- The required Watch Display and any DroidLink Slave controllers or dedicated DroidLink devices being installed
 
 ## Before connecting hardware
 
@@ -63,7 +63,7 @@ Watch the console for successful license activation and `MASTER READY`. If activ
 
 ## 2. Install the Watch Display
 
-The Watch Display is optional, but it provides system status, programmable buttons, device configuration access, and other controls.
+The Watch Display is required for the current DroidLink system. It provides system status, programmable buttons, device configuration access, and other controls.
 
 1. Return to the DroidLink Web Installer and enter the same license key.
 2. Connect the Watch Display by USB.

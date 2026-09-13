@@ -29,7 +29,7 @@ DroidLink_AP, MagicPanel, and Periscope provide controls for their specific hard
 
 ### Watch Display
 
-The optional Watch Display provides system status, programmable buttons, and access to device configuration. It sends user actions to the Master rather than controlling mechanisms directly.
+The required Watch Display provides system status, programmable buttons, and access to device configuration. It sends user actions to the Master rather than controlling mechanisms directly.
 
 ## How a command moves through the system
 
