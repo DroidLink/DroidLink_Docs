@@ -48,6 +48,7 @@ Direct output commands use the same zero-based output number shown in Web Config
 | Output type | Commands | Action |
 |---|---|---|
 | Positional servo | `:BS0O` / `:BS0C` | Move Output 0 to its saved Full / Closed position |
+| Positional servo toggle | `:BS0T` | Alternate Output 0 between its saved Full and Closed positions; the first toggle after startup moves it to Full |
 | On/Off output | `:BS0O` / `:BS0C` | Turn Output 0 on / off using its saved pulse values |
 | 360-degree servo | `:BS0F` / `:BS0R` / `:BS0S` | Run Output 0 forward / reverse / stop |
 

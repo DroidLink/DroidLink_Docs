@@ -11,11 +11,11 @@ Some older releases do not have a recorded release date or detailed public notes
 | Device | Version | Status |
 | --- | --- | --- |
 | Master Controller | V2.0.1 | Current |
-| DroidLink Slave | V2.1.0 | Current |
+| DroidLink Slave | V2.2.0 | Current |
 | Watch Display | V2.0.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| DroidLink_AP | V1.1.0 | Current |
+| DroidLink_AP | V2.2.0 | Current |
 
 ## Master Controller
 
@@ -76,6 +76,14 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## DroidLink Slave
 
+### V2.2.0 — September 15, 2026
+
+- Added direct positional-servo Toggle commands for one-button Open/Close control across all configured output numbers.
+- Added duplicate-command protection so one button transmission cannot toggle twice.
+- Direct Open, Close, and Toggle movements use the same fast door timing.
+- Updated the built-in Commands tab and output guidance.
+- Released as a free update for ESP32-C3 Super Mini and ESP32 DevKit controllers.
+
 ### V2.1.0 — September 13, 2026
 
 - Replaces the legacy Universal Slave for new Maestro-based installations.
@@ -108,6 +116,16 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## DroidLink_AP
+
+### DroidLink_AP V2.2.0 — September 15, 2026
+
+- Added configurable 360-degree servo outputs with saved Reverse, Stop, and Forward pulses.
+- Added direct Forward, Reverse, Stop, and positional-servo Toggle commands.
+- Added 360-degree servo actions to the sequence builder, templates, and backup and restore.
+- Standardized 360-degree servo calibration to 1000–2000 us with a 1500 us default Stop pulse.
+- Improved direct positional Open, Close, and Toggle movement behavior for PCA9685 outputs.
+- Updated Web Config controls and command guidance.
+- Released as a free update.
 
 ### DroidLink_AP V1.1.0 — September 11, 2026
 

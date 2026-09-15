@@ -118,13 +118,19 @@ The onboard status LED remains solid while Web Config is active. Select **Exit W
 For each connected output:
 
 1. Give the output a clear, unique name.
-2. Select **Servo** for a positional servo or **Output** for an on/off servo-signal device.
+2. Select **Servo** for a positional servo, **360° servo** for a continuous-rotation servo, or **Output** for an on/off servo-signal device.
 3. Leave unused channels marked **Do Not Use**.
 4. For a servo, enable live output and begin with a narrow safe range.
 5. Find and save the safe closed and full positions.
 6. Test both saved positions before attaching the linkage.
 
 Saved endpoints must be safe working positions, not mechanical hard stops. Test one mechanism at a time and keep its power disconnect accessible.
+
+### Positional-servo toggle
+
+V2.2.0 adds a direct toggle command for normal positional servos. For example, `:BS4T` moves Body Slave Output 4 to its saved Full position on the first press after startup. The next press moves it to its saved Closed position, and later presses continue alternating. Use the configured role prefix: `BS`, `DS`, `LS`, or `US`.
+
+The toggle follows the numbered output assignment, not the user-configurable output name. It is rejected for On/Off outputs and 360-degree servos.
 
 ## Output templates
 

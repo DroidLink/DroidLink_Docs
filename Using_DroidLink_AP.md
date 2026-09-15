@@ -5,7 +5,24 @@ PCA9685, or wired Marcduino control. Detailed operating instructions and the
 commands supported by the installed firmware are available inside its Web
 Config interface.
 
-The current Installer release is **V1.1.0**.
+The current Installer release is **V2.2.0**.
+
+## Output controls
+
+Maestro and PCA9685 modes add **360-degree servo** as an output type. Each
+360-degree servo stores Reverse, Stop, and Forward pulses within 1000-2000 us;
+the default Stop pulse is 1500 us. Direct commands use the numbered output
+shown in Web Config:
+
+- `:DS<n>F` runs 360-degree servo output `<n>` forward.
+- `:DS<n>R` runs it in reverse.
+- `:DS<n>S` stops it at its saved Stop pulse.
+- `:DS<n>T` toggles a normal positional-servo output `<n>` between its saved
+  Closed and Full positions.
+
+Custom output names do not change command targeting. Shared sequences operate
+the same mechanism only when the receiving droid uses the same numbered output;
+each droid retains its own calibration.
 
 ## Before installation
 
