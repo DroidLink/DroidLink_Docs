@@ -64,7 +64,7 @@ Follow the guides in this order:
 - [DroidLink Slave](Using_DroidLink_Slave.md) — replacement for the older Universal Slave firmware
 - [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md)
 - **DroidLink_AP**:
-  - [Installation and setup](Using_DroidLink_AP.md)
+  - [Installation and setup](Using_DroidLink_AP.md) ([PDF](Using_DroidLink_AP.pdf))
   - [Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
   - [PCA dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
 - [Periscope Logic Lights](Using_DroidLink_Periscope.md) ([PDF](Using_DroidLink_Periscope.pdf))
