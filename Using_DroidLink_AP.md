@@ -251,8 +251,8 @@ your own devices.
 Before connecting to the `AstroPixels` Wi-Fi network, download the correct
 template file to the phone, tablet, or computer that will be used for setup:
 
-- [Download the Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
-- [Download the PCA9685 dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
+- [Download the Maestro dome template](https://raw.githubusercontent.com/DroidLink/DroidLink_Docs/main/downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
+- [Download the PCA9685 dome template](https://raw.githubusercontent.com/DroidLink/DroidLink_Docs/main/downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
 
 Use the **Maestro dome template** when the servos are connected to Pololu
 Maestro controllers. Use the **PCA9685 dome template** only when the servos are
@@ -331,10 +331,10 @@ dropdowns alone.
 ## What the template changes
 
 Ready-to-import layouts are available in the
-[DroidLink_AP template folder](downloads/DroidLink_AP/):
+[DroidLink_AP template folder](https://github.com/DroidLink/DroidLink_Docs/tree/main/downloads/DroidLink_AP):
 
-- [Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
-- [PCA9685 dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
+- [Maestro dome template](https://raw.githubusercontent.com/DroidLink/DroidLink_Docs/main/downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
+- [PCA9685 dome template](https://raw.githubusercontent.com/DroidLink/DroidLink_Docs/main/downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
 
 The template sets up output names, output types, assignments, and servo groups.
 It does not set the Device ID, Master MAC, lighting configuration, saved
