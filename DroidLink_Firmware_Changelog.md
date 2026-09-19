@@ -11,11 +11,11 @@ Some older releases do not have a recorded release date or detailed public notes
 | Device | Version | Status |
 | --- | --- | --- |
 | Master Controller | V2.0.1 | Current |
-| DroidLink Slave | V2.2.0 | Current |
+| DroidLink Slave | V2.3.0 | Current |
 | Watch Display | V2.0.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| DroidLink_AP | V2.2.0 | Current |
+| DroidLink_AP | V2.3.0 | Current |
 
 ## Master Controller
 
@@ -76,6 +76,16 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## DroidLink Slave
 
+### V2.3.0 — September 19, 2026
+
+- Expanded reusable servo groups from 8 to 16 while preserving existing groups.
+- Expanded saved sequences from 128 to as many as 512 actions.
+- Redesigned LED sequence actions as directly editable cards with drag-to-reorder controls.
+- Fixed saving a new combined servo-and-lighting sequence without first saving the servo sequence separately.
+- Sequence Stop now releases active outputs and clears the configured LEDs.
+- Save errors and confirmations now appear beside the Save Sequence button.
+- Released as a free update for ESP32-C3 Super Mini and ESP32 DevKit controllers.
+
 ### V2.2.0 — September 15, 2026
 
 - Added direct positional-servo Toggle commands for one-button Open/Close control across all configured output numbers.
@@ -116,6 +126,18 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## DroidLink_AP
+
+### DroidLink_AP V2.3.0 — September 19, 2026
+
+- Added built-in `:SE` panel movement support for Maestro and PCA9685 installations using the supplied dome templates.
+- Added optional fifth and sixth pie-panel participation in built-in dome movements when those outputs are included in the panel groups.
+- Added reliable simultaneous top and bottom front-logic scrolling messages as one saved lighting action.
+- Added scrolling-text actions and drag-to-reorder controls to the LED Sequence Builder.
+- Expanded reusable servo groups from 8 to 16 while preserving existing groups.
+- Expanded saved sequences from 128 to as many as 512 actions.
+- Changed the default Web Config network to `DL_AP` with the shared default password documented in the setup guide.
+- Expanded the Web Config Commands tab to list the complete built-in `:SE` command range.
+- Released as a free update.
 
 ### DroidLink_AP V2.2.0 — September 15, 2026
 

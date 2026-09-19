@@ -5,7 +5,7 @@ PCA9685, or wired Marcduino control. Detailed operating instructions and the
 commands supported by the installed firmware are available inside its Web
 Config interface.
 
-The current Installer release is **V2.2.0**.
+The current Installer release is **V2.3.0**.
 
 ## Choose your controller path
 
@@ -248,7 +248,7 @@ your own devices.
 
 ## Open Web Config
 
-Before connecting to the `AstroPixels` Wi-Fi network, download the correct
+Before connecting to the `DL_AP` Wi-Fi network, download the correct
 template file to the phone, tablet, or computer that will be used for setup:
 
 - [Download the Maestro dome template](https://raw.githubusercontent.com/DroidLink/DroidLink_Docs/main/downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
@@ -265,8 +265,8 @@ ID. You can also create a Watch Display button using `:SCFG,<ID>`, replacing
 
 The device restarts and creates its temporary Web Config network:
 
-- Wi-Fi: `AstroPixels`
-- Password: `Astromech`
+- Wi-Fi: `DL_AP`
+- Password: `droidlink`
 - Address: `http://192.168.4.1`
 
 ## Required: install the dome output template
@@ -349,6 +349,59 @@ Use **Exit Web Config** only after the template is applied, every installed
 servo has been calibrated and saved, the servo groups have been checked, and a
 complete controller backup has been downloaded.
 
+## Built-in `:SE` panel movements
+
+With the supplied dome template applied, built-in `:SE` commands can run their
+AstroPixels lighting and sound together with the expected panel movement. The
+saved `ALL_PANELS` group controls normal all-panel movements, and
+`DOME_DANCE` controls the dome-dance movements. Do not rename those groups.
+
+If one of those groups is missing, the lighting and sound can still run, but
+the related panel movement will not. A servo marked **Do Not Use This Output**
+remains blocked. DroidLink_AP supports up to 16 saved servo groups.
+
+### Optional fifth and sixth pie panels
+
+The standard template configures four pie panels. Six-pie users can add the
+other two without changing the standard assignments:
+
+1. Configure output rows 13 and 14 as `PIE_PANEL_5` and `PIE_PANEL_6`.
+   These are Maestro A physical channels 13 and 14, or PCA A outputs A13 and
+   A14.
+2. Calibrate, save, and enable both outputs.
+3. Add both outputs to `PIE_PANELS`, `DOME_DANCE`, and `ALL_PANELS`.
+4. Confirm that `DOME_DANCE` contains 12 servos and `ALL_PANELS` contains 15.
+
+During the built-in dome-dance sequences, pie 5 follows pie 4 and pie 6
+follows pie 1. Users with four pie panels should leave the optional outputs
+unused.
+
+## Building LED and scrolling-text sequences
+
+Each saved sequence can contain up to 512 timed actions.
+
+Open **LED Sequence Builder** to combine timed AstroPixels lighting and
+scrolling-text actions under one saved `:AP00` through `:AP31` command.
+
+1. Click **Add Seq Action** for a normal lighting action, or click
+   **Add Scrolling Text** for a matrix-text action.
+2. Set the action's **Start time (ms)**.
+3. For scrolling text, choose the matrix target and color. Selecting
+   **Both front logic matrices (different text)** displays separate **Top
+   message** and **Bottom message** fields. DroidLink_AP stores those two
+   messages as one local action.
+4. Add the remaining lighting or text actions. Use the drag handle on an
+   action card to change its saved order. Dragging does not alter its start
+   time; order is most important when multiple actions share the same start
+   time.
+5. Click **Run sequence** and verify the complete result.
+6. Enter a sequence name, choose an available DroidLink command, and click
+   **Save Sequence**.
+
+The Master sends only the saved `:APxx` command. DroidLink_AP loads and runs
+the complete timed sequence locally instead of requiring the Master to send
+every lighting and text action separately.
+
 ## Advanced settings only: changing assignments and sharing sequences
 
 This section is for users who intentionally wire a mechanism differently from
@@ -423,14 +476,14 @@ Before sharing a sequence, both users should verify the following:
 4. Each user calibrates their own servo endpoints. A shared sequence does not
    transfer another user's physical calibration.
 
-With the supplied V2.2.0 templates, panel outputs P1 through P13 use
+With the supplied standard templates, panel outputs P1 through P13 use
 DroidLink_AP outputs 0 through 12 in both Maestro and PCA modes. Panel sequences
 can therefore be exchanged without renaming the panels. AstroPixels lighting
 steps are also independent of Maestro versus PCA servo hardware.
 
-### Known V2.2.0 holoprojector limitation
+### Known V2.2.0–V2.3.0 holoprojector limitation
 
-The V2.2.0 templates do not use matching DroidLink_AP output numbers for the
+The current templates do not use matching DroidLink_AP output numbers for the
 holoprojectors:
 
 | Holoprojector function | Maestro template | PCA template |
@@ -442,12 +495,12 @@ holoprojectors:
 | Top Holo H | 22 | 20 |
 | Top Holo V | 23 | 21 |
 
-Consequently, panel and lighting steps remain correct when a V2.2.0 sequence is
+Consequently, panel and lighting steps remain correct when a V2.2.0 or V2.3.0 sequence is
 shared between Maestro and PCA users, but holoprojector steps might move a
 different holoprojector or do nothing. They will not be redirected to a dome
 panel when both users have applied the supplied standard templates.
 
-For V2.2.0, users can correct the exported sequence JSON before importing it:
+For V2.2.0 and V2.3.0, users can correct the exported sequence JSON before importing it:
 
 - Maestro sequence to PCA: change holo targets 18-23 to 16-21 respectively.
 - PCA sequence to Maestro: change holo targets 16-21 to 18-23 respectively.
@@ -456,7 +509,7 @@ Only holoprojector command targets should be changed. Do not change panel
 targets 0 through 12 or AstroPixels lighting commands. Edit each complete
 command carefully so one replacement is not accidentally processed twice.
 
-This holoprojector numbering mismatch is a known V2.2.0 limitation and is
-planned to be corrected in the next DroidLink_AP release. Until that correction
+This holoprojector numbering mismatch is a known V2.2.0–V2.3.0 limitation and is
+planned to be corrected in a future DroidLink_AP release. Until that correction
 is actually released, verify or convert holo command targets before exchanging
 sequences between Maestro and PCA installations.
