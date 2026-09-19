@@ -126,6 +126,12 @@ For each connected output:
 
 Saved endpoints must be safe working positions, not mechanical hard stops. Test one mechanism at a time and keep its power disconnect accessible.
 
+### Servo groups
+
+Up to 16 reusable servo groups can be saved. Groups let one sequence action
+move several configured servo outputs together while those outputs remain
+available for individual control.
+
 ### Positional-servo toggle
 
 V2.2.0 adds a direct toggle command for normal positional servos. For example, `:BS4T` moves Body Slave Output 4 to its saved Full position on the first press after startup. The next press moves it to its saved Closed position, and later presses continue alternating. Use the configured role prefix: `BS`, `DS`, `LS`, or `US`.
@@ -155,6 +161,14 @@ When importing a template, review every output assignment before applying it. Se
 
 GPIO4 supports one NeoPixel-compatible data chain divided into as many as three named, non-overlapping segments. Web Config provides pixel type, pixel count, brightness, solid-color tests, effects, and LED-only sequences.
 
+In the LED Sequence Builder, select **Add Action** to create an editable action
+card. Choose its start time, LED section, action, color, and animation settings
+directly in that card. Cards can be run, copied, removed, or dragged into a new
+order. Dragging does not change an action's start time.
+
+Selecting **Stop** during sequence testing stops playback, releases active
+outputs, and clears the configured LEDs.
+
 Use a separate fused LED power supply and a common ground. Confirm the LED voltage and byte order before testing.
 
 ## Physical switches
@@ -163,7 +177,9 @@ Four board-specific GPIO inputs can trigger an action on a quick press, hold, or
 
 ## Build and assign sequences
 
-The Sequence Builder can combine timed servo/output, switch-wait, and LED actions. Actions with the same start time begin together.
+The Sequence Builder can combine up to 512 timed servo/output, switch-wait,
+and LED actions in one saved sequence. Actions with the same start time begin
+together.
 
 1. Add and preview each action.
 2. Save the sequence with a unique name.
