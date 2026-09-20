@@ -12,7 +12,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | --- | --- | --- |
 | Master Controller | V2.0.1 | Current |
 | DroidLink Slave | V2.3.0 | Current |
-| Watch Display | V2.0.0 | Current |
+| Watch Display | V2.1.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
 | DroidLink_AP | V2.3.0 | Current |
@@ -48,6 +48,15 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## Watch and Original Displays
+
+### Watch Display V2.1.0 — September 20, 2026
+
+- Added a Home-screen indicator for the active Master RC button profile (`P1`–`P4`).
+- Added automatic profile synchronization during startup and after the Display wakes.
+- Added drag-to-reorder controls for custom Web Config buttons in the Body, Dome, Lifter, Audio, and Universal tabs.
+- Preserved existing Display configurations and saved button lists without requiring a migration.
+- Released as a free update for all active DroidLink users.
+- Active-profile synchronization requires compatible Master firmware; the Display remains safe to use with earlier Master versions.
 
 ### Watch Display V2.0.0 — August 15, 2026
 
