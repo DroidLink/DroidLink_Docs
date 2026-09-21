@@ -30,6 +30,11 @@ Select the firmware entry that exactly matches the connected controller board.
 In particular, DroidLink Slave has separate Installer choices for the ESP32-C3
 Super Mini and ESP32 DevKit.
 
+For Master and DroidLink Slave installations, the Installer lets you choose
+whether to erase the device first. Keep the existing data for a normal firmware
+update. Choose erase only for a new board, a deliberate factory reset, or a
+recovery that requires first-time setup again.
+
 ## 4. Complete setup
 
 Follow [Getting Started with DroidLink](getting_started.md) to activate the

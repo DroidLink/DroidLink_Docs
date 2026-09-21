@@ -108,6 +108,15 @@ Example:
 :CM08  → Display in Config Mode  
 :CM09  → Put Master in Config Mode  
 
+### RC profile commands (Master V2.1.0)
+
+- `:RCP1` through `:RCP4` — select RC Profile 1 through 4.
+- `:RCPNEXT` — select the next profile, wrapping from Profile 4 to Profile 1.
+- `:RCPPREV` — select the previous profile, wrapping from Profile 1 to Profile 4.
+- `:RCPQ` — request the active profile from a compatible Watch Display.
+
+The Master starts in Profile 1 after boot. Profile switching is blocked while guarded Web Drive Tuning is armed.
+
 ---
 
 ## 👁 Sentry Mode (Autonomous Behavior)

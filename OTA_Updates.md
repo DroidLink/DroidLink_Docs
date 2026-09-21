@@ -13,6 +13,7 @@ This guide covers the Master Controller. DroidLink Slave and other devices shoul
 - Do not disconnect power after the update begins.
 
 Remote OTA installs the release currently offered for that device. It does not allow a user to choose an arbitrary firmware version.
+Some testing releases are available only to specifically authorized licenses. If a license is not eligible, the Master leaves the installed firmware unchanged and reports that the update is unavailable.
 
 ## Update the Master Controller
 

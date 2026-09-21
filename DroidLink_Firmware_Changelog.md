@@ -17,7 +17,26 @@ Some older releases do not have a recorded release date or detailed public notes
 | Periscope | V1.0 | Current |
 | DroidLink_AP | V2.3.0 | Current |
 
+## Limited Testing Firmware
+
+| Device | Version | Status |
+| --- | --- | --- |
+| Master Controller | V2.1.0 | Locked testing access |
+
 ## Master Controller
+
+### V2.1.0 — Locked testing release, September 20, 2026
+
+- Added four named RC button profiles plus Global mappings available in every profile.
+- Added profile switching, optional activation feedback, and active-profile status for compatible Watch Displays.
+- Added custom and chained commands to RC mappings.
+- Added drag-to-reorder controls for Master Sequence steps.
+- Expanded configuration capacity and added clear size warnings before saving.
+- Improved safe configuration saving, backup compatibility, device discovery pacing, and error reporting.
+- Added optional names for configured DroidLink Slave devices and Radar Eye discovery.
+- Added further RC input filtering and restrictions that prevent automated actions from issuing drive commands.
+- Removed a harmless preference-storage warning from the first boot after a complete erase.
+- Available through the Installer and Remote OTA only to licenses authorized for locked testing. V2.0.1 remains the normal current Master release.
 
 ### V2.0.1 — August 28, 2026
 

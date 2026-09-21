@@ -59,7 +59,11 @@ Use the page’s save control after editing settings. Initial setup and configur
 
 ## RC Controls
 
-RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, and other supported actions.
+RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, profile switching, custom commands, and other supported actions.
+
+Master V2.1.0 provides four named profiles and a Global mapping page. Profile mappings change when a different profile is selected. Global mappings remain active in every profile, so use them for essential controls and profile switching. The Master starts in Profile 1 after every boot.
+
+Each profile can have an optional activation feedback command. Save applies the mappings immediately. **Load RC Defaults** resets only the RC profile mappings and does not erase Master Sequences, devices, network settings, or other Master configuration.
 
 1. Choose the desired input.
 2. Select its action.
