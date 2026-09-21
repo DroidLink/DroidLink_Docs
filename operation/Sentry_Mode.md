@@ -163,4 +163,4 @@ Stopping the Master Sequence scheduler cannot undo a command already received by
 
 ## Next step
 
-See the [DroidLink Command Reference](DroidLink_Command_Reference.md) for other commands, or continue to [OTA Updates](OTA_Updates.md).
+See the [DroidLink Command Reference](../reference/Command_Reference.md) for other commands, or continue to [OTA Updates](OTA_Updates.md).

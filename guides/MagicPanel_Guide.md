@@ -1,6 +1,6 @@
-# Using DroidLink MagicPanel
+# DroidLink MagicPanel Complete Guide
 
-DroidLink MagicPanel controls a supported LED matrix through the DroidLink Master. This guide covers installation, first-time setup, connection, a basic test, and recovery.
+DroidLink MagicPanel controls a supported LED matrix through the DroidLink Master. This guide covers hardware, installation, USB-console first-time setup, Master registration, normal operation, commands, recovery, and troubleshooting.
 
 ## What you need
 
@@ -65,9 +65,9 @@ After saving the profile, MagicPanel reports that setup is complete and reboots 
 If MagicPanel has not received Master communication after approximately 15 seconds, the Console displays **Waiting for Master** and prints the MagicPanel Device MAC.
 
 1. Copy the displayed MagicPanel Device MAC.
-2. Open Master Config.
-3. Add that MAC to the same Device ID selected during MagicPanel setup.
-4. Select **Save Configuration**. The Master saves the entry and reboots automatically when required.
+2. Open Master System Setup.
+3. Select **Add Slave**, enter a useful name such as `MagicPanel`, and enter the exact MagicPanel Device MAC.
+4. Select **Save Configuration**. The Master saves the entry and reboots automatically when required. MagicPanel continues to report the Device ID saved during its own first-time setup.
 
 When communication begins, the MagicPanel Console displays **DroidLink Connected** and **MagicPanel Online**, including its Device ID.
 
@@ -131,6 +131,22 @@ Check the power supply capacity, wiring, connectors, voltage, and common ground.
 
 ## Commands
 
-See the [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) for patterns, colors, brightness, speed, text, persistent settings, and complete examples. A [printable PDF](DroidLink_MagicPanel_Command_Reference.pdf) is also available.
+See the [MagicPanel Command Reference](../reference/MagicPanel_Command_Reference.md) for patterns, colors, brightness, speed, text, persistent settings, and complete examples.
 
-Return to the [Documentation Home](README.md) when setup and testing are complete.
+## Backups and firmware updates
+
+MagicPanel does not provide a downloadable configuration backup. Record its Device ID, Master MAC, and selected matrix profile with the droid's other configuration records.
+
+Use the DroidLink Installer for firmware updates. For a normal update, leave **Erase Flash** disabled so the saved setup can be retained. Use **Erase Flash** only for a deliberate clean installation or recovery, then repeat first-time setup and verify the Master entry.
+
+## Completion checklist
+
+- [ ] Correct MagicPanel firmware installed
+- [ ] Master MAC saved
+- [ ] Unique Device ID from `2` through `13` saved
+- [ ] Correct matrix profile selected
+- [ ] Exact MagicPanel Device MAC added with **Add Slave** in Master System Setup
+- [ ] MagicPanel appears in Master Device Status
+- [ ] Basic pattern tested with the matrix safely powered
+
+Return to the [Documentation Home](../README.md) when setup and testing are complete.

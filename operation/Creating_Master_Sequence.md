@@ -138,7 +138,7 @@ You can also trigger a Master Sequence from the Display by sending:
 
 ## 📸 Master Sequence Screen
 
-![Master Sequence Screen](images/master_sequence_screen.png)
+![Master Sequence Screen](../images/master_sequence_screen.png)
 
 ## Example Sequence Explanation
 

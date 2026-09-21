@@ -54,7 +54,7 @@ The following prefixes address DroidLink Slave devices according to their config
 
 `:DSnn` → Dome Slave sequence
 
-`:USnn` → Universal Slave sequence
+`:USnn` → Universal-role DroidLink Slave sequence
 
 `nn` = two-digit shortcut assigned on that DroidLink Slave.
 
@@ -68,7 +68,7 @@ Examples:
 
 `:DS03` → Dome Slave runs sequence 03
 
-`:US04` → Universal Slave runs sequence 04
+`:US04` → Universal-role DroidLink Slave runs sequence 04
 
 These commands are dedicated to DroidLink Slave role shortcuts and are not used for unrelated device types.
 ---
@@ -134,7 +134,7 @@ Sentry Mode allows the Master to perform randomized actions such as dome movemen
 
 ### 🔹 Legacy Configure + Start
 
-The recommended configuration method is the Master web interface described in the [Sentry Mode User Guide](Sentry_Mode.md). The legacy `:SM` command remains available for compatibility and starts Sentry immediately:
+The recommended configuration method is the Master web interface described in the [Sentry Mode User Guide](../operation/Sentry_Mode.md). The legacy `:SM` command remains available for compatibility and starts Sentry immediately:
 
 `:SM:<minDelay>:<maxDelay>:<sound>:<domeMin>:<domeMax>,MS00,MS01,MS02`
 
@@ -190,7 +190,7 @@ Depending on the saved configuration, Sentry Mode can randomly perform:
 - Delay timing is randomized between the configured minimum and maximum.
 - Saved settings persist after reboot, but Sentry always starts off.
 
-See the [Sentry Mode User Guide](Sentry_Mode.md) for complete configuration, frequency, persistence, and shutdown details.
+See the [Sentry Mode User Guide](../operation/Sentry_Mode.md) for complete configuration, frequency, persistence, and shutdown details.
 
 ---
 
@@ -417,6 +417,6 @@ For advanced integrations, external hardware behavior, or device-specific comman
 
 Learn how to combine commands into reusable actions:
 
-👉 **[Creating a Master Sequence →](Creating_Master_Sequence.md)**
+👉 **[Creating a Master Sequence →](../operation/Creating_Master_Sequence.md)**
 
-Device-specific commands are covered in the guides listed on the [Documentation Home](README.md).
+Device-specific commands are covered in the guides listed on the [Documentation Home](../README.md).

@@ -73,4 +73,4 @@ Allow the device to reboot normally, verify power and Wi-Fi, and try once more. 
 
 ## Continue
 
-Review the [Firmware Changelog](DroidLink_Firmware_Changelog.md) for user-visible release information, or return to the [Documentation Home](README.md).
+Review the [Firmware Changelog](../reference/Firmware_Changelog.md) for user-visible release information, or return to the [Documentation Home](../README.md).

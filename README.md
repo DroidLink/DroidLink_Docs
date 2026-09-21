@@ -30,51 +30,41 @@ Robots can move unexpectedly and may cause injury or property damage. By buildin
 
 ## Start here
 
-New users should begin with [Getting Started](getting_started.md). It covers:
-
-1. Installing and activating the Master
-2. Installing the required Watch Display
-3. Installing DroidLink Slave and dedicated DroidLink devices
-4. Adding device MAC addresses to the Master
-5. Verifying Device Status
-6. Creating configuration backups
+New users should begin with [Start Here with DroidLink](DroidLink_Start_Here.md). It is the single roadmap from hardware selection through installation, pairing, safe testing, and backups.
 
 ## Recommended documentation path
 
 Follow the guides in this order:
 
-1. [Start Here with DroidLink](DroidLink_Start_Here.md) — hardware, licensing, installation, and setup path
-2. [DroidLink Main Hardware](DroidLink_Parts_List.md) — controller boards, breakouts, RC equipment, and optional audio
-3. [Getting Started](getting_started.md) — installation, activation, pairing, verification, and backups
-4. [Using DroidLink](using_droidlink.md) — system overview
-5. [Master Wiring and Connections](Master_Wiring_and_Connections.md) — power and hardware wiring
-6. [Using DroidLink Slave](Using_DroidLink_Slave.md) — installation, wiring, outputs, LEDs, switches, and sequences
-7. [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) — role commands and saved-sequence shortcuts
-8. [Master Interface Guide](Master_Interface_Guide.md) — Master configuration and operation
-9. [Display Interface Guide](Display_Interface_Guide.md) — Watch Display configuration and operation
-10. [DroidLink Command Reference](DroidLink_Command_Reference.md) — supported command syntax
-11. [Creating a Master Sequence](Creating_Master_Sequence.md) — reusable timed actions
-12. [Creating Display Sequences](Creating_Display_Sequences.md) — chained Display commands
-13. [Sentry Mode User Guide](Sentry_Mode.md) — unattended random actions
-14. [Remote OTA Updates](OTA_Updates.md) — supported wireless firmware updates
-15. [Firmware Changelog](DroidLink_Firmware_Changelog.md) — current, testing, and historical releases
+1. [Start Here with DroidLink](DroidLink_Start_Here.md) — the authoritative installation roadmap
+2. [DroidLink Main Hardware](reference/Parts_List.md) — supported boards and required hardware
+3. [Master and Watch Display Complete Guide](guides/Master_and_Watch_Display_Guide.md) — installation, initial setup, and pairing
+4. [Master Wiring and Connections](operation/Master_Wiring.md) — power and hardware wiring
+5. [DroidLink Slave Complete Guide](guides/DroidLink_Slave_Guide.md) — installation, configuration, and operation
+6. [DroidLink_AP Complete Guide](guides/DroidLink_AP_Guide.md)
+7. [Using DroidLink](operation/System_Overview.md) — system overview after installation
+8. [Master Interface Guide](operation/Master_Interface.md) — Master configuration and operation
+9. [Display Interface Guide](operation/Display_Interface.md) — Watch Display configuration and operation
+10. [DroidLink Command Reference](reference/Command_Reference.md) — supported command syntax
+11. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
+12. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
+13. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
+14. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
+15. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
 
-## Device guides
+## Additional device and reference guides
 
-- [DroidLink Slave](Using_DroidLink_Slave.md) — replacement for the older Universal Slave firmware
-- [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md)
-- **DroidLink_AP**:
-  - [Installation and setup](Using_DroidLink_AP.md) ([PDF](Using_DroidLink_AP.pdf))
-  - [Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
-  - [PCA dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
-- [Periscope Logic Lights](Using_DroidLink_Periscope.md) ([PDF](Using_DroidLink_Periscope.pdf))
-- [MagicPanel setup](Using_DroidLink_MagicPanel.md) ([PDF](Using_DroidLink_MagicPanel.pdf))
-- [MagicPanel Command Reference](DroidLink_MagicPanel_Command_Reference.md) ([PDF](DroidLink_MagicPanel_Command_Reference.pdf))
+- [DroidLink Slave Command Reference](reference/Slave_Command_Reference.md)
+- [DroidLink_AP Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
+- [DroidLink_AP PCA dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
+- [DroidLink Periscope Complete Guide](guides/Periscope_Guide.md)
+- [DroidLink MagicPanel Complete Guide](guides/MagicPanel_Guide.md)
+- [MagicPanel Command Reference](reference/MagicPanel_Command_Reference.md)
 
-## Release guides
+## Historical release guides
 
-- [DroidLink V2.0.0 New Features](DroidLink_V2.0.0_New_Features.md) ([PDF](DroidLink_V2.0.0_New_Features.pdf))
-- [DroidLink Firmware Changelog](DroidLink_Firmware_Changelog.md)
+- [DroidLink V2.0.0 New Features](historical/V2.0.0_New_Features.md) — retained for users of that historical release
+- [DroidLink Firmware Changelog](reference/Firmware_Changelog.md)
 
 ## Optional audio hardware
 

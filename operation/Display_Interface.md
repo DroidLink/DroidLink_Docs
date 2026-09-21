@@ -4,7 +4,7 @@ The DroidLink Watch Display is a touchscreen controller and status display for t
 
 ## Display Web Config
 
-Connect to the Display hotspot and open its configuration page. Select **Enter Setup** to edit its settings.
+Connect to the Wi-Fi network beginning with `DroidLink_Display_` using password `droidlink`, then open `http://192.168.4.1`. The final four characters in the network name are unique to the Display. Select **Enter Setup** to edit its settings.
 
 The welcome page shows the installed firmware version and the Display’s own MAC address. Use **Copy** when entering the Display MAC in the Watch Display field of the Master’s System Setup page.
 
@@ -78,9 +78,7 @@ The scrollable Settings screen includes:
 - Device configuration buttons for Device IDs `2` through `13`
 - Two SD-card backup and restore slots
 
-Every DroidLink device must have a unique Device ID. Use the matching Device ID button when placing a configured device into setup mode.
-
-This also allows you to ping any device online and paired. 
+Every DroidLink device must have a unique Device ID. Select the matching Device ID button to restart that configured device in its Web Config mode.
 
 Backup and restore require a compatible SD card. Hold the backup or restore control to prevent accidental activation.
 
@@ -133,4 +131,4 @@ Confirm shutdown is enabled, USB power is disconnected, and Display Wi-Fi is off
 
 ## Next step
 
-Continue to the [DroidLink Command Reference](DroidLink_Command_Reference.md). After reviewing the commands, see [Creating a Master Sequence](Creating_Master_Sequence.md) and [Creating Display Sequences](Creating_Display_Sequences.md) for advanced actions.
+Continue to the [DroidLink Command Reference](../reference/Command_Reference.md). After reviewing the commands, see [Creating a Master Sequence](Creating_Master_Sequence.md) and [Creating Display Sequences](Creating_Display_Sequences.md) for advanced actions.

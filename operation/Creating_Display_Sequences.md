@@ -58,7 +58,7 @@ The image below shows three Display buttons:
 - **Display Seq 2** – Chained external serial commands  
 - **Master Seq 0** – Stored Master Sequence call  
 
-![Display Sequence Screen](images/display_sequence_screen.png)
+![Display Sequence Screen](../images/display_sequence_screen.png)
 
 ---
 
@@ -124,4 +124,4 @@ This gives you two ways to build behavior:
 Want to explore all available DroidLink commands,  
 including advanced system, audio, dome, and chaining options?
 
-👉 **[DroidLink Command Reference →](DroidLink_Command_Reference.md)**
+👉 **[DroidLink Command Reference →](../reference/Command_Reference.md)**

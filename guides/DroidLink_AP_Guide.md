@@ -1,9 +1,10 @@
-# Installing and setting up DroidLink_AP
+# DroidLink_AP Complete Guide
 
 DroidLink_AP combines AstroPixels lighting with a choice of Pololu Maestro,
-PCA9685, or wired Marcduino control. Detailed operating instructions and the
-commands supported by the installed firmware are available inside its Web
-Config interface.
+PCA9685, or wired Marcduino control. This guide covers hardware, wiring,
+installation, first-time setup, Master registration, Web Config, templates,
+normal operation, sequences, backups, and troubleshooting. Detailed command
+help is also available inside the installed firmware's Web Config interface.
 
 The current Installer release is **V2.3.0**.
 
@@ -237,16 +238,19 @@ returning the device to a completely clean setup.
    unique DroidLink Device ID from 2 through 13, and enter the DroidLink Master
    MAC when requested. When selecting Maestro, accept device numbers 12 and 13
    only if they match the numbers applied in Maestro Control Center.
-8. After DroidLink_AP restarts, add its displayed Device MAC to Master Config
-   and save the Master configuration.
+8. Record the DroidLink_AP Device MAC shown in the console.
+9. After DroidLink_AP restarts, open **Master System Setup**.
+10. Select **Add Slave**, enter a useful name such as `DroidLink_AP`, and enter
+    the exact Device MAC recorded from the console.
+11. Save the Master configuration and allow the Master to restart if requested.
 
 The console walkthrough below shows the information requested during first-time
 setup. The MAC addresses shown are examples; use the addresses displayed by
 your own devices.
 
-![DroidLink_AP first-time setup walkthrough](images/droidlink-ap-first-time-setup-v2.png)
+![DroidLink_AP first-time setup walkthrough](../images/droidlink-ap-first-time-setup-v2.png)
 
-## Open Web Config
+## Open Web Config from the Watch Display
 
 Before connecting to the `DL_AP` Wi-Fi network, download the correct
 template file to the phone, tablet, or computer that will be used for setup:
@@ -259,15 +263,28 @@ Maestro controllers. Use the **PCA9685 dome template** only when the servos are
 connected to PCA9685 boards. These files are not interchangeable because the
 second controller begins at a different DroidLink_AP output number.
 
-From the Watch Display Settings screen, select the saved DroidLink_AP Device
-ID. You can also create a Watch Display button using `:SCFG,<ID>`, replacing
-`<ID>` with the saved device number.
+Use the Watch Display to select DroidLink_AP by the Device ID assigned during
+first-time setup:
 
-The device restarts and creates its temporary Web Config network:
+1. Power on the Master, Watch Display, and DroidLink_AP.
+2. On the Watch Display, open **Command Center** and select **Settings**.
+3. Scroll to the **DEVICE ID** buttons.
+4. Select the Device ID assigned to DroidLink_AP.
+5. Wait for DroidLink_AP to restart in Web Config mode.
+6. On the phone, tablet, or computer containing the downloaded template,
+   connect to the `DL_AP` Wi-Fi network.
+7. Enter the default Wi-Fi password `droidlink`.
+8. Open `http://192.168.4.1` in a web browser.
 
-- Wi-Fi: `DL_AP`
-- Password: `droidlink`
-- Address: `http://192.168.4.1`
+If the phone, tablet, or computer reports that this Wi-Fi network has no
+internet connection, remain connected. The network is only used to configure
+DroidLink_AP.
+
+If selecting the Device ID does not open Web Config, confirm that the Watch
+Display is connected to the Master, the exact DroidLink_AP Device MAC is saved
+in Master System Setup, and the selected Device ID matches the ID assigned to
+DroidLink_AP during first-time setup. Then select the matching **DEVICE ID**
+again and wait for DroidLink_AP to restart.
 
 ## Required: install the dome output template
 
@@ -513,3 +530,30 @@ This holoprojector numbering mismatch is a known V2.2.0–V2.3.0 limitation and 
 planned to be corrected in a future DroidLink_AP release. Until that correction
 is actually released, verify or convert holo command targets before exchanging
 sequences between Maestro and PCA installations.
+
+## Backups and firmware updates
+
+Download a **Complete controller backup** from the Welcome tab after the template, outputs, calibration, lighting, and sequences have been verified.
+
+For a normal firmware update, use the DroidLink Installer with **Erase Flash** disabled so saved identity and configuration can be retained. Use **Erase Flash** only for a new installation, deliberate factory reset, or recovery that requires first-time setup again. Restore a backup only to a compatible controller setup.
+
+## Troubleshooting checklist
+
+- Confirm the Device ID is unique from `2` through `13`.
+- Confirm the exact DroidLink_AP Device MAC is saved with **Add Slave** in Master System Setup.
+- Confirm the saved Master MAC is correct.
+- Select the matching Watch Display **DEVICE ID** and wait for `DL_AP` to appear.
+- Connect with password `droidlink` and open `http://192.168.4.1`.
+- Confirm the imported template matches Maestro or PCA9685 hardware.
+- Keep linkages disconnected until every installed servo has safe saved endpoints.
+
+## Completion checklist
+
+- [ ] Correct controller type and unique Device ID saved
+- [ ] Master MAC saved
+- [ ] Exact Device MAC added to Master System Setup
+- [ ] Web Config opens from the matching Watch Display **DEVICE ID** button
+- [ ] Correct dome template applied
+- [ ] Every installed servo calibrated and tested safely
+- [ ] Lighting and saved sequences verified
+- [ ] Complete controller backup downloaded

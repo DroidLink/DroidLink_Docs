@@ -1,6 +1,6 @@
-# Using DroidLink Slave
+# DroidLink Slave Complete Guide
 
-DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
+DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. This guide covers hardware, wiring, installation, first-time setup, Master registration, Web Config, normal configuration and operation, backups, and troubleshooting. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
 
 The built-in web interface is used to name outputs, calibrate servos, configure LEDs and switches, build sequences, and assign DroidLink commands. Pololu Maestro scripts are not required.
 
@@ -36,7 +36,7 @@ Do not install one board's build on the other board.
 | Configurable switch input 3 | GPIO3 | GPIO25 | No |
 | Configurable switch input 4 | GPIO10 | GPIO26 | No |
 | NeoPixel-compatible LED data | GPIO4 | GPIO4 | No |
-| Web Config button | Onboard BOOT / GPIO9 | Onboard BOOT / GPIO0 | Built in |
+| Web Config recovery button | Onboard BOOT / GPIO9 | Onboard BOOT / GPIO0 | Built in |
 | Command-status LED | GPIO8 | GPIO2 | Built in |
 | Maestro serial RX reserve; do not connect | GPIO20 | GPIO16 | No |
 | Serial TX to Maestro RX | GPIO21 | GPIO17 | Yes |
@@ -90,28 +90,46 @@ Follow the prompts in the Installer console:
 6. Enter the DroidLink Master MAC address.
 7. Allow the controller to save and reboot.
 
-Record the Device MAC shown near the top of the console. In Master System Setup, select **Add Slave** (the current interface label for a Maestro or dedicated device), enter a useful name and the Device MAC, then save the Master configuration.
+Record the Device MAC shown near the top of the console. You will need this address to add the Slave to the Master.
 
 Each DroidLink device must have a unique Device ID. The Slave will not start normal output operation until its required setup values are valid.
 
-## Open Web Config
+## Add the DroidLink Slave to the Master
 
-Start Web Config in any of these ways:
+Before opening the Slave's Web Config, add it to the Master:
 
-- Select the Slave's Device ID from the Watch Display Settings page.
-- Send the role command shown below.
-- Hold the ESP32 BOOT button for about two seconds during normal operation.
+1. Open **Master System Setup**.
+2. Select **Add Slave**.
+3. Enter a useful name, such as `Body Slave` or `Dome Slave`.
+4. Enter the exact Device MAC recorded from the Installer console.
+5. Save the Master configuration and allow the Master to restart if requested.
 
-| Role | Open Web Config command | Wi-Fi network |
-|---|---|---|
-| Body | `:BS,WEB,ON` | `DroidLink_Body` |
-| Dome | `:DS,WEB,ON` | `DroidLink_Dome` |
-| Lifter | `:LS,WEB,ON` | `DroidLink_Lifter` |
-| Universal | `:US,WEB,ON` | `DroidLink_Universal` |
+Repeat these steps for every DroidLink Slave installed in the droid.
 
-Connect using password `droidlink`, then open `http://192.168.4.1`.
+## Open Web Config from the Watch Display
 
-The onboard status LED remains solid while Web Config is active. Select **Exit Web Config** when finished so the Slave reboots into normal DroidLink operation.
+Use the Watch Display to select the exact DroidLink device by its assigned Device ID:
+
+1. Power on the Master, Watch Display, and DroidLink Slave.
+2. On the Watch Display, open **Command Center** and select **Settings**.
+3. Scroll to the **DEVICE ID** buttons.
+4. Select the Device ID assigned to the DroidLink Slave you want to configure.
+5. Wait for the selected Slave to restart in Web Config mode. The selected device's onboard status LED remains solid while Web Config is active.
+6. On a phone, tablet, or computer, connect to the Wi-Fi network for the Slave's configured role:
+
+| Configured role | Default Wi-Fi network |
+|---|---|
+| Body | `DroidLink_Body` |
+| Dome | `DroidLink_Dome` |
+| Lifter | `DroidLink_Lifter` |
+| Universal | `DroidLink_Universal` |
+
+7. Enter the default Wi-Fi password `droidlink`.
+8. Open `http://192.168.4.1` in a web browser.
+
+If the phone, tablet, or computer reports that this Wi-Fi network has no internet connection, remain connected. The network is only used to configure the DroidLink Slave.
+
+Select **Exit Web Config** when finished. The Slave restarts and returns to normal DroidLink operation.
 
 ## Configure outputs safely
 
@@ -144,8 +162,8 @@ An output template contains output names, output types, and groups. It does not 
 
 Available templates:
 
-- [Basic MK4 Body output template](downloads/DroidLink_Slave/DroidLink-MK4-Body-Output-Template.json) — requires at least 24 outputs.
-- [Five-lifter output template](downloads/DroidLink_Slave/DroidLink-Lifter-Output-Template.json) — requires at least 10 outputs.
+- [Basic MK4 Body output template](../downloads/DroidLink_Slave/DroidLink-MK4-Body-Output-Template.json) — requires at least 24 outputs.
+- [Five-lifter output template](../downloads/DroidLink_Slave/DroidLink-Lifter-Output-Template.json) — requires at least 10 outputs.
 
 Templates and downloaded presets include the configured role in their filenames, for example:
 
@@ -189,13 +207,15 @@ together.
 
 Command `60` restores the saved startup LED sequence and command `61` stops LED effects and turns the configured LEDs off. The Web Config Commands tab shows all ranges using the prefix selected for this device.
 
-See the [DroidLink Slave Command Reference](DroidLink_Slave_Command_Reference.md) for commands available to users.
+See the [DroidLink Slave Command Reference](../reference/Slave_Command_Reference.md) for commands available to users.
 
 ## Back up before updating or erasing
 
 Use **Complete controller backup and restore** on the Welcome tab. The complete backup contains output names and types, saved endpoints, groups, inputs, LED configuration, sequences, command assignments, and the Web Config network name. Restore accepts a backup created for the same servo-controller backend. Pairing and controller selection remain those of the device receiving the restore.
 
 Output templates remain useful for sharing a layout without sharing calibration or identity. Sequence exports remain useful for sharing only selected sequences. **Erase Flash** removes the saved setup, so download a complete backup first.
+
+For a normal firmware update, use the DroidLink Installer with **Erase Flash** disabled so saved identity and configuration can be retained. Use **Erase Flash** only for a new installation, deliberate factory reset, or recovery that requires first-time setup again.
 
 ## Troubleshooting
 
@@ -215,12 +235,27 @@ Output templates remain useful for sharing a layout without sharing calibration 
 
 ### Web Config does not appear
 
-- Confirm the role-specific command uses the correct prefix.
-- Hold BOOT for about two seconds, then look for the role-specific setup network.
-- Connect directly to `http://192.168.4.1` after joining that network.
+- Confirm the Master, Watch Display, and DroidLink Slave are powered on.
+- Confirm the Watch Display is connected to the Master.
+- Confirm the Slave's exact Device MAC is saved in Master System Setup.
+- Confirm the **DEVICE ID** selected on the Watch Display matches the Device ID assigned to that Slave.
+- Select the matching **DEVICE ID** again and wait for the Slave to restart.
+- For recovery only, wait until the Slave has started normally and then hold its onboard BOOT button for about two seconds. Do not hold BOOT while powering on or resetting the board.
+- Join the role-specific Wi-Fi network using password `droidlink`, then open `http://192.168.4.1`.
 
 ### Emergency stop
 
 Send the role prefix followed by `BX`, such as `:BS,BX`. This stops sequence playback, servo motion, LED effects, and Maestro outputs. Disconnect mechanism power if movement remains unsafe.
 
 For a broader controlled stop, use `:BS,STOP` (replace `BS` with the configured role prefix). Use `:BS,HOME` to stop active actions and return configured positional outputs to their saved Closed positions.
+
+## Completion checklist
+
+- [ ] Correct board-specific firmware installed
+- [ ] Unique Device ID, role, controller type, and Master MAC saved
+- [ ] Exact Device MAC added with **Add Slave** in Master System Setup
+- [ ] Device appears in Master Device Status
+- [ ] Web Config opens from the matching Watch Display **DEVICE ID** button
+- [ ] Unused outputs are marked **Do Not Use**
+- [ ] Every installed mechanism has safe saved endpoints
+- [ ] Complete controller backup downloaded

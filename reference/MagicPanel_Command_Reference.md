@@ -115,7 +115,7 @@ Example setup:
 | `:MPHELP FULL` | Print extended help. |
 | `:MPLIST` | Print the complete supported pattern list. |
 
-The printable [MagicPanel Command Reference PDF](DroidLink_MagicPanel_Command_Reference.pdf) contains the full pattern-number table and additional examples.
+The complete pattern-number table and additional examples are included below.
 
 ## Recovery
 

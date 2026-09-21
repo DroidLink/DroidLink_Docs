@@ -84,4 +84,4 @@ Examples:
 
 Most users should create motion and lighting actions with Web Config instead of entering low-level calibration or pulse commands manually.
 
-Return to [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation, wiring, calibration, sequences, backups, and troubleshooting.
+Return to the [DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md) for installation, wiring, calibration, sequences, backups, and troubleshooting.

@@ -47,7 +47,7 @@ A shared ground ensures reliable signal communication between all devices.
 The image below shows the Master Controller mounted to the breakout board,
 powered via a 12V DC input, with both SBUS receivers connected.
 
-![Master Installed – 12V Power and SBUS Connected](images/master_power_sbus_wiring.jpg)
+![Master Installed – 12V Power and SBUS Connected](../images/master_power_sbus_wiring.jpg)
 
 ### Connection Overview
 
@@ -69,6 +69,8 @@ DroidLink supports:
 
 Choose the configuration that matches your system.
 
+Do not select the **Dome Encoder** option. Encoder-dome runtime output is not completed in the current normal Master release.
+
 ---
 
 ## Dome Controller — ESC Mode (PWM)
@@ -86,7 +88,7 @@ Only the **signal and ground wires** are required.
 
 ### Dome Wiring Diagram
 
-![Dome PWM Connection](images/master_dome_motor_wiring.jpg)
+![Dome PWM Connection](../images/master_dome_motor_wiring.jpg)
 
 ---
 
@@ -135,7 +137,7 @@ The Master transmits commands on **GPIO 4**, and each controller responds only t
 
 ### Wiring Diagram
 
-![Sabertooth Packetized Serial Wiring](images/master_packetized_serial_wiring.jpg)
+![Sabertooth Packetized Serial Wiring](../images/master_packetized_serial_wiring.jpg)
 
 ---
 
@@ -244,7 +246,7 @@ The RX pin on the ESP32 is **not used**.
 
 ### DFPlayer Wiring Diagram
 
-![DFPlayer Mini Breakout Wiring](images/master_dfplayer_wiring.jpg)
+![DFPlayer Mini Breakout Wiring](../images/master_dfplayer_wiring.jpg)
 
 Connect the following pins:
 
@@ -262,7 +264,7 @@ DroidLink uses audio files stored on a **microSD card inserted into the DFPlayer
 
 Download the official DroidLink Audio Pack:
 
-👉 **[Download DroidLink Audio Pack v1](downloads/DroidLink_Audio_Pack_v1.zip)**
+👉 **[Download DroidLink Audio Pack v1](../downloads/DroidLink_Audio_Pack_v1.zip)**
 
 ---
 
@@ -315,7 +317,7 @@ Only **signal and ground wires** connect to the Master.
 
 ## ESC Wiring Diagram
 
-![Drive ESC Signal Connection](images/master_drive_esc.jpg)
+![Drive ESC Signal Connection](../images/master_drive_esc.jpg)
 
 ---
 
@@ -333,9 +335,9 @@ https://youtu.be/dwMedRteUe4?si=NSW_UL7fBHayW-up
 
 When the video reaches the calibration step:
 
-1. Switch to the DroidLink Master display
-2. Scroll to the bottom of the **Master Mode** menu
-3. Select **CALIBRATE ONLY**
+1. On the Watch Display, open **Command Center**.
+2. Select **Master**.
+3. Select **CALIBRATE ONLY**.
 
 This performs ESC calibration through the DroidLink system.
 
@@ -369,8 +371,8 @@ After drive controller setup is complete drive behavior can be tuned from the Di
 
 To adjust drive speed profiles:
 
-1. Swipe to **Master Mode**
-2. Open **Params**
+1. On the Watch Display, open **Command Center**.
+2. Select **Drives**.
 
 You can adjust speed scaling for:
 
@@ -416,4 +418,4 @@ Before continuing verify:
 
 Proceed to the next guide:
 
-Continue with **[Using DroidLink Slave](Using_DroidLink_Slave.md)** for Maestro wiring, installation, and configuration.
+Continue with the **[DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md)** for Maestro wiring, installation, and configuration.

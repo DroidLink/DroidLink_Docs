@@ -6,11 +6,13 @@ The DroidLink Master web interface configures the droid, maps RC controls, build
 
 ### First-time setup or forced configuration
 
-Connect to the Master setup hotspot, open the address shown by the installer console, and complete System Setup. This mode is intended for initial configuration and recovery.
+Connect to `Master_Config` using password `droidlink`, open `http://192.168.4.1`, and complete System Setup. This mode is intended for initial configuration and recovery.
+
+For recovery, press Reset and immediately hold BOOT for approximately four seconds. Release BOOT after the Master enters configuration mode.
 
 ### Runtime Web Config
 
-During normal operation, send **Master Web UI On** (`:CM09`) from the Watch Display or an assigned control. Connect to the `DroidLink_Master` hotspot and open the configuration page.
+During normal operation, select **Master Web UI On** from the Watch Display Settings screen or use an assigned control. Connect to `DroidLink_Master` using password `droidlink`, then open `http://192.168.4.1`.
 
 Use **Exit Web Mode**, **Master Web UI Off**, or `:CM0B` when finished. The Master shows a solid pink indicator while runtime Web Config is active.
 
@@ -40,6 +42,10 @@ Enter the MAC printed or displayed by each DroidLink device. Every configured de
 
 The Watch Display and optional Large Display have separate settings. Enable only the Displays that are installed, enter their correct MAC addresses, and save the configuration.
 
+The **Add Slave** control is also used for dedicated DroidLink devices such as DroidLink_AP, MagicPanel, and Periscope. Enter the exact Device MAC shown by each device.
+
+Do not select **Dome Encoder** unless a current released firmware guide specifically states that encoder-dome output is supported. The existing encoder option does not have a completed runtime output path in the current normal release.
+
 ### Dome RC calibration
 
 Use **Dome RC Calibration** when the dome does not reach full speed or the receiver's center and endpoints differ from the standard SBUS values.
@@ -61,7 +67,7 @@ Use the page’s save control after editing settings. Initial setup and configur
 
 RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, profile switching, custom commands, and other supported actions.
 
-Master V2.1.0 provides four named profiles and a Global mapping page. Profile mappings change when a different profile is selected. Global mappings remain active in every profile, so use them for essential controls and profile switching. The Master starts in Profile 1 after every boot.
+Authorized Master V2.1.0 testing firmware provides four named profiles and a Global mapping page. These controls are not part of the normal V2.0.1 release. In V2.1.0, profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master starts in Profile 1 after every boot.
 
 Each profile can have an optional activation feedback command. Save applies the mappings immediately. **Load RC Defaults** resets only the RC profile mappings and does not erase Master Sequences, devices, network settings, or other Master configuration.
 
@@ -132,7 +138,7 @@ Use **Backup / Restore** before firmware updates or major configuration changes.
 
 Backups include the Master configuration, RC mappings, sequences, and supported Sentry settings.
 
-**Dome RC calibration is stored separately and is not included in `Master_Config.json`.** After installing V2.0.1, complete Dome RC calibration once from System Setup. Restoring `Master_Config.json` does not restore the calibration, so repeat it after a full device erase or whenever the Dome RC receiver or controller is changed.
+**Dome RC calibration is stored separately and is not included in `Master_Config.json`.** Complete Dome RC calibration after a clean installation or full device erase. Restoring `Master_Config.json` does not restore the calibration, so repeat it whenever the Dome RC receiver or controller is changed.
 
 ## Updating the Master
 
@@ -162,4 +168,4 @@ Cancellation stops future sequence steps. Send the device’s normal stop or idl
 
 ## Next step
 
-Continue to the [Display Interface Guide](Display_Interface_Guide.md).
+Continue to the [Display Interface Guide](Display_Interface.md).

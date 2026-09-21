@@ -21,7 +21,7 @@ Each DroidLink Slave ESP32 is assigned one role:
 
 A DroidLink Slave receives commands from the Master and operates its configured Maestro or PCA9685 outputs, LED segments, physical switch actions, and saved sequences. Multiple Slave devices can be used in one droid, provided each has a unique Device ID.
 
-See [Using DroidLink Slave](Using_DroidLink_Slave.md) for installation and configuration.
+See the [DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md) for installation and configuration.
 
 ### Dedicated devices
 
@@ -52,7 +52,7 @@ After setup:
 
 ## Device identity
 
-The Master uses Device ID `0` and the Watch Display uses Device ID `1`. Maestro controllers and dedicated devices use unique IDs from `2` through `13`.
+The Master uses Device ID `0` and the Watch Display uses Device ID `1`. DroidLink Slave controllers and dedicated DroidLink devices use unique DroidLink Device IDs from `2` through `13`. Pololu Maestro device numbers are separate hardware settings and must not be confused with DroidLink Device IDs.
 
 The Master must contain each device's MAC address, and each device must contain the Master MAC address. Do not reuse a Device ID or MAC entry.
 
@@ -60,8 +60,8 @@ The Master must contain each device's MAC address, and each device must contain 
 
 Inputs include physical switches, RC controls, and Watch Display buttons. An action is the behavior assigned to an input. Commands are the messages used to start those actions on the Master or another DroidLink device.
 
-The configuration interfaces create most commands for you. See the [DroidLink Command Reference](DroidLink_Command_Reference.md) when entering commands manually.
+The configuration interfaces create most commands for you. See the [DroidLink Command Reference](../reference/Command_Reference.md) when entering commands manually.
 
 ## Continue
 
-Proceed to [Master Wiring and Connections](Master_Wiring_and_Connections.md), then [Using DroidLink Slave](Using_DroidLink_Slave.md) for Maestro- or PCA9685-controlled mechanisms.
+Proceed to [Master Wiring and Connections](Master_Wiring.md), then the [DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md) for Maestro- or PCA9685-controlled mechanisms.

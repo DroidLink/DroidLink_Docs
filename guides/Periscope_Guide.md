@@ -1,14 +1,23 @@
-# DroidLink Periscope Logic Lights
+# DroidLink Periscope Complete Guide
 
 ESP32-C3 Super Mini controller for the Printed-Droid Periscope Logic Lights.
 
-This firmware keeps the original Periscope lighting effects and adds wireless control through the DroidLink Master.
+This guide covers hardware, installation, USB-console first-time setup, Master registration, normal operation, commands, recovery, and troubleshooting. The firmware keeps the original Periscope lighting effects and adds wireless control through the DroidLink Master.
 
 The Periscope can still be controlled directly from USB Serial, but normal operation is through the DroidLink Master.
 
+## What you need
+
+- The ESP32-C3 Super Mini Periscope controller and connected logic lights
+- The correct 5 V power supply and a common ground for the controller and lights
+- A USB data cable
+- The DroidLink Installer and its Console Log set to `9600` baud
+- The DroidLink Master's MAC address
+- One unused DroidLink Device ID from `2` through `13`
+
 ---
 
-# Controlling the Periscope
+## Controlling the Periscope
 
 The communication path is:
 
@@ -50,7 +59,7 @@ Runs Periscope Sequence 1.
 
 Runs Main LED Effect 1, White, at Speed 5.
 
-# First-Time DroidLink Setup
+## Installation and First-Time DroidLink Setup
 
 The Periscope and Master must know each other's MAC addresses.
 
@@ -78,9 +87,7 @@ Copy this address.
 
 ## Step 2 — Add the Periscope to the Master
 
-Open the DroidLink Master configuration.
-
-Add the Periscope MAC address to an available slave slot.
+Open Master System Setup. Select **Add Slave**, enter a useful name such as `Periscope`, and enter the exact Periscope Device MAC.
 
 The Periscope uses the node ID selected during first-time setup:
 
@@ -88,7 +95,7 @@ The Periscope uses the node ID selected during first-time setup:
 Node ID: 2 through 13 (user selected)
 ```
 
-Select **Save Configuration**. The Master saves the device entry and reboots automatically when required.
+Select **Save Configuration**. The Master saves the device entry and reboots automatically when required. The Periscope continues to report the Device ID saved during its own first-time setup.
 
 ---
 
@@ -132,7 +139,7 @@ The node ID and Master MAC are stored on the device and remain saved after power
 
 ---
 
-# Successful Connection
+## Successful Connection
 
 When configuration is correct, the Periscope starts normally and appears in the Master's **Device Status** page. If its MAC has not yet been saved in a Master device slot, it may first appear as an **Unconfigured device**.
 
@@ -147,7 +154,7 @@ The Master and Periscope automatically find each other after both have been conf
 
 ---
 
-# Changing an Incorrect Master MAC
+## Changing an Incorrect Master MAC
 
 If the wrong Master MAC was entered, connect the Periscope to USB and open a serial terminal.
 
@@ -175,7 +182,7 @@ Enter the correct Master MAC.
 
 ---
 
-# Master Communication Check
+## Master Communication Check
 
 After boot, the Periscope checks for communication with the configured Master.
 
@@ -195,7 +202,7 @@ This can mean:
 
 ---
 
-# DroidLink Command Format
+## DroidLink Command Format
 
 All DroidLink Periscope commands begin with:
 
@@ -225,7 +232,7 @@ Examples:
 
 ---
 
-# Basic Commands
+## Basic Commands
 
 These are the native Periscope commands.
 
@@ -240,7 +247,7 @@ When using DroidLink, add `:PS` before the command.
 
 ---
 
-# Sequence Commands
+## Sequence Commands
 
 A sequence command selects and configures the requested lighting sequence. If the Periscope LEDs are currently off, the sequence is prepared but will not be displayed until the lights are enabled with:
 
@@ -283,7 +290,7 @@ If the LEDs are already on, sending another sequence command changes to that seq
 
 ---
 
-# LED Groups
+## LED Groups
 
 | Code | Group |
 |---|---|
@@ -298,7 +305,7 @@ If the LEDs are already on, sending another sequence command changes to that seq
 
 ---
 
-# Custom Command Format
+## Custom Command Format
 
 The native Periscope format is:
 
@@ -334,7 +341,7 @@ M185
 
 ---
 
-# Colors
+## Colors
 
 | Number | Color |
 |---|---|
@@ -351,7 +358,7 @@ M185
 
 ---
 
-# Speed
+## Speed
 
 | Number | Speed |
 |---|---|
@@ -363,7 +370,7 @@ Values from `0` through `9` may be used.
 
 ---
 
-# Useful DroidLink Examples
+## Useful DroidLink Examples
 
 ## Turn Everything Off
 
@@ -415,7 +422,7 @@ Values from `0` through `9` may be used.
 
 ---
 
-# Direct USB Serial Control
+## Direct USB Serial Control
 
 The Periscope can still be controlled directly through USB Serial.
 
@@ -455,7 +462,7 @@ to erase the saved node ID and Master MAC and restart first-time setup.
 
 ---
 
-# Serial Settings
+## Serial Settings
 
 - Baud Rate: `9600`
 - Line Ending: `Newline` or `Both NL & CR`
@@ -464,7 +471,7 @@ Commands are converted to uppercase by the firmware, so lowercase input is also 
 
 ---
 
-# Hardware
+## Hardware
 
 ## Board
 
@@ -483,7 +490,7 @@ Commands are converted to uppercase by the firmware, so lowercase input is also 
 
 ---
 
-# Current DroidLink Configuration
+## Current DroidLink Configuration
 
 The current firmware reports:
 
@@ -501,7 +508,7 @@ to the configured Periscope.
 
 ---
 
-# Quick Setup Summary
+## Quick Setup Summary
 
 ```text
 1. Install Periscope firmware
@@ -531,6 +538,22 @@ Turns the Periscope lights off.
 
 ---
 
-# Continue
+## Backups and firmware updates
 
-Return to the [Documentation Home](README.md) or review the [DroidLink Command Reference](DroidLink_Command_Reference.md).
+The Periscope does not provide a downloadable configuration backup. Record its Device ID, Master MAC, and device MAC somewhere safe so the setup can be restored if the controller is replaced or the flash is erased.
+
+For a normal firmware update, use the DroidLink Installer with **Erase Flash disabled** so the saved setup is retained. If setup does not survive an update or you intentionally erase the flash, repeat the first-time setup in this guide.
+
+## Completion checklist
+
+- [ ] Periscope firmware is installed
+- [ ] Periscope is registered in the Master by its device MAC
+- [ ] Periscope has an unused Device ID from `2` through `13`
+- [ ] Correct Master MAC is saved in the Periscope
+- [ ] Master Device Status shows the Periscope connected
+- [ ] `:PS` test commands operate the lights correctly
+- [ ] Device ID and MAC addresses are recorded for recovery
+
+## Continue
+
+Return to the [Documentation Home](../README.md) or review the [DroidLink Command Reference](../reference/Command_Reference.md).
