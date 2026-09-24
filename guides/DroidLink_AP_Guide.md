@@ -55,14 +55,18 @@ servo linkages while establishing safe endpoints.
 
 Choose the controller mode that matches the installed hardware:
 
-- **Pololu Maestro:** connect ESP32 GPIO17 TX to the Maestro serial input. The
-  firmware uses 115200 baud and defaults to Maestro device numbers 12 and 13.
+- **Pololu Maestro:** use the AstroPixels board's **Serial2** header labeled
+  `G V R T`. Connect **T** to the Maestro serial input/RX and **G** to Maestro
+  ground. Leave **V** and **R** disconnected. The firmware uses 115200 baud and
+  defaults to Maestro device numbers 12 and 13.
 - **PCA9685:** connect GPIO21 to SDA and GPIO22 to SCL. Configure the two boards
   as addresses `0x40` and `0x41`. Follow the
   [AstroPixelsPlus servo wiring diagram](https://github.com/reeltwo/AstroPixelsPlus/blob/main/Wiring-Diagram.png)
   for the standard dome layout.
-- **Marcduino:** connect ESP32 GPIO17 TX to the Marcduino serial input. Connect
-  GPIO16 RX to the Marcduino serial output when two-way communication is used.
+- **Marcduino:** use the same AstroPixels **Serial2** header labeled `G V R T`.
+  Connect **T** to the Marcduino serial input/RX and **G** to Marcduino ground.
+  For two-way communication, also connect **R** to the Marcduino serial
+  output/TX. Leave **V** disconnected.
 
 ## Maestro users only: wiring and controller setup
 
@@ -93,12 +97,14 @@ Controller**.
 
 ### Connect the Maestro serial control wires
 
-1. Connect ESP32 **GPIO17 TX** to the serial receive input on Maestro A.
-2. Connect the same serial TX control line to the serial receive input on
+1. Locate the **Serial2** header labeled `G V R T` on the AstroPixels board.
+2. Connect **T** on Serial2 to the serial receive input/RX on Maestro A.
+3. Connect the same **T** serial line to the serial receive input/RX on
    Maestro B.
-3. Connect an ESP32 ground to the ground on both Maestro controllers.
-4. In Pololu Maestro Control Center, set both controllers to **115200 baud**.
-5. Give the controllers different device numbers. DroidLink_AP uses device
+4. Connect **G** on Serial2 to ground on both Maestro controllers. Leave
+   **V** and **R** disconnected.
+5. In Pololu Maestro Control Center, set both controllers to **115200 baud**.
+6. Give the controllers different device numbers. DroidLink_AP uses device
    number **12 for Maestro A** and **13 for Maestro B** by default.
 
 ### Configure both boards in Maestro Control Center
@@ -536,6 +542,15 @@ sequences between Maestro and PCA installations.
 Download a **Complete controller backup** from the Welcome tab after the template, outputs, calibration, lighting, and sequences have been verified.
 
 For a normal firmware update, use the DroidLink Installer with **Erase Flash** disabled so saved identity and configuration can be retained. Use **Erase Flash** only for a new installation, deliberate factory reset, or recovery that requires first-time setup again. Restore a backup only to a compatible controller setup.
+
+## Reset first-time setup
+
+1. Connect the device to the DroidLink Installer by USB.
+2. Open **Logs & Console**.
+3. Type `NEWMAC` and press Enter.
+4. Follow the first-time setup instructions.
+
+Your saved device configuration and servo settings will not be erased.
 
 ## Troubleshooting checklist
 

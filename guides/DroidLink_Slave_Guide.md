@@ -217,6 +217,15 @@ Output templates remain useful for sharing a layout without sharing calibration 
 
 For a normal firmware update, use the DroidLink Installer with **Erase Flash** disabled so saved identity and configuration can be retained. Use **Erase Flash** only for a new installation, deliberate factory reset, or recovery that requires first-time setup again.
 
+## Reset first-time setup
+
+1. Connect the device to the DroidLink Installer by USB.
+2. Open **Logs & Console**.
+3. Type `NEWMAC` and press Enter.
+4. Follow the first-time setup instructions.
+
+Your saved device configuration and servo settings will not be erased.
+
 ## Troubleshooting
 
 ### Slave does not appear in Device Status
