@@ -13,7 +13,7 @@ Git records the complete history of every PDF and its source document. The SHA-2
 | `MagicPanel_Command_Reference.pdf` | 1 | September 5, 2026 | [MagicPanel Command Reference](../../reference/MagicPanel_Command_Reference.md) | `0988E38950477F336F31FC687B0AA52F88406F97C01CBEE0ED3EDDA926B28241` |
 | `MagicPanel_Guide.pdf` | 1 | September 21, 2026 | [DroidLink MagicPanel Complete Guide](../../guides/MagicPanel_Guide.md) | `5856DF04BF7BA9D208C9059102A484B0F5D222A0205C8AB28B3F42BCD01C19CD` |
 | `Master_and_Watch_Display_Guide.pdf` | 1 | September 21, 2026 | [Master and Watch Display Complete Guide](../../guides/Master_and_Watch_Display_Guide.md) | `7ABDA823A3940A9249EF398661C4BAEC44BDD4495F804B98644AAA654DD9380C` |
-| `Periscope_Guide.pdf` | 1 | September 21, 2026 | [DroidLink Periscope Complete Guide](../../guides/Periscope_Guide.md) | `29000625E237408D999F3EE1409DE77E9B2E182BB809158BCE5AE6C4E23A051A` |
+| `Periscope_Guide.pdf` | 2 | September 26, 2026 | [DroidLink Periscope Complete Guide](../../guides/Periscope_Guide.md) | `3B3EA6999D803682A5C488E8AAB24494561049B55192FCCB26EBA63328E2F214` |
 | `V2.0.0_New_Features.pdf` | 1 | August 23, 2026 | [DroidLink V2.0.0 New Features](../../historical/V2.0.0_New_Features.md) | `0F984ACE9B579D68078AD7A6798F2BBD134454A1B5C219AD177AAA6755BF9442` |
 
 To verify a downloaded file in Windows PowerShell, run:
@@ -30,4 +30,4 @@ Retired PDFs are no longer offered as current documentation. Their final publish
 
 | PDF | Final document revision | Retired | Reason | Final published SHA-256 |
 |---|---:|---|---|---|
-| `Complete_Command_Reference.pdf` | 2 | September 26, 2026 | Replaced by the maintained [DroidLink Command Reference](../../reference/Command_Reference.md), device guides, and each device's Web Config command page | `7C93C86BA195C48112972BB245F36368664EBDB0BCB76B884C4F1099C93C8537` |
+| `Complete_Command_Reference.pdf` | 2 | September 26, 2026 | Replaced by device guides and each device's Web Config command page | `7C93C86BA195C48112972BB245F36368664EBDB0BCB76B884C4F1099C93C8537` |

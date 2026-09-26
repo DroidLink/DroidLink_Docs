@@ -29,9 +29,9 @@ and Slave controllers only when those features are part of the build.
 ## Get a DroidLink License
 
 A DroidLink license is required to download firmware through the DroidLink Web
-Installer. A license is $80 per droid. To purchase a license, email
-[droidlink77@gmail.com](mailto:droidlink77@gmail.com?subject=DroidLink%20License).
-In the email, say whether you also want a DroidLink DFPlayer breakout board.
+Installer. See [Start Here with DroidLink](../DroidLink_Start_Here.md#step-2-get-a-droidlink-license)
+for current pricing and purchase instructions. In the email, say whether you
+also want a DroidLink DFPlayer breakout board.
 
 After choosing the hardware and receiving a license key, continue to the
 [DroidLink Web Installer](https://droidlink.github.io/DroidLink_Installer/),

@@ -8,7 +8,7 @@ New to DroidLink? Begin with [Start Here with DroidLink](DroidLink_Start_Here.md
 for the complete hardware, license, installation, and setup path.
 
 - A license is required to download firmware with the DroidLink Web Installer.
-- Licenses are $80 per droid.
+- Current license pricing and purchase instructions are in [Start Here with DroidLink](DroidLink_Start_Here.md).
 - Contact: droidlink77@gmail.com
 
 ## Safety and liability notice
@@ -45,12 +45,11 @@ Follow the guides in this order:
 7. [Using DroidLink](operation/System_Overview.md) — system overview after installation
 8. [Master Interface Guide](operation/Master_Interface.md) — Master configuration and operation
 9. [Display Interface Guide](operation/Display_Interface.md) — Watch Display configuration and operation
-10. [DroidLink Command Reference](reference/Command_Reference.md) — supported command syntax
-11. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
-12. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
-13. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
-14. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
-15. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
+10. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
+11. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
+12. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
+13. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
+14. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
 
 ## Additional device and reference guides
 
@@ -72,7 +71,7 @@ A DFPlayer Mini breakout board designed for DroidLink is available to simplify a
 
 ![DFPlayer breakout wiring](images/master_dfplayer_wiring.jpg)
 
-Breakout board price: $40. Contact droidlink77@gmail.com for availability.
+Current breakout-board pricing and availability are listed in [DroidLink Main Hardware](reference/Parts_List.md).
 
 ## Documentation scope
 

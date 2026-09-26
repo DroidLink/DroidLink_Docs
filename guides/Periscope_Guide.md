@@ -1,5 +1,7 @@
 # DroidLink Periscope Complete Guide
 
+**Document revision 2 — Revised September 26, 2026**
+
 ESP32-C3 Super Mini controller for the Printed-Droid Periscope Logic Lights.
 
 This guide covers hardware, installation, USB-console first-time setup, Master registration, normal operation, commands, recovery, and troubleshooting. The firmware keeps the original Periscope lighting effects and adds wireless control through the DroidLink Master.
@@ -556,4 +558,5 @@ For a normal firmware update, use the DroidLink Installer with **Erase Flash dis
 
 ## Continue
 
-Return to the [Documentation Home](../README.md) or review the [DroidLink Command Reference](../reference/Command_Reference.md).
+Return to the [Documentation Home](../README.md). The commands supported by
+the Periscope are documented in this guide.

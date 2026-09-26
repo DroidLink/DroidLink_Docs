@@ -1,5 +1,7 @@
 # Start Here with DroidLink
 
+**Document revision 2 — Reviewed September 26, 2026**
+
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
 DroidLink does not require programming, compiling, or an IDE. Install released firmware with the [DroidLink Web Installer](https://droidlink.github.io/DroidLink_Installer/) using Google Chrome or Microsoft Edge.
@@ -53,6 +55,8 @@ Install the Master first and the Watch Display second. Then save each device's M
 
 Follow the [Master and Watch Display Complete Guide](guides/Master_and_Watch_Display_Guide.md) without skipping the pairing section.
 
+For a normal new installation, select **Master Controller V2.0.1 (Current)** and **Watch Display V2.1.0 (NEW)** in the Installer. Use Master V2.1.0 only when DroidLink has authorized the license for locked testing. Do not select a legacy firmware version for a new installation.
+
 That guide covers:
 
 1. Installing the Master with **Erase Flash** for a new installation
@@ -88,7 +92,7 @@ Before applying motor power:
 4. Begin with conservative drive and spin limits.
 5. Verify RC failsafe and centered controls.
 
-Do not select **Dome Encoder** unless a current released guide explicitly states that encoder-dome output is supported.
+Do not select **Dome Encoder**. Encoder-dome runtime output is not supported by the current normal Master release.
 
 ## Step 5: Install DroidLink Slave and DroidLink_AP devices
 
@@ -181,7 +185,7 @@ Use the [Firmware Changelog](reference/Firmware_Changelog.md) to identify curren
 - [Using DroidLink](operation/System_Overview.md) — system overview
 - [Master Interface Guide](operation/Master_Interface.md) — Master configuration pages
 - [Display Interface Guide](operation/Display_Interface.md) — Watch Display operation
-- [DroidLink Command Reference](reference/Command_Reference.md) — supported command syntax
+- Device-specific commands are shown in each device's Web Config interface and complete guide.
 - [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
 
 ## Need help?

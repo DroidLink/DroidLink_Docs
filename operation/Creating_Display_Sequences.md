@@ -119,9 +119,9 @@ This gives you two ways to build behavior:
 
 ---
 
-## 📘 Command Reference
+## Finding commands
 
-Want to explore all available DroidLink commands,  
-including advanced system, audio, dome, and chaining options?
-
-👉 **[DroidLink Command Reference →](../reference/Command_Reference.md)**
+Use each device's **Commands** page in Web Config or its complete guide for the
+commands currently available to that device. This keeps Display sequences
+aligned with the installed firmware instead of relying on a separate command
+list.
