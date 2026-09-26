@@ -1,0 +1,448 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 12 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 612 792 ] /Parent 11 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/PageMode /UseNone /Pages 11 0 R /Type /Catalog
+>>
+endobj
+10 0 obj
+<<
+/Author (DroidLink Documentation) /CreationDate (D:20260925130623+00'00') /Creator (DroidLink_Slave documentation generator) /Keywords (DroidLink, LED, sequence, webui, walkthrough) /ModDate (D:20260925130623+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Complete beginner walkthrough for LED strip setup, sections, testing, and LED sequence configuration in DroidLink WebUI.) /Title (DroidLink LED Strip Configuration Walkthrough) /Trapped /False
+>>
+endobj
+11 0 obj
+<<
+/Count 5 /Kids [ 4 0 R 5 0 R 6 0 R 7 0 R 8 0 R ] /Type /Pages
+>>
+endobj
+12 0 obj
+<<
+/Length 3134
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 16 Tf 19.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (DroidLink LED Strip Configuration Walkthrough) Tj T* ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 715.4 Tm (\(DroidLink_Slave + DL_AP\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 691.4 Tm (This guide explains LED setup from zero, for users who do not already know how ) Tj T* ET
+BT 1 0 0 1 57.6 677.4 Tm (sequence builders work.) Tj T* ET
+.7 w
+n 57.6 647.4 m 554.4 647.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 627.4 Tm (1\) What you are configuring) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 603.4 Tm (In DroidLink WebUI, the LED system has 4 separate parts:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 581.4 Tm (1. LED strip setup \(hardware details\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 567.4 Tm (2. LED sections \(optional named regions on the strip\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 553.4 Tm (3. LED sequences \(saved lighting timelines\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 539.4 Tm (4. Startup/indicator behavior) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 517.4 Tm (Most problems happen when users mix these parts together. Keep them separate while ) Tj T* ET
+BT 1 0 0 1 57.6 503.4 Tm (learning.) Tj T* ET
+.7 w
+n 57.6 473.4 m 554.4 473.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 453.4 Tm (2\) Core concept before clicking anything) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 429.4 Tm (The strip is one long line of pixels.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 407.4 Tm (- Pixel numbering starts at 0.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 393.4 Tm (- If you have 30 LEDs, valid positions are 0 through 29.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 371.4 Tm (A section is just a named range of those pixel numbers.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 349.4 Tm (Example:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 327.4 Tm (- Section A = 0 to 9) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 313.4 Tm (- Section B = 10 to 19) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 299.4 Tm (- Section C = 20 to 29) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 277.4 Tm (Sections cannot overlap, and they must stay inside total LED count.) Tj T* ET
+.7 w
+n 57.6 247.4 m 554.4 247.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 227.4 Tm (3\) Hardware wiring basics \(must be correct first\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 203.4 Tm (From WebUI guidance for this project:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 181.4 Tm (- Data line goes to GPIO4.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 167.4 Tm (- ESP32 ground and LED power-supply ground must be tied together.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 153.4 Tm (- LED strip power comes from proper external power, not from the ESP32.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 131.4 Tm (If power and ground are wrong, software changes will not fix behavior.) Tj T* ET
+.7 w
+n 57.6 101.4 m 554.4 101.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 81.4 Tm (4\) Open the correct WebUI area) Tj T* ET
+ 
+endstream
+endobj
+13 0 obj
+<<
+/Length 3523
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (1. Enter Web Config mode for the device.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 720.4 Tm (2. Open `http://192.168.4.1`.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 706.4 Tm (3. Open the LED Config tab.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 684.4 Tm (Inside LED Config, work top-to-bottom:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 662.4 Tm (1. LED strip setup) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 648.4 Tm (2. Test saved LED setup) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 634.4 Tm (3. Startup lighting) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 620.4 Tm (4. Web Config indicator) Tj T* ET
+.7 w
+n 57.6 590.4 m 554.4 590.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 570.4 Tm (5\) Step-by-step: LED strip setup) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 546.4 Tm (In 1. LED strip setup:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 524.4 Tm (1. Confirm LED data connection is shown as GPIO4.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 510.4 Tm (2. Set Total LEDs connected to full strip length.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 496.4 Tm (3. Choose Type of LED strip \(WS2812B / NeoPixel is most common\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 482.4 Tm (4. Set Maximum strip brightness \(global cap, 0-255\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 468.4 Tm (5. \(Optional\) Add named sections.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 454.4 Tm (6. Click Save LED setup.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 432.4 Tm (Important:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 410.4 Tm (- If total LED count is wrong, every section and sequence will be offset or clipped.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 396.4 Tm (- Overall brightness limits the entire strip output.) Tj T* ET
+.7 w
+n 57.6 366.4 m 554.4 366.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 346.4 Tm (6\) Step-by-step: Add and save LED sections) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 322.4 Tm (Use sections when different physical areas need separate lighting.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 300.4 Tm (1. Click Add LED section.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 286.4 Tm (2. Give it a clear name \(example: COIN_SLOT, FRONT_LOGIC, REAR_RING\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 272.4 Tm (3. Set start/end range so it stays in bounds.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 258.4 Tm (4. Repeat for more sections \(up to 3 user-configured sections in this UI\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 244.4 Tm (5. Make sure no ranges overlap.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 230.4 Tm (6. Click Save LED setup.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 208.4 Tm (Best practice:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 186.4 Tm (- Build sections to match real physical zones on the droid.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 172.4 Tm (- Keep names short and descriptive so sequence building is easy later.) Tj T* ET
+.7 w
+n 57.6 142.4 m 554.4 142.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 122.4 Tm (7\) Step-by-step: Test saved LED setup) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 98.4 Tm (Go to 2. Test saved LED setup.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 76.4 Tm (1. Select target \(Entire strip or saved section\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 3345
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (2. Pick a color preset or custom color.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 720.4 Tm (3. For RGBW strips, set extra white level if needed.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 706.4 Tm (4. Click Show selected color.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 692.4 Tm (5. Confirm only expected LEDs respond.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 678.4 Tm (6. Use Turn this section off or Turn entire strip off when done.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 656.4 Tm (If wrong area lights up:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 634.4 Tm (- Recheck section boundaries.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 620.4 Tm (- Recheck total LED count.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 606.4 Tm (- Save again, then retest.) Tj T* ET
+.7 w
+n 57.6 576.4 m 554.4 576.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 556.4 Tm (8\) LED sequence builder: what is happening) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 532.4 Tm (A sequence is a timeline of lighting actions.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 510.4 Tm (Each action means:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 488.4 Tm (- At time X ms, do action Y on target Z.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 466.4 Tm (One action is not a complete show by itself. If you want change-over-time behavior, ) Tj T* ET
+BT 1 0 0 1 57.6 452.4 Tm (add multiple timed actions.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 430.4 Tm (Example:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 408.4 Tm (- 0 ms: FRONT_LOGIC -> Start scanner) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 394.4 Tm (- 2000 ms: FRONT_LOGIC -> Solid blue) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 380.4 Tm (- 5000 ms: FRONT_LOGIC -> Off) Tj T* ET
+.7 w
+n 57.6 350.4 m 554.4 350.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 330.4 Tm (9\) Step-by-step: Create LED-only sequences) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 306.4 Tm (Open LED Seq.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 284.4 Tm (1. Click Add Action.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 270.4 Tm (2. For each action set:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 256.4 Tm (   - Start time \(ms\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 242.4 Tm (   - LED section or Entire strip) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 228.4 Tm (   - Action type \(animation, solid color, off\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 214.4 Tm (   - Effect settings \(speed, brightness, color\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 200.4 Tm (3. Add all actions needed.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 186.4 Tm (4. Click Preview sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 172.4 Tm (5. Enter Sequence name.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 158.4 Tm (6. \(Optional\) assign available command shortcut.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 144.4 Tm (7. Click Save sequence and command.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 122.4 Tm (Then use Run or edit saved LED sequences to run, edit, export, import, or delete.) Tj T* ET
+.7 w
+n 57.6 92.4 m 554.4 92.4 l S
+BT /F2 13 Tf 15.6 TL ET
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 3482
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (10\) Startup lighting vs normal sequences) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 710.4 Tm (Startup lighting is separate from normal run commands.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 688.4 Tm (In 3. Startup lighting:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 666.4 Tm (1. Choose saved LED sequence \(or keep LEDs off\).) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 652.4 Tm (2. Click Save startup choice.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 630.4 Tm (Behavior notes:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 608.4 Tm (- Command 60 restores saved startup lighting.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 594.4 Tm (- Command 61 stops effects and turns LEDs off.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 580.4 Tm (- Commands 62-91 are LED-only saved sequences.) Tj T* ET
+.7 w
+n 57.6 550.4 m 554.4 550.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 530.4 Tm (11\) Web Config indicator \(optional\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 506.4 Tm (In 4. Web Config indicator:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 484.4 Tm (1. Enable indicator checkbox.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 470.4 Tm (2. Select target section.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 456.4 Tm (3. Select color.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 442.4 Tm (4. Set duration.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 428.4 Tm (5. Save indicator settings.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 406.4 Tm (This is only a short "Web Config ready" light and does not consume a sequence slot.) Tj T* ET
+.7 w
+n 57.6 376.4 m 554.4 376.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 356.4 Tm (12\) Troubleshooting checklist) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 332.4 Tm (If LEDs do not behave as expected, check in this order:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 310.4 Tm (1. Data pin really connected to GPIO4) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 296.4 Tm (2. Common ground between ESP32 and LED power supply) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 282.4 Tm (3. Correct strip type selected) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 268.4 Tm (4. Correct total LED count saved) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 254.4 Tm (5. Section ranges are valid and non-overlapping) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 240.4 Tm (6. Brightness not set too low) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 226.4 Tm (7. Testing saved setup before sequence editing) Tj T* ET
+.7 w
+n 57.6 196.4 m 554.4 196.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 176.4 Tm (13\) Teaching script for beginners) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 152.4 Tm (Use this short script with builders:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 130.4 Tm (- "First we define what strip exists \(count, type, brightness\).") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 116.4 Tm (- "Then we divide it into named zones \(sections\).") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 102.4 Tm (- "Then we tell those zones what to do over time \(sequences\).") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 88.4 Tm (- "Every sequence action is one timed instruction.") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 74.4 Tm (- "If we do not add an action, it will not happen.") Tj T* ET
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 417
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+.7 w
+n 57.6 726.4 m 554.4 726.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 706.4 Tm (14\) One-sentence summary) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 682.4 Tm (Configure strip first, verify sections second, then build timed lighting actions in ) Tj T* ET
+BT 1 0 0 1 57.6 668.4 Tm (sequences - because each action is a single command at a specific time.) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 17
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000516 00000 n 
+0000000711 00000 n 
+0000000906 00000 n 
+0000001101 00000 n 
+0000001296 00000 n 
+0000001365 00000 n 
+0000001861 00000 n 
+0000001945 00000 n 
+0000005131 00000 n 
+0000008706 00000 n 
+0000012103 00000 n 
+0000015637 00000 n 
+trailer
+<<
+/ID 
+[<b712b86128baf578c2831bf73dd2dcc3><b712b86128baf578c2831bf73dd2dcc3>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 10 0 R
+/Root 9 0 R
+/Size 17
+>>
+startxref
+16105
+%%EOF

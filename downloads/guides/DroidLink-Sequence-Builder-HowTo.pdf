@@ -1,0 +1,318 @@
+%PDF-1.3
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/Contents 10 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+5 0 obj
+<<
+/Contents 11 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/Contents 12 0 R /MediaBox [ 0 0 612 792 ] /Parent 9 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/PageMode /UseNone /Pages 9 0 R /Type /Catalog
+>>
+endobj
+8 0 obj
+<<
+/Author (DroidLink Documentation) /CreationDate (D:20260925130623+00'00') /Creator (DroidLink_Slave documentation generator) /Keywords (DroidLink, LED, sequence, webui, walkthrough) /ModDate (D:20260925130623+00'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (Beginner walkthrough for building servo, LED, and combined sequences in DroidLink WebUI.) /Title (DroidLink WebUI Sequence Builder How-To) /Trapped /False
+>>
+endobj
+9 0 obj
+<<
+/Count 3 /Kids [ 4 0 R 5 0 R 6 0 R ] /Type /Pages
+>>
+endobj
+10 0 obj
+<<
+/Length 3075
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F2 16 Tf 19.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (DroidLink WebUI Sequence Builder How-To) Tj T* ET
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 715.4 Tm (\(DroidLink_Slave + DL_AP\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 691.4 Tm (This guide is written for builders who are new to sequence logic.) Tj T* ET
+.7 w
+n 57.6 661.4 m 554.4 661.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 641.4 Tm (1\) What a Sequence Builder actually is) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 617.4 Tm (A sequence builder is a timeline editor.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 595.4 Tm (It does not automatically "figure out" a routine for you.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 581.4 Tm (It only runs the exact actions you put on the timeline.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 559.4 Tm (Think of each action like this:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 537.4 Tm (- At time X, tell target Y to do action Z.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 515.4 Tm (If you do not add an action, that behavior will not happen.) Tj T* ET
+.7 w
+n 57.6 485.4 m 554.4 485.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 465.4 Tm (2\) What an action actually does) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 441.4 Tm (An action is a single command.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 419.4 Tm (Example:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 397.4 Tm (- "Open Drawer at 0 ms" = one command.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 375.4 Tm (That command does not include "close later." If you want the drawer to close, you ) Tj T* ET
+BT 1 0 0 1 57.6 361.4 Tm (must add a second action with a later start time.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 339.4 Tm (Example timeline:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 317.4 Tm (- Action 1: Start 0 ms -> Drawer -> Open) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 303.4 Tm (- Action 2: Start 3000 ms -> Drawer -> Close) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 281.4 Tm (This means:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 259.4 Tm (- Open now) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 245.4 Tm (- Wait about 3 seconds) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 231.4 Tm (- Then close) Tj T* ET
+.7 w
+n 57.6 201.4 m 554.4 201.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 181.4 Tm (3\) Beginner mental model \(always use this\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 157.4 Tm (Every action answers 4 questions:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 135.4 Tm (1. When does it start? \(Start ms\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 121.4 Tm (2. What does it control? \(Target output/group/LED section\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 107.4 Tm (3. What should it do? \(Open/Close/Position/Animation/Off/etc.\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 93.4 Tm (4. How long or until what condition? \(Move time, timeout, stop input\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+ 
+endstream
+endobj
+11 0 obj
+<<
+/Length 3690
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (If one of those is missing, behavior is usually confusing or unsafe.) Tj T* ET
+.7 w
+n 57.6 704.4 m 554.4 704.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 684.4 Tm (4\) Why beginners think sequences are broken) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 660.4 Tm (### "I opened it, but it didn't close") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 646.4 Tm (Because closing is a different command. Add another action later.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 624.4 Tm (### "My 360 servo keeps spinning") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 610.4 Tm (Forward/Reverse keeps running until a Stop action \(or other stopping condition\). Add ) Tj T* ET
+BT 1 0 0 1 57.6 596.4 Tm (a Stop action at a later time.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 574.4 Tm (### "I turned an output on and it stayed on") Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 560.4 Tm (On and Off are separate actions unless you use an input-controlled action that auto-) Tj T* ET
+BT 1 0 0 1 57.6 546.4 Tm (returns off.) Tj T* ET
+.7 w
+n 57.6 516.4 m 554.4 516.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 496.4 Tm (5\) Build a lights-only sequence \(LED Seq\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 472.4 Tm (1. Open LED Seq.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 458.4 Tm (2. Click Add Action.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 444.4 Tm (3. For each action set:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 430.4 Tm (   - Start time \(ms\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 416.4 Tm (   - LED section \(or Entire strip\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 402.4 Tm (   - Action type \(animation / solid color / off\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 388.4 Tm (   - Effect options \(color, speed, brightness\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 374.4 Tm (4. Repeat until all lighting actions are added.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 360.4 Tm (5. Click Preview sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 346.4 Tm (6. Enter Sequence name.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 332.4 Tm (7. \(Optional\) assign a command shortcut.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 318.4 Tm (8. Click Save sequence and command.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 296.4 Tm (Important: each LED action is also a timed command. Lighting changes only when the ) Tj T* ET
+BT 1 0 0 1 57.6 282.4 Tm (timeline reaches that action.) Tj T* ET
+.7 w
+n 57.6 252.4 m 554.4 252.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 232.4 Tm (6\) Build a servo sequence \(Seq Builder\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 208.4 Tm (1. Open Seq Builder.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 194.4 Tm (2. Click Add sequence action.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 180.4 Tm (3. For each action set:) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 166.4 Tm (   - Start ms) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 152.4 Tm (   - Target output or group) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 138.4 Tm (   - Action type \(Open, Close, Position, Flutter, etc.\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 124.4 Tm (   - Timing/safety options when shown) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 110.4 Tm (4. Add all movement actions needed.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 96.4 Tm (5. Click Run sequence to test.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 82.4 Tm (6. Use Stop any time for safety.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+ 
+endstream
+endobj
+12 0 obj
+<<
+/Length 3127
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 734.4 Tm (7. Enter Sequence name and command slot.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 720.4 Tm (8. Click Save Sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 698.4 Tm (Important: a servo sequence is not a script language. It is a timed list of direct ) Tj T* ET
+BT 1 0 0 1 57.6 684.4 Tm (commands.) Tj T* ET
+.7 w
+n 57.6 654.4 m 554.4 654.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 634.4 Tm (7\) Build a combined servo + lights sequence) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 610.4 Tm (1. First, build and save an LED sequence in LED Seq.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 596.4 Tm (2. Build your movement actions in Seq Builder.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 582.4 Tm (3. In Add a saved LED sequence \(optional\), select the LED preset, set Start offset \(0) Tj T* ET
+BT 1 0 0 1 57.6 568.4 Tm ( ms = start with first movement action\), and click Add LED sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 554.4 Tm (4. Test the combined sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 540.4 Tm (5. Save it as a normal sequence.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 518.4 Tm (Important: attaching a saved LED sequence adds that full lighting timeline as one ) Tj T* ET
+BT 1 0 0 1 57.6 504.4 Tm (reusable block.) Tj T* ET
+.7 w
+n 57.6 474.4 m 554.4 474.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 454.4 Tm (8\) Command ranges \(user-facing\)) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 430.4 Tm (- 00-59: servo-only or combined servo+LED sequences) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 416.4 Tm (- 60: restore startup lighting) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 402.4 Tm (- 61: turn all configured LEDs off) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 388.4 Tm (- 62-91: LED-only saved sequences) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 366.4 Tm (Role prefix depends on configuration \(BS / DS / LS / US\).) Tj T* ET
+.7 w
+n 57.6 336.4 m 554.4 336.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 316.4 Tm (9\) Safety guidance to include with every builder) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 292.4 Tm (- Calibrate with linkages disconnected first.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 278.4 Tm (- Test one mechanism at a time.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 264.4 Tm (- Use input limits and safety timeouts where applicable.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 250.4 Tm (- Keep a hand near power during first live tests.) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 236.4 Tm (- Treat every action as a direct hardware command.) Tj T* ET
+.7 w
+n 57.6 206.4 m 554.4 206.4 l S
+BT /F2 13 Tf 15.6 TL ET
+BT 1 0 0 1 57.6 186.4 Tm (One sentence to teach every new user) Tj T* ET
+BT /F1 11 Tf 13.2 TL ET
+BT 1 0 0 1 57.6 162.4 Tm (A sequence is a timed list of individual commands; one action does one thing, so ) Tj T* ET
+BT 1 0 0 1 57.6 148.4 Tm (return motions \(like close or stop\) must be added as separate later actions.) Tj T* ET
+ 
+endstream
+endobj
+xref
+0 13
+0000000000 65535 f 
+0000000061 00000 n 
+0000000102 00000 n 
+0000000209 00000 n 
+0000000321 00000 n 
+0000000515 00000 n 
+0000000709 00000 n 
+0000000903 00000 n 
+0000000971 00000 n 
+0000001428 00000 n 
+0000001499 00000 n 
+0000004626 00000 n 
+0000008368 00000 n 
+trailer
+<<
+/ID 
+[<f6c2c3ef32d9f78e071c1193535e6e42><f6c2c3ef32d9f78e071c1193535e6e42>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 8 0 R
+/Root 7 0 R
+/Size 13
+>>
+startxref
+11547
+%%EOF
