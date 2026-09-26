@@ -7,7 +7,6 @@ Git records the complete history of every PDF and its source document. The SHA-2
 | PDF | Document revision | Revised | Source | SHA-256 |
 |---|---:|---|---|---|
 | `DroidLink_Slave_Guide.pdf` | 2 | September 26, 2026 | [DroidLink Slave Complete Guide](../../guides/DroidLink_Slave_Guide.md) | `84AE1F7B4B89F6C1703478C7227267C8FB6082F66DCE8F9E4CC54A0837A0206D` |
-| `Complete_Command_Reference.pdf` | 2 | September 26, 2026 | [DroidLink Complete Command Reference](../../reference/Complete_Command_Reference.md) | `7C93C86BA195C48112972BB245F36368664EBDB0BCB76B884C4F1099C93C8537` |
 | `DroidLink-LED-Strip-Configuration-HowTo.pdf` | 1 | September 25, 2026 | Web Config walkthrough | `6C4137D530CEB0F25580BE8F0F7555FFDA494B61785D13BEAC04668D996A77CD` |
 | `DroidLink-Sequence-Builder-HowTo.pdf` | 1 | September 25, 2026 | Web Config walkthrough | `46AB37160249E41028A1EA92D1453CC8F226EBF0B4FA7111DE818A057881B30A` |
 | `DroidLink_AP_Guide.pdf` | 1 | September 21, 2026 | [DroidLink_AP Complete Guide](../../guides/DroidLink_AP_Guide.md) | `E9609EC54E22C1A3E0B0D93E9E16DB9AC61FAD451F8FC3172690C3CFB7F7C551` |
@@ -24,3 +23,11 @@ Get-FileHash .\DroidLink_Slave_Guide.pdf -Algorithm SHA256
 ```
 
 Compare the result with the checksum in the table above.
+
+## Retired PDFs
+
+Retired PDFs are no longer offered as current documentation. Their final published checksum is retained here so previously downloaded copies can still be identified.
+
+| PDF | Final document revision | Retired | Reason | Final published SHA-256 |
+|---|---:|---|---|---|
+| `Complete_Command_Reference.pdf` | 2 | September 26, 2026 | Replaced by the maintained [DroidLink Command Reference](../../reference/Command_Reference.md), device guides, and each device's Web Config command page | `7C93C86BA195C48112972BB245F36368664EBDB0BCB76B884C4F1099C93C8537` |
