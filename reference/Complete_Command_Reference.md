@@ -1,5 +1,7 @@
 # DroidLink Complete Command Reference
 
+**Document revision 2 — Revised September 26, 2026**
+
 This searchable reference lists the user-facing commands supported by the DroidLink projects in this workspace. Enter these commands in a Watch Display button, RC mapping, Master Sequence, or another DroidLink command field unless marked **USB Console only**.
 
 Current firmware source is the authority. Internal transport and developer-only messages are intentionally omitted.
@@ -283,7 +285,7 @@ Custom output names do not alter these command numbers.
 
 DroidLink Slave uses `BS`, `DS`, `LS`, or `US` according to its configured Body, Dome, Lifter, or Universal role. Saved controller sequences use shortcuts `00` through `59`; `60` restores startup lighting, `61` turns configured lighting off, and LED-only sequences use `62` through `91`.
 
-Use the [DroidLink Slave Command Reference](Slave_Command_Reference.md) for direct output, sequence, lighting, Web Config, stop, and return-home commands. Output calibration and sequence creation are performed in the Slave Web Config interface.
+The **Commands** tab in Slave Web Config is the authoritative command reference because it displays the correct role prefix and Device ID for that controller. The [DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md#commands-available-to-users) contains the same user command list. Output calibration, sequence creation, and shortcut assignment are performed in Web Config.
 
 ## External prefixes and console setup
 

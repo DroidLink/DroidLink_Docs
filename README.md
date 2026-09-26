@@ -54,7 +54,7 @@ Follow the guides in this order:
 
 ## Additional device and reference guides
 
-- [DroidLink Slave Command Reference](reference/Slave_Command_Reference.md)
+- [Downloadable PDF revision history](downloads/guides/PDF_Revision_History.md)
 - [DroidLink_AP Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
 - [DroidLink_AP PCA dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
 - [DroidLink Periscope Complete Guide](guides/Periscope_Guide.md)

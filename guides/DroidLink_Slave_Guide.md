@@ -1,5 +1,7 @@
 # DroidLink Slave Complete Guide
 
+**Document revision 2 — Revised September 26, 2026**
+
 DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. This guide covers hardware, wiring, installation, first-time setup, Master registration, Web Config, normal configuration and operation, backups, and troubleshooting. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
 
 The built-in web interface is used to name outputs, calibrate servos, configure LEDs and switches, build sequences, and assign DroidLink commands. Pololu Maestro scripts are not required.
@@ -207,7 +209,33 @@ together.
 
 Command `60` restores the saved startup LED sequence and command `61` stops LED effects and turns the configured LEDs off. The Web Config Commands tab shows all ranges using the prefix selected for this device.
 
-See the [DroidLink Slave Command Reference](../reference/Slave_Command_Reference.md) for commands available to users.
+## Commands available to users
+
+The **Commands** tab in the Slave Web Config interface is the authoritative command reference for that device. It automatically displays the configured role prefix and Device ID. The same commands are summarized below.
+
+Replace `<role>` with the prefix selected during first-time setup:
+
+| Device role | Prefix |
+|---|---|
+| Body | `BS` |
+| Dome | `DS` |
+| Lifter | `LS` |
+| Universal | `US` |
+
+| Command | Purpose |
+|---|---|
+| `:<role>00` through `:<role>59` | Run an assigned servo-only or combined servo-and-lighting sequence |
+| `:<role>60` | Restore the saved startup LED sequence |
+| `:<role>61` | Stop LED effects and turn all configured LEDs off |
+| `:<role>62` through `:<role>91` | Run an assigned LED-only sequence |
+| `:<role>,STOP` | Immediately stop every active action and place outputs in their safe stopped state |
+| `:<role>,HOME` | Stop all actions, return positional servos to Closed, turn On/Off outputs off, and stop 360-degree servos; current lighting is unchanged |
+| `:<role>0O` / `:<role>0C` | Open or close displayed Output 0, or turn On/Off Output 0 on or off, using its saved setup |
+| `:<role>0T` | Toggle positional-servo Output 0 between its saved Closed and Full positions |
+| `:<role>0F` / `:<role>0R` / `:<role>0S` | Run displayed 360-degree servo Output 0 forward, reverse, or stop using its saved setup |
+| `:SCFG,<device ID>` | Restart the selected Slave in Web Config mode |
+
+For a direct output command, change `0` to the exact zero-based output number displayed in Web Config. Commands that do not match the saved output type are rejected. Configure and calibrate outputs, create sequences, and assign shortcuts in Web Config rather than entering low-level setup commands manually.
 
 ## Back up before updating or erasing
 
