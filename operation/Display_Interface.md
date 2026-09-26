@@ -133,5 +133,6 @@ Confirm shutdown is enabled, USB power is disconnected, and Display Wi-Fi is off
 
 Continue to [Creating a Master Sequence](Creating_Master_Sequence.md) and
 [Creating Display Sequences](Creating_Display_Sequences.md) for advanced
-actions. Use each device's Web Config **Commands** page or complete guide when
-choosing commands for Display buttons.
+actions. Use the [Master Command Reference](../reference/Master_Command_Reference.md)
+for Master commands and chaining syntax. Use each other device's Web Config
+**Commands** page or complete guide when choosing commands for Display buttons.

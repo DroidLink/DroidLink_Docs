@@ -45,11 +45,12 @@ Follow the guides in this order:
 7. [Using DroidLink](operation/System_Overview.md) — system overview after installation
 8. [Master Interface Guide](operation/Master_Interface.md) — Master configuration and operation
 9. [Display Interface Guide](operation/Display_Interface.md) — Watch Display configuration and operation
-10. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
-11. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
-12. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
-13. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
-14. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
+10. [Master Command Reference](reference/Master_Command_Reference.md) — verified Master commands and chaining syntax
+11. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
+12. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
+13. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
+14. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
+15. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
 
 ## Additional device and reference guides
 

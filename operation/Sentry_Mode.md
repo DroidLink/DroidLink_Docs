@@ -163,5 +163,7 @@ Stopping the Master Sequence scheduler cannot undo a command already received by
 
 ## Next step
 
-Use each device's Web Config **Commands** page or complete guide for commands
-used in Sentry actions, or continue to [OTA Updates](OTA_Updates.md).
+Use the [Master Command Reference](../reference/Master_Command_Reference.md) for
+Master commands used in Sentry actions. Use each other device's Web Config
+**Commands** page or complete guide for its commands, or continue to
+[OTA Updates](OTA_Updates.md).

@@ -1,6 +1,6 @@
 # Start Here with DroidLink
 
-**Document revision 2 — Reviewed September 26, 2026**
+**Document revision 3 — Reviewed September 26, 2026**
 
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
@@ -185,6 +185,7 @@ Use the [Firmware Changelog](reference/Firmware_Changelog.md) to identify curren
 - [Using DroidLink](operation/System_Overview.md) — system overview
 - [Master Interface Guide](operation/Master_Interface.md) — Master configuration pages
 - [Display Interface Guide](operation/Display_Interface.md) — Watch Display operation
+- [Master Command Reference](reference/Master_Command_Reference.md) — verified Master system, motion, sequence, Sentry, audio, and chaining commands
 - Device-specific commands are shown in each device's Web Config interface and complete guide.
 - [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
 

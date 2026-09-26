@@ -168,4 +168,5 @@ Cancellation stops future sequence steps. Send the device’s normal stop or idl
 
 ## Next step
 
-Continue to the [Display Interface Guide](Display_Interface.md).
+Review the [Master Command Reference](../reference/Master_Command_Reference.md),
+then continue to the [Display Interface Guide](Display_Interface.md).

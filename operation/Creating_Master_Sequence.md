@@ -173,6 +173,9 @@ The final 5-second delay at the end allows the Body Slave sequence to complete b
 
 Audio will continue playing unless you stop it manually using `:AS00`.
 
+See the [Master Command Reference](../reference/Master_Command_Reference.md) for
+the verified Master commands available in sequence steps.
+
 ---
 
 ## 📱 Next Step — Creating Display Sequences

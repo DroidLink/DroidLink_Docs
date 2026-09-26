@@ -61,7 +61,8 @@ The Master must contain each device's MAC address, and each device must contain 
 Inputs include physical switches, RC controls, and Watch Display buttons. An action is the behavior assigned to an input. Commands are the messages used to start those actions on the Master or another DroidLink device.
 
 The configuration interfaces create most commands for you. When entering a
-command manually, use that device's Web Config **Commands** page or complete
+Master command manually, use the [Master Command Reference](../reference/Master_Command_Reference.md).
+For another device, use that device's Web Config **Commands** page or complete
 guide so the command matches the installed firmware.
 
 ## Continue

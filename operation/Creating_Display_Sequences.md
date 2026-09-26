@@ -121,7 +121,7 @@ This gives you two ways to build behavior:
 
 ## Finding commands
 
-Use each device's **Commands** page in Web Config or its complete guide for the
-commands currently available to that device. This keeps Display sequences
-aligned with the installed firmware instead of relying on a separate command
-list.
+Use the [Master Command Reference](../reference/Master_Command_Reference.md) for
+Master commands, delays, and command-chain rules. Use each other device's
+**Commands** page in Web Config or its complete guide for the commands currently
+available to that device.
