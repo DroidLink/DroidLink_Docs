@@ -1,6 +1,6 @@
 # DroidLink Slave Complete Guide
 
-**Document revision 2 — Revised September 26, 2026**
+**Document revision 2 — Reviewed September 26, 2026**
 
 DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. This guide covers hardware, wiring, installation, first-time setup, Master registration, Web Config, normal configuration and operation, backups, and troubleshooting. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
 
@@ -176,6 +176,14 @@ DroidLink-Lifter-Presets.json
 ```
 
 When importing a template, review every output assignment before applying it. Servo outputs still require calibration on the actual mechanism.
+
+## Printable Web Config walkthroughs
+
+- [LED Strip Configuration walkthrough](DroidLink_Slave_LED_Strip_Walkthrough.md) ([PDF](../downloads/guides/DroidLink-LED-Strip-Configuration-HowTo.pdf))
+- [Sequence Builder walkthrough](DroidLink_Slave_Sequence_Builder_Walkthrough.md) ([PDF](../downloads/guides/DroidLink-Sequence-Builder-HowTo.pdf))
+
+These walkthroughs supplement this complete guide and follow the current
+DroidLink Slave Web Config interface.
 
 ## LEDs
 

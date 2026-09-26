@@ -1,5 +1,7 @@
 # DroidLink Master and Watch Display Complete Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 This guide covers installation, first-time activation, two-way pairing, connection verification, recovery, and the initial safety checks for the DroidLink Master and required Watch Display. Complete the steps in order.
 
 ## What you need

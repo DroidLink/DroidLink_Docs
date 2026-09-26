@@ -1,6 +1,6 @@
 # DroidLink Periscope Complete Guide
 
-**Document revision 2 — Revised September 26, 2026**
+**Document revision 2 — Reviewed September 26, 2026**
 
 ESP32-C3 Super Mini controller for the Printed-Droid Periscope Logic Lights.
 

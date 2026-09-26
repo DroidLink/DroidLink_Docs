@@ -1,5 +1,7 @@
 # DroidLink Remote OTA Updates
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 Remote OTA updates supported DroidLink firmware without requiring another USB installation. The update is requested from the device's configuration page, downloaded through DroidLink's update service, installed, and completed by the device automatically.
 
 This guide covers the Master Controller. DroidLink Slave and other devices should be updated with the DroidLink Web Installer unless their current user guide specifically provides an OTA option.

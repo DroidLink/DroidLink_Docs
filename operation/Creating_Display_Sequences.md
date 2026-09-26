@@ -1,127 +1,102 @@
-# 🔗 Creating Display Sequences
+# Creating Display Command Chains
 
-## Using Chained Commands from the Display
+**Document revision 2 — Reviewed September 26, 2026**
 
-In addition to triggering Master Sequences (`:MSnn`),  
-Display buttons can send chained commands directly.
+A Watch Display button can send one command, run a saved Master Sequence, or
+send a short chain of commands and timed delays. Use a Display command chain
+for a simple action with no more than six command chunks. Use a saved Master
+Sequence for longer or reusable behavior.
 
-A chained command is multiple commands sent in one string.
+## Before you begin
 
-Example:
-:BS00:W5000
+- Confirm every individual command works safely before combining commands.
+- Keep drive wheels raised and mechanisms unloaded during testing.
+- End every intentional dome movement with `:DC,STOP`.
+- Remember that a delay measures time; it does not wait for audio, servo motion,
+  or another device effect to finish.
 
+## Command-chain format
 
-This means:
+Place commands next to each other without spaces. Insert a timed delay with:
 
-1. Run Body Sequence 00
-2. Wait 5000 milliseconds (5 seconds)
+```text
+:W<milliseconds>
+```
 
-The `:W` command creates a delay between actions.
+The Master accepts up to six prefixed command chunks in one temporary chain.
+Native DroidLink commands begin with `:`. External prefix characters are
+supported only when the matching external hardware is configured.
 
-Chained commands allow you to create simple timed behaviors directly from a Display button without needing to create a full Master Sequence.
+## Safe native example
 
----
+```text
+:DC,RIGHT:W500:DC,STOP
+```
 
-### Example Use Case
+This chain:
 
-Create a button in the **Body** or **Universal** tab.
+1. Starts rightward dome rotation.
+2. Waits 500 milliseconds.
+3. Stops dome rotation.
 
-Set the command to:
+The delay begins as soon as it is reached. It does not wait for the dome or any
+other device to report completion.
+
+## Multi-device example
+
+```text
 :BS00:W1000:DS02
+```
 
+This chain:
 
-This will:
+1. Runs Body Slave shortcut `00`.
+2. Waits 1000 milliseconds.
+3. Runs Dome Slave shortcut `02`.
 
-- Run Body Sequence 00
-- Wait 1 second
-- Run Dome Sequence 02
+The Slave shortcut must already be assigned on the receiving device. Replace
+`BS` or `DS` with the configured role prefix when necessary.
 
-All from a single button press.
+## Run a saved Master Sequence
 
----
+Use `:MS00` through `:MS31` to run a saved Master Sequence:
 
-### When to Use Chained Commands vs Master Sequences
+```text
+:MS05
+```
 
-Use chained commands when:
+The saved sequence contains its own ordered commands and delays. See
+[Creating a Master Sequence](Creating_Master_Sequence.md) for setup.
 
-- The behavior is short
-- You only need 1–6 simple steps
-- You want quick testing
+## Add the chain to the Watch Display
 
----
+1. Open the Watch Display Web Config interface.
+2. Open the Body, Dome, Lifter, Audio, or Universal button section where the
+   custom button belongs.
+3. Add or edit a button.
+4. Enter a useful button label.
+5. Enter the complete command or chain without spaces.
+6. Save the Display configuration.
+7. Test the button with the droid safely supported.
 
-## 📸 Display Sequence Screen Example
+## Choosing between a chain and a Master Sequence
 
-The image below shows three Display buttons:
+Use a Display command chain when:
 
-- **Display Seq 1** – Chained native DroidLink commands  
-- **Display Seq 2** – Chained external serial commands  
-- **Master Seq 0** – Stored Master Sequence call  
+- The behavior is short.
+- It uses six or fewer command chunks.
+- It is needed by only one Display button.
 
-![Display Sequence Screen](../images/display_sequence_screen.png)
+Use a Master Sequence when:
 
----
-
-### 🔹 Display Seq 1
-
-Command:
-:DC,RIGHT:W5000:DC,LEFT:BS01:W5000
-
-This button will:
-
-1. Spin the dome RIGHT  
-2. Wait 5 seconds  
-3. Spin the dome LEFT  
-4. Call Body Slave Sequence 01
-5. Wait another 5 seconds  
-
-This is a fully chained native command using `:DC`, `:BS`, and `:W`.
-
----
-
-### 🔹 Display Seq 2
-
-Command:
-@3MDroidLink:W5000@APLE20000
-
-This button will:
-
-1. Scroll "DroidLink" on the Rear Logic Display (DroidLink_AP)
-2. Wait 5 seconds  
-3. Set DroidLink_AP to failure mode
-
-This demonstrates chaining external serial commands with a delay between them.
-
----
-
-### 🔹 Master Seq 0
-
-Command:
-:MS00
-
-This button triggers a stored Master Sequence.
-
-All timing and behavior are handled inside the Master Sequence itself.
-
----
-
-### What This Example Demonstrates
-
-- Display buttons can send raw chained commands
-- Native (`:`) and external (` : * @ # ! % etc`) commands can be mixed
-- Delays (`:Wxxxx`) apply within the same chain
-- Master Sequences provide reusable structured behavior
-
-This gives you two ways to build behavior:
-
-- **Inline chaining (quick and direct)**
-- **Stored Master Sequences (organized and reusable)**
-
----
+- The action has several commands or delays.
+- The same action will be triggered from the Display, RC controls, or Sentry.
+- The behavior should be edited and tested centrally in Master Runtime Web
+  Config.
 
 ## Finding commands
 
 Use the [Master Command Reference](../reference/Master_Command_Reference.md) for
 Master commands, delays, and command-chain rules. Use each other device's
-**Commands** page in Web Config or its complete guide for the commands currently
-available to that device.
+**Commands** page in Web Config or its complete guide for commands supported by
+that device.

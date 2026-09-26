@@ -1,5 +1,7 @@
 # DroidLink MagicPanel Complete Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 DroidLink MagicPanel controls a supported LED matrix through the DroidLink Master. This guide covers hardware, installation, USB-console first-time setup, Master registration, normal operation, commands, recovery, and troubleshooting.
 
 ## What you need
@@ -18,7 +20,7 @@ DroidLink MagicPanel controls a supported LED matrix through the DroidLink Maste
 
 1. Connect the MagicPanel controller with a USB data cable.
 2. Open DroidLink Installer.
-3. Select **MagicPanel V1.0**.
+3. Select the current **MagicPanel** entry.
 4. Select the ESP32-C3 serial/COM port.
 5. Start installation and wait for it to finish completely.
 6. Open the Installer Console at `9600` baud.

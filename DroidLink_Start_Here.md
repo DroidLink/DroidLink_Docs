@@ -55,7 +55,12 @@ Install the Master first and the Watch Display second. Then save each device's M
 
 Follow the [Master and Watch Display Complete Guide](guides/Master_and_Watch_Display_Guide.md) without skipping the pairing section.
 
-For a normal new installation, select **Master Controller V2.0.1 (Current)** and **Watch Display V2.1.0 (NEW)** in the Installer. Use Master V2.1.0 only when DroidLink has authorized the license for locked testing. Do not select a legacy firmware version for a new installation.
+For a normal new installation, select the Master Controller entry marked
+**Current** and the newest Watch Display entry. Use a Master entry marked
+**Locked** only when DroidLink has authorized the license for testing. Do not
+select a legacy firmware version for a new installation. The
+[Firmware Changelog](reference/Firmware_Changelog.md) lists the current version
+numbers.
 
 That guide covers:
 

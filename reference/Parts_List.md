@@ -1,5 +1,7 @@
 # DroidLink Main Hardware
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 This guide lists the main controller boards and breakout boards used to build
 a DroidLink system. AstroPixels, MagicPanel, Periscope, motors, servos, power
 systems, and other installed accessories are not included because those parts

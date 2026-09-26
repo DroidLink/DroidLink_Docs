@@ -1,12 +1,16 @@
 # DroidLink_AP Complete Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 DroidLink_AP combines AstroPixels lighting with a choice of Pololu Maestro,
 PCA9685, or wired Marcduino control. This guide covers hardware, wiring,
 installation, first-time setup, Master registration, Web Config, templates,
 normal operation, sequences, backups, and troubleshooting. Detailed command
 help is also available inside the installed firmware's Web Config interface.
 
-The current Installer release is **V2.3.0**.
+Select the current **DroidLink_AP** entry in the Installer. The
+[Firmware Changelog](../reference/Firmware_Changelog.md) lists the current
+released version.
 
 ## Choose your controller path
 

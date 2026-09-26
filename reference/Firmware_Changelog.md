@@ -1,5 +1,7 @@
 # DroidLink Firmware Changelog
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 This is the main user-facing release history for DroidLink firmware.
 
 Only firmware made available to users through the official DroidLink Web Installer is listed here. Internal builds and unfinished development versions are not public releases and are not included.
@@ -56,7 +58,6 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added improved configuration backup and restore.
 - Added expanded Sentry timing, sound, dome-motion, and Master Sequence options.
 - Added support for up to three optional Master Sequences in a Sentry configuration.
-- Added optional Large Display configuration support.
 - Expanded the supported DroidLink device registry.
 - Improved safe transitions when entering and leaving Web Config.
 

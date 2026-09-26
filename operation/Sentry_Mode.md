@@ -1,5 +1,7 @@
 # Sentry Mode User Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 Sentry Mode lets DroidLink Master perform unattended random actions. It can move the dome, play sounds, pause for an idle result, and run configured Master Sequences.
 
 Sentry settings are saved on the Master and persist after a reboot. Sentry itself always starts **off** after a reboot and must be started again.

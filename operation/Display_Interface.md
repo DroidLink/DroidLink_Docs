@@ -1,5 +1,7 @@
 # DroidLink Watch Display Interface Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 The DroidLink Watch Display is a touchscreen controller and status display for the DroidLink Master. It provides direct controls, configurable command buttons, Master status, power management, and its own browser-based configuration page.
 
 ## Display Web Config

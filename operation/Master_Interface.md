@@ -1,5 +1,7 @@
 # DroidLink Master Interface Guide
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 The DroidLink Master web interface configures the droid, maps RC controls, builds Master Sequences, configures Sentry Mode, monitors devices, and backs up settings.
 
 ## Opening the Master interface
@@ -40,7 +42,8 @@ System Setup contains the Master’s primary configuration. Available sections d
 
 Enter the MAC printed or displayed by each DroidLink device. Every configured device must use its own unique Device ID.
 
-The Watch Display and optional Large Display have separate settings. Enable only the Displays that are installed, enter their correct MAC addresses, and save the configuration.
+Enable the Watch Display, enter its correct MAC address, and save the
+configuration.
 
 The **Add Slave** control is also used for dedicated DroidLink devices such as DroidLink_AP, MagicPanel, and Periscope. Enter the exact Device MAC shown by each device.
 

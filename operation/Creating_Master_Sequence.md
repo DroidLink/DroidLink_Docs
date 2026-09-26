@@ -1,186 +1,101 @@
-# 🎬 Creating a Master Sequence
+# Creating a Master Sequence
 
-Master Sequences allow you to create single commands or multi-step command chains that can be triggered from:
+**Document revision 2 — Reviewed September 26, 2026**
 
-- The **Master Seq** tab (RC button mapping)
-- The **Display**
-- A direct command using `:MSnn`
+Master Sequences store ordered commands and timed delays on the Master. A saved
+sequence can be run from Master Runtime Web Config, a Watch Display button, an
+RC mapping, Sentry Mode, or a direct `:MSnn` command.
 
-Each sequence slot is identified by a number:
+The Master provides 32 slots: `MS00` through `MS31`.
 
-MS00 → MS32
+## Open the Master Sequence page
 
+1. On the Watch Display, open **Command Center**, select **Settings**, and
+   select **Master Web UI On**.
+2. Connect a phone, tablet, or computer to `DroidLink_Master` using password
+   `droidlink`.
+3. Open `http://192.168.4.1`.
+4. Select **Master Sequences**.
 
----
+Drive output remains locked while Runtime Web Config is active.
 
-## 🔧 Step 1 — Open Master Sequences
+## Build a sequence
 
-1. Power on your Master Controller.
-2. Connect to the Master Config web interface.
-3. Click **Master Sequences**.
+1. Use the previous and next controls to select a slot from `00` through `31`.
+2. Select **Add Command** for a command step.
+3. Enter one verified command, such as `:AS005`, `:BS01`, or `:DC,RIGHT`.
+4. Select **Add Delay** for a timed pause and enter the duration in
+   milliseconds. For example, `1000` is one second.
+5. Arrange the steps in the order they should run.
+6. Select **Save**.
+7. Select **Run Saved** to test the sequence.
 
-You will see:
+Test each command by itself before adding it to a sequence. Device-specific
+commands must already be configured on the receiving device.
 
-- ◀ ▶ navigation buttons  
-- A label showing the current slot (example: `Editing: MS00`)
-- Buttons to add commands or delays
-- Save button
+## Safe example
 
----
+This example plays Master audio while rotating the dome briefly:
 
-## 🔢 Step 2 — Select a Sequence Slot
+| Step | Type | Value |
+|---:|---|---|
+| 1 | Command | `:AS005` |
+| 2 | Command | `:DC,RIGHT` |
+| 3 | Delay | `500` |
+| 4 | Command | `:DC,STOP` |
 
-Use the ◀ and ▶ buttons to choose the sequence number you want to edit.
+The delay begins after the dome command is sent. It does not wait for the audio
+track to finish. The final stop command is required so sequence-driven dome
+movement does not remain active.
 
-Example: 
+## Run a saved sequence
 
-Editing: MS05
+Send `:MSnn`, replacing `nn` with the two-digit slot number. For example:
 
-
-This means you are editing Master Sequence 05.
-
----
-
-## ➕ Step 3 — Add a Command
-
-Click:
-
-➕ Add Command
-
-In the input field, enter a valid DroidLink command, for example:
-- :AS005
-- :BS01
-- @APLE14000
-
-
-You may chain commands later by adding multiple rows.
-
----
-
-## ⏱ Step 4 — Add a Delay (Optional)
-
-Click:
-⏱ Add Delay
-
-A new row will appear
-Enter a time in milliseconds.
-
-Example:
-1000
-
-
-This creates a 1 second delay before the next step runs.
-
----
-
-## 🧱 Example Sequence
-
-Example: Play sound, wait 5 seconds, spin dome left.
-
-| Step | Type  | Value      |
-|------|-------|------------|
-| 1    | CMD   | `:DC,LEFT` |
-| 2    | DELAY | `5000`     |
-| 3    | CMD   | `:AS005`   |
-
-When triggered, the Master will:
-
-1. Spin dome left  
-2. Wait 5 seconds  
-3. Play Track 5  
-
----
-
-## 💾 Step 5 — Save
-
-Click:
-💾 Save
-
-This stores the sequence in the Master’s configuration.
-
-If you leave without saving, changes will be lost.
-
----
-
-## 🎮 Assigning to an RC Button
-
-To trigger a Master Sequence from your controller:
-
-1. Go to **RC Controls**
-2. Select the **Master Seq** tab
-3. Choose an event (example: `DriveA`)
-4. Enter the sequence number (example: `05`)
-
-This will trigger:
+```text
 :MS05
+```
 
+An undefined slot does nothing. A second Master Sequence does not start while
+one is already running.
 
-when that RC event occurs.
+## Assign a sequence to an RC control
 
----
+1. Open **RC Controls** in Master Runtime Web Config.
+2. Open the **Master Seq** mapping section.
+3. Select the desired transmitter event.
+4. Assign the saved sequence number.
+5. Save the RC mappings.
+6. Test with the droid safely supported and the drive wheels raised.
 
-## 📱 Triggering from Display
+## Run a sequence from the Watch Display
 
-You can also trigger a Master Sequence from the Display by sending:
-:MSnn
+Assign `:MSnn` to a custom Watch Display button, or include it in a short
+Display command chain. See
+[Creating Display Command Chains](Creating_Display_Sequences.md).
 
+## Cancel a running sequence
 
----
+Select **Cancel Remaining Steps** on the Master Sequence page. Cancellation
+prevents commands and delays that have not run yet. It cannot undo a command
+already received by another device.
 
-## 🛑 Notes
+Add an explicit stop or idle command when an effect must not remain active. For
+example:
 
-- Master Sequences run in the order listed.
-- Delays are in milliseconds.
-- Use realistic delay timing to avoid overlapping actions.
-- The maximum number of steps per sequence may be limited.
+- End dome movement with `:DC,STOP`.
+- Stop Master audio with `:AS00` when required.
+- Use the receiving device's documented stop or off command for lighting,
+  servo, or panel actions.
 
----
+## Timing rules
 
-## 📸 Master Sequence Screen
-
-![Master Sequence Screen](../images/master_sequence_screen.png)
-
-## Example Sequence Explanation
-
-This example sequence will:
-
-- Install the current Master firmware before creating or editing Master Sequences.
-- Start the dome turning **RIGHT**
-- Call Body Slave Sequence 1
-- Start track 240  
-- Wait 5 seconds (non-blocking — foot drives will still work)  
-- Call Body Slave Sequence 1 again
-- Change the dome direction to **LEFT**  
-- Wait 5 seconds  
-
----
-
-## Important Timing Notes
-
-This is all based on timing.
-
-- The dome will start  
-- The Body Slave sequence will start
-- Audio will start  
-
-Those three will begin in that order with little to no delay between them.
-
-The 5-second timer starts immediately as well, so you must make sure the Body Slave sequence you are running has enough time to complete before you call it again.
-
-After the wait, the Body Slave and dome actions begin immediately.
-
-The final 5-second delay at the end allows the Body Slave sequence to complete before the dome stops spinning.
-
-Audio will continue playing unless you stop it manually using `:AS00`.
+- Sequence steps run in their saved order.
+- Delays are measured in milliseconds.
+- A delay does not wait for the preceding action to finish.
+- Audio and remote-device actions can continue after the Master advances to the
+  next step.
+- Use realistic delays based on the actual mechanism or effect duration.
 
 See the [Master Command Reference](../reference/Master_Command_Reference.md) for
 the verified Master commands available in sequence steps.
-
----
-
-## 📱 Next Step — Creating Display Sequences
-
-Now that you understand how Master Sequences work,  
-learn how to trigger and chain them from the Display.
-
-👉 **[Creating Display Sequences →](Creating_Display_Sequences.md)**

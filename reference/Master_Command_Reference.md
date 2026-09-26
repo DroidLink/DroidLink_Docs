@@ -1,6 +1,6 @@
 # DroidLink Master Command Reference
 
-**Document revision 1 — September 26, 2026**
+**Document revision 1 — Reviewed September 26, 2026**
 
 This reference was checked against the released Master V2.0.1 source and the Master
 V2.1.0 locked-testing source on September 26, 2026. It contains only commands

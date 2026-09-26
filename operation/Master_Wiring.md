@@ -1,5 +1,7 @@
 # Wiring and Connections
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 This guide explains how to properly wire your **DroidLink Master hardware**.
 
 > ⚠️ Always disconnect battery power before making or modifying wiring connections.

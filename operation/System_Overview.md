@@ -1,5 +1,7 @@
 # Using DroidLink
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 DroidLink is a modular control system made up of devices that work together without requiring an internet connection during normal operation.
 
 ## Main components

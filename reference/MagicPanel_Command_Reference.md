@@ -1,5 +1,7 @@
 # DroidLink MagicPanel Command Reference
 
+**Document revision 1 — Reviewed September 26, 2026**
+
 MagicPanel commands begin with `:MP`. Send them from a Watch Display button, RC mapping, Master Sequence, or another supported DroidLink command source.
 
 ## Pattern format
