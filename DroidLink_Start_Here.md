@@ -1,6 +1,6 @@
 # Start Here with DroidLink
 
-**Document revision 3 — Reviewed September 26, 2026**
+**Document revision 4 — Reviewed September 26, 2026**
 
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
@@ -184,6 +184,28 @@ Master dome RC calibration is stored separately from `Master_Config.json`. Repea
 - Erasing a device removes its saved configuration and requires setup and pairing to be repeated.
 
 Use the [Firmware Changelog](reference/Firmware_Changelog.md) to identify current, testing, legacy, and historical releases. A version listed as testing is not the normal release for all users.
+
+## Downloadable and printable PDFs
+
+Use the linked online guides whenever internet access is available. They are the
+current source and make updates immediately visible. Download a PDF when a
+printed or offline copy is needed, and download a fresh copy before beginning a
+new installation or major reconfiguration.
+
+- [Master and Watch Display Complete Guide PDF](downloads/guides/Master_and_Watch_Display_Guide.pdf)
+- [Master Command Reference PDF](downloads/guides/Master_Command_Reference.pdf)
+- [DroidLink Slave Complete Guide PDF](downloads/guides/DroidLink_Slave_Guide.pdf)
+- [DroidLink Slave LED Strip Configuration walkthrough PDF](downloads/guides/DroidLink-LED-Strip-Configuration-HowTo.pdf)
+- [DroidLink Slave Sequence Builder walkthrough PDF](downloads/guides/DroidLink-Sequence-Builder-HowTo.pdf)
+- [DroidLink_AP Complete Guide PDF](downloads/guides/DroidLink_AP_Guide.pdf)
+- [MagicPanel Complete Guide PDF](downloads/guides/MagicPanel_Guide.pdf)
+- [MagicPanel Command Reference PDF](downloads/guides/MagicPanel_Command_Reference.pdf)
+- [Periscope Complete Guide PDF](downloads/guides/Periscope_Guide.pdf)
+
+Every PDF displays its document revision and review date. Use the
+[PDF Revision History](downloads/guides/PDF_Revision_History.md) to compare a
+downloaded copy with the current revision and SHA-256 checksum. Replace an old
+copy instead of relying on it after the online guide changes.
 
 ## Where to go next
 
