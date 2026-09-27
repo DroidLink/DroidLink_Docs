@@ -1,6 +1,6 @@
 # DroidLink Main Hardware
 
-**Document revision 1 — Reviewed September 26, 2026**
+**Document revision 2 — Reviewed September 27, 2026**
 
 This guide lists the main controller boards and breakout boards used to build
 a DroidLink system. AstroPixels, MagicPanel, Periscope, motors, servos, power
@@ -44,21 +44,24 @@ then follow [Start Here with DroidLink](../DroidLink_Start_Here.md).
 A Master Controller requires one supported ESP32-S3 controller and one
 compatible breakout board. Choose one controller and one breakout option.
 
-> **Important:** Do **not** buy an external-antenna version. For the N16R8
-> option, buy the version that matches the photo below.
+> **Important:** Do **not** buy an external-antenna version. Buy the
+> Meshnology N16R8 version that matches the photo below.
 
 | Item | Quantity | Status | Notes |
 |---|---:|---|---|
-| Supported ESP32-S3 development board | 1 | Required | The Freenove FNK0085 8 MB Flash board is preferred. The pictured Meshnology N16R8 board is also supported. Do not buy an external-antenna version. |
+| Supported ESP32-S3 development board | 1 | Required | Use the pictured Meshnology ESP32-S3 N16R8 board for a new Master. Do not buy an external-antenna version. Existing Freenove FNK0085 8 MB Flash installations remain supported. |
 | ESP32-S3 breakout board | 1 | Required | Choose one of the compatible breakout options below. |
 
 ### Master board options
 
-- **Preferred:** [Freenove ESP32-S3-WROOM FNK0085 — select 8 MB Flash; no external antenna](https://store.freenove.com/products/fnk0085)
-
 ![Meshnology ESP32-S3 N16R8 development board](../images/parts/master-esp32-s3-n16r8.jpg)
 
-- **Supported alternative:** [Meshnology ESP32-S3 N16R8 development board — no external antenna](https://www.amazon.com/dp/B0FRG4MWRB)
+- **Recommended for a new Master:** [Meshnology ESP32-S3 N16R8 development board — no external antenna](https://www.amazon.com/dp/B0FRG4MWRB)
+
+The Freenove FNK0085 8 MB Flash board remains supported in existing Master
+installations. It is no longer linked as the preferred new purchase because
+the current product listing is presented as a camera kit and can be confused
+with other Freenove products.
 
 ### Master breakout options
 
@@ -169,5 +172,3 @@ Do not install the ESP32-C3 firmware on an ESP32 DevKit or the ESP32 DevKit
 firmware on an ESP32-C3. See
 [DroidLink Slave Complete Guide](../guides/DroidLink_Slave_Guide.md) for board-specific wiring and
 Installer instructions.
-
-Last reviewed: September 13, 2026.
