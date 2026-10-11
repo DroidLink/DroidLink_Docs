@@ -120,7 +120,7 @@ Display.
 
 | Availability | Command | Action | Important behavior |
 |---|---|---|---|
-| Testing only | `:RCP1` through `:RCP4` | Select RC button Profile 1 through 4 | The Master boots into Profile 1. |
+| Testing only | `:RCP1` through `:RCP4` | Select RC button Profile 1 through 4 | The selected profile remains active across Master restarts. A new or factory-reset Master starts in Profile 1. |
 | Testing only | `:RCPNEXT` | Select the next RC profile, wrapping after Profile 4 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
 | Testing only | `:RCPPREV` | Select the previous RC profile, wrapping before Profile 1 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
 | Testing only | `:RCPQ` | Request the active RC profile state | Intended for compatible Display synchronization and normally sent automatically. |

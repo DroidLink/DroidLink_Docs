@@ -64,6 +64,8 @@ Follow the guides in this order:
 14. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
 15. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
 
+Testing firmware users can also use the [Master RC Actuator Controls and Slave Information testing guide](guides/Master_RC_Actuator_and_Slave_Info_Guide.md).
+
 ## Additional device and reference guides
 
 - [Downloadable PDF revision history](downloads/guides/PDF_Revision_History.md)
@@ -84,6 +86,7 @@ Follow the guides in this order:
 - [MagicPanel Complete Guide PDF](downloads/guides/MagicPanel_Guide.pdf)
 - [MagicPanel Command Reference PDF](downloads/guides/MagicPanel_Command_Reference.pdf)
 - [Periscope Complete Guide PDF](downloads/guides/Periscope_Guide.pdf)
+- [Master RC Actuator Controls and Slave Information testing guide PDF](downloads/guides/Master_RC_Actuator_and_Slave_Info_Guide.pdf)
 
 Use the [PDF revision history](downloads/guides/PDF_Revision_History.md) to
 identify the revision and checksum of a downloaded copy.

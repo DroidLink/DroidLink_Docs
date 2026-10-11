@@ -1,6 +1,6 @@
 # Downloadable PDF Revision History
 
-**Ledger revision 2 — Reviewed September 26, 2026**
+**Ledger revision 3 — Reviewed October 3, 2026**
 
 This page identifies the revision of each downloadable DroidLink PDF. Document revisions track corrections and documentation changes; they are separate from firmware version numbers.
 
@@ -16,6 +16,7 @@ Git records the complete history of every PDF and its source document. The SHA-2
 | `MagicPanel_Guide.pdf` | 1 | September 26, 2026 | [DroidLink MagicPanel Complete Guide](../../guides/MagicPanel_Guide.md) | `83A1483C6F90585393D2183F4B950CB30092A4CE69B8168427D2AB08FE444CBA` |
 | `Master_and_Watch_Display_Guide.pdf` | 1 | September 26, 2026 | [Master and Watch Display Complete Guide](../../guides/Master_and_Watch_Display_Guide.md) | `972DAD82AB9CE1837AFD9967C52B0AC30720DA19E27E1E50758429B16F255251` |
 | `Master_Command_Reference.pdf` | 1 | September 26, 2026 | [Master Command Reference](../../reference/Master_Command_Reference.md) | `344650BE3990E7DB4CBC51C67E311C01F4D4B8015A5203B221A2436FB3383523` |
+| `Master_RC_Actuator_and_Slave_Info_Guide.pdf` | 1 | October 3, 2026 | [Master RC Actuator and Slave Information Guide](../../guides/Master_RC_Actuator_and_Slave_Info_Guide.md) | `133497191EF7C951FD649E6FEB950521CE2214FA3DF27057848BB9171EDBFEF8` |
 | `Periscope_Guide.pdf` | 2 | September 26, 2026 | [DroidLink Periscope Complete Guide](../../guides/Periscope_Guide.md) | `566AE39F62F6D5288701BF8C381871233F6925C0075A1A1273C41EA9CBC9AC16` |
 
 To verify a downloaded file in Windows PowerShell, run:

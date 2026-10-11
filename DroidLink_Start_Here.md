@@ -201,6 +201,7 @@ new installation or major reconfiguration.
 - [MagicPanel Complete Guide PDF](downloads/guides/MagicPanel_Guide.pdf)
 - [MagicPanel Command Reference PDF](downloads/guides/MagicPanel_Command_Reference.pdf)
 - [Periscope Complete Guide PDF](downloads/guides/Periscope_Guide.pdf)
+- [Master RC Actuator Controls and Slave Information testing guide PDF](downloads/guides/Master_RC_Actuator_and_Slave_Info_Guide.pdf)
 
 Every PDF displays its document revision and review date. Use the
 [PDF Revision History](downloads/guides/PDF_Revision_History.md) to compare a

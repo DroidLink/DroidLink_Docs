@@ -109,6 +109,32 @@ These controls differ from the Home-screen Wi-Fi control, which manages only the
 
 The Settings screen provides two SD-card backup slots and two matching restore controls. A restored configuration is applied after restart. Verify the Master MAC, buttons, theme, and power settings after restoring.
 
+## V2.2.0 testing interface
+
+> These controls describe authorized testing firmware and are not part of the
+> current public Installer release.
+
+The testing Web Config adds a responsive operating dashboard, up to eight
+editable Quick Actions, direct device-control pages, saved Master Sequence and
+audio selections, and catalog-backed command builders. Device controls appear
+only after their information has been saved through Droid Update.
+
+The Watch **Settings > Droid Update** screen provides:
+
+- **Update Devices** to refresh compatible device names, outputs, groups,
+  sequences, LED zones, and supported commands without restarting the Watch.
+- **Update Audio** to read track names from the SD card's `/mp3` folder. This
+  maintenance action restarts the Watch before sending the saved list to the
+  Master.
+- **Clear Saved Info** to clear only the Watch's saved device and audio
+  catalogs. It does not erase Master or slave configuration.
+
+The Master WebUI **Update Droid** action refreshes online devices one at a
+time, reports unavailable devices, preserves usable cached information, and
+sends the final catalog to the Watch when it is powered on. Automatic device
+Web Config buttons use the custom name saved on the Master when present;
+otherwise they use the device's reported name.
+
 ## Updating the Display
 
 Use the DroidLink Installer and follow the instructions provided with the current Watch Display update. Back up the Display configuration before updating.

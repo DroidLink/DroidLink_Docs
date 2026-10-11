@@ -40,7 +40,11 @@ System Setup contains the Master’s primary configuration. Available sections d
 
 ### Device configuration
 
-Enter the MAC printed or displayed by each DroidLink device. Every configured device must use its own unique Device ID.
+Each configured DroidLink device row accepts an optional custom name, a unique
+Device ID from `2` through `13`, and the MAC printed or displayed by the
+device. Leave the custom name blank to use the name reported by compatible
+device firmware. Older saved configurations without IDs remain loadable and
+can learn a missing ID during an authorized testing-firmware update.
 
 Enable the Watch Display, enter its correct MAC address, and save the
 configuration.
@@ -70,7 +74,9 @@ Use the page’s save control after editing settings. Initial setup and configur
 
 RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, profile switching, custom commands, and other supported actions.
 
-Authorized Master V2.1.0 testing firmware provides four named profiles and a Global mapping page. These controls are not part of the normal V2.0.1 release. In V2.1.0, profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master starts in Profile 1 after every boot.
+Authorized Master V2.2.0 testing firmware adds toggle-based RC Actuator controls and an on-demand **Update Droid** action on the Master main screen. Compatible device testing firmware can provide named outputs, LED zones, saved groups, assigned sequence shortcuts, and supported commands. The completed catalog can also be sent to a compatible Watch Display. See the [Master RC Actuator Controls and Slave Information testing guide](../guides/Master_RC_Actuator_and_Slave_Info_Guide.md). These features are not part of the current public release.
+
+Authorized Master V2.1.0 testing firmware provides four named profiles and a Global mapping page. These controls are not part of the normal V2.0.1 release. In V2.1.0, profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master remembers the active profile across restarts. A new or factory-reset Master starts in Profile 1.
 
 Each profile can have an optional activation feedback command. Save applies the mappings immediately. **Load RC Defaults** resets only the RC profile mappings and does not erase Master Sequences, devices, network settings, or other Master configuration.
 

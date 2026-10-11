@@ -1,5 +1,7 @@
 # DroidLink Slave Complete Guide
 
+> Users testing DL_Slave V2.4.0 with Master V2.2.0 can use the Master's on-demand device-information update and RC Actuator controls. See the [testing guide](Master_RC_Actuator_and_Slave_Info_Guide.md). These features are not part of the current public release.
+
 **Document revision 2 — Reviewed September 26, 2026**
 
 DroidLink Slave is the recommended replacement for the older DroidLink Universal Slave firmware. This guide covers hardware, wiring, installation, first-time setup, Master registration, Web Config, normal configuration and operation, backups, and troubleshooting. One ESP32 can be configured as a Body, Dome, Lifter, or Universal controller and can use either Pololu Maestro or PCA9685 output hardware.
