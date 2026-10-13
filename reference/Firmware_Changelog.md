@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 1 — Reviewed September 26, 2026**
+**Document revision 2 — Reviewed October 13, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -12,22 +12,17 @@ Some older releases do not have a recorded release date or detailed public notes
 
 | Device | Version | Status |
 | --- | --- | --- |
-| Master Controller | V2.0.1 | Current |
+| Master Controller | V2.2.0 | Current paid upgrade |
 | DroidLink Slave | V2.3.0 | Current |
 | Watch Display | V2.1.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
+| RadarEye | V1.0.0 | Current paid upgrade |
 | DroidLink_AP | V2.3.0 | Current |
-
-## Limited Testing Firmware
-
-| Device | Version | Status |
-| --- | --- | --- |
-| Master Controller | V2.1.0 | Locked testing access |
 
 ## Master Controller
 
-### V2.1.0 — Locked testing release, September 20, 2026
+### V2.2.0 — October 13, 2026
 
 - Added four named RC button profiles plus Global mappings available in every profile.
 - Added profile switching, optional activation feedback, and active-profile status for compatible Watch Displays.
@@ -36,9 +31,12 @@ Some older releases do not have a recorded release date or detailed public notes
 - Expanded configuration capacity and added clear size warnings before saving.
 - Improved safe configuration saving, backup compatibility, device discovery pacing, and error reporting.
 - Added optional names for configured DroidLink Slave devices and Radar Eye discovery.
+- Added synchronized device command catalogs for the Master and compatible Watch Display.
+- Added saved Master Sequence labels and hides unused sequence slots from selectable action lists.
+- Added authorized RadarEye discovery and its available named commands to the Master and Watch interfaces.
 - Added further RC input filtering and restrictions that prevent automated actions from issuing drive commands.
 - Removed a harmless preference-storage warning from the first boot after a complete erase.
-- Available through the Installer and Remote OTA only to licenses authorized for locked testing. V2.0.1 remains the normal current Master release.
+- Available through the Installer and Remote OTA as a paid upgrade. V2.0.1 remains available in the Installer as the fallback release.
 
 ### V2.0.1 — August 28, 2026
 

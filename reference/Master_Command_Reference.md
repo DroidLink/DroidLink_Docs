@@ -1,9 +1,8 @@
 # DroidLink Master Command Reference
 
-**Document revision 1 — Reviewed September 26, 2026**
+**Document revision 2 — Reviewed October 13, 2026**
 
-This reference was checked against the released Master V2.0.1 source and the Master
-V2.1.0 locked-testing source on September 26, 2026. It contains only commands
+This reference was checked against the released Master V2.2.0 source on October 13, 2026. It contains only commands
 owned or interpreted by the Master. Commands belonging to DroidLink Slave,
 DroidLink_AP, MagicPanel, Periscope, and external serial devices remain in their
 own guides or Web Config interfaces.
@@ -112,15 +111,14 @@ Example:
 This begins rightward dome movement, waits 500 milliseconds, and sends the stop
 command. Sequence-driven dome movement must always end with a stop command.
 
-## Master V2.1.0 locked-testing commands
+## Master V2.2.0 profile commands
 
-These commands are not available in normal Master V2.0.1. They require a
-license authorized for Master V2.1.0 locked testing and a compatible Watch
-Display.
+These commands are available in Master V2.2.0. A compatible Watch Display can
+show and synchronize the selected profile.
 
 | Availability | Command | Action | Important behavior |
 |---|---|---|---|
-| Testing only | `:RCP1` through `:RCP4` | Select RC button Profile 1 through 4 | The selected profile remains active across Master restarts. A new or factory-reset Master starts in Profile 1. |
-| Testing only | `:RCPNEXT` | Select the next RC profile, wrapping after Profile 4 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
-| Testing only | `:RCPPREV` | Select the previous RC profile, wrapping before Profile 1 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
-| Testing only | `:RCPQ` | Request the active RC profile state | Intended for compatible Display synchronization and normally sent automatically. |
+| V2.2.0 | `:RCP1` through `:RCP4` | Select RC button Profile 1 through 4 | The selected profile remains active across Master restarts. A new or factory-reset Master starts in Profile 1. |
+| V2.2.0 | `:RCPNEXT` | Select the next RC profile, wrapping after Profile 4 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
+| V2.2.0 | `:RCPPREV` | Select the previous RC profile, wrapping before Profile 1 | Profile switching is blocked while guarded Web Drive Tuning is armed. |
+| V2.2.0 | `:RCPQ` | Request the active RC profile state | Intended for compatible Display synchronization and normally sent automatically. |

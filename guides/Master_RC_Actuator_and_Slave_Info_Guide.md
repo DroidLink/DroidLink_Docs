@@ -2,9 +2,9 @@
 
 **Testing guide revision 2 — October 10, 2026**
 
-> This guide describes unreleased testing firmware. These features are not part
-> of the current public Installer release. Use only the matching testing builds
-> supplied for your Master and slave controllers.
+> Master V2.2.0 is released. The DroidLink Slave and DroidLink_AP features in
+> this guide still require matching V2.4.0 testing firmware supplied for those
+> devices.
 
 RC Actuator Controls temporarily give one RC stick control of a servo, a saved
 servo group, or a two-axis mechanism. The selected RC button toggles that
@@ -29,9 +29,9 @@ The Master locks drive outputs during RC Actuator Live Test. Normal runtime
 operation retains the usual RC signal-loss, drive-stop, dome-stop, and
 centered-stick protections.
 
-## Compatible testing firmware
+## Compatible firmware
 
-- DroidLink Master V2.2.0 testing firmware
+- DroidLink Master V2.2.0 current firmware
 - DroidLink Slave V2.4.0 testing firmware
 - DroidLink_AP V2.4.0 testing firmware
 
@@ -259,7 +259,7 @@ the endpoints and output state needed for safe live positioning.
 
 - Confirm the slave is powered and paired to the correct Master MAC.
 - Confirm its Device ID and MAC are in Master System Setup.
-- Confirm both devices use matching catalog-capable testing firmware.
+- Confirm both devices use matching catalog-capable firmware.
 - Refresh Device Discovery and try Update Droid again.
 
 ### A device shows saved cache

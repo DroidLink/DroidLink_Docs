@@ -74,9 +74,9 @@ Use the page’s save control after editing settings. Initial setup and configur
 
 RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, profile switching, custom commands, and other supported actions.
 
-Authorized Master V2.2.0 testing firmware adds toggle-based RC Actuator controls and an on-demand **Update Droid** action on the Master main screen. Compatible device testing firmware can provide named outputs, LED zones, saved groups, assigned sequence shortcuts, and supported commands. The completed catalog can also be sent to a compatible Watch Display. See the [Master RC Actuator Controls and Slave Information testing guide](../guides/Master_RC_Actuator_and_Slave_Info_Guide.md). These features are not part of the current public release.
+Master V2.2.0 adds toggle-based RC Actuator controls and an on-demand **Update Droid** action on the Master main screen. Compatible device firmware can provide named outputs, LED zones, saved groups, assigned sequence shortcuts, and supported commands. The completed catalog can also be sent to a compatible Watch Display. See the [Master RC Actuator Controls and Slave Information guide](../guides/Master_RC_Actuator_and_Slave_Info_Guide.md). Some device-side catalog and actuator features still require matching testing firmware as identified in that guide.
 
-Authorized Master V2.1.0 testing firmware provides four named profiles and a Global mapping page. These controls are not part of the normal V2.0.1 release. In V2.1.0, profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master remembers the active profile across restarts. A new or factory-reset Master starts in Profile 1.
+Master V2.2.0 provides four named profiles and a Global mapping page. Profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master remembers the active profile across restarts. A new or factory-reset Master starts in Profile 1.
 
 Each profile can have an optional activation feedback command. Save applies the mappings immediately. **Load RC Defaults** resets only the RC profile mappings and does not erase Master Sequences, devices, network settings, or other Master configuration.
 
