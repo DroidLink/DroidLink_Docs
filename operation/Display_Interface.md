@@ -116,6 +116,8 @@ editable Quick Actions, direct device-control pages, saved Master Sequence and
 audio selections, and catalog-backed command builders. Device controls appear
 only after their information has been saved through Droid Update.
 
+See the [Watch Web Config and Quick Actions Guide](../guides/DroidLink_Watch_Web_Config_and_Quick_Actions_Guide.md) for Dashboard status, safe dome controls, button sources, multi-step command chains, Quick Action saving, and Control-page customization.
+
 The Watch **Settings > Droid Update** screen provides:
 
 - **Update Devices** to refresh compatible device names, outputs, groups,
@@ -131,6 +133,8 @@ time, reports unavailable devices, preserves usable cached information, and
 sends the final catalog to the Watch when it is powered on. Automatic device
 Web Config buttons use the custom name saved on the Master when present;
 otherwise they use the device's reported name.
+
+See the [Update Droid and Device Catalog Guide](../guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.md) for the complete Master and Watch update workflow, saved catalog behavior, clearing options, and troubleshooting.
 
 ## Updating the Display
 

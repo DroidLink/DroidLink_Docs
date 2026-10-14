@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 2 — Reviewed October 13, 2026**
+**Document revision 3 — Reviewed October 14, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -12,13 +12,13 @@ Some older releases do not have a recorded release date or detailed public notes
 
 | Device | Version | Status |
 | --- | --- | --- |
-| Master Controller | V2.2.0 | Current paid upgrade |
-| DroidLink Slave | V2.3.0 | Current |
+| Master Controller | V2.2.0 | Current |
+| DroidLink Slave | V2.4.0 | Current |
 | Watch Display | V2.2.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| RadarEye | V1.0.0 | Current paid upgrade |
-| DroidLink_AP | V2.3.0 | Current |
+| RadarEye | V1.0.0 | Current |
+| DroidLink_AP | V2.4.0 | Current |
 
 ## Master Controller
 
@@ -36,7 +36,7 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added authorized RadarEye discovery and its available named commands to the Master and Watch interfaces.
 - Added further RC input filtering and restrictions that prevent automated actions from issuing drive commands.
 - Removed a harmless preference-storage warning from the first boot after a complete erase.
-- Available through the Installer and Remote OTA as a paid upgrade. V2.0.1 remains available in the Installer as the fallback release.
+- Available through the Installer and Remote OTA. V2.0.1 remains available in the Installer as the fallback release.
 
 ### V2.0.1 — August 28, 2026
 
@@ -115,6 +115,13 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## DroidLink Slave
 
+### V2.4.0 — October 14, 2026
+
+- Added device catalog reporting for names, controller type, firmware, configured outputs, saved groups, saved sequences, lighting capabilities, and supported actions.
+- Added compatible output, group, and two-axis targets for Master RC Actuator Controls.
+- Added safe release behavior when live actuator control ends or communication is interrupted.
+- Available through the Installer for ESP32-C3 Super Mini and ESP32 DevKit controllers. V2.3.0 remains available as the fallback release.
+
 ### V2.3.0 — September 19, 2026
 
 - Expanded reusable servo groups from 8 to 16 while preserving existing groups.
@@ -165,6 +172,13 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## DroidLink_AP
+
+### DroidLink_AP V2.4.0 — October 14, 2026
+
+- Added device catalog reporting for names, controller type, firmware, configured outputs, saved groups, saved sequences, lighting capabilities, and supported actions.
+- Added compatible Maestro and PCA9685 targets for Master RC Actuator Controls.
+- Preserved MarcDuino installations as command-only devices.
+- Available through the Installer. V2.3.0 remains available as the fallback release.
 
 ### DroidLink_AP V2.3.0 — September 19, 2026
 

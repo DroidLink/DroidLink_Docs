@@ -1,6 +1,6 @@
 # Start Here with DroidLink
 
-**Document revision 4 — Reviewed September 26, 2026**
+**Document revision 5 — Reviewed October 14, 2026**
 
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
@@ -192,16 +192,7 @@ current source and make updates immediately visible. Download a PDF when a
 printed or offline copy is needed, and download a fresh copy before beginning a
 new installation or major reconfiguration.
 
-- [Master and Watch Display Complete Guide PDF](downloads/guides/Master_and_Watch_Display_Guide.pdf)
-- [Master Command Reference PDF](downloads/guides/Master_Command_Reference.pdf)
-- [DroidLink Slave Complete Guide PDF](downloads/guides/DroidLink_Slave_Guide.pdf)
-- [DroidLink Slave LED Strip Configuration walkthrough PDF](downloads/guides/DroidLink-LED-Strip-Configuration-HowTo.pdf)
-- [DroidLink Slave Sequence Builder walkthrough PDF](downloads/guides/DroidLink-Sequence-Builder-HowTo.pdf)
-- [DroidLink_AP Complete Guide PDF](downloads/guides/DroidLink_AP_Guide.pdf)
-- [MagicPanel Complete Guide PDF](downloads/guides/MagicPanel_Guide.pdf)
-- [MagicPanel Command Reference PDF](downloads/guides/MagicPanel_Command_Reference.pdf)
-- [Periscope Complete Guide PDF](downloads/guides/Periscope_Guide.pdf)
-- [Master RC Actuator Controls and Slave Information testing guide PDF](downloads/guides/Master_RC_Actuator_and_Slave_Info_Guide.pdf)
+- [Open the complete DroidLink Documentation Index](DroidLink_Documentation_Index.md) to find every online guide, feature guide, PDF, command reference, and template.
 
 Every PDF displays its document revision and review date. Use the
 [PDF Revision History](downloads/guides/PDF_Revision_History.md) to compare a
@@ -210,6 +201,7 @@ copy instead of relying on it after the online guide changes.
 
 ## Where to go next
 
+- [DroidLink Documentation Index](DroidLink_Documentation_Index.md) — complete guide and download library
 - [Using DroidLink](operation/System_Overview.md) — system overview
 - [Master Interface Guide](operation/Master_Interface.md) — Master configuration pages
 - [Display Interface Guide](operation/Display_Interface.md) — Watch Display operation

@@ -1,8 +1,8 @@
 # DroidLink_AP Complete Guide
 
-> Users testing DL_AP V2.4.0 with Master V2.2.0 can use the Master's on-demand device-information update. RC Actuator controls require the Maestro or PCA9685 backend; MarcDuino remains command-only. See the [testing guide](Master_RC_Actuator_and_Slave_Info_Guide.md). The required DL_AP V2.4.0 firmware is not part of the current public release.
+**Document revision 2 — Reviewed October 14, 2026**
 
-**Document revision 1 — Reviewed September 26, 2026**
+> DroidLink_AP V2.4.0 supports the Master's on-demand device catalog. RC Actuator Controls require the Maestro or PCA9685 backend; MarcDuino remains command-only. See the [Update Droid and Device Catalog Guide](DroidLink_Update_Droid_and_Device_Catalog_Guide.md) and [RC Actuator Controls Guide](DroidLink_RC_Actuator_Controls_Guide.md).
 
 DroidLink_AP combines AstroPixels lighting with a choice of Pololu Maestro,
 PCA9685, or wired Marcduino control. This guide covers hardware, wiring,

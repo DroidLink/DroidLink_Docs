@@ -335,13 +335,9 @@ Recommended setup video:
 
 https://youtu.be/dwMedRteUe4?si=NSW_UL7fBHayW-up
 
-When the video reaches the calibration step:
+When the video reaches the calibration step, use the guarded **Arm ESC Calibration** control on the Master V2.2.0 Drive Tuning page. Keep both drive wheels raised and follow only the ESC manufacturer's required stick and power sequence.
 
-1. On the Watch Display, open **Command Center**.
-2. Select **Master**.
-3. Select **CALIBRATE ONLY**.
-
-This performs ESC calibration through the DroidLink system.
+See the [Master Drive Tuning and Live Test Guide](../guides/DroidLink_Master_Drive_Tuning_and_Live_Test_Guide.md) before calibration. ESC calibration is not used in Sabertooth mode.
 
 ---
 
@@ -369,12 +365,13 @@ Always increase speed gradually and test in a safe open area.
 
 ## Drive Mode Speed Configuration
 
-After drive controller setup is complete drive behavior can be tuned from the Display.
+After drive controller setup is complete, drive behavior can be tuned from the Master V2.2.0 Runtime Web Config interface.
 
 To adjust drive speed profiles:
 
-1. On the Watch Display, open **Command Center**.
-2. Select **Drives**.
+1. Turn on **Master Web UI** from the Watch Display.
+2. Connect to `DroidLink_Master` and open `http://192.168.4.1`.
+3. Select **Drive Tuning**.
 
 You can adjust speed scaling for:
 
@@ -382,7 +379,7 @@ You can adjust speed scaling for:
 * Normal Mode
 * Turbo Mode
 
-Changes take effect **immediately** when the slider is released.
+Select **Save Profile** to store changes. Use guarded **Live Test** with the wheels raised before floor testing.
 
 ---
 

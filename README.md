@@ -1,6 +1,6 @@
 # DroidLink Documentation
 
-**Documentation index revision 2 — Reviewed September 26, 2026**
+**Documentation home revision 3 — Reviewed October 14, 2026**
 
 Welcome to the public user documentation for DroidLink.
 
@@ -34,66 +34,31 @@ Robots can move unexpectedly and may cause injury or property damage. By buildin
 
 New users should begin with [Start Here with DroidLink](DroidLink_Start_Here.md). It is the single roadmap from hardware selection through installation, pairing, safe testing, and backups.
 
-### Link to share on Discord
+## Complete documentation library
 
-Share this single link with a new user:
+Use the [DroidLink Documentation Index](DroidLink_Documentation_Index.md) to find every maintained online guide, downloadable PDF, command reference, template, and firmware feature guide.
+
+The index is organized by:
+
+- New firmware features
+- Master Controller
+- Watch Display
+- DroidLink Slave
+- DroidLink_AP
+- Dedicated accessories
+- Downloads and revision records
+
+### Links to share
+
+For a new installation, share:
 
 <https://github.com/DroidLink/DroidLink_Docs/blob/main/DroidLink_Start_Here.md>
 
-The Start Here page links to the current Installer, required hardware, setup
-order, device guides, safe testing, backups, and troubleshooting. Share a
-device-specific guide only when the user is already working on that device.
+For the complete guide library or the new firmware feature guides, share:
 
-## Recommended documentation path
+<https://github.com/DroidLink/DroidLink_Docs/blob/main/DroidLink_Documentation_Index.md>
 
-Follow the guides in this order:
-
-1. [Start Here with DroidLink](DroidLink_Start_Here.md) — the authoritative installation roadmap
-2. [DroidLink Main Hardware](reference/Parts_List.md) — supported boards and required hardware
-3. [Master and Watch Display Complete Guide](guides/Master_and_Watch_Display_Guide.md) — installation, initial setup, and pairing
-4. [Master Wiring and Connections](operation/Master_Wiring.md) — power and hardware wiring
-5. [DroidLink Slave Complete Guide](guides/DroidLink_Slave_Guide.md) — installation, configuration, and operation
-6. [DroidLink_AP Complete Guide](guides/DroidLink_AP_Guide.md)
-7. [Using DroidLink](operation/System_Overview.md) — system overview after installation
-8. [Master Interface Guide](operation/Master_Interface.md) — Master configuration and operation
-9. [Display Interface Guide](operation/Display_Interface.md) — Watch Display configuration and operation
-10. [Master Command Reference](reference/Master_Command_Reference.md) — verified Master commands and chaining syntax
-11. [Creating a Master Sequence](operation/Creating_Master_Sequence.md) — reusable timed actions
-12. [Creating Display Sequences](operation/Creating_Display_Sequences.md) — chained Display commands
-13. [Sentry Mode User Guide](operation/Sentry_Mode.md) — unattended random actions
-14. [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
-15. [Firmware Changelog](reference/Firmware_Changelog.md) — current, testing, and historical releases
-
-Testing firmware users can also use the [Master RC Actuator Controls and Slave Information testing guide](guides/Master_RC_Actuator_and_Slave_Info_Guide.md).
-
-## Additional device and reference guides
-
-- [Downloadable PDF revision history](downloads/guides/PDF_Revision_History.md)
-- [DroidLink_AP Maestro dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-Maestro-Dome-Template.json)
-- [DroidLink_AP PCA dome template](downloads/DroidLink_AP/DroidLink-AstroPixels-PCA-Dome-Template.json)
-- [DroidLink Periscope Complete Guide](guides/Periscope_Guide.md)
-- [DroidLink MagicPanel Complete Guide](guides/MagicPanel_Guide.md)
-- [MagicPanel Command Reference](reference/MagicPanel_Command_Reference.md)
-
-## Downloadable guides
-
-- [Master and Watch Display Complete Guide PDF](downloads/guides/Master_and_Watch_Display_Guide.pdf)
-- [Master Command Reference PDF](downloads/guides/Master_Command_Reference.pdf)
-- [DroidLink Slave Complete Guide PDF](downloads/guides/DroidLink_Slave_Guide.pdf)
-- [DroidLink Slave LED Strip Configuration walkthrough PDF](downloads/guides/DroidLink-LED-Strip-Configuration-HowTo.pdf)
-- [DroidLink Slave Sequence Builder walkthrough PDF](downloads/guides/DroidLink-Sequence-Builder-HowTo.pdf)
-- [DroidLink_AP Complete Guide PDF](downloads/guides/DroidLink_AP_Guide.pdf)
-- [MagicPanel Complete Guide PDF](downloads/guides/MagicPanel_Guide.pdf)
-- [MagicPanel Command Reference PDF](downloads/guides/MagicPanel_Command_Reference.pdf)
-- [Periscope Complete Guide PDF](downloads/guides/Periscope_Guide.pdf)
-- [Master RC Actuator Controls and Slave Information testing guide PDF](downloads/guides/Master_RC_Actuator_and_Slave_Info_Guide.pdf)
-
-Use the [PDF revision history](downloads/guides/PDF_Revision_History.md) to
-identify the revision and checksum of a downloaded copy.
-
-Editable versions of the Slave walkthroughs are available in the
-[LED Strip Configuration walkthrough](guides/DroidLink_Slave_LED_Strip_Walkthrough.md)
-and [Sequence Builder walkthrough](guides/DroidLink_Slave_Sequence_Builder_Walkthrough.md).
+The [PDF Revision History](downloads/guides/PDF_Revision_History.md) identifies the revision and SHA-256 checksum of every maintained downloadable PDF.
 
 ## Document revisions and firmware releases
 

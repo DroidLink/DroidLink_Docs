@@ -1,6 +1,6 @@
 # DroidLink Master Interface Guide
 
-**Document revision 1 — Reviewed September 26, 2026**
+**Document revision 2 — Reviewed October 14, 2026**
 
 The DroidLink Master web interface configures the droid, maps RC controls, builds Master Sequences, configures Sentry Mode, monitors devices, and backs up settings.
 
@@ -34,6 +34,8 @@ The dashboard provides access to:
 
 The Master MAC appears near the top of the interface. Use **Copy** when entering it into a Display or another DroidLink device.
 
+Master V2.2.0 adds **Drive Tuning** for the separate Slow, Normal, and Turbo profiles. Its guarded Live Test permits the physical RC controller to test a selected profile while Runtime Web Config remains open; the browser cannot enable or move the droid. See the [Master Drive Tuning and Live Test Guide](../guides/DroidLink_Master_Drive_Tuning_and_Live_Test_Guide.md) before using this safety-critical feature.
+
 ## System Setup
 
 System Setup contains the Master’s primary configuration. Available sections depend on the installed hardware and selected modes.
@@ -44,7 +46,7 @@ Each configured DroidLink device row accepts an optional custom name, a unique
 Device ID from `2` through `13`, and the MAC printed or displayed by the
 device. Leave the custom name blank to use the name reported by compatible
 device firmware. Older saved configurations without IDs remain loadable and
-can learn a missing ID during an authorized testing-firmware update.
+can learn a missing ID during Update Droid with compatible device firmware.
 
 Enable the Watch Display, enter its correct MAC address, and save the
 configuration.
@@ -74,9 +76,11 @@ Use the page’s save control after editing settings. Initial setup and configur
 
 RC Controls assigns transmitter inputs to DroidLink actions. Mapping sections include audio, Master Sequences, drive controls, Sentry On and Off, profile switching, custom commands, and other supported actions.
 
-Master V2.2.0 adds toggle-based RC Actuator controls and an on-demand **Update Droid** action on the Master main screen. Compatible device firmware can provide named outputs, LED zones, saved groups, assigned sequence shortcuts, and supported commands. The completed catalog can also be sent to a compatible Watch Display. See the [Master RC Actuator Controls and Slave Information guide](../guides/Master_RC_Actuator_and_Slave_Info_Guide.md). Some device-side catalog and actuator features still require matching testing firmware as identified in that guide.
+Master V2.2.0 adds toggle-based RC Actuator controls and an on-demand **Update Droid** action on the Master main screen. Compatible device firmware can provide named outputs, LED zones, saved groups, assigned sequence shortcuts, and supported commands. The completed catalog can also be sent to a compatible Watch Display. See the [DroidLink RC Actuator Controls Guide](../guides/DroidLink_RC_Actuator_Controls_Guide.md) for complete configuration, Live Test, operation, and safety instructions. See the [Update Droid and Device Catalog Guide](../guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.md) for device refresh, saved-name, offline-cache, Watch-audio, and clearing instructions.
 
 Master V2.2.0 provides four named profiles and a Global mapping page. Profile mappings change when a different profile is selected, Global mappings remain active in every profile, and the Master remembers the active profile across restarts. A new or factory-reset Master starts in Profile 1.
+
+See the [DroidLink RC Button Profiles Guide](../guides/DroidLink_RC_Button_Profiles_Guide.md) for complete setup, Global priority, Watch Display operation, upgrade behavior, backups, and troubleshooting.
 
 Each profile can have an optional activation feedback command. Save applies the mappings immediately. **Load RC Defaults** resets only the RC profile mappings and does not erase Master Sequences, devices, network settings, or other Master configuration.
 
@@ -106,7 +110,7 @@ Select a saved sequence and run it from the browser, or send `:MSnn`, such as `:
 
 **Cancel Remaining Steps** prevents steps that have not yet been sent. It cannot reverse a command already received by another device. Add an appropriate stop or idle command at the end when an effect should not remain active.
 
-For detailed sequence design, see [Creating a Master Sequence](Creating_Master_Sequence.md).
+For sequence names, catalog-backed actions, drag ordering, Watch synchronization, safe testing, and cancellation, see the [Master Sequences Guide](Creating_Master_Sequence.md).
 
 ## Sentry Mode
 
