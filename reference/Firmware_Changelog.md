@@ -14,7 +14,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | --- | --- | --- |
 | Master Controller | V2.2.0 | Current paid upgrade |
 | DroidLink Slave | V2.3.0 | Current |
-| Watch Display | V2.1.0 | Current |
+| Watch Display | V2.2.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
 | RadarEye | V1.0.0 | Current paid upgrade |
@@ -67,6 +67,17 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## Watch and Original Displays
 
+### Watch Display V2.2.0 — October 13, 2026
+
+- Added the Command Center browser dashboard with editable Quick Actions and direct device-control pages.
+- Added Droid Update controls for refreshing saved device and audio information.
+- Added catalog-backed controls for authorized RadarEye commands and other saved DroidLink devices.
+- Added saved Master Sequence names and hides unused sequence slots from selectable action lists.
+- Added saved audio track names and selections to the browser interface.
+- Added direct Watch controls for compatible Master RC button profiles.
+- Improved catalog transfers to use less working memory during updates.
+- Released as a free update for all active DroidLink users. V2.1.0 remains available in the Installer as the fallback release.
+
 ### Watch Display V2.1.0 — September 20, 2026
 
 - Added a Home-screen indicator for the active Master RC button profile (`P1`–`P4`).
@@ -75,6 +86,7 @@ Some older releases do not have a recorded release date or detailed public notes
 - Preserved existing Display configurations and saved button lists without requiring a migration.
 - Released as a free update for all active DroidLink users.
 - Active-profile synchronization requires compatible Master firmware; the Display remains safe to use with earlier Master versions.
+- Retained in the Installer as the fallback Watch Display release.
 
 ### Watch Display V2.0.0 — August 15, 2026
 

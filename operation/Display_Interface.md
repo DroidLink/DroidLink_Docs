@@ -109,12 +109,9 @@ These controls differ from the Home-screen Wi-Fi control, which manages only the
 
 The Settings screen provides two SD-card backup slots and two matching restore controls. A restored configuration is applied after restart. Verify the Master MAC, buttons, theme, and power settings after restoring.
 
-## V2.2.0 testing interface
+## V2.2.0 interface
 
-> These controls describe authorized testing firmware and are not part of the
-> current public Installer release.
-
-The testing Web Config adds a responsive operating dashboard, up to eight
+The V2.2.0 Web Config adds a responsive operating dashboard, up to eight
 editable Quick Actions, direct device-control pages, saved Master Sequence and
 audio selections, and catalog-backed command builders. Device controls appear
 only after their information has been saved through Droid Update.
