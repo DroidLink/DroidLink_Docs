@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 3 — Reviewed October 14, 2026**
+**Document revision 4 — Reviewed October 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -17,7 +17,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Watch Display | V2.2.0 | Current |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
-| RadarEye | V1.0.0 | Current |
+| RadarEye | V1.0.1 | Current |
 | DroidLink_AP | V2.4.0 | Current |
 
 ## Master Controller
@@ -250,6 +250,19 @@ Some older releases do not have a recorded release date or detailed public notes
 - Starts with its LEDs off until an ON command is received.
 - Added saved sequence selection and Periscope lighting commands.
 - Improved first-time setup validation and startup behavior.
+
+## RadarEye
+
+### V1.0.1 — October 18, 2026
+
+- Improved display stability for installations using longer display ribbon cables.
+- Retains all RadarEye commands, saved media, first-time setup, and DroidLink integration from V1.0.0.
+- Replaces V1.0.0 as the only RadarEye firmware offered by the Installer.
+
+### V1.0.0 — October 13, 2026
+
+- Initial DroidLink RadarEye release for the Adafruit Qualia ESP32-S3 RGB666.
+- Added DroidLink command handling, guided first-time setup, built-in effects, and user media support.
 
 ## About Legacy Firmware
 
