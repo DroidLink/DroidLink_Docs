@@ -1,6 +1,6 @@
 # Start Here with DroidLink
 
-**Document revision 5 — Reviewed October 14, 2026**
+**Document revision 6 — Reviewed October 28, 2026**
 
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
@@ -38,6 +38,13 @@ Add only the optional hardware your droid needs:
 - DroidLink_AP
 - MagicPanel
 - Periscope
+
+> **Master hardware must match the pictures:** Buy only the Master ESP32-S3
+> board that looks exactly like the board pictured in
+> [DroidLink Main Hardware](reference/Parts_List.md#required-master-esp32-s3-board).
+> It must have an onboard antenna and **no external antenna or external-antenna
+> connector**. The pictured Freenove ESP32-S3 terminal breakout board is the
+> only Master breakout board to purchase.
 
 Confirm the exact controller-board model, flash size, antenna type, connector arrangement, and breakout-board compatibility. Similar-looking ESP32 boards are not always interchangeable.
 

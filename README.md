@@ -1,6 +1,6 @@
 # DroidLink Documentation
 
-**Documentation home revision 3 — Reviewed October 14, 2026**
+**Documentation home revision 4 — Reviewed October 28, 2026**
 
 Welcome to the public user documentation for DroidLink.
 
@@ -75,8 +75,6 @@ through the DroidLink Installer and Gatekeeper.
 ## Optional audio hardware
 
 A DFPlayer Mini breakout board designed for DroidLink is available to simplify audio wiring and reduce connection errors.
-
-![DFPlayer breakout wiring](images/master_dfplayer_wiring.jpg)
 
 Current breakout-board pricing and availability are listed in [DroidLink Main Hardware](reference/Parts_List.md).
 

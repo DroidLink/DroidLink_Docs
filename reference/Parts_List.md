@@ -1,6 +1,6 @@
 # DroidLink Main Hardware
 
-**Document revision 2 — Reviewed September 27, 2026**
+**Document revision 3 — Reviewed October 28, 2026**
 
 This guide lists the main controller boards and breakout boards used to build
 a DroidLink system. AstroPixels, MagicPanel, Periscope, motors, servos, power
@@ -41,42 +41,40 @@ then follow [Start Here with DroidLink](../DroidLink_Start_Here.md).
 
 ## Master Controller
 
-A Master Controller requires one supported ESP32-S3 controller and one
-compatible breakout board. Choose one controller and one breakout option.
+A new Master Controller requires the exact ESP32-S3 N16R8 development board
+shown below and the Freenove ESP32-S3 terminal breakout board shown below.
 
-> **Important:** Do **not** buy an external-antenna version. Buy the
-> Meshnology N16R8 version that matches the photo below.
+> **Important — match the photo exactly:** The Master ESP32-S3 board must look
+> exactly like the controller in the photo below, including the two USB-C ports
+> and onboard antenna. Do **not** buy a version with an external antenna
+> connector or detachable external antenna. If the board looks different from
+> the photo, do not buy it for a DroidLink Master.
 
 | Item | Quantity | Status | Notes |
 |---|---:|---|---|
-| Supported ESP32-S3 development board | 1 | Required | Use the pictured Meshnology ESP32-S3 N16R8 board for a new Master. Do not buy an external-antenna version. Existing Freenove FNK0085 8 MB Flash installations remain supported. |
-| ESP32-S3 breakout board | 1 | Required | Choose one of the compatible breakout options below. |
+| Pictured ESP32-S3 N16R8 development board | 1 | Required | It must look exactly like the photo and must not have an external antenna or external-antenna connector. |
+| Freenove ESP32-S3 terminal breakout board | 1 | Required | This is the only Master breakout board to purchase. Do not substitute another breakout board. |
 
-### Master board options
+### Required Master ESP32-S3 board
 
-![Meshnology ESP32-S3 N16R8 development board](../images/parts/master-esp32-s3-n16r8.jpg)
+![Required ESP32-S3 N16R8 Master development board with onboard antenna and no external antenna](../images/parts/master-esp32-s3-n16r8.jpg)
 
-- **Recommended for a new Master:** [Meshnology ESP32-S3 N16R8 development board — no external antenna](https://www.amazon.com/dp/B0FRG4MWRB)
+- [Purchase the pictured ESP32-S3 N16R8 development board — no external antenna](https://www.amazon.com/dp/B0FRG4MWRB)
 
-The Freenove FNK0085 8 MB Flash board remains supported in existing Master
-installations. It is no longer linked as the preferred new purchase because
-the current product listing is presented as a camera kit and can be confused
-with other Freenove products.
+The photo is the hardware reference. A listing title alone is not enough;
+compare the board layout, two USB-C ports, and antenna style before ordering.
 
-### Master breakout options
+### Required Master breakout board
 
 ![Freenove ESP32-S3 terminal breakout board](../images/parts/master-freenove-breakout.jpg)
 
 - [Freenove ESP32-S3 terminal breakout board](https://www.amazon.com/dp/B0CD2512JV)
 
-![Meshnology N40 ESP32/ESP32-S3 expansion board](../images/parts/master-n40-breakout.webp)
-
-- [Meshnology N40 ESP32/ESP32-S3 expansion board](https://meshnology.com/products/n40-esp32-expansion-board-for-esp32-esp32-s3-core-modules)
-
-The controller must be inserted in the correct orientation. Check the breakout
-board labels before applying power. Continue with
+The Freenove board pictured above is the only Master breakout board to
+purchase. The controller must be inserted in the correct orientation. Check
+the breakout board labels before applying power. Continue with
 [Master Wiring and Connections](../operation/Master_Wiring.md) after the
-controller and breakout have been selected.
+controller and Freenove breakout have been selected.
 
 ## Watch Display
 
@@ -127,8 +125,6 @@ DFPlayer Mini.
 ![DFPlayer Mini](../images/parts/dfplayer-mini.jpg)
 
 - [DFPlayer Mini purchase example](https://www.amazon.com/dp/B089D5NLW1)
-
-![DroidLink DFPlayer breakout board connected to the Master](../images/master_dfplayer_wiring.jpg)
 
 The DroidLink DFPlayer breakout board is $40. Contact
 [droidlink77@gmail.com](mailto:droidlink77@gmail.com) for availability.

@@ -1,8 +1,16 @@
 # Wiring and Connections
 
-**Document revision 1 — Reviewed September 26, 2026**
+**Document revision 2 — Reviewed October 28, 2026**
 
 This guide explains how to properly wire your **DroidLink Master hardware**.
+
+Use only the Master ESP32-S3 board and Freenove ESP32-S3 terminal breakout
+board pictured below. The Master controller must look exactly like this image
+and must not have an external antenna or external-antenna connector.
+
+![Required ESP32-S3 N16R8 Master development board with onboard antenna and no external antenna](../images/parts/master-esp32-s3-n16r8.jpg)
+
+![Required Freenove ESP32-S3 terminal breakout board](../images/parts/master-freenove-breakout.jpg)
 
 > ⚠️ Always disconnect battery power before making or modifying wiring connections.
 
@@ -46,10 +54,9 @@ A shared ground ensures reliable signal communication between all devices.
 
 ## Master Power & SBUS Connections
 
-The image below shows the Master Controller mounted to the breakout board,
-powered via a 12V DC input, with both SBUS receivers connected.
-
-![Master Installed – 12V Power and SBUS Connected](../images/master_power_sbus_wiring.jpg)
+Mount the Master Controller on the Freenove breakout board in the orientation
+shown by the breakout-board labels. Confirm the orientation before connecting
+power.
 
 ### Connection Overview
 
@@ -87,10 +94,6 @@ In ESC mode the dome motor is controlled using a **PWM signal output** from the 
 Only the **signal and ground wires** are required.
 
 > ⚠️ Do NOT connect 5V from the dome controller to the ESP32.
-
-### Dome Wiring Diagram
-
-![Dome PWM Connection](../images/master_dome_motor_wiring.jpg)
 
 ---
 
@@ -136,12 +139,6 @@ The Master transmits commands on **GPIO 4**, and each controller responds only t
 | Sabertooth S1 | Serial input        |
 | SyRen S1      | Serial input        |
 | Master GND    | Controller ground   |
-
-### Wiring Diagram
-
-![Sabertooth Packetized Serial Wiring](../images/master_packetized_serial_wiring.jpg)
-
----
 
 ### Wiring Layout
 
@@ -246,10 +243,6 @@ The RX pin on the ESP32 is **not used**.
 
 ---
 
-### DFPlayer Wiring Diagram
-
-![DFPlayer Mini Breakout Wiring](../images/master_dfplayer_wiring.jpg)
-
 Connect the following pins:
 
 VCC
@@ -314,12 +307,6 @@ ESC systems use standard **PWM motor control signals**.
 Only **signal and ground wires** connect to the Master.
 
 > ⚠️ Never connect ESC 5V outputs to the ESP32.
-
----
-
-## ESC Wiring Diagram
-
-![Drive ESC Signal Connection](../images/master_drive_esc.jpg)
 
 ---
 
