@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 8 — Reviewed November 18, 2026**
+**Document revision 9 — Reviewed November 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -18,6 +18,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | DroidLink Slave | V2.5.0 | Beta |
 | Watch Display | V2.2.0 | Current |
 | Watch Display | V2.3.0 | Beta |
+| Large Display | V2.1.0 | Beta |
 | MagicPanel | V1.0 | Current |
 | MagicPanel | V1.1.0 | Beta |
 | Periscope | V1.0 | Current |
@@ -140,6 +141,26 @@ Some older releases do not have a recorded release date or detailed public notes
 
 - Legacy firmware for the original round DroidLink Display.
 - Detailed public release notes were not recorded.
+
+## Large Display
+
+### V2.1.0 Beta — November 18, 2026
+
+- Added the first paid hardware-test Beta for the 7-inch DroidLink Large
+  Display.
+- Added dashboard controls, Quick Actions, named droid profiles, and sequence
+  banks for operating and organizing compatible DroidLink systems.
+- Added Large Display setup for compatible device outputs, servo groups,
+  physical inputs, LEDs, and saved device sequences.
+- Added the Full Droid Sequence Builder for coordinated mechanical, lighting,
+  and audio actions.
+- Added RC button mapping, dual-axis actuator setup, Sentry configuration,
+  drive and dome tuning, and Clock Mode.
+- Added guided device and audio catalog updates through the Master.
+- Simplified normal serial output while preserving the Display MAC, firmware
+  version, readiness information, warnings, and errors.
+- Available through the Installer as Beta for hardware testing. It is not a
+  Current or general-availability Large Display release.
 
 ## DroidLink Slave
 
