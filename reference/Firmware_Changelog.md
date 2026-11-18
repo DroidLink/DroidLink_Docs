@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 4 — Reviewed October 18, 2026**
+**Document revision 5 — Reviewed November 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -13,6 +13,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Device | Version | Status |
 | --- | --- | --- |
 | Master Controller | V2.2.0 | Current |
+| Master Controller | V2.3.0 | Beta |
 | DroidLink Slave | V2.4.0 | Current |
 | Watch Display | V2.2.0 | Current |
 | MagicPanel | V1.0 | Current |
@@ -21,6 +22,17 @@ Some older releases do not have a recorded release date or detailed public notes
 | DroidLink_AP | V2.4.0 | Current |
 
 ## Master Controller
+
+### V2.3.0 Beta — November 18, 2026
+
+- Added Beta support for Display-based device setup, input setup, Full Droid Sequences, and Sentry configuration.
+- Added Master-routed physical input actions that behave like normal configured button presses.
+- Expanded RC Actuator Controls with two-output and two-saved-group targets.
+- Improved device and audio catalog updates when more than one compatible Display is connected.
+- Improved Full Droid Sequence storage, bank switching, command selection, and saved sequence names.
+- Improved safe Display-driven drive testing and command routing.
+- Simplified normal serial startup output while preserving actionable warnings and safety messages.
+- Available through the Installer as Beta. V2.2.0 remains the Current and Remote OTA release.
 
 ### V2.2.0 — October 13, 2026
 
