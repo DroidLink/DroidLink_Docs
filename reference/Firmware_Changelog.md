@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 7 — Reviewed November 18, 2026**
+**Document revision 8 — Reviewed November 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -15,6 +15,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Master Controller | V2.2.0 | Current |
 | Master Controller | V2.3.0 | Beta |
 | DroidLink Slave | V2.4.0 | Current |
+| DroidLink Slave | V2.5.0 | Beta |
 | Watch Display | V2.2.0 | Current |
 | Watch Display | V2.3.0 | Beta |
 | MagicPanel | V1.0 | Current |
@@ -23,6 +24,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Periscope | V1.1.0 | Beta |
 | RadarEye | V1.0.1 | Current |
 | DroidLink_AP | V2.4.0 | Current |
+| DroidLink_AP | V2.5.0 | Beta |
 
 ## Master Controller
 
@@ -141,6 +143,16 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## DroidLink Slave
 
+### V2.5.0 Beta — November 18, 2026
+
+- Added Beta support for configuring compatible Slave outputs, groups, inputs, LEDs, and saved sequences from the Large Display.
+- Added Master-routed physical input actions for Short Press, Release, and Hold triggers while retaining local-command actions.
+- Added Full Droid Sequence storage, playback, and saved-sequence reporting for compatible Master and Display controls.
+- Added two-saved-group targets for compatible dual-axis RC Actuator Controls.
+- Preserved existing input settings through the updated saved-input format.
+- Simplified normal serial output while preserving first-time setup, ready information, warnings, and errors.
+- Available through the Installer as Beta for ESP32-C3 Super Mini and ESP32 DevKit controllers. V2.4.0 remains the Current release.
+
 ### V2.4.0 — October 14, 2026
 
 - Added device catalog reporting for names, controller type, firmware, configured outputs, saved groups, saved sequences, lighting capabilities, and supported actions.
@@ -198,6 +210,15 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## DroidLink_AP
+
+### DroidLink_AP V2.5.0 Beta — November 18, 2026
+
+- Added Beta support for configuring compatible DroidLink_AP outputs, groups, lighting, and saved sequences from the Large Display.
+- Added Full Droid Sequence storage, playback, and saved-sequence reporting for compatible Master and Display controls.
+- Added two-saved-group targets for compatible dual-axis RC Actuator Controls in Maestro and PCA9685 modes.
+- Preserved the existing AstroPixels lighting, Maestro, PCA9685, and Marcduino operating modes.
+- Simplified normal serial output while preserving first-time setup, ready information, warnings, and errors.
+- Available through the Installer as Beta. V2.4.0 remains the Current DroidLink_AP release.
 
 ### DroidLink_AP V2.4.0 — October 14, 2026
 
