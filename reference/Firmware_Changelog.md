@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 6 — Reviewed November 18, 2026**
+**Document revision 7 — Reviewed November 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -18,7 +18,9 @@ Some older releases do not have a recorded release date or detailed public notes
 | Watch Display | V2.2.0 | Current |
 | Watch Display | V2.3.0 | Beta |
 | MagicPanel | V1.0 | Current |
+| MagicPanel | V1.1.0 | Beta |
 | Periscope | V1.0 | Current |
+| Periscope | V1.1.0 | Beta |
 | RadarEye | V1.0.1 | Current |
 | DroidLink_AP | V2.4.0 | Current |
 
@@ -256,6 +258,15 @@ Some older releases do not have a recorded release date or detailed public notes
 
 ## MagicPanel
 
+### V1.1.0 Beta — November 18, 2026
+
+- Added Full Droid Sequence storage and playback for compatible DroidLink sequence controls.
+- Added firmware-version reporting to compatible Master device information.
+- Improved sequence transfers with safer temporary-file handling and recovery after an interrupted transfer.
+- Added the `NEWMAC` serial command for restarting Master pairing setup.
+- Simplified normal serial startup output while preserving setup instructions and actionable errors.
+- Available through the Installer as Beta. V1.0 remains the Current MagicPanel release.
+
 ### V1.0 — August 2026
 
 - Initial DroidLink MagicPanel release.
@@ -265,6 +276,15 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added MagicPanel text, effect, color, speed, and brightness commands.
 
 ## Periscope
+
+### V1.1.0 Beta — November 18, 2026
+
+- Added Full Droid Sequence storage and playback for compatible DroidLink sequence controls.
+- Added firmware-version reporting to compatible Master device information.
+- Improved sequence transfers with safer temporary-file handling and recovery after an interrupted transfer.
+- Improved Master capability refresh and reconnection reporting.
+- Simplified normal serial startup output while preserving setup instructions and actionable errors.
+- Available through the Installer as Beta. V1.0 remains the Current Periscope release.
 
 ### V1.0 — 2026
 
