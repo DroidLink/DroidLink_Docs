@@ -164,4 +164,3 @@ progress.
 
 Confirm the devices are powered and saved in the Master, then run **Update
 Droid** again.
-
