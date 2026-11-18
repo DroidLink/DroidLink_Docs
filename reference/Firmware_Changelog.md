@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 5 — Reviewed November 18, 2026**
+**Document revision 6 — Reviewed November 18, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -16,6 +16,7 @@ Some older releases do not have a recorded release date or detailed public notes
 | Master Controller | V2.3.0 | Beta |
 | DroidLink Slave | V2.4.0 | Current |
 | Watch Display | V2.2.0 | Current |
+| Watch Display | V2.3.0 | Beta |
 | MagicPanel | V1.0 | Current |
 | Periscope | V1.0 | Current |
 | RadarEye | V1.0.1 | Current |
@@ -78,6 +79,17 @@ Some older releases do not have a recorded release date or detailed public notes
 - Detailed public release notes were not recorded.
 
 ## Watch and Original Displays
+
+### Watch Display V2.3.0 Beta — November 18, 2026
+
+- Added Watch catalog support for configured device inputs and saved Full Droid Sequences.
+- Added Full Droid Sequence selection to Watch control pickers and dashboard Quick Actions.
+- Improved Droid Update so unchanged device information does not need to be rewritten.
+- Improved Watch-started audio updates by verifying the saved track count before reporting completion.
+- Simplified normal serial startup output while preserving actionable connection and hardware errors.
+- Preserved existing Watch configuration, saved buttons, themes, pairing, and SD-card backups.
+- Designed for the Master V2.3.0 Beta catalog and update workflow.
+- Available through the Installer as Beta. V2.2.0 remains the Current Watch release.
 
 ### Watch Display V2.2.0 — October 13, 2026
 
