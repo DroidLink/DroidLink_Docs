@@ -1,6 +1,6 @@
 # DroidLink Documentation Index
 
-**Index revision 1 — Reviewed October 14, 2026**
+**Index revision 2 — Reviewed November 18, 2026**
 
 This is the complete public guide library for DroidLink. Use the **Read online** link for the latest maintained instructions or download the matching PDF for printing and offline use.
 
@@ -8,7 +8,8 @@ New to DroidLink? Begin with [Start Here with DroidLink](DroidLink_Start_Here.md
 
 ## New firmware feature guides
 
-These guides cover the major features introduced with Master V2.2.0, Watch Display V2.2.0, DroidLink Slave V2.4.0, and DroidLink_AP V2.4.0.
+These guides cover major features introduced across current and Beta DroidLink
+firmware.
 
 | Feature | Read online | Download PDF |
 |---|---|---|
@@ -18,6 +19,7 @@ These guides cover the major features introduced with Master V2.2.0, Watch Displ
 | Update Droid and Device Catalog | [Open guide](guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.md) | [Download PDF](downloads/guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.pdf) |
 | Watch Web Config and Quick Actions | [Open guide](guides/DroidLink_Watch_Web_Config_and_Quick_Actions_Guide.md) | [Download PDF](downloads/guides/DroidLink_Watch_Web_Config_and_Quick_Actions_Guide.pdf) |
 | Master Sequences | [Open guide](operation/Creating_Master_Sequence.md) | [Download PDF](downloads/guides/DroidLink_Master_Sequences_Guide.pdf) |
+| Large Display | [Open guide library](guides/large-display/README.md) | — |
 
 ## Installation and system guides
 
@@ -52,6 +54,17 @@ These guides cover the major features introduced with Master V2.2.0, Watch Displ
 | Watch Web Config and Quick Actions | [Open guide](guides/DroidLink_Watch_Web_Config_and_Quick_Actions_Guide.md) | [Download PDF](downloads/guides/DroidLink_Watch_Web_Config_and_Quick_Actions_Guide.pdf) |
 | Creating Display Command Chains | [Open guide](operation/Creating_Display_Sequences.md) | — |
 | Update Droid and Device Catalog | [Open guide](guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.md) | [Download PDF](downloads/guides/DroidLink_Update_Droid_and_Device_Catalog_Guide.pdf) |
+
+## Large Display
+
+Large Display V2.1.0 is a hardware-test Beta for the Waveshare
+ESP32-S3-Touch-LCD-7. The guide library contains first-time setup and a
+separate guide for every tested Large Display feature.
+
+| Guide | Read online | Download PDF |
+|---|---|---|
+| Large Display User Guide Library | [Open guide library](guides/large-display/README.md) | — |
+| Large Display Getting Started | [Open guide](guides/large-display/GETTING_STARTED.md) | — |
 
 ## DroidLink Slave
 

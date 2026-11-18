@@ -1,6 +1,6 @@
 # DroidLink Documentation
 
-**Documentation home revision 4 — Reviewed October 28, 2026**
+**Documentation home revision 5 — Reviewed November 18, 2026**
 
 Welcome to the public user documentation for DroidLink.
 
@@ -43,6 +43,7 @@ The index is organized by:
 - New firmware features
 - Master Controller
 - Watch Display
+- Large Display
 - DroidLink Slave
 - DroidLink_AP
 - Dedicated accessories
@@ -57,6 +58,10 @@ For a new installation, share:
 For the complete guide library or the new firmware feature guides, share:
 
 <https://github.com/DroidLink/DroidLink_Docs/blob/main/DroidLink_Documentation_Index.md>
+
+For Large Display Beta installation and operation, share:
+
+<https://github.com/DroidLink/DroidLink_Docs/blob/main/guides/large-display/README.md>
 
 The [PDF Revision History](downloads/guides/PDF_Revision_History.md) identifies the revision and SHA-256 checksum of every maintained downloadable PDF.
 

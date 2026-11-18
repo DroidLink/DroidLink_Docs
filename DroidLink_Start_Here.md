@@ -1,6 +1,6 @@
 # Start Here with DroidLink
 
-**Document revision 6 — Reviewed October 28, 2026**
+**Document revision 7 — Reviewed November 18, 2026**
 
 Use this page as the main roadmap for a new DroidLink installation. Complete the sections in order and follow the linked guide whenever a section directs you to it.
 
@@ -16,6 +16,7 @@ You need:
 - A DroidLink license key
 - One supported Master Controller
 - One supported Watch Display
+- An optional supported Large Display when authorized for Beta testing
 - The RC, motor, audio, Slave, and dedicated-device hardware required by your droid
 
 Keep drive wheels raised and mechanisms disconnected during initial setup. Install an accessible master power switch before testing powered movement.
@@ -84,6 +85,25 @@ That guide covers:
 11. Confirming the Watch Display's Master indicator turns green
 
 Do not continue until the Master and Watch Display communicate successfully.
+
+## Optional after Step 3: Install the Large Display Beta
+
+Large Display V2.1.0 is an optional hardware-test Beta for the Waveshare
+ESP32-S3-Touch-LCD-7. It is configured as an additional Display and does not
+replace the normal Watch Display setup in this installation roadmap.
+
+Use [Getting Started with the DroidLink Large Display](guides/large-display/GETTING_STARTED.md)
+to:
+
+1. Install **Large Display V2.1.0 (Beta)** through the DroidLink Installer.
+2. Prepare the optional but strongly recommended microSD card.
+3. Enable the Large Display and save its MAC in Master System Setup.
+4. Save the Master MAC on the Large Display.
+5. Run Update Droid and Update Audio.
+6. Save the connected droid as a named profile.
+
+Continue with the normal hardware and safety steps below after the Large
+Display reports **Master Online**.
 
 ## Step 4: Wire and verify the Master hardware
 
@@ -212,6 +232,7 @@ copy instead of relying on it after the online guide changes.
 - [Using DroidLink](operation/System_Overview.md) — system overview
 - [Master Interface Guide](operation/Master_Interface.md) — Master configuration pages
 - [Display Interface Guide](operation/Display_Interface.md) — Watch Display operation
+- [Large Display User Guide Library](guides/large-display/README.md) — Large Display installation, operation, setup, sequences, and controls
 - [Master Command Reference](reference/Master_Command_Reference.md) — verified Master system, motion, sequence, Sentry, audio, and chaining commands
 - Device-specific commands are shown in each device's Web Config interface and complete guide.
 - [Remote OTA Updates](operation/OTA_Updates.md) — supported Master wireless updates
