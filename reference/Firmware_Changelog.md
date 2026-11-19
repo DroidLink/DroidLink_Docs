@@ -1,6 +1,6 @@
 # DroidLink Firmware Changelog
 
-**Document revision 9 — Reviewed November 18, 2026**
+**Document revision 10 — Reviewed November 19, 2026**
 
 This is the main user-facing release history for DroidLink firmware.
 
@@ -36,6 +36,8 @@ Some older releases do not have a recorded release date or detailed public notes
 - Expanded RC Actuator Controls with two-output and two-saved-group targets.
 - Improved device and audio catalog updates when more than one compatible Display is connected.
 - Improved Full Droid Sequence storage, bank switching, command selection, and saved sequence names.
+- Improved Full Droid Sequence Stop All so recently completed device timelines
+  remain reachable until every participating device confirms the stop.
 - Improved safe Display-driven drive testing and command routing.
 - Simplified normal serial startup output while preserving actionable warnings and safety messages.
 - Available through the Installer as Beta. V2.2.0 remains the Current and Remote OTA release.
@@ -157,6 +159,10 @@ Some older releases do not have a recorded release date or detailed public notes
 - Added RC button mapping, dual-axis actuator setup, Sentry configuration,
   drive and dome tuning, and Clock Mode.
 - Added guided device and audio catalog updates through the Master.
+- Improved startup memory use by creating major setup screens only when they
+  are opened.
+- Improved Full Droid Sequence Stop All reliability by retrying a missing
+  Master request or confirmation.
 - Simplified normal serial output while preserving the Display MAC, firmware
   version, readiness information, warnings, and errors.
 - Available through the Installer as Beta for hardware testing. It is not a
